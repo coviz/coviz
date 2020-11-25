@@ -1,6 +1,6 @@
 {
-  "name": "boilermaker",
-  "version": "2.0.0",
+  "name": "coviz",
+  "version": "1.0.0",
   "description": "Some boilerplate code to get you started - get shakin'!",
   "engines": {
     "node": "~12.11.1"
@@ -46,11 +46,12 @@
     "connect-session-sequelize": "^6.0.0",
     "express": "^4.16.4",
     "express-session": "^1.15.1",
+    "fast-csv": "^4.3.5",
     "history": "^4.9.0",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
-    "pg": "^7.9.0",
+    "pg": "^7.18.2",
     "pg-hstore": "^2.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
