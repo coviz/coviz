@@ -4,6 +4,7 @@ import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome, ProofOfConcept} from './components'
 import {me} from './store'
+import {WorldMap} from './components/proof/ProofOfConceptReact'
 
 /**
  * COMPONENT
@@ -19,7 +20,7 @@ class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route path="/" component={ProofOfConcept} />
+        <Route path="/" component={WorldMap} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         {isLoggedIn && (
