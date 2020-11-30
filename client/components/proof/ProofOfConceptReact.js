@@ -8,7 +8,7 @@ const projection = geoAlbersUsa()
   .translate([975 / 2, 610 / 2])
 console.log(projection([-86.279118, 32.361538]))
 
-export const WorldMap = () => {
+export const USMap = () => {
   const [geographies, setGeographies] = useState([])
   const [capitals, setCapitals] = useState([])
 
@@ -21,13 +21,13 @@ export const WorldMap = () => {
 
   return (
     <svg width={975} height={610} viewBox="0 0 975 610">
-      <g className="countries">
+      <g className="states">
         {geographies.map((d, i) => (
           <path
             key={`path-${i}`}
             d={geoPath().projection(projection)(d)}
-            className="country"
-            fill={`rgba(38,50,56,${1 / geographies.length * i})`}
+            className="states"
+            fill="rgba(38,50,56)"
             stroke="#FFFFFF"
             strokeWidth={0.5}
           />
