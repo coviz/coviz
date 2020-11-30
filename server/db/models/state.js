@@ -2,10 +2,10 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const State = db.define('state', {
-  origin: {
+  state: {
     type: Sequelize.STRING
   },
-  capitals: {
+  capital: {
     type: Sequelize.STRING
   },
   latitude: {
@@ -13,6 +13,20 @@ const State = db.define('state', {
   },
   longitude: {
     type: Sequelize.FLOAT
+  },
+  population: {
+    type: Sequelize.BIGINT
+  },
+  stateCode: {
+    type: Sequelize.STRING
+  },
+  createdAt: {
+    type: Sequelize.DATE,
+    allowNull: true
+  },
+  updatedAt: {
+    type: Sequelize.DATE,
+    allowNull: true
   }
 })
 module.exports = State
