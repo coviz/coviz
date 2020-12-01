@@ -1,4 +1,5 @@
 const State = require('./state')
+const Ethnicity = require('./ethnicity')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -14,5 +15,6 @@ const State = require('./state')
  * instead of: const User = require('../db/models/user')
  */
 module.exports = {
-  State
+  State,
+  Ethnicity
 }
