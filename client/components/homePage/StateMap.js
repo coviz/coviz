@@ -8,7 +8,7 @@ const projection = geoAlbersUsa()
   .translate([975 / 2, 610 / 2])
 console.log(projection([-86.279118, 32.361538]))
 
-export const USMap = () => {
+export const StateMap = () => {
   const [geographies, setGeographies] = useState([])
   const [capitals, setCapitals] = useState([])
 
