@@ -22,6 +22,10 @@ async function createTable() {
       const pool = new Pool({
         host: 'localhost',
         user: 'postgres',
+        // ^^comment this back in when not on Anna's comp^^
+        // user: 'ania',
+        // password: 'newPassword',
+        // ^^comment these 2 lines out when not on Anna's comp^^
         database: 'coviz',
         port: 5432
       })

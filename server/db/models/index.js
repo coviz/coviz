@@ -1,5 +1,6 @@
 const State = require('./state')
 const Ethnicity = require('./ethnicity')
+const AgeSex = require('./age-and-sex')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -16,5 +17,6 @@ const Ethnicity = require('./ethnicity')
  */
 module.exports = {
   State,
-  Ethnicity
+  Ethnicity,
+  AgeSex
 }
