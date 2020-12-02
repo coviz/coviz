@@ -6,4 +6,4 @@
 export {StateMap} from './homePage/StateMap'
 export {Chart} from './chartd3/Chart'
 export {Navbar} from './navbar'
-export {Ethnicity} from './homePage/ethnicity'
+export {EthnicityChart} from './homePage/ethnicity'

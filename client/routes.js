@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import {StateMap, Chart, Ethnicity} from './components'
+import {StateMap, Chart, EthnicityChart} from './components'
 
 /**
  * COMPONENT
@@ -13,7 +13,7 @@ export default class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route exact path="/" component={StateMap} />
         <Route exact path="/chart" component={Chart} />
-        <Route exact path='/ethnicity' component={Ethnicity} />
+        <Route exact path='/ethnicity' component={EthnicityChart} />
       </Switch>
     )
   }

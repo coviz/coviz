@@ -11,6 +11,11 @@ router.get('/', async (req, res, next) => {
                 state: 'United States'
             }
         })
+        // let mappedData = Object.keys(nation).map(ethnKey => {
+        //     if (ethnKey.includes('Totals')) {
+        //         return nation[ethnKey]
+        //     }
+        // })
         res.json(nation)
     } catch (error) {
         next(error)
