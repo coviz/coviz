@@ -1,4 +1,6 @@
 const State = require('./state')
+const Ethnicity = require('./ethnicity')
+const AgeSex = require('./age-and-sex')
 const CovidDaily = require('./covidDaily')
 
 /**
@@ -16,5 +18,7 @@ const CovidDaily = require('./covidDaily')
  */
 module.exports = {
   State,
+  Ethnicity,
+  AgeSex,
   CovidDaily
 }
