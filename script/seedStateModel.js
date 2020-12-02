@@ -3,10 +3,10 @@ const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
-async function createTable() {
+async function createStateTable() {
   await db.sync({force: true})
   await db.close()
-  console.log('this is inside createTable')
+
   let stream = fs.createReadStream('script/usCapitals.csv')
   let csvData = []
   let csvStream = fastcsv
@@ -29,9 +29,9 @@ async function createTable() {
         database: 'coviz',
         port: 5432
       })
-      console.log('this is right before query')
+
       const query =
-        'INSERT INTO "states" (state, capital, latitude, longitude, population, "stateCode") VALUES ($1, $2, $3, $4, $5, $6)'
+        'INSERT INTO "states" (state, capital, latitude, longitude, population, "statecode") VALUES ($1, $2, $3, $4, $5, $6)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -55,4 +55,6 @@ async function createTable() {
   stream.pipe(csvStream)
 }
 
-createTable()
+createStateTable()
+
+module.exports = createStateTable()

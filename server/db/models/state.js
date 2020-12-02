@@ -17,7 +17,7 @@ const State = db.define('state', {
   population: {
     type: Sequelize.BIGINT
   },
-  stateCode: {
+  statecode: {
     type: Sequelize.STRING
   },
   createdAt: {
