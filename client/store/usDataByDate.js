@@ -25,7 +25,7 @@ export const fetchSingleDateDataThunk = date => {
 const initialState = []
 
 // reducer
-export default function(state = initialState, action) {
+export default function usDataByDateReducer(state = initialState, action) {
   switch (action.type) {
     case GET_SINGLE_DATE_DATA:
       return action.data

@@ -57,4 +57,4 @@ async function createStateTable() {
 
 createStateTable()
 
-module.exports = createStateTable()
+// module.exports = createStateTable()

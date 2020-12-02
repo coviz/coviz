@@ -4,7 +4,7 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createCovidDailyTable() {
-  await db.sync({force: true})
+  await db.sync()
   await db.close()
 
   let stream = fs.createReadStream('script/daily_covid_case_counts_112320.csv')
@@ -62,4 +62,4 @@ async function createCovidDailyTable() {
 
 createCovidDailyTable()
 
-module.exports = createCovidDailyTable()
+// module.exports = createCovidDailyTable()

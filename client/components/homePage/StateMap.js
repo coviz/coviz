@@ -1,22 +1,29 @@
 import React, {useState, useEffect} from 'react'
 import {geoAlbersUsa, geoPath} from 'd3-geo'
 import usData from './usData.json'
-import states from './capitals.json'
+// import states from './capitals.json'
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchSingleDateDataThunk} from '../../store/usDataByDate'
 
 const projection = geoAlbersUsa()
   .scale(1300)
   .translate([975 / 2, 610 / 2])
-console.log(projection([-86.279118, 32.361538]))
 
 export const StateMap = () => {
   const [geographies, setGeographies] = useState([])
-  const [capitals, setCapitals] = useState([])
+  // const [capitals, setCapitals] = useState([])
+
+  // console.log('not inside useEffect usDataByDate', usDataByDate)
+  const capitals = useSelector(state => state.usDataByDate)
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log(usData)
-
+    dispatch(fetchSingleDateDataThunk(20201123))
     setGeographies(usData.features)
-    setCapitals(states.capitals)
+    // setCapitals(usDataByDate)
+    // console.log('inside useEffect: usDataByDate', usDataByDate)
+    // console.log('inside useEffect: capitals', capitals)
   }, [])
 
   return (
@@ -34,12 +41,12 @@ export const StateMap = () => {
         ))}
       </g>
       <g className="markers">
-        {capitals.map((state, index) => (
+        {capitals.map(state => (
           <circle
-            key={index}
-            cx={projection([state.long, state.lat])[0]}
-            cy={projection([state.long, state.lat])[1]}
-            r={state.pop / 1000000}
+            key={state.statecode}
+            cx={projection([state.longitude, state.latitude])[0]}
+            cy={projection([state.longitude, state.latitude])[1]}
+            r={state.population / 1000000}
             fill="#E91E"
             className="marker"
           />

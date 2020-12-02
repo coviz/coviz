@@ -10,8 +10,8 @@ const CovidDaily = require('./covidDaily')
  *    BlogPost.belongsTo(User)
  */
 
-State.hasMany(CovidDaily)
-CovidDaily.belongsTo(State)
+// State.hasMany(CovidDaily)
+// CovidDaily.belongsTo(State)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
