@@ -4,7 +4,7 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createCovidDailyTable() {
-  await db.sync({force: true})
+  await db.sync()
   await db.close()
 
   let stream = fs.createReadStream('script/daily_covid_case_counts_112320.csv')
@@ -32,7 +32,7 @@ async function createCovidDailyTable() {
       })
 
       const query =
-        'INSERT INTO "covidDailies" (date, "stateCode", positive, death, "positiveIncrease", "deathIncrease") VALUES ($1, $2, $3, $4, $5, $6)'
+        'INSERT INTO "covidDailies" (date, "statecode", positive, death, "positiveIncrease", "deathIncrease") VALUES ($1, $2, $3, $4, $5, $6)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -61,3 +61,5 @@ async function createCovidDailyTable() {
 }
 
 createCovidDailyTable()
+
+// module.exports = createCovidDailyTable()

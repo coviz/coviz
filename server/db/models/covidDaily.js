@@ -5,7 +5,7 @@ const CovidDaily = db.define('covidDaily', {
   date: {
     type: Sequelize.INTEGER
   },
-  stateCode: {
+  statecode: {
     type: Sequelize.STRING
   },
   positive: {
