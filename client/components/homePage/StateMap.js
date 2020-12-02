@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {geoAlbersUsa, geoPath} from 'd3-geo'
 import usData from './usData.json'
-// import states from './capitals.json'
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchSingleDateDataThunk} from '../../store/usDataByDate'
 
@@ -11,19 +10,12 @@ const projection = geoAlbersUsa()
 
 export const StateMap = () => {
   const [geographies, setGeographies] = useState([])
-  // const [capitals, setCapitals] = useState([])
-
-  // console.log('not inside useEffect usDataByDate', usDataByDate)
   const capitals = useSelector(state => state.usDataByDate)
-
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchSingleDateDataThunk(20201123))
     setGeographies(usData.features)
-    // setCapitals(usDataByDate)
-    // console.log('inside useEffect: usDataByDate', usDataByDate)
-    // console.log('inside useEffect: capitals', capitals)
   }, [])
 
   return (
@@ -46,7 +38,7 @@ export const StateMap = () => {
             key={state.statecode}
             cx={projection([state.longitude, state.latitude])[0]}
             cy={projection([state.longitude, state.latitude])[1]}
-            r={state.population / 1000000}
+            r={state.positive / state.population * 300}
             fill="#E91E"
             className="marker"
           />
