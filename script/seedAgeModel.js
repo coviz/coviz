@@ -7,7 +7,7 @@ async function createTable() {
   await db.sync({force: true})
   await db.close()
   console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/usCapitals.csv')
+  let stream = fs.createReadStream('script/covid_vs_age.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -22,7 +22,7 @@ async function createTable() {
       const pool = new Pool({
         host: 'localhost',
         user: 'postgres',
-        // ^^comment this back in when not on Anna's comp^^
+        // ^^comment this 1 line in when not on Anna's comp^^
         // user: 'ania',
         // password: 'newPassword',
         // ^^comment these 2 lines out when not on Anna's comp^^
@@ -31,7 +31,7 @@ async function createTable() {
       })
       console.log('this is right before query')
       const query =
-        'INSERT INTO "states" (state, capital, latitude, longitude, population, "stateCode") VALUES ($1, $2, $3, $4, $5, $6)'
+        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals") VALUES ($1, $2, $3, $4)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
