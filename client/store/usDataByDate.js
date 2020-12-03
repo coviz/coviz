@@ -16,9 +16,11 @@ export const fetchSingleDateDataThunk = date => {
       const array = date.split('/')
       const year = array.pop()
       array.unshift(year)
+      if (array[1].length <= 1) {
+        let temp = array[1]
+        array[1] = `0${temp}`
+      }
       const newDate = array.join('')
-      console.log('string:', newDate)
-      console.log('date:', new Date(newDate))
       const {data} = await axios.get(`api/covidDaily/${newDate}`)
       dispatch(fetchSingleDateData(data))
     } catch (err) {

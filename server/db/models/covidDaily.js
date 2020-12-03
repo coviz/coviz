@@ -3,7 +3,7 @@ const db = require('../db')
 
 const CovidDaily = db.define('covidDaily', {
   date: {
-    type: Sequelize.STRING
+    type: Sequelize.INTEGER
   },
   statecode: {
     type: Sequelize.STRING

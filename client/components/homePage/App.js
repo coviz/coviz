@@ -11,7 +11,7 @@ export const App = () => {
 
   // create the timer
   const timer = useTimer({
-    startTime: new Date('2020-01-22'),
+    startTime: new Date('2020-03-22'),
     endTime: new Date('2020-11-23'),
     step: 1000 * 60 * 60,
     frequency: 24
@@ -27,6 +27,6 @@ export const App = () => {
     },
     [timerDate]
   )
-
+  console.log(capitals)
   return <div>{isLoading ? <StateMap data={capitals} /> : <div />}</div>
 }
