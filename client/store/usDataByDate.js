@@ -22,6 +22,7 @@ export const fetchSingleDateDataThunk = date => {
       }
       const newDate = array.join('')
       const {data} = await axios.get(`api/covidDaily/${newDate}`)
+      console.log('thunk data', data)
       dispatch(fetchSingleDateData(data))
     } catch (err) {
       console.error(err)
