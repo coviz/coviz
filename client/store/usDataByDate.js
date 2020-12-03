@@ -22,13 +22,16 @@ export const fetchSingleDateDataThunk = date => {
 }
 
 // initial state
-const initialState = []
+const initialState = {
+  isLoading: false,
+  usDailyData: []
+}
 
 // reducer
 export default function usDataByDateReducer(state = initialState, action) {
   switch (action.type) {
     case GET_SINGLE_DATE_DATA:
-      return action.data
+      return {...state, isLoading: true, usDailyData: action.data}
     default:
       return state
   }

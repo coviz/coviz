@@ -3,6 +3,6 @@
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
-export {StateMap} from './homePage/StateMap'
+export {App} from './homePage/App'
 export {Chart} from './chartd3/Chart'
 export {Navbar} from './navbar'

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import {StateMap, Chart} from './components'
+import {App, Chart} from './components'
 
 /**
  * COMPONENT
@@ -11,7 +11,7 @@ export default class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route exact path="/" component={StateMap} />
+        <Route exact path="/" component={App} />
         <Route exact path="/chart" component={Chart} />
       </Switch>
     )
