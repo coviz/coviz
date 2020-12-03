@@ -13,7 +13,13 @@ const fetchSingleDateData = data => ({
 export const fetchSingleDateDataThunk = date => {
   return async dispatch => {
     try {
-      const {data} = await axios.get(`api/covidDaily/${date}`)
+      const array = date.split('/')
+      const year = array.pop()
+      array.unshift(year)
+      const newDate = array.join('')
+      console.log('string:', newDate)
+      console.log('date:', new Date(newDate))
+      const {data} = await axios.get(`api/covidDaily/${newDate}`)
       dispatch(fetchSingleDateData(data))
     } catch (err) {
       console.error(err)
