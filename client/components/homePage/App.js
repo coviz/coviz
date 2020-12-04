@@ -11,10 +11,10 @@ export const App = () => {
 
   // create the timer
   const timer = useTimer({
-    startTime: new Date('2020-05-22'),
+    startTime: new Date('2020-03-01'),
     endTime: new Date('2020-11-23'),
     step: 1000 * 60 * 60,
-    frequency: 24
+    frequency: 77
   })
 
   const timerDate = timer.time.toLocaleDateString()
@@ -33,7 +33,7 @@ export const App = () => {
   )
 
   console.log('capitals after setData', capitals)
-  console.log('capitals after setData dataaaa', data)
+  console.log('dataaaa after setData', data)
   return (
     <div>
       <h1>{timerDate}</h1>
