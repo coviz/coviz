@@ -19,3 +19,9 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+* {
+  background-color: rgb(228, 233, 235);
+  color: #555c69;
+  font-family: 'Courier New', Courier, monospace
+}
