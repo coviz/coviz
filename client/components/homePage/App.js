@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
-import {fetchSingleDateDataThunk} from '../../store/usDataByDate'
+import {fetchAllDateDataThunk} from '../../store/usDataByDate'
 import useTimer from './useTimer'
+import {nest} from 'd3'
+
 
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
@@ -20,19 +22,35 @@ export const App = () => {
   const timerDate = timer.time.toLocaleDateString()
   const [data, setData] = useState([])
 
+  const nestedDailyState = nest()
+    .key(d => d.date)
+    .entries(capitals)
+    .reduce(
+      (acc, row) => ({
+        ...acc,
+        [new Date(row.key).toLocaleDateString()]: row.values.map(value => {
+          const { Date, ...valueRemainder } = value
+          console.log('valueRemainderrrrrrrrr', valueRemainder)
+          return valueRemainder
+        }),
+      }),
+      {}
+  )
+
   useEffect(
     () => {
-      console.log(timerDate)
-      dispatch(fetchSingleDateDataThunk(timerDate))
-      console.log('capitals after thunk', capitals)
+      // console.log(timerDate)
+      dispatch(fetchAllDateDataThunk())
+      // console.log('capitals after thunk', capitals)
       if (isLoading) {
-        setData(capitals)
+        // setData(capitals)
+        setData(nestedDailyState[timerDate])
       }
     },
     [timerDate]
   )
 
-  console.log('capitals after setData', capitals)
+  // console.log('capitals after setData', capitals)
   console.log('dataaaa after setData', data)
   return (
     <div>

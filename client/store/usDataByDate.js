@@ -1,33 +1,33 @@
 import axios from 'axios'
 
 // action types
-const GET_SINGLE_DATE_DATA = 'GET_SINGLE_DATE_DATA'
+const GET_ALL_DATE_DATA = 'GET_ALL_DATE_DATA'
 
 // action creators
-const fetchSingleDateData = data => ({
-  type: GET_SINGLE_DATE_DATA,
+const fetchAllDateData = (data) => ({
+  type: GET_ALL_DATE_DATA,
   data
 })
 
 // thunk creators
-export const fetchSingleDateDataThunk = date => {
+export const fetchAllDateDataThunk = () => {
   return async dispatch => {
     try {
-      const array = date.split('/')
-      const year = array.pop()
-      array.unshift(year)
-      if (array[1].length <= 1) {
-        let temp = array[1]
-        array[1] = `0${temp}`
-      }
-      if (array[2].length <= 1) {
-        let temp = array[2]
-        array[2] = `0${temp}`
-      }
-      const newDate = array.join('')
-      const {data} = await axios.get(`api/covidDaily/${newDate}`)
-      console.log('thunk data', data)
-      dispatch(fetchSingleDateData(data))
+      // const array = date.split('/')
+      // const year = array.pop()
+      // array.unshift(year)
+      // if (array[1].length <= 1) {
+      //   let temp = array[1]
+      //   array[1] = `0${temp}`
+      // }
+      // if (array[2].length <= 1) {
+      //   let temp = array[2]
+      //   array[2] = `0${temp}`
+      // }
+      // const newDate = array.join('')
+      const {data} = await axios.get(`api/covidDaily`)
+      // console.log('thunk data', data)
+      dispatch(fetchAllDateData(data))
     } catch (err) {
       console.error(err)
     }
@@ -43,7 +43,7 @@ const initialState = {
 // reducer
 export default function usDataByDateReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_SINGLE_DATE_DATA:
+    case GET_ALL_DATE_DATA:
       return {...state, isLoading: true, usDailyData: action.data}
     default:
       return state
