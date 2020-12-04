@@ -48,8 +48,8 @@ export const StateMap = data => {
         // Add class for reference
         .attr('class', 'circle')
         // style
-        .style('fill', '#E6532E')
-        .style('fill-opacity', 0.3)
+        .style('fill', '#E91E')
+        .style('fill-opacity', 0.7)
         // Update x-position
         .attr('cx', d => projection([d.longitude, d.latitude])[0])
         // Update y-position
