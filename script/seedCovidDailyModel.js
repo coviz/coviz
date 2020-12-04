@@ -4,7 +4,7 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createCovidDailyTable() {
-  await db.sync()
+  await db.sync({force: true})
   await db.close()
 
   let stream = fs.createReadStream('script/daily_covid_case_counts_112320.csv')
@@ -27,6 +27,10 @@ async function createCovidDailyTable() {
       const pool = new Pool({
         host: 'localhost',
         user: 'postgres',
+        // ^^comment this back in when not on Anna's comp^^
+        // user: 'ania',
+        // password: 'newPassword',
+        // ^^comment these 2 lines out when not on Anna's comp^^
         database: 'coviz',
         port: 5432
       })

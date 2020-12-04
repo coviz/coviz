@@ -34,6 +34,7 @@ router.get('/:date', async (req, res, next) => {
   const query = `SELECT states.state, states.statecode, states.latitude, states.longitude, states.population, date, positive FROM states JOIN "covidDailies" ON states.statecode = "covidDailies".statecode WHERE date=${
     req.params.date
   }`
+
   try {
     const [results] = await db.query(query)
     res.json(results)
