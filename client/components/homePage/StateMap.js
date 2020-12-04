@@ -31,7 +31,6 @@ export const StateMap = data => {
         .style('fill', '#DFE7EB')
         .style('stroke', '#fff')
         .style('stroke-width', 2)
-      console.log('data', data)
       const maxCases = max(data.data.map(d => d.positive))
 
       const radiusScale = scaleSqrt()

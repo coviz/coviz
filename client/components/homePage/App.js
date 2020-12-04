@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
 import {fetchAllDateDataThunk} from '../../store/usDataByDate'
 import useTimer from './useTimer'
-import {nest} from 'd3'
+import {group} from 'd3'
 
 
 export const App = () => {
@@ -16,42 +16,49 @@ export const App = () => {
     startTime: new Date('2020-03-01'),
     endTime: new Date('2020-11-23'),
     step: 1000 * 60 * 60,
-    frequency: 77
+    frequency: 100
   })
 
   const timerDate = timer.time.toLocaleDateString()
+
   const [data, setData] = useState([])
 
-  const nestedDailyState = nest()
-    .key(d => d.date)
-    .entries(capitals)
-    .reduce(
-      (acc, row) => ({
-        ...acc,
-        [new Date(row.key).toLocaleDateString()]: row.values.map(value => {
-          const { Date, ...valueRemainder } = value
-          console.log('valueRemainderrrrrrrrr', valueRemainder)
-          return valueRemainder
-        }),
-      }),
-      {}
+
+  useEffect(
+    () => {
+      dispatch(fetchAllDateDataThunk())
+    },
+    []
   )
 
   useEffect(
     () => {
+      const array = timerDate.split('/')
+      const year = array.pop()
+      array.unshift(year)
+      if (array[1].length <= 1) {
+        let temp = array[1]
+        array[1] = `0${temp}`
+      }
+      if (array[2].length <= 1) {
+        let temp = array[2]
+        array[2] = `0${temp}`
+      }
+      const newDate = array.join('')
       // console.log(timerDate)
-      dispatch(fetchAllDateDataThunk())
       // console.log('capitals after thunk', capitals)
       if (isLoading) {
         // setData(capitals)
-        setData(nestedDailyState[timerDate])
+        const nestedDailyState = Array.from(group(capitals, d => d.date), ([key, value]) => ({key, value}))
+        const searchedDate = nestedDailyState.filter(elem => {
+          return elem.key === +newDate
+        })
+        setData(searchedDate[0].value)
       }
     },
     [timerDate]
   )
 
-  // console.log('capitals after setData', capitals)
-  console.log('dataaaa after setData', data)
   return (
     <div>
       <h1>{timerDate}</h1>
