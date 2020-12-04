@@ -28,7 +28,7 @@ export const StateMap = data => {
         // Run data through pathGenerator
         .attr('d', pathGenerator)
         // Style
-        .style('fill', '#DFE7EB')
+        .style('fill', 'rgba(38,50,56)')
         .style('stroke', '#fff')
         .style('stroke-width', 2)
       const maxCases = max(data.data.map(d => d.positive))
@@ -58,7 +58,7 @@ export const StateMap = data => {
         .merge(circleData)
         // Transition the next update
         .transition()
-        .duration(1000)
+        .duration(10)
         .ease(easeLinear)
         // Update the radius to the new cases value
         .attr('r', d => radiusScale(d.positive))
