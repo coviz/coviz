@@ -6,3 +6,4 @@
 export {App} from './homePage/App'
 export {Chart} from './chartd3/Chart'
 export {Navbar} from './navbar'
+export {EthnicityChart} from './homePage/ethnicity'
