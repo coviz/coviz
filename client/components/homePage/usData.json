@@ -1,3 +1,5 @@
+// are there plans to place this data in the db instead?
+// consider moving to its own folder (or the public folder?)
 {
   "type": "FeatureCollection",
   "features": [

@@ -1,6 +1,10 @@
 import React, {useRef} from 'react'
 import {geoAlbersUsa, easeLinear, select, scaleSqrt, max} from 'd3'
 
+/** 
+  I would recommend creating two folders in "homePage" - one for components and one for helper functions. 
+*/
+
 export const makeBubbles = data => {
   const maxCases = max(data.map(d => d.positive))
 

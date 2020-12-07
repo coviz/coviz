@@ -5,7 +5,6 @@ import {fetchAllDateDataThunk} from '../../store/usDataByDate'
 import useTimer from './useTimer'
 import {group} from 'd3'
 
-
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
   const isLoading = useSelector(state => state.usDataByDate.isLoading)
@@ -23,14 +22,11 @@ export const App = () => {
 
   const [data, setData] = useState([])
 
+  useEffect(() => {
+    dispatch(fetchAllDateDataThunk())
+  }, [])
 
-  useEffect(
-    () => {
-      dispatch(fetchAllDateDataThunk())
-    },
-    []
-  )
-
+  // can we add a bit of documentation here to clarify what is going on with this useEffect? Specifically with the temp arrays.
   useEffect(
     () => {
       const array = timerDate.split('/')
@@ -49,7 +45,10 @@ export const App = () => {
       // console.log('capitals after thunk', capitals)
       if (isLoading) {
         // setData(capitals)
-        const nestedDailyState = Array.from(group(capitals, d => d.date), ([key, value]) => ({key, value}))
+        const nestedDailyState = Array.from(
+          group(capitals, d => d.date),
+          ([key, value]) => ({key, value})
+        )
         const searchedDate = nestedDailyState.filter(elem => {
           return elem.key === +newDate
         })

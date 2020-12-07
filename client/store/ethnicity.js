@@ -1,3 +1,11 @@
+/** 
+  Something to consider: you may not need Redux in every app you make. I would say this app doesn't necessarily need Redux since you only have about one action per data set. Consider cutting out Redux and using plain React state (either for this project, future data sets on this project, or future projects)
+*/
+
+/** 
+  General note: this codebase has a fair amount of rogue console logs and unused imports. Don't forget to go back and clean these up before pushing to master. 
+*/
+
 import axios from 'axios'
 
 const SET_ETHNICITIES = 'SET_ETHNICITIES'

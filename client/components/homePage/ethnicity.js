@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import {fetchEthnicities} from '../../store/ethnicity'
 import {drawChart, initChart} from '../chartd3/BasicD3'
 
+// it's best practice if the file name matches the component name
+
 export const EthnicityChart = props => {
   const dispatch = useDispatch()
   const data = useSelector(state => state.ethnicities.usData)

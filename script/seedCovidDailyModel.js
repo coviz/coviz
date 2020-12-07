@@ -42,6 +42,7 @@ async function createCovidDailyTable() {
         if (err) throw err
 
         try {
+          // forEach does weird things with promises. Consider using a plain for loop or a .map with Promise.all
           csvData.forEach(row => {
             client.query(query, row, (err, res) => {
               if (err) {
