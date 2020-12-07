@@ -79,18 +79,22 @@ export const App = () => {
   return (
     <div>
       <h1>{timerDate}</h1>
-      <div>
-        {!timer.isPlaying ? (
-          <button onClick={timer.play}>Play</button>
-        ) : (
-          <button onClick={timer.stop}>Stop</button>
-        )}
-      </div>
-      <div>{isLoading ? <StateMap data={data} /> : <div />}</div>
       <Trend
         data={casesByDate.map(row => ({...row, Date: new Date(row.Date)}))}
         {...timer}
       />
+      <div>
+        {!timer.isPlaying ? (
+          <button type="button" className="play-button" onClick={timer.play}>
+            Play
+          </button>
+        ) : (
+          <button type="button" className="play-button" onClick={timer.stop}>
+            Stop
+          </button>
+        )}
+      </div>
+      <div>{isLoading ? <StateMap data={data} /> : <div />}</div>
     </div>
   )
 }
