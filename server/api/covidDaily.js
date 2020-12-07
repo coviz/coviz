@@ -1,41 +1,43 @@
 const router = require('express').Router()
-const {CovidDaily} = require('../db/models')
+const {CovidDaily, State} = require('../db/models')
+const db = require('../db')
 module.exports = router
 
-// GET route for all data
-// Do we actually need this call? It takes a long time to load....
+// query for all data
+
 router.get('/', async (req, res, next) => {
+  const query =
+    'SELECT states.state, states.statecode, states.latitude, states.longitude, states.population, date, positive FROM states JOIN "covidDailies" ON states.statecode = "covidDailies".statecode'
   try {
-    const covidDailyData = await CovidDaily.findAll()
-    res.json(covidDailyData)
+    const [results] = await db.query(query)
+    res.json(results)
   } catch (err) {
     next(err)
   }
 })
 
-// GET route for a specific data's data
+//GET route by state
+router.get('/states/:statecode', async (req, res, next) => {
+  const query = `SELECT states.state, states.statecode, states.latitude, states.longitude, states.population, date, positive FROM states JOIN "covidDailies" ON states.statecode = "covidDailies".statecode WHERE states.statecode='${
+    req.params.statecode
+  }'`
+  try {
+    const [results] = await db.query(query)
+    res.json(results)
+  } catch (err) {
+    next(err)
+  }
+})
+
+//GET route by date
 router.get('/:date', async (req, res, next) => {
-  try {
-    const covidDailyDateData = await CovidDaily.findAll({
-      where: {
-        date: +req.params.date
-      }
-    })
-    res.json(covidDailyDateData)
-  } catch (err) {
-    next(err)
-  }
-})
+  const query = `SELECT states.state, states.statecode, states.latitude, states.longitude, states.population, date, positive FROM states JOIN "covidDailies" ON states.statecode = "covidDailies".statecode WHERE date=${
+    req.params.date
+  }`
 
-// GET route for a specific state's data
-router.get('/state/:stateCode', async (req, res, next) => {
   try {
-    const covidDailyStateData = await CovidDaily.findAll({
-      where: {
-        stateCode: req.params.stateCode
-      }
-    })
-    res.json(covidDailyStateData)
+    const [results] = await db.query(query)
+    res.json(results)
   } catch (err) {
     next(err)
   }

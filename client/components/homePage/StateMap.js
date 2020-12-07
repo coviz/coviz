@@ -1,50 +1,76 @@
-import React, {useState, useEffect} from 'react'
-import {geoAlbersUsa, geoPath} from 'd3-geo'
+import React, {useRef, useEffect} from 'react'
+import {geoAlbersUsa, geoPath, select, scaleSqrt, easeLinear, max} from 'd3'
 import usData from './usData.json'
-import states from './capitals.json'
 
-const projection = geoAlbersUsa()
-  .scale(1300)
-  .translate([975 / 2, 610 / 2])
-console.log(projection([-86.279118, 32.361538]))
+export const StateMap = data => {
+  // const [geographies, setGeographies] = useState([])
 
-export const StateMap = () => {
-  const [geographies, setGeographies] = useState([])
-  const [capitals, setCapitals] = useState([])
+  const svgRef = useRef()
 
-  useEffect(() => {
-    console.log(usData)
+  useEffect(
+    () => {
+      const projection = geoAlbersUsa()
+        .scale(1300)
+        .translate([975 / 2, 610 / 2])
 
-    setGeographies(usData.features)
-    setCapitals(states.capitals)
-  }, [])
+      const svg = select(svgRef.current)
+      const pathGenerator = geoPath().projection(projection)
+
+      // setGeographies(usData.features)
+      const statePathData = svg.selectAll('.state-path').data(usData.features)
+      statePathData
+        // Enter new data
+        .enter()
+        // Append a path for each state feature
+        .append('path')
+        // Add class for reference
+        .attr('class', 'state-path')
+        // Run data through pathGenerator
+        .attr('d', pathGenerator)
+        // Style
+        .style('fill', 'rgba(38,50,56)')
+        .style('stroke', '#fff')
+        .style('stroke-width', 2)
+      const maxCases = max(data.data.map(d => d.positive))
+
+      const radiusScale = scaleSqrt()
+        .domain([0, 1, maxCases])
+        .range([0, 2, 75])
+
+      const circleData = svg
+        .selectAll('.circle')
+        .data(data.data, d => d.statecode)
+      circleData
+        // Enter new data
+        .enter()
+        // Append a circle for each county data point
+        .append('circle')
+        // Add class for reference
+        .attr('class', 'circle')
+        // style
+        .style('fill', '#E91E')
+        .style('fill-opacity', 0.7)
+        // Update x-position
+        .attr('cx', d => projection([d.longitude, d.latitude])[0])
+        // Update y-position
+        .attr('cy', d => projection([d.longitude, d.latitude])[1])
+        // Merge incoming new data
+        .merge(circleData)
+        // Transition the next update
+        .transition()
+        .duration(10)
+        .ease(easeLinear)
+        // Update the radius to the new cases value
+        .attr('r', d => radiusScale(d.positive))
+      // Exit data points no longer in data and remove
+      circleData.exit().remove()
+    },
+    [svgRef, data]
+  )
 
   return (
-    <svg width={975} height={610} viewBox="0 0 975 610">
-      <g className="states">
-        {geographies.map((d, i) => (
-          <path
-            key={`path-${i}`}
-            d={geoPath().projection(projection)(d)}
-            className="states"
-            fill="rgba(38,50,56)"
-            stroke="#FFFFFF"
-            strokeWidth={0.5}
-          />
-        ))}
-      </g>
-      <g className="markers">
-        {capitals.map((state, index) => (
-          <circle
-            key={index}
-            cx={projection([state.long, state.lat])[0]}
-            cy={projection([state.long, state.lat])[1]}
-            r={state.pop / 1000000}
-            fill="#E91E"
-            className="marker"
-          />
-        ))}
-      </g>
-    </svg>
+    <div>
+      <svg ref={svgRef} width={975} height={610} viewBox="0 0 975 610" />
+    </div>
   )
 }

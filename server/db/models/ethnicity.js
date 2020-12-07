@@ -43,4 +43,4 @@ const Ethnicity = db.define('ethnicity', {
     }
 })
 
-module.exports = Ethnicity;
+module.exports = Ethnicity
