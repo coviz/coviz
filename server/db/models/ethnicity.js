@@ -2,36 +2,23 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Ethnicity = db.define('ethnicity', {
-    state: {
+    ethnicity: {
         type: Sequelize.STRING,
     },
-    caucasianTotals: {
+    raw: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    africanAmericanTotals: {
+    perPop: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    nativeAmericanTotals: {
-        type: Sequelize.INTEGER,
+    deathPerPop: {
+        type: Sequelize.DECIMAL(10, 2),
         defaultValue: 0,
     },
-    asianAmericanTotals: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0,
-    },
-    pacificIslanderTotals: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0,
-    },
-    latinoAmericanTotals: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0,
-    },
-    otherTotals: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0,
+    state: {
+        type: Sequelize.STRING,
     },
     createdAt: {
       type: Sequelize.DATE,
