@@ -5,6 +5,7 @@ module.exports = router
 router.use('/ethnicity', require('./ethnicity'))
 router.use('/age-and-sex', require('./ageSex'))
 router.use('/covidDaily', require('./covidDaily'))
+router.use('/behindBars', require('./behindBars'))
 
 router.use((req, res, next) => {
   const error = new Error('Not Found')
