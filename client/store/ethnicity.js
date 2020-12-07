@@ -20,9 +20,9 @@ export const fetchEthnicities = () => {
             return data[0][ethnKey]
           }
         })
-        // .filter(dataBit => {
-        //   return dataBit !== undefined
-        // })
+        .filter(dataBit => {
+          return dataBit !== undefined
+        })
 
       console.log('mapped in thunk', mappedData)
       dispatch(setEthnicities(mappedData))
