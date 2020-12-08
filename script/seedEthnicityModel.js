@@ -4,10 +4,10 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createTable() {
-  await db.sync({force: true})
+  await db.sync()
   await db.close()
   console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/covid_vs_race.csv')
+  let stream = fs.createReadStream('script/covid_v_race.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -31,7 +31,7 @@ async function createTable() {
       })
       console.log('this is right before query')
       const query =
-        'INSERT INTO "ethnicities" ("ethnicity", raw, "perPop", "deathPerPop", state) VALUES ($1, $2, $3, $4, $5)'
+        'INSERT INTO "ethnicities" ("state", "ethnicity", "deaths", "pop", "percentage") VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
