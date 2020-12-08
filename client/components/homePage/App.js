@@ -4,7 +4,7 @@ import {StateMap} from './StateMap'
 import {fetchAllDateDataThunk} from '../../store/usDataByDate'
 import useTimer from './useTimer'
 import {group} from 'd3'
-import Trend from './Trend'
+// import Trend from './Trend'
 
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
@@ -87,10 +87,10 @@ export const App = () => {
         )}
       </div>
       <div>{isLoading ? <StateMap data={data} /> : <div />}</div>
-      <Trend
+      {/* <Trend
         data={casesByDate.map(row => ({...row, Date: new Date(row.Date)}))}
         {...timer}
-      />
+      /> */}
     </div>
   )
 }

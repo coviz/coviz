@@ -23,6 +23,7 @@ router.get('/states/:statecode', async (req, res, next) => {
   }'`
   try {
     const [results] = await db.query(query)
+
     res.json(results)
   } catch (err) {
     next(err)
