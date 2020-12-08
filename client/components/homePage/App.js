@@ -41,10 +41,7 @@ export const App = () => {
         array[2] = `0${temp}`
       }
       const newDate = array.join('')
-      // console.log(timerDate)
-      // console.log('capitals after thunk', capitals)
       if (isLoading) {
-        // setData(capitals)
         const nestedDailyState = Array.from(
           group(capitals, d => d.date),
           ([key, value]) => ({key, value})
