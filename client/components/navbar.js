@@ -9,7 +9,7 @@ export const Navbar = () => (
       <div>
         {/* The navbar will show these links before you log in */}
         <Link to="/">US Map</Link>
-        <Link to="/chart">Chart</Link>
+        <Link to="/ethnicity">Covid v. Ethnicity</Link>
         <Link to="/about">About</Link>
       </div>
     </nav>

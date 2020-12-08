@@ -29,7 +29,7 @@ export const StateMap = data => {
         .attr('d', pathGenerator)
         // Style
         .style('fill', 'rgba(38,50,56)')
-        .style('stroke', '#fff')
+        .style('stroke', '#011627')
         .style('stroke-width', 2)
       const maxCases = max(data.data.map(d => d.positive))
 

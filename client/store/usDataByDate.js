@@ -4,7 +4,7 @@ import axios from 'axios'
 const GET_ALL_DATE_DATA = 'GET_ALL_DATE_DATA'
 
 // action creators
-const fetchAllDateData = (data) => ({
+export const fetchAllDateData = data => ({
   type: GET_ALL_DATE_DATA,
   data
 })

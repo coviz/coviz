@@ -4,7 +4,6 @@ import {StateMap} from './StateMap'
 import {fetchAllDateDataThunk} from '../../store/usDataByDate'
 import useTimer from './useTimer'
 import {group} from 'd3'
-import Trend from './Trend'
 
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
