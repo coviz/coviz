@@ -7,7 +7,7 @@ async function createTable() {
   await db.sync({force: true})
   await db.close()
   console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/covid_vs_age.csv')
+  let stream = fs.createReadStream('script/Covd_vs_Age_&_Sex.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -21,10 +21,10 @@ async function createTable() {
       // create a new connection to the database
       const pool = new Pool({
         host: 'localhost',
-        user: 'postgres',
+        // user: 'postgres',
         // ^^comment this 1 line in when not on Anna's comp^^
-        // user: 'ania',
-        // password: 'newPassword',
+        user: 'ania',
+        password: 'newPassword',
         // ^^comment these 2 lines out when not on Anna's comp^^
         database: 'coviz',
         port: 5432

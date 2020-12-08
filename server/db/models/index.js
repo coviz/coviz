@@ -1,6 +1,6 @@
 const State = require('./state')
 const Ethnicity = require('./ethnicity')
-const AgeSex = require('./age-and-sex')
+const AgeSex = require('./ageSex')
 const CovidDaily = require('./covidDaily')
 
 /**
