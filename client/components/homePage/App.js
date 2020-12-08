@@ -5,7 +5,6 @@ import {fetchAllDateDataThunk} from '../../store/usDataByDate'
 import useTimer from './useTimer'
 import {group} from 'd3'
 
-
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
   const isLoading = useSelector(state => state.usDataByDate.isLoading)
@@ -13,7 +12,7 @@ export const App = () => {
 
   // create the timer
   const timer = useTimer({
-    startTime: new Date('2020-03-01'),
+    startTime: new Date('2020-02-26'),
     endTime: new Date('2020-11-23'),
     step: 1000 * 60 * 60,
     frequency: 100
@@ -23,13 +22,9 @@ export const App = () => {
 
   const [data, setData] = useState([])
 
-
-  useEffect(
-    () => {
-      dispatch(fetchAllDateDataThunk())
-    },
-    []
-  )
+  useEffect(() => {
+    dispatch(fetchAllDateDataThunk())
+  }, [])
 
   useEffect(
     () => {
@@ -49,7 +44,10 @@ export const App = () => {
       // console.log('capitals after thunk', capitals)
       if (isLoading) {
         // setData(capitals)
-        const nestedDailyState = Array.from(group(capitals, d => d.date), ([key, value]) => ({key, value}))
+        const nestedDailyState = Array.from(
+          group(capitals, d => d.date),
+          ([key, value]) => ({key, value})
+        )
         const searchedDate = nestedDailyState.filter(elem => {
           return elem.key === +newDate
         })
