@@ -23,7 +23,7 @@ export function drawEthnChart(height, width, data) {
       'LatinoAmerican',
       'Other'
     ])
-    .range(d3.schemeDark2)
+    .range(d3.schemeSet2)
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
 
   // Size scale for countries
@@ -49,7 +49,7 @@ export function drawEthnChart(height, width, data) {
   }
   var mousemove = function(d) {
     const dataBub = d.srcElement.__data__
-    console.log(dataBub)
+    // console.log(d)
     Tooltip.html(
       '<u>' +
         ` ${dataBub.ethnicity} in ${dataBub.state} ` +
@@ -129,18 +129,23 @@ export function drawEthnChart(height, width, data) {
   })
 
   // What happens when a circle is dragged?
-  function dragstarted(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.03).restart()
-    d.fx = d.x
-    d.fy = d.y
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.03).restart()
+    d3
+      .select(this)
+      .raise()
+      .attr('stroke', 'black')
   }
-  function dragged(d) {
-    d.fx = d3.event.x
-    d.fy = d3.event.y
+
+  function dragged(event, d) {
+    d3
+      .select(this)
+      .attr('cx', (d.x = event.x))
+      .attr('cy', (d.y = event.y))
   }
-  function dragended(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.03)
-    d.fx = null
-    d.fy = null
+
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0.03)
+    d3.select(this)
   }
 }

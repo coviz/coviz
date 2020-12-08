@@ -12,14 +12,14 @@ export const EthnicityChart = props => {
     dispatch(fetchEthnicities())
   }, [])
   useEffect(() => {
-    initEthnChart(450, 600)
+    initEthnChart(600, 600)
   }, [])
 
   console.log(data)
   return (
     <div>
       <h2>Covid v. Ethnicity</h2>
-      {isLoading ? drawEthnChart(450, 600, data) : <div />}
+      {isLoading ? drawEthnChart(600, 600, data) : <div />}
       <div id="ethnChart" />
     </div>
   )
