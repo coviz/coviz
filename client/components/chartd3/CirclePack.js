@@ -23,7 +23,7 @@ export function drawEthnChart(height, width, data) {
       'LatinoAmerican',
       'Other'
     ])
-    .range(d3.schemeSet1)
+    .range(d3.schemeDark2)
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
 
   // Size scale for countries
