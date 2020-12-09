@@ -1,5 +1,15 @@
 import React, {useRef, useEffect} from 'react'
-import {geoAlbersUsa, geoPath, select, scaleSqrt, easeLinear, max} from 'd3'
+import {
+  geoAlbersUsa,
+  geoPath,
+  select,
+  scaleSqrt,
+  easeLinear,
+  max,
+  mouse
+} from 'd3'
+import * as d3 from 'd3'
+import d3Tip from 'd3-tip'
 import usData from '../Assets/usData.json'
 
 export const StateMap = data => {
@@ -16,6 +26,23 @@ export const StateMap = data => {
       const svg = select(svgRef.current)
       const pathGenerator = geoPath().projection(projection)
 
+      // define the tooltip
+      let currentPosition
+      var tooltip = d3Tip()
+        .attr('class', 'map-tip')
+        // if the mouse position is greater than 650 (~ Kentucky/Missouri), offset tooltip to the left instead of the right
+        .offset(function() {
+          if (currentPosition[0] > 650) {
+            return [-20, -120]
+          } else {
+            return [20, 120]
+          }
+        })
+        // input the title, and include the div
+        .html("<p>COVID-19 cases over time in</p><div id='tipDiv'></div>")
+
+      svg.call(tooltip)
+
       // setGeographies(usData.features)
       const statePathData = svg.selectAll('.state-path').data(usData.features)
       statePathData
@@ -31,6 +58,7 @@ export const StateMap = data => {
         .style('fill', '#384F56')
         .style('stroke', '#080B0C')
         .style('stroke-width', 2)
+
       const maxCases = max(data.data.map(d => d.positive))
 
       const radiusScale = scaleSqrt()
@@ -64,15 +92,62 @@ export const StateMap = data => {
         .ease(easeLinear)
         // Update the radius to the new cases value
         .attr('r', d => radiusScale(d.positive))
+
       // Exit data points no longer in data and remove
       circleData.exit().remove()
+
+      // Tooltip
+      circleData
+        .on('mouseover', function(d) {
+          console.log(d)
+          // define and store the mouse position. this is used to define tooltip offset, seen above.
+          currentPosition = d3.mouse(this)
+
+          // define current state
+          let currentState = 'WA'
+
+          // show the tooltip
+          tooltip.show()
+
+          var tipSVG = select('#tipDiv')
+            .append('svg')
+            .attr('width', 220)
+            .attr('height', 55)
+
+          tipSVG
+            .append('text')
+            .text('deaths')
+            .attr('x', 140)
+            .attr('y', 10)
+
+          tipSVG
+            .append('text')
+            .text('per 100,000')
+            .attr('x', 140)
+            .attr('y', 24)
+
+          tipSVG
+            .append('text')
+            .text(currentState)
+            .attr('x', 0)
+            .attr('y', 15)
+            .style('font-size', 18)
+            .style('font-weight', 400)
+        })
+        .on('mouseout', tooltip.hide)
     },
     [svgRef, data]
   )
 
   return (
     <div>
-      <svg ref={svgRef} width={975} height={610} viewBox="0 0 975 610" />
+      <svg
+        id="mainMap"
+        ref={svgRef}
+        width={975}
+        height={610}
+        viewBox="0 0 975 610"
+      />
     </div>
   )
 }

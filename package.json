@@ -47,6 +47,7 @@
     "connect-session-sequelize": "^6.0.0",
     "d3": "^6.2.0",
     "d3-geo": "^2.0.1",
+    "d3-tip": "^0.9.1",
     "express": "^4.16.4",
     "express-session": "^1.15.1",
     "fast-csv": "^4.3.5",
