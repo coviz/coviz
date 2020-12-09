@@ -20,11 +20,53 @@ export function drawEthnChart(height, width, data) {
       'NativeAmerican',
       'AsianAmerican',
       'PacificIslander',
-      'LatinoAmerican',
+      'latinoAmerican',
       'Other'
     ])
     .range(d3.schemeSet2)
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
+
+  //creates legend
+  let legend = d3
+    .select('body')
+    .append('svg')
+    .attr('class', 'legend')
+    .attr('width', 140)
+    .attr('height', 200)
+    .selectAll('g')
+    .data(
+      color
+        .domain()
+        .slice()
+        .reverse()
+    )
+    .enter()
+    .append('g')
+    .attr('transform', function(d, i) {
+      return 'translate(0,' + i * 20 + ')'
+    })
+
+  legend
+    .append('rect')
+    .attr('width', 18)
+    .attr('height', 18)
+    .style('fill', color)
+
+  legend
+    .append('text')
+    .data(
+      color
+        .domain()
+        .slice()
+        .reverse()
+    )
+    .attr('x', 24)
+    .attr('y', 9)
+    .attr('dy', '.35em')
+    .text(function(d) {
+      return d
+    })
+    .attr('stroke', 'white')
 
   // Size scale
   let size = d3
@@ -38,7 +80,7 @@ export function drawEthnChart(height, width, data) {
     .append('div')
     .style('opacity', 0)
     .attr('class', 'tooltip')
-    .style('background-color', 'white')
+    .style('background-color', '#ced4da')
     .style('border', 'solid')
     .style('border-width', '2px')
     .style('border-radius', '5px')
