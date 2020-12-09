@@ -58,7 +58,7 @@ export const App = () => {
 
   return (
     <div>
-      <h1>{timerDate}</h1>
+      <h2>{timerDate}</h2>
       <Trend {...timer} />
       <div>
         {!timer.isPlaying ? (
