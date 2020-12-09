@@ -84,7 +84,13 @@ export const App = () => {
           Restart
         </button>
       </div>
-      <div>{isLoading ? <StateMap data={data} /> : <div />}</div>
+      <div>
+        {isLoading ? (
+          <StateMap data={data} isPlaying={timer.isPlaying} />
+        ) : (
+          <div />
+        )}
+      </div>
     </div>
   )
 }
