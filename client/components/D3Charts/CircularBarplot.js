@@ -10,7 +10,7 @@ export function initGenderChart(height, width) {
   // .style('background-color', '#fff')
 }
 export function drawGenderChart(data) {
-  var svg = d3.select('svg'),
+  let svg = d3.select('svg'),
     width = +svg.attr('width'),
     height = +svg.attr('height'),
     innerRadius = 250,
@@ -19,14 +19,14 @@ export function drawGenderChart(data) {
       .append('g')
       .attr('transform', 'translate(' + width / 2 + ',' + height * 0.5 + ')')
 
-  var x = d3
+  let x = d3
     .scaleBand()
     .range([0, 2 * Math.PI])
     .align(0)
 
-  var y = d3.scaleRadial().range([innerRadius, outerRadius])
+  let y = d3.scaleRadial().range([innerRadius, outerRadius])
 
-  var z = d3.scaleOrdinal().range(['#fbff12', '#41ead4'])
+  let z = d3.scaleOrdinal().range(['#fbff12', '#41ead4'])
   x.domain(
     data.map(function(d) {
       return d.state
@@ -76,7 +76,7 @@ export function drawGenderChart(data) {
         .padRadius(innerRadius)
     )
 
-  var label = g
+  let label = g
     .append('g')
     .selectAll('g')
     .data(data)
@@ -111,9 +111,9 @@ export function drawGenderChart(data) {
     })
     .attr('stroke', '#fff')
 
-  var yAxis = g.append('g').attr('text-anchor', 'end')
+  let yAxis = g.append('g').attr('text-anchor', 'end')
 
-  var yTick = yAxis
+  let yTick = yAxis
     .selectAll('g')
     .data(y.ticks(10).slice(1))
     .enter()
@@ -158,7 +158,7 @@ export function drawGenderChart(data) {
     .text('Population')
     .attr('stroke', '#fff')
 
-  var legend = g
+  let legend = g
     .append('g')
     .selectAll('g')
     .data(['males', 'females'].reverse())
