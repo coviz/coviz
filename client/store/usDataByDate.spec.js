@@ -34,6 +34,7 @@ describe('usDataByDate redux', () => {
   })
   it('fetchAllDateData action creator returns a valid action', () => {
     const example = fetchAllDateData(data)
+
     expect(fetchAllDateData(data)).to.deep.equal({
       type: 'GET_ALL_DATE_DATA',
       data

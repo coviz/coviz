@@ -10,7 +10,7 @@ import {
 } from 'd3'
 import * as d3 from 'd3'
 import d3Tip from 'd3-tip'
-import usData from './usData.json'
+import usData from '../Assets/usData.json'
 
 export const StateMap = data => {
   // const [geographies, setGeographies] = useState([])
@@ -55,8 +55,8 @@ export const StateMap = data => {
         // Run data through pathGenerator
         .attr('d', pathGenerator)
         // Style
-        .style('fill', 'rgba(38,50,56)')
-        .style('stroke', '#011627')
+        .style('fill', '#384F56')
+        .style('stroke', '#080B0C')
         .style('stroke-width', 2)
 
       const maxCases = max(data.data.map(d => d.positive))
@@ -76,7 +76,9 @@ export const StateMap = data => {
         // Add class for reference
         .attr('class', 'circle')
         // style
-        .style('fill', '#E91E')
+
+        //.style('fill', '#E91E')
+        .style('fill', '#80ed99')
         .style('fill-opacity', 0.7)
         // Update x-position
         .attr('cx', d => projection([d.longitude, d.latitude])[0])
