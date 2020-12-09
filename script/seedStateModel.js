@@ -20,13 +20,13 @@ async function createStateTable() {
 
       // create a new connection to the database
       const pool = new Pool({
-        host: 'localhost',
-        user: 'postgres',
-        // ^^comment this back in when not on Anna's comp^^
+        host: process.env.HOST || 'localhost',
+        user: process.env.USER || 'postgres',
+        // ^^comment this 1 line in when not on Anna's comp^^
         // user: 'ania',
         // password: 'newPassword',
         // ^^comment these 2 lines out when not on Anna's comp^^
-        database: 'coviz',
+        database: process.env.DATABASE || 'coviz',
         port: 5432
       })
 
