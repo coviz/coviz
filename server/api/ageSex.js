@@ -71,24 +71,7 @@ router.get('/', async (req, res, next) => {
     next(error)
   }
 })
-// router.get('/gender', async (req, res, next) => {
-//     try {
-//         const gender = await AgeSex.findAll({
-//             attributes: ['sex', 'state',
-//      [Sequelize.fn('sum', Sequelize.col('deathTotals')),'total']],
-//             where: {
-//                 state: {[Op.notIn]: ['United States']},
-//                 sex: {[Op.notIn]: ['All Sexes', 'Unknown']},
-//                 ageGroup: 'All Ages'
 
-//             },
-//             group:['sex', 'state']
-//         })
-//         res.json(gender)
-//     } catch (error) {
-//         next(error)
-//     }
-// })
 router.get('/gender', async (req, res, next) => {
   try {
     const gender = await AgeSex.findAll({

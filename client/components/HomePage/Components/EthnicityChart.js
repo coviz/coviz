@@ -15,7 +15,6 @@ export const EthnicityChart = props => {
     initEthnChart(600, 600)
   }, [])
 
-  console.log(data)
   return (
     <div>
       <h2>Covid v. Ethnicity</h2>

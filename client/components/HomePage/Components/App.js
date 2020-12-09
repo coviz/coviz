@@ -4,6 +4,7 @@ import {StateMap} from './StateMap'
 import {fetchAllDateDataThunk} from '../../../store/usDataByDate'
 import useTimer from '../../HomePage/Assets/useTimer'
 import {group} from 'd3'
+import Trend from './Trend'
 
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
@@ -58,11 +59,16 @@ export const App = () => {
   return (
     <div>
       <h1>{timerDate}</h1>
+      <Trend {...timer} />
       <div>
         {!timer.isPlaying ? (
-          <button onClick={timer.play}>Play</button>
+          <button type="button" className="play-button" onClick={timer.play}>
+            Play
+          </button>
         ) : (
-          <button onClick={timer.stop}>Stop</button>
+          <button type="button" className="play-button" onClick={timer.stop}>
+            Stop
+          </button>
         )}
       </div>
       <div>{isLoading ? <StateMap data={data} /> : <div />}</div>
