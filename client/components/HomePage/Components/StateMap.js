@@ -124,7 +124,6 @@ export const StateMap = data => {
 
           // fade out tooltip on mouse out
           .on('mouseout', function(d) {
-            console.log('mouseout')
             div
               .transition()
               .duration(500)

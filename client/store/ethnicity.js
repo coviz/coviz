@@ -13,7 +13,7 @@ export const fetchEthnicities = () => {
       const {data} = await axios.get('/api/ethnicity')
       dispatch(setEthnicities(data))
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 }
