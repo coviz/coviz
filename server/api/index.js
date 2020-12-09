@@ -3,7 +3,7 @@ module.exports = router
 
 // router.use('/states', require('./states')
 router.use('/ethnicity', require('./ethnicity'))
-router.use('/age-and-sex', require('./ageSex'))
+router.use('/agesex', require('./ageSex'))
 router.use('/covidDaily', require('./covidDaily'))
 
 router.use((req, res, next) => {
