@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
-import {fetchAllDateDataThunk} from '../../store/usDataByDate'
-import useTimer from './useTimer'
+import {fetchAllDateDataThunk} from '../../../store/usDataByDate'
+import useTimer from '../../HomePage/Assets/useTimer'
 import {group} from 'd3'
 import Trend from './Trend'
 
@@ -43,6 +43,7 @@ export const App = () => {
         array[2] = `0${temp}`
       }
       const newDate = array.join('')
+
       if (isLoading) {
         const nestedDailyState = Array.from(
           group(capitals, d => d.date),
@@ -59,7 +60,7 @@ export const App = () => {
 
   return (
     <div>
-      <h1>{timerDate}</h1>
+      <h2>{timerDate}</h2>
       <Trend {...timer} />
       <div>
         {!timer.isPlaying ? (

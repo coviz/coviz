@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: #011627;
+  background-color: #080b0c;
 }
 
 a {
@@ -19,6 +19,15 @@ nav a {
 form div {
   margin: 1em;
   display: inline-block;
+}
+
+h1,
+h2 {
+  color: whitesmoke;
+}
+
+.flex {
+  display: flex;
 }
 
 .play-button {
