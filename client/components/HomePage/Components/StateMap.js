@@ -26,22 +26,12 @@ export const StateMap = data => {
       const svg = select(svgRef.current)
       const pathGenerator = geoPath().projection(projection)
 
-      // define the tooltip
-      let currentPosition
-      var tooltip = d3Tip()
-        .attr('class', 'map-tip')
-        // if the mouse position is greater than 650 (~ Kentucky/Missouri), offset tooltip to the left instead of the right
-        .offset(function() {
-          if (currentPosition[0] > 650) {
-            return [-20, -120]
-          } else {
-            return [20, 120]
-          }
-        })
-        // input the title, and include the div
-        .html("<p>COVID-19 cases over time in</p><div id='tipDiv'></div>")
-
-      svg.call(tooltip)
+      // Create the tooltip
+      var div = d3
+        .select('body')
+        .append('div')
+        .attr('class', 'tooltip')
+        .style('opacity', 0)
 
       // setGeographies(usData.features)
       const statePathData = svg.selectAll('.state-path').data(usData.features)
@@ -76,7 +66,6 @@ export const StateMap = data => {
         // Add class for reference
         .attr('class', 'circle')
         // style
-
         //.style('fill', '#E91E')
         .style('fill', '#80ed99')
         .style('fill-opacity', 0.7)
@@ -97,44 +86,51 @@ export const StateMap = data => {
       circleData.exit().remove()
 
       // Tooltip
-      circleData
-        .on('mouseover', function(d) {
-          console.log(d)
-          // define and store the mouse position. this is used to define tooltip offset, seen above.
-          currentPosition = d3.mouse(this)
+      if (!data.isPlaying) {
+        circleData
+          // .data(data.data, d => d.statecode)
+          .on('mouseover', function(d) {
+            const toolData = d.srcElement.__data__
+            // change the date format form yyyymmdd to mm/dd/yyyy
+            const dateString = toolData.date.toString()
+            const year = dateString.substring(0, 4)
+            const month = dateString.substring(4, 6)
+            const day = dateString.substring(6, 8)
+            const date = new Date(year, month - 1, day)
+            const newDateString = date.toLocaleDateString()
 
-          // define current state
-          let currentState = 'WA'
+            // add commas to numerical values for display
+            function numberWithCommas(x) {
+              return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            }
 
-          // show the tooltip
-          tooltip.show()
+            div
+              .transition()
+              .duration(200)
+              .style('opacity', 0.9)
+            div
+              .html(
+                '<b><u>' +
+                  ` ${toolData.state}` +
+                  '</u></b>' +
+                  '<br>' +
+                  `${numberWithCommas(
+                    toolData.positive
+                  )} cases on ${newDateString}`
+              )
+              .style('left', d.pageX + 'px')
+              .style('top', d.pageY - 28 + 'px')
+          })
 
-          var tipSVG = select('#tipDiv')
-            .append('svg')
-            .attr('width', 220)
-            .attr('height', 55)
-
-          tipSVG
-            .append('text')
-            .text('deaths')
-            .attr('x', 140)
-            .attr('y', 10)
-
-          tipSVG
-            .append('text')
-            .text('per 100,000')
-            .attr('x', 140)
-            .attr('y', 24)
-
-          tipSVG
-            .append('text')
-            .text(currentState)
-            .attr('x', 0)
-            .attr('y', 15)
-            .style('font-size', 18)
-            .style('font-weight', 400)
-        })
-        .on('mouseout', tooltip.hide)
+          // fade out tooltip on mouse out
+          .on('mouseout', function(d) {
+            console.log('mouseout')
+            div
+              .transition()
+              .duration(500)
+              .style('opacity', 0)
+          })
+      }
     },
     [svgRef, data]
   )
