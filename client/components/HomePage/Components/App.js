@@ -22,9 +22,7 @@ export const App = () => {
   const timerDate = timer.time.toLocaleDateString()
 
   const [data, setData] = useState([])
-  const resetFunc = () => {
-    timer.updateTime(new Date('2020-02-26'))
-  }
+  
   useEffect(() => {
     dispatch(fetchAllDateDataThunk())
   }, [])
@@ -59,10 +57,10 @@ export const App = () => {
   )
 
   return (
-    <div>
-      <h2>{timerDate}</h2>
-      <Trend {...timer} />
-      <div>
+    <div id="mainMap">
+      <div id="map">
+        <Trend {...timer} />
+         <div>
         {timerDate === '11/22/2020' ? (
           <button type="button" className="play-button" onClick={timer.reset}>
             {' '}
@@ -79,22 +77,16 @@ export const App = () => {
         )}
       </div>
       <div>
-        <button
-          type="button"
-          className="play-button"
-          onClick={() => {
-            resetFunc()
-          }}
-        >
-          Restart
-        </button>
+        <div>
+          {isLoading ? (
+            <StateMap data={data} isPlaying={timer.isPlaying} />
+          ) : (
+            <div />
+          )}
+        </div>
       </div>
-      <div>
-        {isLoading ? (
-          <StateMap data={data} isPlaying={timer.isPlaying} />
-        ) : (
-          <div />
-        )}
+      <div id="time">
+        <h1>{timerDate}</h1>
       </div>
     </div>
   )

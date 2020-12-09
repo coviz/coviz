@@ -14,6 +14,43 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
+  margin-top: 1px;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+nav a:hover {
+  color: #80ed99;
+}
+
+nav h5 {
+  display: inline-block;
+  margin: 0px;
+  letter-spacing: 1px;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* background-color: #a91010; */
+  padding: 5px;
+  padding-bottom: 0px;
+}
+img {
+  height: 50px;
+  width: 200px;
+}
+#logo {
+  display: inline-block;
+  align-items: flex-end;
+  /* font-family: Roboto, sans-serif; */
+  color: #ffffff;
+}
+
+#about {
+  color: #ced4da;
 }
 
 form div {
@@ -98,6 +135,18 @@ div.tooltip {
   pointer-events: none;
 }
 
+#mainMap {
+  display: flex;
+  justify-content: space-between;
+}
+#map {
+  flex-direction: column;
+  /* border: 2px solid lime; */
+}
+#time {
+  /* border: 2px solid peachpuff; */
+  align-items: flex-end;
+}
 div.tooltipz {
   /* position: absolute; */
   text-align: center;
