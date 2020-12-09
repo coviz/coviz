@@ -22,7 +22,9 @@ export const App = () => {
   const timerDate = timer.time.toLocaleDateString()
 
   const [data, setData] = useState([])
-
+  const resetFunc = () => {
+    timer.updateTime(new Date('2020-02-26'))
+  }
   useEffect(() => {
     dispatch(fetchAllDateDataThunk())
   }, [])
@@ -70,6 +72,17 @@ export const App = () => {
             Stop
           </button>
         )}
+      </div>
+      <div>
+        <button
+          type="button"
+          className="play-button"
+          onClick={() => {
+            resetFunc()
+          }}
+        >
+          Restart
+        </button>
       </div>
       <div>
         {isLoading ? (
