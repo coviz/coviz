@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
-import {fetchAllDateDataThunk} from '../../store/usDataByDate'
-import useTimer from './useTimer'
+import {fetchAllDateDataThunk} from '../../../store/usDataByDate'
+import useTimer from '../../HomePage/Assets/useTimer'
 import {group} from 'd3'
 
 export const App = () => {
@@ -40,10 +40,8 @@ export const App = () => {
         array[2] = `0${temp}`
       }
       const newDate = array.join('')
-      // console.log(timerDate)
-      // console.log('capitals after thunk', capitals)
+
       if (isLoading) {
-        // setData(capitals)
         const nestedDailyState = Array.from(
           group(capitals, d => d.date),
           ([key, value]) => ({key, value})

@@ -11,7 +11,7 @@ export function initEthnChart(height, width) {
 
 export function drawEthnChart(height, width, data) {
   const svg = d3.select('#ethnChart svg')
-  // Color palette for continents?
+  // Color palette
   let color = d3
     .scaleOrdinal()
     .domain([
@@ -26,7 +26,7 @@ export function drawEthnChart(height, width, data) {
     .range(d3.schemeSet2)
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
 
-  // Size scale for countries
+  // Size scale
   let size = d3
     .scaleLinear()
     .domain([0, 1])
@@ -49,7 +49,7 @@ export function drawEthnChart(height, width, data) {
   }
   let mousemove = function(d) {
     const dataBub = d.srcElement.__data__
-    // console.log(d)
+
     Tooltip.html(
       '<u>' +
         ` ${dataBub.ethnicity} in ${dataBub.state} ` +
@@ -62,8 +62,6 @@ export function drawEthnChart(height, width, data) {
       // manipulate d.value to be % per pop
       .style('left', d3.pointer(this)[0] + 20 + 'px')
       .style('top', d3.pointer(this)[1] + 'px')
-    // .style("left", (d3.mouse(this)[0] + 20) + "px")
-    // .style("top", (d3.mouse(this)[1]) + "px")
   }
   let mouseleave = function(d) {
     Tooltip.style('opacity', 0)

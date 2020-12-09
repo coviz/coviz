@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEthnicities} from '../../store/ethnicity'
-import {initEthnChart, drawEthnChart} from '../chartd3/CirclePack'
+import {fetchEthnicities} from '../../../store/ethnicity'
+import {initEthnChart, drawEthnChart} from '../../D3Charts/CirclePack'
 
 export const EthnicityChart = props => {
   const dispatch = useDispatch()

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchGenderData} from '../../store/gender'
-import {initGenderChart, drawGenderChart} from '../chartd3/CircularBarplot'
+import {fetchGenderData} from '../../../store/gender'
+import {initGenderChart, drawGenderChart} from '../../D3Charts/CircularBarplot'
 
 export const GenderChart = props => {
   const dispatch = useDispatch()
@@ -12,11 +12,10 @@ export const GenderChart = props => {
     dispatch(fetchGenderData())
   }, [])
   useEffect(() => {
-    initGenderChart(960, 960)
+    initGenderChart(1000, 1200)
   }, [])
 
   const test = data.map(elem => {
-    //console.log(elem)
     if (elem.state) {
       elem.state = elem.state.slice(0, 2).toUpperCase()
       elem.total = +elem.females + +elem.males
@@ -25,7 +24,7 @@ export const GenderChart = props => {
     }
     return elem
   })
-  console.log(test)
+
   return (
     <div>
       <h2>Covid v. Gender</h2>
