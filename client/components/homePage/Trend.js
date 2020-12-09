@@ -47,6 +47,7 @@ export default ({time, startTime, endTime, updateTime}) => {
     /** Pass the relative click position through the xScale invert function to get the appropriate date */
 
     updateTime(xScale.invert(clickX >= 0 ? clickX : 0))
+    console.log('LOOK', xScale.invert(clickX >= 0 ? clickX : 0))
   }
 
   return (
