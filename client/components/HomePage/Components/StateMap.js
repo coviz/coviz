@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import {
   geoAlbersUsa,
   geoPath,
@@ -13,9 +13,11 @@ import d3Tip from 'd3-tip'
 import usData from '../Assets/usData.json'
 
 export const StateMap = data => {
-  // const [geographies, setGeographies] = useState([])
+  const [mode, setMode] = useState(false)
 
   const svgRef = useRef()
+  const maxCases = max(data.data.map(d => d.positive))
+  let radiusScale = scaleSqrt()
 
   useEffect(
     () => {
@@ -49,12 +51,6 @@ export const StateMap = data => {
         .style('stroke', '#080B0C')
         .style('stroke-width', 2)
 
-      const maxCases = max(data.data.map(d => d.positive))
-
-      const radiusScale = scaleSqrt()
-        .domain([0, 1, maxCases])
-        .range([0, 2, 75])
-
       const circleData = svg
         .selectAll('.circle')
         .data(data.data, d => d.statecode)
@@ -79,8 +75,17 @@ export const StateMap = data => {
         .transition()
         .duration(10)
         .ease(easeLinear)
-        // Update the radius to the new cases value
-        .attr('r', d => radiusScale(d.positive))
+      if (mode) {
+        circleData.attr('r', d =>
+          radiusScale.domain([0, 1, d.population / 10]).range([0, 2, 75])(
+            d.positive
+          )
+        )
+      } else {
+        circleData.attr('r', d =>
+          radiusScale.domain([0, 1, maxCases]).range([0, 2, 75])(d.positive)
+        )
+      }
 
       // Exit data points no longer in data and remove
       circleData.exit().remove()
@@ -124,7 +129,6 @@ export const StateMap = data => {
 
           // fade out tooltip on mouse out
           .on('mouseout', function(d) {
-            console.log('mouseout')
             div
               .transition()
               .duration(500)
@@ -132,11 +136,21 @@ export const StateMap = data => {
           })
       }
     },
-    [svgRef, data]
+    [svgRef, data, mode]
   )
 
   return (
     <div>
+      <div>
+        <select
+          onChange={() => {
+            setMode(!mode)
+          }}
+        >
+          <option value="maxcases"> new cases/max cases</option>
+          <option value="pop"> new cases/state population</option>
+        </select>
+      </div>
       <svg
         id="mainMap"
         ref={svgRef}
