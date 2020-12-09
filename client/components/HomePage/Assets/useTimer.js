@@ -33,6 +33,9 @@ export default ({startTime, endTime, step, frequency}) => {
   /** Stop function */
   const stop = () => setIsPlaying(false)
 
+  /** Reset function */
+  const reset = () => setTime(startTime.valueOf())
+
   /** Effect hook runs when time changes */
   useEffect(
     () => {
@@ -48,6 +51,7 @@ export default ({startTime, endTime, step, frequency}) => {
     time: new Date(time),
     play,
     stop,
+    reset,
     updateTime,
     isPlaying,
     startTime,

@@ -63,7 +63,12 @@ export const App = () => {
       <h2>{timerDate}</h2>
       <Trend {...timer} />
       <div>
-        {!timer.isPlaying ? (
+        {timerDate === '11/22/2020' ? (
+          <button type="button" className="play-button" onClick={timer.reset}>
+            {' '}
+            Reset{' '}
+          </button>
+        ) : !timer.isPlaying ? (
           <button type="button" className="play-button" onClick={timer.play}>
             Play
           </button>

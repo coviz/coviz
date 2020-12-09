@@ -15,7 +15,7 @@ export const fetchGenderData = () => {
       const {data} = await axios.get('/api/agesex/gender')
       dispatch(getGenderData(data))
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 }
