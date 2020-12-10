@@ -21,6 +21,18 @@ form div {
   display: inline-block;
 }
 
-/* .xAxis line{
-  fill: white;
-} */
+.chartNinfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.chartNinfo div {
+  z-index: 10;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.ageFacts li{
+  padding: 10px;
+  line-height: 1.6;
+}
