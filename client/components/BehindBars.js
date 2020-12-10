@@ -5,7 +5,7 @@ import * as d3 from 'd3'
 
 // import {drawChart, initChart} from './BehindBarsChart'
 
-export const HeatMap = () => {
+export const BehindBars = () => {
   // const dispatch = useDispatch()
   // const data = useSelector((state) => state.behindBars.data)
   // const isLoading = useSelector((state) => state.behindBars.isLoading)
