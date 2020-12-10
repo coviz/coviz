@@ -31,7 +31,7 @@ const getRemoteURL = (name, remotes) => {
   try {
     return remotes.filter(remote => remote.name === name)[0].refs.fetch
   } catch (err) {
-    console.log(
+    console.error(
       `It appears that the remote ${name} does not exist.`,
       `Here is the full error:`,
       err

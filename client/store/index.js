@@ -5,12 +5,14 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import states from './states'
 import usDataByDate from './usDataByDate'
 import ethnicities from './ethnicity'
+import genders from './gender'
 import behindBarsReducer from './behindBarsReducer'
 
 const reducer = combineReducers({
   states,
   usDataByDate,
   ethnicities,
+  genders,
   behindBarsReducer
 })
 

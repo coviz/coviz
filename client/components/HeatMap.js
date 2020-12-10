@@ -5,7 +5,7 @@ import * as d3 from 'd3'
 
 // import {drawChart, initChart} from './BehindBarsChart'
 
-export const BehindBars = () => {
+export const HeatMap = () => {
   // const dispatch = useDispatch()
   // const data = useSelector((state) => state.behindBars.data)
   // const isLoading = useSelector((state) => state.behindBars.isLoading)
@@ -194,7 +194,7 @@ export const BehindBars = () => {
   }, [])
   return (
     <div>
-      <h1>behind bars</h1>
+      <h1>Heat Map</h1>
       <svg ref={svgRef} width={975} height={610} viewBox="0 0 975 610" />
     </div>
   )

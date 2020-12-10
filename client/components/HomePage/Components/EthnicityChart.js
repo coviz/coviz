@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEthnicities} from '../../store/ethnicity'
-import {drawChart, initChart} from '../chartd3/BasicD3'
+import {fetchEthnicities} from '../../../store/ethnicity'
+import {initEthnChart, drawEthnChart} from '../../D3Charts/CirclePack'
 
 export const EthnicityChart = props => {
   const dispatch = useDispatch()
@@ -12,15 +12,15 @@ export const EthnicityChart = props => {
     dispatch(fetchEthnicities())
   }, [])
   useEffect(() => {
-    initChart(400, 600)
+    initEthnChart(600, 800)
   }, [])
 
-  console.log(data)
   return (
     <div>
-      <h2>Covid vs Race & Ethnicity</h2>
-      {isLoading ? drawChart(400, 600, data) : <div />}
-      <div id="chart" />
+      <h2>Covid v. Ethnicity</h2>
+      {isLoading ? drawEthnChart(700, 800, data) : <div />}
+      <div id="ethnChart" />
+      <div id="ethnLegend" />
     </div>
   )
 }
