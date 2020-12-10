@@ -3,7 +3,7 @@ const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 const connectionString =
-  'postgres://ngzkezcbdbrhah:4f712c9e90a2eeca1c40e8aad69062f2c468475d911c6c4a2611bc62ea006c03@ec2-54-235-116-235.compute-1.amazonaws.com:5432/dddc7ahebtdgje'
+  'postgres://uvwoudywlamqec:d9f5e5619ff97970fe450cac1ed73858d420d2443615228dcea65f1ff8179d12@ec2-3-89-230-115.compute-1.amazonaws.com:5432/d5mpo1h40u920n'
 
 async function createStateTable() {
   await db.sync()
