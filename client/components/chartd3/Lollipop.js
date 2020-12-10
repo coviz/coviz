@@ -129,7 +129,7 @@ export function drawAgeChart(height, width, data) {
             return y(d.deathTotals);
         })
         .attr("stroke", "#5a90a6")
-        .attr("stroke-width", 1.5)
+        .attr("stroke-width", 2.5)
         .attr("fill", "#80ceed")
         .on('mouseover', function (d, i) {
             d3.select(this).transition()
