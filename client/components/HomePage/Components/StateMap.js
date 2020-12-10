@@ -16,7 +16,7 @@ export const StateMap = data => {
   const [mode, setMode] = useState(false)
 
   const svgRef = useRef()
-  const maxCases = max(data.data.map(d => d.positive))
+  const maxCases = max(data.data.map(d => d.positiveCumulative))
   let radiusScale = scaleSqrt()
 
   useEffect(
@@ -78,12 +78,14 @@ export const StateMap = data => {
       if (mode) {
         circleData.attr('r', d =>
           radiusScale.domain([0, 1, d.population / 10]).range([0, 2, 75])(
-            d.positive
+            d.positiveCumulative
           )
         )
       } else {
         circleData.attr('r', d =>
-          radiusScale.domain([0, 1, maxCases]).range([0, 2, 75])(d.positive)
+          radiusScale.domain([0, 1, maxCases]).range([0, 2, 75])(
+            d.positiveCumulative
+          )
         )
       }
 
@@ -120,7 +122,7 @@ export const StateMap = data => {
                   '</u></b>' +
                   '<br>' +
                   `${numberWithCommas(
-                    toolData.positive
+                    toolData.positiveCumulative
                   )} cases on ${newDateString}`
               )
               .style('left', d.pageX + 'px')
