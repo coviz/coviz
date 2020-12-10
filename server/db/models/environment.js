@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Enviro = db.define('enviro', {
+const Environment = db.define('environment', {
   code: {
     type: Sequelize.STRING
   },
@@ -24,4 +24,4 @@ const Enviro = db.define('enviro', {
   }
 })
 
-module.exports = Enviro;
+module.exports = Environment;
