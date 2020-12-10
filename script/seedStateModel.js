@@ -1,5 +1,5 @@
 const fs = require('fs')
-const pg = require('pg')
+const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 const connectionString =
@@ -21,21 +21,14 @@ async function createStateTable() {
       csvData.shift()
 
       // create a new connection to the database
-      // const pool = new Pool({
-      //   host: process.env.HOST || 'localhost',
-      //   user: process.env.USER || 'postgres',
-      //   // ^^comment this 1 line in when not on Anna's comp^^
-      //   // user: 'ania',
-      //   // password: 'newPassword',
-      //   // ^^comment these 2 lines out when not on Anna's comp^^
-      //   database: process.env.DATABASE || 'coviz',
-      //   port: 5432
-      // })
+      const pool = new Pool({
+        connectionString: connectionString
+      })
 
       const query =
         'INSERT INTO "states" (state, capital, latitude, longitude, population, "statecode") VALUES ($1, $2, $3, $4, $5, $6)'
-      console.log('process.env', process.env)
-      pg.connect(connectionString, (err, client, done) => {
+
+      pool.connect((err, client, done) => {
         if (err) throw err
 
         try {
