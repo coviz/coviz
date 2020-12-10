@@ -21,14 +21,14 @@ export function initAgeChart(height, width) {
 
 export function drawAgeChart(height, width, data) {
     const svg = d3.select('#ageChart svg')
-    var margin = {top: 10, right: 30, bottom: 90, left: 80}
+    var margin = {top: 10, right: 30, bottom: 90, left: 120}
 
     // X axis
     var x = d3
         .scaleBand()
-        .range([ 0, width ])
+        .range([ 0, width +250])
         .domain(data.map(function(d) { return d.ageGroup; }))
-        .padding(1);
+        .padding(2);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         // .attr("transform", `translate(0,${height - margin.top})`)
@@ -80,8 +80,37 @@ export function drawAgeChart(height, width, data) {
         .attr("cx", function(d) { return x(d.ageGroup); })
         .attr("cy", function(d) { return y((d.deathTotals)); })
         .attr("r", "10")
-        .style("fill", "#458EAD")
-        .attr("stroke", "#2E5E73")
+        .style("fill", "#80ceed")
+        .attr("stroke", "#5a90a6")
+
+    //  x axis labels
+    svg.append("text")
+        .attr("class", "x label")
+        // .style("font-size", "18px")
+        // .attr("color", "white")
+        .attr("text-anchor", "end")
+        .attr("x", width - 100)
+        .attr("y", height + 150)
+        .text("Age Groups")
+        .attr("fill", "white")
+        .style("font-size", "25px")
+        .style("font-weight", "bold")
+        
+
+    // y axis labels
+    svg.append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "end")
+        // .attr("x", width )
+        .attr("y", 5)
+        // .attr("dx", "2em")
+        .attr("dy", "0.80em")
+        .attr("x", -210)
+        .attr("transform", "rotate(-90)")
+        .text("Death Totals")
+        .style("font-size", "25px")
+        .attr("fill", "white")
+        .style("font-weight", "bold")
 
     // // Data Values Above
     // svg.selectAll("myValues")

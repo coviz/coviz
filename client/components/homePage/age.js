@@ -20,8 +20,8 @@ export const AgeChart = props => {
   return (
     <div>
       <h2 style={{color: "white"}}>Covid v. Age Groups</h2>
-      {isLoading ? drawAgeChart(650, 900, data) : <div />}
-      <div style={{margin: 50, border: "2px solid red"}}id="ageChart" />
+      {isLoading ? drawAgeChart(650, 600, data) : <div />}
+      <div style={{margin: 50}}id="ageChart" />
       <p>HELLLLLOOOOO</p>
     </div>
   )
