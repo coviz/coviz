@@ -113,6 +113,48 @@ export function drawAgeChart(height, width, data) {
         .style("font-weight", "bold")
 
     // // Data Values Above
+
+    var div = d3.select("body").append("div")
+       .attr("class", "tooltip")
+       .style("opacity", 0);
+
+    var path = svg.selectAll("dot")
+        .data(data)
+        .enter().append("circle")
+        .attr("r", 10)
+        .attr("cx", function (d) {
+            return x(d.ageGroup);
+        })
+        .attr("cy", function (d) {
+            return y(d.deathTotals);
+        })
+        .attr("stroke", "#5a90a6")
+        .attr("stroke-width", 1.5)
+        .attr("fill", "#80ceed")
+        .on('mouseover', function (d, i) {
+            d3.select(this).transition()
+                .duration('100')
+                .attr("r", 15);
+            div.transition()
+                .duration(100)
+                .style("opacity", 1);
+            // div.html("$" + d3.format(".2f")(d.wage))
+            //     .style("left", (d3.event.pageX + 10) + "px")
+            //     .style("top", (d3.event.pageY - 15) + "px");
+       })
+       .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                .duration('200')
+                .attr("r", 10);
+            div.transition()
+                .duration('200')
+                .style("opacity", 0);
+       });
+    
+    
+
+    
+
     // svg.selectAll("myValues")
     //     console.log('in myvals')
     //     .data(data)
