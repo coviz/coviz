@@ -19,7 +19,7 @@ describe('covidDaily model', () => {
     })
     expect(example.date).to.equal(20201123)
     expect(example.statecode).to.equal('CA')
-    expect(example.positive).to.equal(100)
+    expect(example.positiveCumulative).to.equal(100)
     expect(example.death).to.equal(10)
     expect(example.positiveIncrease).to.equal(10)
     expect(example.deathIncrease).to.equal(2)
