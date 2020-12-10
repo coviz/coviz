@@ -20,6 +20,9 @@ export const Navbar = () => (
           <Link to="/gender">Covid v. Gender</Link>
         </h5>
         <h5>
+          <Link to="/age">Covid v. Age</Link>
+        </h5>
+        <h5>
           <Link to="/about">About</Link>
         </h5>
       </div>
