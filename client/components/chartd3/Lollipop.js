@@ -21,6 +21,7 @@ export function initAgeChart(height, width) {
 
 export function drawAgeChart(height, width, data) {
     const svg = d3.select('#ageChart svg')
+    var margin = {top: 10, right: 30, bottom: 90, left: 80}
 
     // X axis
     var x = d3
@@ -30,18 +31,34 @@ export function drawAgeChart(height, width, data) {
         .padding(1);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
+        // .attr("transform", `translate(0,${height - margin.top})`)
+        .attr("color", "white")
+        // .attr("transform", `translate(${margin.bottom},0)`)
         .call(d3.axisBottom(x))
         .selectAll("text")
+        // .attr("color", "white")
         .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end");
+        .style("text-anchor", "end")
+        // .style("text", "white");
+        .style("font-size", "18px")
+        
+        // .attr("class", "xAxis")
 
     // Add Y axis
     var y = d3
         .scaleLinear()
-        .domain([0, 13000])
-        .range([ height, 0]);
+        .domain([0, 81000])
+        .range([ height, 0])
+        //.padding(1);
     svg.append("g")
-        .call(d3.axisLeft(y));
+        // .attr("class", "y axis")
+        // .attr("transform", "translate(0," + width + ")")
+        // attr("transform", "translate(" + width + ", 0)")
+        .attr("transform", `translate(${margin.left},0)`)
+        .style("font-size", "18px")
+        .attr("color", "white")
+        .call(d3.axisLeft(y))
+        // .selectAll("text")
 
     // Lines
     svg.selectAll("myline")
@@ -50,9 +67,10 @@ export function drawAgeChart(height, width, data) {
         .append("line")
         .attr("x1", function(d) { return x(d.ageGroup); })
         .attr("x2", function(d) { return x(d.ageGroup); })
-        .attr("y1", function(d) { return y(d.deathTotals); })
+        .attr("y1", function(d) { return y((d.deathTotals)); })
         .attr("y2", y(0))
-        .attr("stroke", "grey")
+        .attr("stroke", "#e3e3e3")
+        // .attr("stroke", "2px")
 
     // Circles
     svg.selectAll("mycircle")
@@ -60,10 +78,22 @@ export function drawAgeChart(height, width, data) {
         .enter()
         .append("circle")
         .attr("cx", function(d) { return x(d.ageGroup); })
-        .attr("cy", function(d) { return y(d.deathTotals); })
-        .attr("r", "4")
-        .style("fill", "#69b3a2")
-        .attr("stroke", "black")
+        .attr("cy", function(d) { return y((d.deathTotals)); })
+        .attr("r", "10")
+        .style("fill", "#458EAD")
+        .attr("stroke", "#2E5E73")
+
+    // // Data Values Above
+    // svg.selectAll("myValues")
+    //     console.log('in myvals')
+    //     .data(data)
+    //     .enter()
+    //     .append("text")
+    //     .attr("d", function(d) { return y((d.deathTotals)); })
+    //     .attr("transform", `translate(0, 10)`) //-10?
+    //     .attr("fill", "white")
+    //     .style("text-anchor", "middle")
+
     
 
 

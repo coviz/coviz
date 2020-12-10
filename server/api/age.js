@@ -14,8 +14,10 @@ router.get('/', async (req, res, next) => {
       }
     })
     console.log('after db find')
-    console.log('NATIONAL DATA', nationData)
-    res.json(nationData)
+    // console.log('NATIONAL DATA', nationData)
+    let nationalData = nationData.slice(1)
+    // ^^ dont want all ages data
+    res.json(nationalData)
   } catch (error) {
     next(error)
   }
@@ -30,7 +32,7 @@ router.get('/:stateName', async (req, res, next) => {
       }
     })
     // console.log(stateData)
-    res.json(stateData)
+    // res.json(stateData)
   } catch (error) {
     next(error)
   }

@@ -13,15 +13,16 @@ export const AgeChart = props => {
     dispatch(fetchAges())
   }, [])
   useEffect(() => {
-    initAgeChart(5000, 5000)
+    initAgeChart(1000, 1000)
   }, [])
 
   console.log('data: ', data)
   return (
     <div>
-      <h2>Covid vs. Age Groups</h2>
-      {isLoading ? drawAgeChart(350, 300, data) : <div />}
-      <div id="ageChart" />
+      <h2 style={{color: "white"}}>Covid v. Age Groups</h2>
+      {isLoading ? drawAgeChart(650, 900, data) : <div />}
+      <div style={{margin: 50, border: "2px solid red"}}id="ageChart" />
+      <p>HELLLLLOOOOO</p>
     </div>
   )
 }

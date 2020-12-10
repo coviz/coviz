@@ -31,7 +31,7 @@ async function createTable() {
       })
       console.log('this is right before query')
       const query =
-        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals") VALUES ($1, $2, $3, $4)'
+        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals", "pop") VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
