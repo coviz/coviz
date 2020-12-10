@@ -129,9 +129,8 @@ export function drawEthnChart(height, width, data) {
   })
 
   //creates legend
-  let legend = d3
-    .select('body')
-    .append('svg')
+  let legend = svg
+    .append('g')
     .attr('class', 'legend')
     .attr('width', 140)
     .attr('height', 200)
