@@ -6,8 +6,8 @@ const db = require('../server/db')
 async function createTable() {
   await db.sync({force: true})
   await db.close()
-  console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/covid_vs_age.csv')
+  // console.log('this is inside createTable')
+  let stream = fs.createReadStream('script/Covd_vs_Age_&_Sex.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -31,7 +31,7 @@ async function createTable() {
       })
       console.log('this is right before query')
       const query =
-        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals") VALUES ($1, $2, $3, $4)'
+        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals", "pop") VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
