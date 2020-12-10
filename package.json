@@ -19,7 +19,7 @@
     "seed": "node script/seedStateModel.js",
     "seedage": "node script/seedAgeModel.js",
     "seedethnicity": "node script/seedEthnicityModel.js",
-    "seedcoviddaily": "node script/seedCovidDaily.js",
+    "seedcoviddaily": "node script/seedCovidDailyModel.js",
     "start": "node server",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
