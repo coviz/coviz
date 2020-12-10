@@ -139,13 +139,10 @@ export function drawAgeChart(height, width, data) {
                 .duration(100)
                 .style("opacity", 1);
     // switch out .event's to new version stuff to show data value
-    //  ^^ ask group
-            // div.html(d.deathTotals)
-            //     .style("left", ((d3.pointer)[0] + 10) + "px")
-            //     .style("top", ((d3.pointer)[1] - 15) + "px")
-            //     console.log(d3.pointer);
-                // .style("left", (d3.event.pageX + 10) + "px")
-                // .style("top", (d3.event.pageY - 15) + "px");
+            div.html(d.srcElement.__data__.deathTotals)
+                .style("left", (d.pageX + 10) + "px")
+                .style("top", (d.pageY - 15) + "px")
+                console.log(d);
        })
        .on('mouseout', function (d, i) {
             d3.select(this).transition()
