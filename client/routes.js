@@ -1,7 +1,13 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
-import {AgeChart} from './components/homePage/age'
-import {About, App, Chart, EthnicityChart, GenderChart} from './components'
+import {
+  About,
+  App,
+  Chart,
+  EthnicityChart,
+  GenderChart,
+  AgeChart
+} from './components'
 
 /**
  * COMPONENT
