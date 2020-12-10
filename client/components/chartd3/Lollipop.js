@@ -138,9 +138,14 @@ export function drawAgeChart(height, width, data) {
             div.transition()
                 .duration(100)
                 .style("opacity", 1);
-            // div.html("$" + d3.format(".2f")(d.wage))
-            //     .style("left", (d3.event.pageX + 10) + "px")
-            //     .style("top", (d3.event.pageY - 15) + "px");
+    // switch out .event's to new version stuff to show data value
+    //  ^^ ask group
+            // div.html(d.deathTotals)
+            //     .style("left", ((d3.pointer)[0] + 10) + "px")
+            //     .style("top", ((d3.pointer)[1] - 15) + "px")
+            //     console.log(d3.pointer);
+                // .style("left", (d3.event.pageX + 10) + "px")
+                // .style("top", (d3.event.pageY - 15) + "px");
        })
        .on('mouseout', function (d, i) {
             d3.select(this).transition()
