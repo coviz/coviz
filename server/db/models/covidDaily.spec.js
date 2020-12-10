@@ -29,7 +29,7 @@ describe('covidDaily model', () => {
       const example = await covidDaily.create({date: '', statecode: 'CA'})
       throw Error('validation should fail with empty string for date.')
     } catch (error) {
-      console.log(error.message)
+      console.error(error.message)
       expect(error.message).to.contain('invalid input syntax for type integer')
     }
   })

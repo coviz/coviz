@@ -115,7 +115,7 @@ export function drawAgeChart(height, width, data) {
     // // Data Values Above
 
     var div = d3.select("body").append("div")
-       .attr("class", "tooltip")
+       .attr("class", "tooltipLolli")
        .style("opacity", 0);
 
     var path = svg.selectAll("dot")

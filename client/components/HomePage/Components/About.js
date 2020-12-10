@@ -2,7 +2,7 @@ import React from 'react'
 
 export const About = () => {
   return (
-    <div>
+    <div id="about">
       <h3>About coviz</h3>
       <p>
         coviz is a data visualization application that takes COVID-19-related

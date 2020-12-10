@@ -10,24 +10,10 @@ export const setEthnicities = usData => ({
 export const fetchEthnicities = () => {
   return async dispatch => {
     try {
-      console.log('before axios')
       const {data} = await axios.get('/api/ethnicity')
-      console.log('after axios')
-      console.log('data in thunk rn:', data)
-      // let mappedData = Object.keys(data[0])
-      //   .map(ethnKey => {
-      //     if (ethnKey.includes('Totals')) {
-      //       return data[0][ethnKey]
-      //     }
-      //   })
-      //   .filter(dataBit => {
-      //     return dataBit !== undefined
-      //   })
-
-      // console.log('mapped in thunk', mappedData)
       dispatch(setEthnicities(data))
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 }

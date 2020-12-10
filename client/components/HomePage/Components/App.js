@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
-import {fetchAllDateDataThunk} from '../../store/usDataByDate'
-import useTimer from './useTimer'
+import {fetchAllDateDataThunk} from '../../../store/usDataByDate'
+import useTimer from '../../HomePage/Assets/useTimer'
 import {group} from 'd3'
+import Trend from './Trend'
 
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
@@ -40,10 +41,8 @@ export const App = () => {
         array[2] = `0${temp}`
       }
       const newDate = array.join('')
-      // console.log(timerDate)
-      // console.log('capitals after thunk', capitals)
+
       if (isLoading) {
-        // setData(capitals)
         const nestedDailyState = Array.from(
           group(capitals, d => d.date),
           ([key, value]) => ({key, value})
@@ -58,16 +57,39 @@ export const App = () => {
   )
 
   return (
-    <div>
-      <h1>{timerDate}</h1>
-      <div>
-        {!timer.isPlaying ? (
-          <button onClick={timer.play}>Play</button>
-        ) : (
-          <button onClick={timer.stop}>Stop</button>
-        )}
+    <div id="mainMap">
+      <div id="map">
+        <Trend {...timer} />
+        <div>
+          {timerDate === '11/22/2020' ? (
+            <button type="button" className="play-button" onClick={timer.reset}>
+              {' '}
+              Reset{' '}
+            </button>
+          ) : !timer.isPlaying ? (
+            <button type="button" className="play-button" onClick={timer.play}>
+              Play
+            </button>
+          ) : (
+            <button type="button" className="play-button" onClick={timer.stop}>
+              Stop
+            </button>
+          )}
+        </div>
+        <div>
+          <div>
+            {isLoading ? (
+              <StateMap data={data} isPlaying={timer.isPlaying} />
+            ) : (
+              <div />
+            )}
+          </div>
+        </div>
       </div>
-      <div>{isLoading ? <StateMap data={data} /> : <div />}</div>
+
+      <div id="time">
+        <h1>{timerDate}</h1>
+      </div>
     </div>
   )
 }
