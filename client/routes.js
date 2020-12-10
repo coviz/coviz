@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
+import {AgeChart} from './components/homePage/age'
 import {About, App, Chart, EthnicityChart, GenderChart} from './components'
 
 /**
@@ -15,6 +16,7 @@ export default class Routes extends Component {
         <Route exact path="/gender" component={GenderChart} />
         <Route exact path="/chart" component={Chart} />
         <Route exact path="/ethnicity" component={EthnicityChart} />
+        <Route exact path="/age" component={AgeChart} />
       </Switch>
     )
   }
