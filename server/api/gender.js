@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const AgeSex = require('../db/models/age-and-sex')
 const Sequelize = require('sequelize')
-const {func} = require('prop-types')
 const Op = Sequelize.Op
 module.exports = router
 

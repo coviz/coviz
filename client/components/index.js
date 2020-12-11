@@ -5,7 +5,7 @@
  */
 export {App} from './HomePage/Components/App'
 export {Chart} from './D3Charts/Chart'
-export {Navbar} from './HomePage/Components/navbar'
+export {Navbar} from './HomePage/Components/Navbar'
 export {EthnicityChart} from './HomePage/Components/EthnicityChart'
 export {About} from './HomePage/Components/About'
 export {GenderChart} from './HomePage/Components/GenderChart'

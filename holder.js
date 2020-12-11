@@ -4,9 +4,9 @@ export function drawGenderUnempChart(data, selected) {
   console.log('this is on the barplot', data)
   if (data.length > 0) {
     // set the dimensions and margins of the graph
-    let margin = {top: 30, right: 30, bottom: 70, left: 90},
-      width = 600 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom
+    let margin = {top: 30, right: 30, bottom: 70, left: 60},
+      width = 460 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom
 
     d3
       .select('#genderUnempChart')
@@ -30,16 +30,16 @@ export function drawGenderUnempChart(data, selected) {
     let xAxis = svg
       .append('g')
       .attr('transform', 'translate(0,' + height + ')')
-      .attr('stroke', '#F7D9C4')
-      .attr('color', '#F7D9C4')
+      .attr('stroke', 'white')
+      .attr('color', 'white')
 
     // Initialize the Y axis
     let y = d3.scaleLinear().range([height, 0])
     let yAxis = svg
       .append('g')
       .attr('class', 'myYaxis')
-      .attr('stroke', '#F7D9C4')
-      .attr('color', '#F7D9C4')
+      .attr('stroke', 'white')
+      .attr('color', 'white')
 
     // X axis
     x.domain(
@@ -68,8 +68,8 @@ export function drawGenderUnempChart(data, selected) {
     let u = svg.selectAll('rect').data(data)
 
     // update bars
-    let color = '#4CC9F0'
-    let other = '#0CF574'
+    let color = 'white'
+    let other = '#69b3a2'
 
     if (selected === 'avgMen') {
       color = other
