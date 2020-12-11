@@ -13,10 +13,12 @@ import d3Tip from 'd3-tip'
 import usData from '../Assets/usData.json'
 
 export const StateMap = data => {
-  const [mode, setMode] = useState(false)
+  const [mode, setMode] = useState('maxcases')
 
   const svgRef = useRef()
   const maxCases = max(data.data.map(d => d.positiveCumulative))
+  const maxDeaths = max(data.data.map(d => d.deathCumulative))
+
   let radiusScale = scaleSqrt()
 
   useEffect(
@@ -62,9 +64,6 @@ export const StateMap = data => {
         // Add class for reference
         .attr('class', 'circle')
         // style
-        //.style('fill', '#E91E')
-        .style('fill', '#80ed99')
-        .style('fill-opacity', 0.7)
         // Update x-position
         .attr('cx', d => projection([d.longitude, d.latitude])[0])
         // Update y-position
@@ -75,16 +74,35 @@ export const StateMap = data => {
         .transition()
         .duration(10)
         .ease(easeLinear)
-      if (mode) {
+      if (mode === 'pop') {
+        circleData.style('fill', '#F25F5C').style('fill-opacity', 0.7)
         circleData.attr('r', d =>
-          radiusScale.domain([0, 1, d.population / 10]).range([0, 2, 75])(
+          radiusScale.domain([0, 1, d.population / 5]).range([0, 2, 75])(
             d.positiveCumulative
           )
         )
-      } else {
+      } else if (mode === 'maxcases') {
+        circleData.style('fill', '#0CF574').style('fill-opacity', 0.7)
         circleData.attr('r', d =>
-          radiusScale.domain([0, 1, maxCases]).range([0, 2, 75])(
+          radiusScale.domain([0, 1, maxCases * 2]).range([0, 2, 75])(
             d.positiveCumulative
+          )
+        )
+      } else if (mode === 'deaths') {
+        circleData.style('fill', '#4CC9F0').style('fill-opacity', 0.7)
+        circleData.attr(
+          'r',
+          d =>
+            radiusScale.domain([0, 1, d.population / 180]).range([0, 2, 75])(
+              d.deathCumulative
+            )
+          //.style('fill', '#E91E')
+        )
+      } else if (mode === 'maxdeaths') {
+        circleData.style('fill', '#F7D9C4').style('fill-opacity', 0.7)
+        circleData.attr('r', d =>
+          radiusScale.domain([0, 1, maxDeaths * 2]).range([0, 2, 75])(
+            d.deathCumulative
           )
         )
       }
@@ -145,12 +163,14 @@ export const StateMap = data => {
     <div>
       <div>
         <select
-          onChange={() => {
-            setMode(!mode)
+          onChange={e => {
+            setMode(e.target.value)
           }}
         >
           <option value="maxcases"> new cases/max cases</option>
           <option value="pop"> new cases/state population</option>
+          <option value="deaths"> deaths/state population</option>
+          <option value="maxdeaths"> deaths/max deaths</option>
         </select>
       </div>
       <svg
