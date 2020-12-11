@@ -9,7 +9,6 @@ export const Navbar = () => (
       <div>
         <Link to="/">US Map</Link>
         <Link to="/chart">Chart</Link>
-        {/* <Link to="/environment">Environment</Link> */}
       </div>
     </nav>
     <hr />

@@ -8,6 +8,7 @@ export const setEnviro = co2Data => ({
 })
 
 export const fetchEnviro = () => {
+    console.log('in fetch')
     return async dispatch => {
         try {
             const {data} = await axios.get('/api/environment')
@@ -24,6 +25,7 @@ const initialState = {
     co2Data: {},
     isLoading: false
 }
+
 
 
 export default function enviroReducer(state=initialState, action) {
