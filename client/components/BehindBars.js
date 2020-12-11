@@ -7,7 +7,7 @@ import {Temp} from './temp'
 export const BehindBars = () => {
   const dispatch = useDispatch()
   const isLoading = useSelector(state => state.behindBarsReducer.isLoading)
-  const allCases = useSelector(state => state.behindBarsReducer.data)
+  let allCases = useSelector(state => state.behindBarsReducer.data)
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -16,14 +16,23 @@ export const BehindBars = () => {
   }, [])
   useEffect(
     () => {
-      //if it's not longer loding
+      //if it's no longer loding
       console.log('inside second useEffect', isLoading)
       if (!isLoading) {
+        console.log('going into if block')
+        allCases = allCases.map(element => {
+          return {
+            id: element.id,
+            long: Number(element.longitude),
+            lat: Number(element.latitude),
+            confirmedResidents: Number(element.confirmedResidents)
+          }
+        })
         setData(allCases)
-        console.log('data after second useEffect', data)
+        console.log('in app behind bars componenet', data)
       }
     },
     [isLoading]
   )
-  return <div>{!isLoading ? <Temp realData={data} /> : <div />}</div>
+  return <div>{isLoading ? <div /> : <Temp realData={data} />}</div>
 }

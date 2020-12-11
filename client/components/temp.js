@@ -13,31 +13,37 @@ import * as d3 from 'd3'
 import usData from './HomePage/Assets/usData.json'
 
 export const Temp = realData => {
-  console.log('DATA', realData)
-  const data = [
-    {
-      id: 1,
-      long: -87.33312321,
-      lat: 31.99483708,
-      state: 'Alabama',
-      value: 10
-    },
-    {
-      id: 2,
-      long: -117.8588801,
-      lat: 35.1532512,
-      state: 'California',
-      value: 2
-    }
-  ]
+  // const data = [
+  //   {
+  //     id: 1,
+  //     long: -87.33312321,
+  //     lat: 31.99483708,
+  //     state: 'Alabama',
+  //     confirmedResidents: 10,
+  //   },
+  //   {
+  //     id: 2,
+  //     long: -117.8588801,
+  //     lat: 35.1532512,
+  //     state: 'California',
+  //     confirmedResidents: 2,
+  //   },
+  // ]
+  const data = realData.realData
+  console.log('realData.realData', data)
+  // console.log('LOOK HERE', data[0].long, typeof data[0].long)
   const svgRef = useRef()
-  const length = d3.scaleLinear([0, d3.max(data, d => d.value)], [0, 200])
+  const length = d3.scaleLinear(
+    [0, d3.max(data, d => d.confirmedResidents)],
+    [0, 200]
+  )
   // const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]))
   const format = d3.format(',.0f')
   const spike = (val, width = 7) => `M${-width / 2},0L0,${-val}L${width / 2},0`
 
   useEffect(
     () => {
+      console.log('data inside useEffect', data)
       let projection = geoAlbersUsa()
         .scale(1300)
         .translate([975 / 2, 610 / 2])
@@ -76,9 +82,9 @@ export const Temp = realData => {
         .data(data, d => d.id)
         .join('path')
         .attr('transform', d => `translate(${projection([d.long, d.lat])})`)
-        .attr('d', d => spike(length(d.value)))
+        .attr('d', d => spike(length(d.confirmedResidents)))
     },
-    [svgRef]
+    [svgRef, data]
   )
 
   return (

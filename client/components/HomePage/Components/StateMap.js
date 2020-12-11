@@ -54,7 +54,6 @@ export const StateMap = data => {
       const circleData = svg
         .selectAll('.circle')
         .data(data.data, d => d.statecode)
-      console.log('AFTER .data', data)
       circleData
         // Enter new data
         .enter()

@@ -10,7 +10,8 @@ router.get('/', async (req, res, next) => {
   try {
     const state = await BehindBars.findAll({
       where: {
-        latitude: {[Op.ne]: null}
+        latitude: {[Op.ne]: null},
+        confirmedResidents: {[Op.ne]: null}
       }
     })
     res.json(state)
