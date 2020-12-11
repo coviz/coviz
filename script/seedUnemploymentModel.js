@@ -31,7 +31,7 @@ async function createUnemploymentTable() {
       })
 
       const query =
-        'INSERT INTO "unemployment" (year, month, "unemployed") VALUES ($1, $2, $3)'
+        'INSERT INTO "unemployment" (year, month, "unemployed", men, women) VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
