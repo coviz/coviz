@@ -9,7 +9,8 @@ const Environment = db.define('environment', {
     type: Sequelize.INTEGER
   },
   value: {
-    type: Sequelize.DECIMAL(10, 3)
+    type: Sequelize.FLOAT
+    // type: Sequelize.DECIMAL(10, 3)
   },
   description: {
     type: Sequelize.STRING
