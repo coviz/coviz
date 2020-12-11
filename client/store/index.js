@@ -7,14 +7,14 @@ import usDataByDate from './usDataByDate'
 import ethnicities from './ethnicity'
 import ages from './age'
 import genders from './gender'
-// import behindBarsReducer from './behindBarsReducer'
+import behindBarsReducer from './behindBarsReducer'
 
 const reducer = combineReducers({
   states,
   usDataByDate,
   ethnicities,
   genders,
-  // behindBarsReducer,
+  behindBarsReducer,
   ages
 })
 

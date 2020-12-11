@@ -14,7 +14,7 @@ import usData from '../Assets/usData.json'
 
 export const StateMap = data => {
   const [mode, setMode] = useState(false)
-
+  console.log('DATA', data)
   const svgRef = useRef()
   const maxCases = max(data.data.map(d => d.positive))
   let radiusScale = scaleSqrt()
@@ -54,6 +54,7 @@ export const StateMap = data => {
       const circleData = svg
         .selectAll('.circle')
         .data(data.data, d => d.statecode)
+      console.log('AFTER .data', data)
       circleData
         // Enter new data
         .enter()
@@ -63,8 +64,7 @@ export const StateMap = data => {
         .attr('class', 'circle')
         // style
         //.style('fill', '#E91E')
-        .style('fill', '#80ed99')
-        .style('fill-opacity', 0.7)
+
         // Update x-position
         .attr('cx', d => projection([d.longitude, d.latitude])[0])
         // Update y-position
@@ -76,15 +76,21 @@ export const StateMap = data => {
         .duration(10)
         .ease(easeLinear)
       if (mode) {
-        circleData.attr('r', d =>
-          radiusScale.domain([0, 1, d.population / 10]).range([0, 2, 75])(
-            d.positive
+        circleData
+          .attr('r', d =>
+            radiusScale.domain([0, 1, d.population / 10]).range([0, 2, 75])(
+              d.positive
+            )
           )
-        )
+          .style('fill', '#00ccff')
+          .style('fill-opacity', 0.7)
       } else {
-        circleData.attr('r', d =>
-          radiusScale.domain([0, 1, maxCases]).range([0, 2, 75])(d.positive)
-        )
+        circleData
+          .attr('r', d =>
+            radiusScale.domain([0, 1, maxCases]).range([0, 2, 75])(d.positive)
+          )
+          .style('fill', '#3587A4')
+          .style('fill-opacity', 0.7)
       }
 
       // Exit data points no longer in data and remove

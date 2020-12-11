@@ -20,13 +20,13 @@ export const fetchCasesInJails = () => {
 
 const initialState = {
   data: {},
-  isLoading: false
+  isLoading: true
 }
 
 export default function behindBarsReducer(state = initialState, action) {
   switch (action.type) {
     case SET_CASES_IN_JAILS:
-      return {...state, data: action.data, isLoading: true}
+      return {...state, data: action.data, isLoading: false}
     default:
       return state
   }
