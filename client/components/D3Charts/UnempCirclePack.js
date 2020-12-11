@@ -43,7 +43,6 @@ export function drawUnempChart(height, width, data) {
   }
   let mousemove = function(d) {
     const dataBub = d.srcElement.__data__
-    console.log('this is the databub', dataBub)
 
     Tooltip.html(
       '<u>' +
@@ -68,7 +67,6 @@ export function drawUnempChart(height, width, data) {
     .append('circle')
     .attr('class', 'node')
     .attr('r', function(d) {
-      console.log('this is ddddd', d)
       return size(d.unemployed / 600000)
     })
     .attr('cx', width / 2)
