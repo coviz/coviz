@@ -52,8 +52,8 @@ export function drawUnempChart(height, width, data) {
         `In ${dataBub.month.toUpperCase()} ${dataBub.year}`
     )
       // manipulate d.value to be % per pop
-      .style('left', d3.pointer(this)[0] + 20 + 'px')
-      .style('top', d3.pointer(this)[1] + 'px')
+      .style('left', d.pageX + 'px')
+      .style('top', d.pageY + 'px')
   }
   let mouseleave = function(d) {
     Tooltip.style('opacity', 0)

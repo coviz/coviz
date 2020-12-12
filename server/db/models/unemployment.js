@@ -17,6 +17,12 @@ const Unemployment = db.define('unemployment', {
   women: {
     type: Sequelize.INTEGER
   },
+  notInLaborMen: {
+    type: Sequelize.INTEGER
+  },
+  notInLaborWomen: {
+    type: Sequelize.INTEGER
+  },
   createdAt: {
     type: Sequelize.DATE,
     allowNull: true

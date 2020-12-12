@@ -62,8 +62,8 @@ export function drawEthnChart(height, width, data) {
         ` Death Count: ${dataBub.deaths}`
     )
       // manipulate d.value to be % per pop
-      .style('left', d3.pointer(this)[0] + 20 + 'px')
-      .style('top', d3.pointer(this)[1] + 'px')
+      .style('left', d.pageX + 'px')
+      .style('top', d.pageY - 28 + 'px')
   }
   let mouseleave = function(d) {
     Tooltip.style('opacity', 0)

@@ -5,11 +5,8 @@ import {
   fetchGenderUnemployment
 } from '../../../store/unemployment'
 import {initUnempChart, drawUnempChart} from '../../D3Charts/UnempCirclePack'
-// import {
-//   drawGenderUnempChart,
-//   initGenderUnempChart
-// } from '../../D3Charts/BarPlot'
 import {drawGenderUnempChart} from '../../D3Charts/StackedBarPlot'
+import {drawGenderLaborChart, init} from '../../D3Charts/BarPlot'
 
 export const UnemploymentChart = props => {
   const dispatch = useDispatch()
@@ -23,10 +20,15 @@ export const UnemploymentChart = props => {
   }, [])
   useEffect(() => {
     initUnempChart(500, 500)
+    init()
     // initGenderUnempChart()
   }, [])
-
+  const newData = data.filter(elem => {
+    return elem.year === '2020'
+  })
   const sortedGenderData = genderData.sort((a, b) => a.year - b.year)
+  console.log('this is new data', newData)
+  console.log('this is data', data)
   return (
     <div>
       <h2 id="unempTitle">Covid v. Unemployment</h2>
@@ -38,20 +40,28 @@ export const UnemploymentChart = props => {
         </div>
         <div id="genderUnemp">
           <h4>Unemployment by Gender</h4>
+          <div id="genderUnempChart" />
           {isLoading ? drawGenderUnempChart(sortedGenderData) : <div />}
+        </div>
+        <div id="notInLabor">
+          <h4>Not in Labor Force by Gender</h4>
+          {isLoading ? (
+            drawGenderLaborChart(newData, 'notInLaborWomen')
+          ) : (
+            <div />
+          )}
           {/* <button
             className="button"
-            onClick={() => drawGenderUnempChart(sortedGenderData, 'avgMen')}
+            onClick={() => drawGenderLaborChart(newData, 'notInLaborMen')}
           >
-            Men Unemployment
+            Men Not In Labor Force
           </button>
           <button
             className="button"
-            onClick={() => drawGenderUnempChart(sortedGenderData)}
+            onClick={() => drawGenderLaborChart(newData, 'notInLaborWomen')}
           >
-            Women Unemployment
+            Women Not In Labor Force
           </button> */}
-          <div id="genderUnempChart" />
         </div>
       </div>
     </div>
