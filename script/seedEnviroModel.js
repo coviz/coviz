@@ -8,7 +8,9 @@ async function createTable() {
   await db.close()
   console.log('this is inside createTable')
   // let stream = fs.createReadStream('script/CO2emissions.csv')
-  let stream = fs.createReadStream('script/co2Emissions(1type).csv')
+  // let stream = fs.createReadStream('script/co2Emissions(1type).csv')
+  // let stream = fs.createReadStream('script/co2Emissions-dateAndVal.csv')
+  let stream = fs.createReadStream('script/totalCO2Emissions.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -33,6 +35,8 @@ async function createTable() {
       console.log('this is right before query')
       const query =
         'INSERT INTO environments (code, date, value, description) VALUES ($1, $2, $3, $4)'
+      // const query =
+      //   'INSERT INTO environments (date, value) VALUES ($1, $2)'
 
       pool.connect((err, client, done) => {
         if (err) throw err

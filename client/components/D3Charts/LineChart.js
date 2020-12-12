@@ -23,40 +23,41 @@ export function drawEnviroChart(height, width, data) {
   width = width - margin.left - margin.right,
   height = height - margin.top - margin.bottom
 
-  // When reading the csv, I must format variables:
-  // DataParse(d){
-  //   return { date : d3.timeParse("%Y%m")(d.date), value : d.value }
-  // }
-
-  // Now I can use this dataset:
-  // const min = d3.min(data, function(d) { return +d.date; })
-  // const max = d3.max(data, function(d) { return +d.date; })
-
-  // console.log('dates', min, max)
-  // Add X axis --> it is a date format
   var x = d3
-    .scaleTime()
-    //explre what scaletime is
-    .domain(d3.extent(data, function(d) { return +d.date; }))
-    // .domain([min,max])
-    .range([ margin.left+5, width+margin.left+10]);
-    console.log('kfheifgu')
-  svg.append("g")
-    .attr("transform", "translate(0," + height + ")")
+    .scaleBand()
+    .range([margin.left, width + 250])
+    .domain(
+      data.map(function(d) {
+        return d.date
+      })
+    )
+    .padding(2)
+  svg
+    .append('g')
+    .attr('transform', 'translate(0,' + height + ')')
     .attr('color', 'white')
     .call(d3.axisBottom(x))
     .selectAll('text')
-    .attr('transform', 'translate(-10,0)rotate(-45)')
+    .attr('transform', 'translate(-10,0)rotate(-90)')
     .style('text-anchor', 'end')
-    .style('font-size', '18px')
+    // .style('font-size', '18px')
+
+  // var x = d3.scaleTime()
+  //   .domain(d3.extent(data, function(d) { return d.date; }))
+  //   .range([ margin.left, width + margin.left ]);
+  // svg.append("g")
+  //   .attr("transform", "translate(0," + height + ")")
+  //   .style('font-size', '18px')
+  //   .attr('color', 'white')
+  //   .call(d3.axisBottom(x));
 
   // Max value observed:
-  const valMax = d3.max(data, function(d) { return +d.value; })
-  console.log('valMax', valMax)
+  const max = d3.max(data, function(d) { return +d.value; })
+  console.log(max)
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, valMax+100])
+    .domain([0, max+40])
     .range([ height, 0 ]);
   svg.append("g")
     .attr('transform', `translate(${margin.left},0)`)
@@ -71,7 +72,7 @@ export function drawEnviroChart(height, width, data) {
     .attr("x1", 0)
     .attr("y1", y(0))
     .attr("x2", 0)
-    .attr("y2", y(valMax))
+    .attr("y2", y(max))
     .selectAll("stop")
       .data([
         {offset: "0%", color: "blue"},
@@ -86,11 +87,34 @@ export function drawEnviroChart(height, width, data) {
     .datum(data)
     .attr("fill", "none")
     .attr("stroke", "url(#line-gradient)" )
-    .attr("stroke-width", 1)
+    .attr("stroke-width", 2)
     .attr("d", d3.line()
       .x(function(d) { return x(d.date) })
       .y(function(d) { return y(d.value) })
-    )
-  
+      )
+
+
+
+  // var parseTime = d3.timeParse("%b %d, %Y");
+  // var dates = [];
+  // for (let obj of data) {
+  //   dates.push(parseTime(obj.date));
+  // }
+  // console.log('dates', dates)
+  // // const newData = data.map(dataBit => {
+  // //   return {...dataBit, date: }
+  // // })
+  // var domain = d3.extent(dates);
+  // console.log('domain', domain)
+  // var xScale = d3.scaleTime()
+  //   .domain(domain)
+  //   .range([25, 555]);
+  // var xAxis = d3.axisBottom(xScale);
+  // svg.append("g")
+  //   .attr("transform", "translate(0,60)")
+  //   .style('font-size', '18px')
+  //   .attr('color', 'white')
+  //   .call(xAxis);
+
   
 }
