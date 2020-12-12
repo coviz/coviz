@@ -5,10 +5,11 @@ import {
   fetchGenderUnemployment
 } from '../../../store/unemployment'
 import {initUnempChart, drawUnempChart} from '../../D3Charts/UnempCirclePack'
-import {
-  drawGenderUnempChart,
-  initGenderUnempChart
-} from '../../D3Charts/BarPlot'
+// import {
+//   drawGenderUnempChart,
+//   initGenderUnempChart
+// } from '../../D3Charts/BarPlot'
+import {drawGenderUnempChart} from '../../D3Charts/StackedBarPlot'
 
 export const UnemploymentChart = props => {
   const dispatch = useDispatch()
@@ -37,12 +38,8 @@ export const UnemploymentChart = props => {
         </div>
         <div id="genderUnemp">
           <h4>Unemployment by Gender</h4>
-          {isLoading ? (
-            drawGenderUnempChart(sortedGenderData, 'avgWomen')
-          ) : (
-            <div />
-          )}
-          <button
+          {isLoading ? drawGenderUnempChart(sortedGenderData) : <div />}
+          {/* <button
             className="button"
             onClick={() => drawGenderUnempChart(sortedGenderData, 'avgMen')}
           >
@@ -50,10 +47,10 @@ export const UnemploymentChart = props => {
           </button>
           <button
             className="button"
-            onClick={() => drawGenderUnempChart(sortedGenderData, 'avgWomen')}
+            onClick={() => drawGenderUnempChart(sortedGenderData)}
           >
             Women Unemployment
-          </button>
+          </button> */}
           <div id="genderUnempChart" />
         </div>
       </div>

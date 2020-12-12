@@ -1,0 +1,137 @@
+import * as d3 from 'd3'
+
+export function drawGenderUnempChart(data) {
+  console.log('this is on the stackedbarplot', data)
+  if (data.length > 0) {
+    // set the dimensions and margins of the graph
+    let margin = {top: 10, right: 30, bottom: 20, left: 90},
+      width = 460 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom
+
+    // append the svg object to the body of the page
+    let svg = d3
+      .select('#genderUnempChart')
+      .append('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+
+    //   // List of subgroups = header of the csv files = soil condition here
+    //   let subgroups = data.columns.slice(1)
+
+    // List of groups = species here = value of the first column called group -> I show them on the X axis
+    let years = d3.map(data, function(d) {
+      return d.year
+    })
+
+    // Add X axis
+    let x = d3
+      .scaleBand()
+      .domain(years)
+      .range([0, width])
+      .padding([0.2])
+    svg
+      .append('g')
+      .attr('transform', 'translate(0,' + height + ')')
+      .call(d3.axisBottom(x).tickSizeOuter(0))
+      .attr('color', '#fff')
+
+    // Add Y axis
+    let y = d3
+      .scaleLinear()
+      .domain([
+        0,
+        d3.max(data, function(d) {
+          return Math.round(+d.total) + 2000000
+        })
+      ])
+      .range([height, 0])
+    svg
+      .append('g')
+      .call(d3.axisLeft(y))
+      .attr('color', '#fff')
+
+    // color palette = one color per subgroup
+    let color = d3
+      .scaleOrdinal()
+      .domain(['Men', 'Women'])
+      .range(['#FE5F55', '#EEF5DB'])
+
+    //stack the data? --> stack per subgroup
+    let stackedData = d3.stack().keys(['Men', 'Women'])(data)
+
+    // ----------------
+    // Create a tooltip
+    // ----------------
+    let tooltip = d3
+      .select('#genderUnempChart')
+      .append('div')
+      .style('opacity', 0)
+      .attr('class', 'tooltip')
+      .style('background-color', 'white')
+      .style('border', 'solid')
+      .style('color', 'black')
+      .style('border-width', '1px')
+      .style('border-radius', '5px')
+      .style('padding', '10px')
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    let mouseover = function(d) {
+      tooltip.style('opacity', 1)
+    }
+    let mousemove = function(d) {
+      const databub = d.srcElement.__data__.data
+      //     console.log('this is the d in mouseover', databub)
+      let subgroupName = d3.select(this.parentNode).datum().key
+      //   console.log(subgroupName)
+      let subgroupValue = databub[subgroupName]
+      //   console.log(subgroupValue)
+      tooltip
+        .html(
+          `Max Unemployment for ${subgroupName} in ${databub.year} ` +
+            '<br>' +
+            'Total:' +
+            subgroupValue.toLocaleString()
+        )
+        .style('left', d.pageX + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+        .style('top', d.pageY - 28 + 'px')
+    }
+    let mouseleave = function(d) {
+      tooltip.style('opacity', 0)
+    }
+
+    // Show the bars
+    svg
+      .append('g')
+      .selectAll('g')
+      // Enter in the stack data = loop key per key = group per group
+      .data(stackedData)
+      .enter()
+      .append('g')
+      .attr('fill', function(d) {
+        return color(d.key)
+      })
+      .selectAll('rect')
+      // enter a second time = loop subgroup per subgroup to add all rectangles
+      .data(function(d) {
+        return d
+      })
+      .enter()
+      .append('rect')
+      .attr('x', function(d) {
+        return x(d.data.year)
+      })
+      .attr('y', function(d) {
+        return y(d[1])
+      })
+      .attr('height', function(d) {
+        return y(d[0]) - y(d[1])
+      })
+      .attr('width', x.bandwidth())
+      .attr('stroke', 'grey')
+      .on('mouseover', mouseover)
+      .on('mousemove', mousemove)
+      .on('mouseleave', mouseleave)
+  }
+}
