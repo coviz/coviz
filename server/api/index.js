@@ -7,6 +7,7 @@ router.use('/ethnicity', require('./ethnicity'))
 router.use('/age', require('./age'))
 router.use('/gender', require('./gender'))
 router.use('/covidDaily', require('./covidDaily'))
+router.use('/hunger', require('./hunger'))
 
 router.use((req, res, next) => {
   const error = new Error('Not Found')
