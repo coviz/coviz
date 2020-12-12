@@ -1,15 +1,5 @@
 import React, {useRef, useEffect, useState} from 'react'
-import {
-  geoAlbersUsa,
-  geoPath,
-  select,
-  scaleSqrt,
-  easeLinear,
-  max,
-  mouse
-} from 'd3'
-import * as d3 from 'd3'
-import d3Tip from 'd3-tip'
+import {geoAlbersUsa, geoPath, select, scaleSqrt, easeLinear, max} from 'd3'
 import usData from '../Assets/usData.json'
 
 export const StateMap = data => {
@@ -29,8 +19,7 @@ export const StateMap = data => {
       const pathGenerator = geoPath().projection(projection)
 
       // Create the tooltip
-      var div = d3
-        .select('body')
+      var div = select('body')
         .append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0)
@@ -63,7 +52,7 @@ export const StateMap = data => {
         .attr('class', 'circle')
         // style
         //.style('fill', '#E91E')
-        .style('fill', '#80ed99')
+        .style('fill', '#4CC9F0')
         .style('fill-opacity', 0.7)
         // Update x-position
         .attr('cx', d => projection([d.longitude, d.latitude])[0])

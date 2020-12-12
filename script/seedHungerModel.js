@@ -3,11 +3,11 @@ const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
-async function createTable() {
-  await db.sync()
+async function createHungerTable() {
+  await db.sync({force: true})
   await db.close()
-  // console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/Covd_vs_Age_&_Sex.csv')
+
+  let stream = fs.createReadStream('script/COVIDHungerData_USDA_Brookings.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -22,16 +22,16 @@ async function createTable() {
       const pool = new Pool({
         host: 'localhost',
         user: 'postgres',
-        // ^^comment this 1 line in when not on Anna's comp^^
+        // ^^comment this back in when not on Anna's comp^^
         // user: 'ania',
         // password: 'newPassword',
         // ^^comment these 2 lines out when not on Anna's comp^^
         database: 'coviz',
         port: 5432
       })
-      console.log('this is right before query')
+
       const query =
-        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals", "pop") VALUES ($1, $2, $3, $4, $5)'
+        'INSERT INTO "hunger" (year, "overallFoodInsecurity", "blackFoodInsecurity", "hispanicFoodInsecurity", "whiteFoodInsecurity", "otherFoodInsecurity", "childrenFoodInsecurity") VALUES ($1, $2, $3, $4, $5, $6, $7)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -55,4 +55,6 @@ async function createTable() {
   stream.pipe(csvStream)
 }
 
-createTable()
+createHungerTable()
+
+// module.exports = createStateTable()
