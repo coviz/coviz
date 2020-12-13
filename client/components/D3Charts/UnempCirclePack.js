@@ -22,8 +22,8 @@ export function drawUnempChart(height, width, data) {
   // Size scale
   let size = d3
     .scaleLinear()
-    .domain([0, 100])
-    .range([7, 55]) // circle will be between 7 and 55 px wi
+    .domain([0, 90])
+    .range([7, 40]) // circle will be between 7 and 55 px wi
 
   // create a tooltip
   let Tooltip = d3
@@ -69,8 +69,8 @@ export function drawUnempChart(height, width, data) {
     .attr('r', function(d) {
       return size(d.unemployed / 600000)
     })
-    .attr('cx', width / 2)
-    .attr('cy', height / 2)
+    .attr('cx', width / 2.2)
+    .attr('cy', height / 2.2)
     .style('fill', function(d) {
       return color(d.year)
     })
@@ -94,8 +94,8 @@ export function drawUnempChart(height, width, data) {
       'center',
       d3
         .forceCenter()
-        .x(width / 2)
-        .y(height / 2)
+        .x(width / 2.2)
+        .y(height / 2.2)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(
@@ -104,7 +104,7 @@ export function drawUnempChart(height, width, data) {
         .forceCollide()
         .strength(0.2)
         .radius(function(d) {
-          return size(d.unemployed / 600000) + 3
+          return size(d.unemployed / 700000) + 3
         })
         .iterations(1)
     ) // Force that avoids circle overlapping
