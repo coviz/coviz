@@ -3,33 +3,15 @@ const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
-async function createCovidDailyTable() {
+async function createUnemploymentTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/daily_covid_case_counts_112320.csv')
+  let stream = fs.createReadStream('script/total_unemployment_rates.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
-    .on('data', function(row) {
-      if (row[2] === '') row[2] = '0'
-      if (row[19] === '') row[19] = '0'
-      if (row[41] === '') row[41] = '0'
-      if (row[46] === '') row[46] = '0'
-      if (row[9] === '') row[9] = '0'
-      if (row[10] === '') row[10] = '0'
-      if (row[48] === '') row[47] = '0'
-      const data = [
-        row[0],
-        row[1],
-        row[2],
-        row[19],
-        row[41],
-        row[46],
-        row[9],
-        row[10],
-        row[47]
-      ]
+    .on('data', function(data) {
       csvData.push(data)
     })
     .on('end', function() {
@@ -49,7 +31,7 @@ async function createCovidDailyTable() {
       })
 
       const query =
-        'INSERT INTO "covidDailies" (date, "statecode", "positiveCumulative", "deathCumulative", "positiveIncrease", "deathIncrease", "hospitalizedCurrently", "hospitalizedCumulative", "hospitalizedIncrease") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)'
+        'INSERT INTO "unemployment" (year, month, "unemployed", men, women) VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -64,19 +46,15 @@ async function createCovidDailyTable() {
               }
             })
           })
-        } catch {
-          // what is the difference between done() and end() and close()
-          // done()
+        } finally {
+          done()
         }
       })
-      // pool.end(() => {
-      //   console.log('pool has ended')
-      // })
     })
 
   stream.pipe(csvStream)
 }
 
-createCovidDailyTable()
+createUnemploymentTable()
 
-// module.exports = createCovidDailyTable()
+// module.exports = createStateTable()
