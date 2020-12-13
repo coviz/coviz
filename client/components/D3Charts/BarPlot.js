@@ -67,7 +67,7 @@ export function drawGenderLaborChart(data) {
     let color = d3
       .scaleOrdinal()
       .domain(['Men', 'Women'])
-      .range(['#3083DC', '#E9E6FF'])
+      .range(['#F7D9C4', '#F25F5C'])
 
     // Show the bars
     svg

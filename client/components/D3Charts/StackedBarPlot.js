@@ -1,21 +1,26 @@
 import * as d3 from 'd3'
 
+let margin = {top: 10, right: 30, bottom: 20, left: 90},
+  width = 460 - margin.left - margin.right,
+  height = 400 - margin.top - margin.bottom
+
+export function initStacked() {
+  d3
+    .select('#genderUnempChart')
+    .append('svg')
+    .attr('width', width + margin.left + margin.right + 70)
+    .attr('height', height + margin.top + margin.bottom + 70)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+}
+
 export function drawGenderUnempChart(data) {
   console.log('this is on the stackedbarplot', data)
   if (data.length > 0) {
     // set the dimensions and margins of the graph
-    let margin = {top: 10, right: 30, bottom: 20, left: 90},
-      width = 460 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom
 
     // append the svg object to the body of the page
-    let svg = d3
-      .select('#genderUnempChart')
-      .append('svg')
-      .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom)
-      .append('g')
-      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+    let svg = d3.select('#genderUnempChart svg')
 
     //   // List of subgroups = header of the csv files = soil condition here
     //   let subgroups = data.columns.slice(1)
@@ -33,7 +38,7 @@ export function drawGenderUnempChart(data) {
       .padding([0.2])
     svg
       .append('g')
-      .attr('transform', 'translate(0,' + height + ')')
+      .attr('transform', 'translate(70,' + height + ')')
       .call(d3.axisBottom(x).tickSizeOuter(0))
       .attr('color', '#fff')
 
@@ -49,6 +54,7 @@ export function drawGenderUnempChart(data) {
       .range([height, 0])
     svg
       .append('g')
+      .attr('transform', 'translate(' + 70 + ')')
       .call(d3.axisLeft(y))
       .attr('color', '#fff')
 
@@ -56,7 +62,7 @@ export function drawGenderUnempChart(data) {
     let color = d3
       .scaleOrdinal()
       .domain(['Men', 'Women'])
-      .range(['#FE5F55', '#EEF5DB'])
+      .range(['#0CF574', '#F7D9C4'])
 
     //stack the data? --> stack per subgroup
     let stackedData = d3.stack().keys(['Men', 'Women'])(data)
@@ -89,7 +95,7 @@ export function drawGenderUnempChart(data) {
       //   console.log(subgroupValue)
       tooltip
         .html(
-          `Max Unemployment for ${subgroupName} in ${databub.year} ` +
+          `Max Unemployment for <u>${subgroupName}</u> in ${databub.year} ` +
             '<br>' +
             'Total:' +
             subgroupValue.toLocaleString()
@@ -120,7 +126,7 @@ export function drawGenderUnempChart(data) {
       .enter()
       .append('rect')
       .attr('x', function(d) {
-        return x(d.data.year)
+        return x(d.data.year) + 70
       })
       .attr('y', function(d) {
         return y(d[1])
@@ -133,5 +139,35 @@ export function drawGenderUnempChart(data) {
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)
       .on('mouseleave', mouseleave)
+
+    let legend = svg
+      .append('g')
+      .attr('class', 'legend')
+      .attr('width', 140)
+      .attr('height', 200)
+      .selectAll('g')
+      .data(['Women', 'Men'])
+      .enter()
+      .append('g')
+      .attr('transform', function(d, i) {
+        return 'translate(80,' + i * 20 + ')'
+      })
+
+    legend
+      .append('rect')
+      .attr('width', 18)
+      .attr('height', 18)
+      .style('fill', color)
+
+    legend
+      .append('text')
+      .data(['Women', 'Men'])
+      .attr('x', 24)
+      .attr('y', 9)
+      .attr('dy', '.35em')
+      .text(function(d) {
+        return d
+      })
+      .attr('stroke', 'white')
   }
 }
