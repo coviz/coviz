@@ -145,6 +145,7 @@ export const StateMap = data => {
     <div>
       <div>
         <select
+          className="select-css"
           onChange={() => {
             setMode(!mode)
           }}
