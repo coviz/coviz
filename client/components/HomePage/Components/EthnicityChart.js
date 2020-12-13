@@ -39,7 +39,7 @@ export const EthnicityChart = props => {
               times the rate of other groups, many islanders in America live in
               large families and tight-knit communities, and work in frontline
               service industries, increasing their risk of exposure" -The
-              Guardian{' '}
+              Guardian
             </li>
             <li>
               "American Indian and Alaska Native people have died in connection
