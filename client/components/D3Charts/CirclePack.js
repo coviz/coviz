@@ -79,8 +79,8 @@ export function drawEthnChart(height, width, data) {
     .attr('r', function(d) {
       return size(d.deaths / d.pop * 100)
     })
-    .attr('cx', width / 2)
-    .attr('cy', height / 2)
+    .attr('cx', width / 2.2)
+    .attr('cy', height / 2.2)
     .style('fill', function(d) {
       return color(d.ethnicity)
     })
@@ -104,8 +104,8 @@ export function drawEthnChart(height, width, data) {
       'center',
       d3
         .forceCenter()
-        .x(width / 2)
-        .y(height / 2)
+        .x(width / 2.2)
+        .y(height / 2.2)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(

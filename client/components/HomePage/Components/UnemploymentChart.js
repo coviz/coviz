@@ -46,7 +46,7 @@ export const UnemploymentChart = props => {
             {isLoading ? drawGenderUnempChart(sortedGenderData) : <div />}
           </div>
           <div id="notInLabor">
-            <h4>Not in Labor Force by Gender</h4>
+            <h4>Not in Labor Force by Gender 2020</h4>
             {isLoading ? (
               drawGenderLaborChart(newData, 'notInLaborWomen')
             ) : (
