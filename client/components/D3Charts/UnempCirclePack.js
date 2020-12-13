@@ -80,13 +80,13 @@ export function drawUnempChart(height, width, data) {
     .on('mouseover', mouseover) // What to do when hovered
     .on('mousemove', mousemove)
     .on('mouseleave', mouseleave)
-    .call(
-      d3
-        .drag() // call specific function when circle is dragged
-        .on('start', dragstarted)
-        .on('drag', dragged)
-        .on('end', dragended)
-    )
+  // .call(
+  //   d3
+  //     .drag() // call specific function when circle is dragged
+  //     .on('start', dragstarted)
+  //     .on('drag', dragged)
+  //     .on('end', dragended)
+  // )
 
   let simulation = d3
     .forceSimulation()
@@ -160,23 +160,23 @@ export function drawUnempChart(height, width, data) {
     .attr('stroke', 'white')
 
   // What happens when a circle is dragged?
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.03).restart()
-    d3
-      .select(this)
-      .raise()
-      .attr('stroke', 'black')
-  }
+  // function dragstarted(event, d) {
+  //   if (!event.active) simulation.alphaTarget(0.03).restart()
+  //   d3
+  //     .select(this)
+  //     .raise()
+  //     .attr('stroke', 'black')
+  // }
 
-  function dragged(event, d) {
-    d3
-      .select(this)
-      .attr('cx', (d.x = event.x))
-      .attr('cy', (d.y = event.y))
-  }
+  // function dragged(event, d) {
+  //   d3
+  //     .select(this)
+  //     .attr('cx', (d.x = event.x))
+  //     .attr('cy', (d.y = event.y))
+  // }
 
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0.03)
-    d3.select(this)
-  }
+  // function dragended(event, d) {
+  //   if (!event.active) simulation.alphaTarget(0.03)
+  //   d3.select(this)
+  // }
 }
