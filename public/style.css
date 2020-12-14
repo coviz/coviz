@@ -100,7 +100,7 @@ form div {
   font-size: 10px;
 }
 
-.track,
+/* .track,
 .track-inset,
 .track-overlay {
   stroke-linecap: round;
@@ -122,14 +122,14 @@ form div {
   stroke-width: 50px;
   stroke: transparent;
   cursor: crosshair;
-}
+} 
 
 .handle {
   fill: pink;
   stroke: #000;
   stroke-opacity: 0.5;
   stroke-width: 1.25px;
-}
+} */
 
 div.tooltipLolli {
   position: absolute;
@@ -142,6 +142,7 @@ div.tooltipLolli {
   pointer-events: none;
   font-size: 0.7rem;
 }
+
 div.tooltip {
   position: absolute;
   text-align: center;
@@ -149,8 +150,8 @@ div.tooltip {
   height: 60px;
   padding: 2px;
   font: 12px sans-serif;
-  background: white;
-  color: black;
+  background: #f7d9c4;
+  color: #080b0c;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
@@ -200,4 +201,28 @@ div.tooltipz {
 .button:hover {
   background-color: #ced4da;
   color: rgba(38, 50, 56);
+}
+
+/* Hunger Chart Stylings */
+div.tooltipHunger {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 40;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #f7d9c4;
+  color: #080b0c;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#hungerFact {
+  text-align: center;
+}
+
+#hungerChart {
+  display: flex;
+  justify-content: center;
 }

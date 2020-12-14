@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 export function drawHungerChart(data) {
   // set the dimensions and margins of the graph
   const margin = {top: 50, right: 50, bottom: 50, left: 50},
-    width = 1000 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom
 
   // append the svg object to the body of the page
@@ -18,7 +18,7 @@ export function drawHungerChart(data) {
   const groups = data.map(x => x.year)
 
   // List of subgroups = header of the csv files = soil condition here
-  const subgroups = ['Overall', 'White', 'Black', 'Hispanic', 'Other']
+  const subgroups = ['all', 'white', 'black', 'hispanic', 'other', 'child']
 
   // Add X axis
   const x = d3
@@ -68,7 +68,7 @@ export function drawHungerChart(data) {
   const color = d3
     .scaleOrdinal()
     .domain(subgroups)
-    .range(['#0CF574', '#EDF0DA', '#F25F5C', '#4CC9F0', '#F7D9C4'])
+    .range(['#0CF574', '#EDF0DA', '#F25F5C', '#4CC9F0', '#F7D9C4', '#CED4DA'])
 
   // Show the bars
   svg
@@ -108,7 +108,14 @@ export function drawHungerChart(data) {
   let legend = svg
     .append('g')
     .selectAll('g')
-    .data(subgroups)
+    .data([
+      'All Households',
+      'White Households',
+      'Black Households',
+      'Hispanic Households',
+      'Multi-racial and Other Race/Ethnicity Households',
+      'Households with Children'
+    ])
     .enter()
     .append('g')
     .attr('transform', function(d, i) {
@@ -119,7 +126,7 @@ export function drawHungerChart(data) {
   legend
     .append('rect')
     .attr('x', 40)
-    .attr('y', 10)
+    .attr('y', 20)
     .attr('width', 18)
     .attr('height', 18)
     .attr('fill', color)
@@ -127,9 +134,51 @@ export function drawHungerChart(data) {
   legend
     .append('text')
     .attr('x', 70)
-    .attr('y', 20)
+    .attr('y', 30)
     .attr('dy', '0.25em')
     .text(function(d) {
       return d
+    })
+
+  // Tooltip
+  const div = d3
+    .select('body')
+    .append('div')
+    .attr('class', 'tooltipHunger')
+    .style('opacity', 0)
+
+  svg
+    .on('mouseover', function(d) {
+      const toolData = d.srcElement.__data__
+
+      div
+        .transition()
+        .duration(200)
+        .style('opacity', 0.9)
+
+      toolData.key === 'child'
+        ? div
+            .html(
+              `<b>${toolData.value}% </b>` +
+                'of ' +
+                '<b>households with children</b>'
+            )
+            .style('left', d.pageX + 'px')
+            .style('top', d.pageY - 28 + 'px')
+        : div
+            .html(
+              `<b>${toolData.value}% </b>` +
+                'of ' +
+                `<b>${toolData.key} households</b>`
+            )
+            .style('left', d.pageX + 'px')
+            .style('top', d.pageY - 28 + 'px')
+    })
+
+    .on('mouseout', function(d) {
+      div
+        .transition()
+        .duration(500)
+        .style('opacity', 0)
     })
 }

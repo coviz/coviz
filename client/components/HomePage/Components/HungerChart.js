@@ -15,6 +15,10 @@ export const HungerChart = props => {
   return (
     <div>
       <h2>Covid v. Hunger</h2>
+      <h1 id="hungerFact">
+        Nearly 1 in 4 households have experienced
+        <br />food insecurity since COVID-19 began.
+      </h1>
       {isLoading ? drawHungerChart(data) : <div />}
       <div id="hungerChart" />
     </div>

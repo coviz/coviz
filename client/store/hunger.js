@@ -19,12 +19,12 @@ export const fetchHungerDataThunk = () => {
       for (let i = 0; i < data.length; i++) {
         newObj.push({
           year: data[i].year,
-          Black: data[i].blackFoodInsecurity,
-          //childrenFoodInsecurity: data[i].childrenFoodInsecurity,
-          Hispanic: data[i].hispanicFoodInsecurity,
-          Other: data[i].otherFoodInsecurity,
-          Overall: data[i].overallFoodInsecurity,
-          White: data[i].whiteFoodInsecurity
+          black: data[i].blackFoodInsecurity,
+          child: data[i].childrenFoodInsecurity,
+          hispanic: data[i].hispanicFoodInsecurity,
+          other: data[i].otherFoodInsecurity,
+          all: data[i].overallFoodInsecurity,
+          white: data[i].whiteFoodInsecurity
         })
       }
       dispatch(fetchHungerData(newObj))
