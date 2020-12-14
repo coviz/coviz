@@ -183,6 +183,10 @@ div.tooltipLolli {
 .genderFact {
   text-align: center;
 }
+.jailFact {
+  text-align: center;
+  padding-top: 50px;
+}
 
 #genderPage {
   display: flex;
@@ -416,3 +420,24 @@ div.tooltipHunger {
   margin: 1em;
   display: inline-block;
 } */
+
+/* #jailMainMap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.mapdiv {
+  padding: 20px;
+}
+.closure {
+  display: flex;
+  justify-content: center;
+}
+.jailFact {
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 70px;
+}

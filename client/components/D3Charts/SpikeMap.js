@@ -116,42 +116,45 @@ export const SpikeMap = realData => {
   )
 
   return (
-    <div>
-      <svg
-        id="mainMap"
-        ref={svgRef}
-        width={975}
-        height={610}
-        viewBox="0 0 975 610"
-      />
-      <div>
+    <div className="mapdiv">
+      <h1 className="jailFact">
+        On average, the COVID-19 mortality rate within prisons is twice as large
+        as that of the general population, after adjusting for sex, age, and
+        race/ethnicity of those incarcerated.
+      </h1>
+      <div className="closure">
+        <svg
+          id="jailMainMap"
+          ref={svgRef}
+          width={975}
+          height={610}
+          viewBox="0 0 975 610"
+        />
+      </div>
+      <div className="closure">
         <p>
           * This map is not a complete representation of all cases in U.S. jails
           and prisions, due to missing data from certain states and counties.
         </p>
-        <div className="factsCont">
-          <div className="prisonfacts">
-            <h4>
-              <u>Unemployment Insights:</u>
-            </h4>
-            <li>
-              Jails and prisons have been severely affected by the COVID-19
-              pandemic. In the USA, more than 40 of the 50 largest clustered
+
+        {/* <li>
+              In the USA, more than 40 of the 50 largest clustered
               outbreaks in the country have occurred in jails and prisons.
-              <sup>1</sup>
+
             </li>
             <li>
-              Compared with the general population, the number of COVID-19 cases
-              is 5·5 times higher among people who are incarcerated.<sup>2</sup>
+              Compared with the general population, the number of COVID-19 cases is 5·5 times higher among people who are incarcerated.
             </li>
             <li>
               Transmission risks in prisons and jails are further exacerbated by
               confined conditions, overcrowding, high occupant turnover, and a
-              scarcity of resources for infection control.<sup>3</sup>
-            </li>
-          </div>
-        </div>
+              scarcity of resources for infection control.
+            </li> */}
       </div>
+      <h1 className="jailFact">
+        Incarcerated individuals are four times more likely to become infected
+        than people in the general population.
+      </h1>
     </div>
   )
 }

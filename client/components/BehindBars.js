@@ -33,5 +33,9 @@ export const BehindBars = () => {
     },
     [isLoading]
   )
-  return <div>{isLoading ? <div /> : <SpikeMap realData={data} />}</div>
+  return (
+    <div className="jailMainDiv">
+      <div>{isLoading ? <div /> : <SpikeMap realData={data} />}</div>
+    </div>
+  )
 }
