@@ -247,7 +247,7 @@ div.tooltipLolli {
   justify-content: space-around;
   flex-direction: column;
   margin: 0px;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
 }
 
 /* Tooltip for Race/Ethnicity and Umemployment */
@@ -290,7 +290,7 @@ div.tooltipsie {
   flex: 1;
   margin: 25px;
   justify-content: center;
-  border: 2px solid rgb(255, 0, 221);
+  /* border: 2px solid rgb(255, 0, 221); */
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -301,14 +301,14 @@ div.tooltipsie {
 }
 
 #genderUnemp {
-  border: 2px solid lime;
+  /* border: 2px solid lime; */
   height: 30%;
   flex: 1;
   width: 33%;
 }
 
 #notInLabor {
-  border: 2px solid peachpuff;
+  /* border: 2px solid peachpuff; */
   height: 30%;
   flex: 1;
   width: 33%;
@@ -321,7 +321,7 @@ div.tooltipsie {
 }
 
 .facts {
-  border: 2px solid skyblue;
+  /* border: 2px solid skyblue; */
   flex-wrap: wrap;
   padding: 30px;
   flex: 1;
