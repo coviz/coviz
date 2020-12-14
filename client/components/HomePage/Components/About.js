@@ -12,6 +12,15 @@ export const About = () => {
       <div className="sources">
         <h3>Sources</h3>
         <ul>
+          <h4>Covid-19</h4>
+          <li>
+            Covid-19 Data, The Covid Tracking Project, The Atlantic:{' '}
+            <u>
+              <a href="https://covidtracking.com/data">
+                https://covidtracking.com/data
+              </a>
+            </u>
+          </li>
           <h4>Unemployment</h4>
           <li>
             Unemployment Data, Bureau of Labor Statistics, Employment status of
@@ -93,6 +102,36 @@ export const About = () => {
             <u>
               <a href="https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku">
                 https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
+              </a>
+            </u>
+          </li>
+          <h4>Incarceration</h4>
+          <li>
+            Incarceration Data, Covid-19 Jail/Prison Confirmed Cases & Deaths,
+            UCLA Law Covid-19 Behind Bars Data Project:{' '}
+            <u>
+              <a href="https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project">
+                https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project
+              </a>
+            </u>
+          </li>
+          <h4>Hunger</h4>
+          <li>
+            Hunger Data, Measuring Household Experiences during the Coronavirus
+            Pandemic, The Brookings Institution's analysis of the US Census
+            Bureau's household pulse survey:{' '}
+            <u>
+              <a href="https://www.census.gov/data/experimental-data-products/household-pulse-survey.html">
+                https://www.census.gov/data/experimental-data-products/household-pulse-survey.html
+              </a>
+            </u>
+          </li>
+          <li>
+            Hunger Data, Food Security in the U.S., United States Department of
+            Agriculture Economic Research Service:{' '}
+            <u>
+              <a href="https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/">
+                https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/
               </a>
             </u>
           </li>
