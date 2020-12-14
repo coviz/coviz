@@ -27,7 +27,7 @@ export const GenderChart = props => {
 
   return (
     <div>
-      <h2>Covid v. Gender</h2>
+      <h2 id="genderTitle">Covid v. Gender</h2>
       <h1 className="genderFact">
         {' '}
         While men are more likely to contract the coronavirus...

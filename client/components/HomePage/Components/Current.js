@@ -11,8 +11,11 @@ export const Current = data => {
   let newCases = data.data[0].positiveIncrease.toLocaleString()
   let newDeaths = data.data[0].deathIncrease.toLocaleString()
   return (
-    <div>
-      <p>U.S. Data on {date}</p>
+    <div id="totalsBox">
+      <u>
+        <h3>Current U.S. Totals</h3>
+      </u>
+      <p>Data as of : {date}</p>
       <p>Total cases : {totalCases} </p>
       <p>Total deaths : {totalDeaths} </p>
       <p>New cases : {newCases} </p>

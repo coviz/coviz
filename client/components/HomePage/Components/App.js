@@ -69,6 +69,19 @@ export const App = () => {
   return (
     <div id="main">
       <div id="map">
+        <div className="aboveTimeline">
+          <div id="aboveTitle">
+            <h4>Click Timeline to Jump to Specific Date</h4>
+          </div>
+          <div id="mapTimer">
+            <div id="pip">
+              <h3>Showing Data As Of:</h3>
+            </div>
+            <div id="pop">
+              <h2 id="time">{timerDate}</h2>
+            </div>
+          </div>
+        </div>
         <Trend {...timer} />
         <div id="test">
           <div>
@@ -98,10 +111,6 @@ export const App = () => {
                 Stop
               </button>
             )}
-          </div>
-          <div id="mapTimer">
-            <h3>Showing Data For:</h3>
-            <h1 id="time">{timerDate}</h1>
           </div>
         </div>
         <div>

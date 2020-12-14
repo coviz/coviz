@@ -55,30 +55,10 @@ export const About = () => {
               </a>
             </u>
           </li>
-          <h4>Ethnicity</h4>
+          <h4>Ethnicity & Race</h4>
           <li>
-            Ethnicity Data, Centers for Disease Control and Prevention (CDC) ,
-            Provisional Death Counts for Coronavirus Disease (COVID-19):
-            Distribution of Deaths by Race and Hispanic Origin:{' '}
-            <u>
-              <a href="https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh">
-                https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh
-              </a>
-            </u>
-          </li>
-          <li>
-            Ethnicity Data, United States Census Bureau, State Population by
-            Characteristics: 2010-2019: Age, Sex, Race, and Hispanic Origin - 6
-            race groups:{' '}
-            <u>
-              <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html">
-                https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
-              </a>
-            </u>
-          </li>
-          <li>
-            Pacific Islanders in US hospitalised with Covid-19 at up to 10 times
-            the rate of other groups, The Guardian:{' '}
+            1.Pacific Islanders in US hospitalised with Covid-19 at up to 10
+            times the rate of other groups, The Guardian:{' '}
             <u>
               <a href="https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us">
                 https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us
@@ -103,6 +83,29 @@ export const About = () => {
               </a>
             </u>
           </li>
+          <div>
+            <h5> Ethnicity & Race Chart: </h5>
+            <li>
+              Ethnicity Data, Centers for Disease Control and Prevention (CDC) ,
+              Provisional Death Counts for Coronavirus Disease (COVID-19):
+              Distribution of Deaths by Race and Hispanic Origin:{' '}
+              <u>
+                <a href="https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh">
+                  https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh
+                </a>
+              </u>
+            </li>
+            <li>
+              Ethnicity Data, United States Census Bureau, State Population by
+              Characteristics: 2010-2019: Age, Sex, Race, and Hispanic Origin -
+              6 race groups:{' '}
+              <u>
+                <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html">
+                  https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
+                </a>
+              </u>
+            </li>
+          </div>
           <h4>Age & Gender</h4>
           <li>
             Age & Gender Data, Centers for Disease Control and Prevention (CDC)
@@ -113,9 +116,9 @@ export const About = () => {
               </a>
             </u>
           </li>
-          <h4>Incarceration</h4>
+          <h4>Jails & Prisons</h4>
           <li>
-            Incarceration Data, Covid-19 Jail/Prison Confirmed Cases & Deaths,
+            Jails & Prisons Data, Covid-19 Jail/Prison Confirmed Cases & Deaths,
             UCLA Law Covid-19 Behind Bars Data Project:{' '}
             <u>
               <a href="https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project">
