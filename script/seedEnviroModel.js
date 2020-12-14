@@ -3,11 +3,14 @@ const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
-async function createUnemploymentTable() {
-  await db.sync()
+async function createTable() {
+  await db.sync({force: true})
   await db.close()
-
-  let stream = fs.createReadStream('script/total_unemployment_rates.csv')
+  console.log('this is inside createTable')
+  // let stream = fs.createReadStream('script/CO2emissions.csv')
+  // let stream = fs.createReadStream('script/co2Emissions(1type).csv')
+  // let stream = fs.createReadStream('script/co2Emissions-dateAndVal.csv')
+  let stream = fs.createReadStream('script/totalCO2Emissions.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -22,16 +25,18 @@ async function createUnemploymentTable() {
       const pool = new Pool({
         host: 'localhost',
         user: 'postgres',
-        // ^^comment this back in when not on Anna's comp^^
+        // ^^comment this 1 line in when not on Anna's comp^^
         // user: 'ania',
         // password: 'newPassword',
         // ^^comment these 2 lines out when not on Anna's comp^^
         database: 'coviz',
         port: 5432
       })
-
+      console.log('this is right before query')
       const query =
-        'INSERT INTO "unemployment" (year, month, "unemployed", men, women, "notInLaborMen","notInLaborWomen") VALUES ($1, $2, $3, $4, $5, $6, $7)'
+        'INSERT INTO environments (code, date, value, description) VALUES ($1, $2, $3, $4)'
+      // const query =
+      //   'INSERT INTO environments (date, value) VALUES ($1, $2)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -55,6 +60,4 @@ async function createUnemploymentTable() {
   stream.pipe(csvStream)
 }
 
-createUnemploymentTable()
-
-// module.exports = createStateTable()
+createTable()

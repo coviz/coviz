@@ -3,10 +3,12 @@ const db = require('../db')
 
 const Ethnicity = db.define('ethnicity', {
   state: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false
   },
   ethnicity: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false
   },
   deaths: {
     type: Sequelize.INTEGER,

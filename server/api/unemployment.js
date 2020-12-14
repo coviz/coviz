@@ -18,8 +18,8 @@ router.get('/gender', async (req, res, next) => {
       attributes: [
         'year',
         [Sequelize.fn('max', Sequelize.col('unemployed')), 'total'],
-        [Sequelize.fn('max', Sequelize.col('men')), 'avgMen'],
-        [Sequelize.fn('max', Sequelize.col('women')), 'avgWomen']
+        [Sequelize.fn('max', Sequelize.col('men')), 'Men'],
+        [Sequelize.fn('max', Sequelize.col('women')), 'Women']
       ],
       group: ['year']
     })
