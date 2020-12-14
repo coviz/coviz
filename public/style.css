@@ -54,20 +54,41 @@ form div {
   display: inline-block;
 }
 
-.chartNinfo {
+.ageChartNinfo {
   display: flex;
   justify-content: space-around;
 }
 
-.chartNinfo div {
+.ageChartNinfo div {
   z-index: 10;
-  color: white;
+  color: #F7D9C4;
   font-size: 1.6rem;
 }
 
 .ageFacts li {
   padding: 10px;
   line-height: 1.6;
+}
+
+.co2ChartNinfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.co2ChartNinfo div {
+  z-index: 10;
+  color: #F7D9C4;
+  font-size: 1.44rem;
+}
+
+.co2Facts li{
+  padding: 10px;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  color: whitesmoke;
 }
 
 .flex {

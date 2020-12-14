@@ -7,6 +7,7 @@ import usDataByDate from './usDataByDate'
 import ethnicities from './ethnicity'
 import ages from './age'
 import genders from './gender'
+import environments from './environment'
 import unemployment from './unemployment'
 
 const reducer = combineReducers({
@@ -15,7 +16,8 @@ const reducer = combineReducers({
   ethnicities,
   genders,
   ages,
-  unemployment
+  unemployment, 
+  environments
 })
 
 const middleware = composeWithDevTools(

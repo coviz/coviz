@@ -23,6 +23,9 @@ export const Navbar = () => (
           <Link to="/age">Covid v. Age</Link>
         </h5>
         <h5>
+          <Link to="/environment">Environment</Link>
+        </h5>
+        <h5>
           <Link to="/unemployment">Covid v. Unemployment</Link>
         </h5>
         <h5>
