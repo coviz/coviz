@@ -20,6 +20,9 @@ export const BehindBars = () => {
         allCases = allCases.map(element => {
           return {
             id: element.id,
+            state: element.state,
+            name: element.nameOfFacility,
+            date: element.date,
             long: Number(element.longitude),
             lat: Number(element.latitude),
             confirmedResidents: Number(element.confirmedResidents)
