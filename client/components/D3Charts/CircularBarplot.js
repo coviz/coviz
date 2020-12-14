@@ -17,7 +17,7 @@ export function drawGenderChart(data) {
     outerRadius = Math.min(width, height) * 0.45,
     g = svg
       .append('g')
-      .attr('transform', 'translate(' + width / 2 + ',' + height * 0.5 + ')')
+      .attr('transform', 'translate(' + width / 1.7 + ',' + height * 0.5 + ')')
 
   let x = d3
     .scaleBand()
@@ -96,7 +96,7 @@ export function drawGenderChart(data) {
   label
     .append('line')
     .attr('x2', -5)
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
   label
     .append('text')
@@ -109,7 +109,7 @@ export function drawGenderChart(data) {
     .text(function(d) {
       return d.state
     })
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
   let yAxis = g.append('g').attr('text-anchor', 'end')
 
@@ -122,7 +122,7 @@ export function drawGenderChart(data) {
   yTick
     .append('circle')
     .attr('fill', 'none')
-    .attr('stroke', '#fff')
+    .attr('stroke', '#F7D9C4')
     .attr('stroke-opacity', 0.5)
     .attr('r', y)
 
@@ -133,8 +133,8 @@ export function drawGenderChart(data) {
       return -y(d)
     })
     .attr('dy', '0.35em')
-    .attr('fill', '#fff')
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
+    .attr('stroke', '#F7D9C4f')
     .attr('stroke-linejoin', 'round')
     .attr('stroke-width', 3)
     .text(y.tickFormat(10, 's'))
@@ -147,6 +147,7 @@ export function drawGenderChart(data) {
     })
     .attr('dy', '0.35em')
     .text(y.tickFormat(10, 's'))
+    .attr('fill', '#F7D9C4')
 
   yAxis
     .append('text')
@@ -156,18 +157,18 @@ export function drawGenderChart(data) {
     })
     .attr('dy', '-1em')
     .text('Population')
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
   let legend = g
     .append('g')
     .selectAll('g')
-    .data(['males', 'females'].reverse())
+    .data(['Males', 'Females'].reverse())
     .enter()
     .append('g')
     .attr('transform', function(d, i) {
       return 'translate(-40,' + (i - (3 - 1) / 2) * 20 + ')'
     })
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
   legend
     .append('rect')

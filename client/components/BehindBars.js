@@ -35,6 +35,7 @@ export const BehindBars = () => {
   )
   return (
     <div className="jailMainDiv">
+      <h2 id="jailTitle">Covid v. Jails & Prisons</h2>
       <div>{isLoading ? <div /> : <SpikeMap realData={data} />}</div>
     </div>
   )

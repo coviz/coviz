@@ -39,8 +39,10 @@ export function drawGenderUnempChart(data) {
     svg
       .append('g')
       .attr('transform', 'translate(70,' + height + ')')
+      .attr('fill', '#F7D9C4')
+      .attr('color', '#F7D9C4')
       .call(d3.axisBottom(x).tickSizeOuter(0))
-      .attr('color', '#fff')
+    //.attr('color', '#fff')
 
     // Add Y axis
     let y = d3
@@ -55,8 +57,10 @@ export function drawGenderUnempChart(data) {
     svg
       .append('g')
       .attr('transform', 'translate(' + 70 + ')')
+      .attr('fill', '#F7D9C4')
+      .attr('color', '#F7D9C4')
       .call(d3.axisLeft(y))
-      .attr('color', '#fff')
+    //.attr('color', '#fff')
 
     // color palette = one color per subgroup
     let color = d3
@@ -168,6 +172,6 @@ export function drawGenderUnempChart(data) {
       .text(function(d) {
         return d
       })
-      .attr('stroke', 'white')
+      .attr('fill', '#F7D9C4')
   }
 }

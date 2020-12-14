@@ -14,23 +14,23 @@ export const Navbar = () => (
           <Link to="/">US Map</Link>
         </h5>
         <h5>
-          <Link to="/ethnicity">Covid v. Ethnicity</Link>
+          <Link to="/ethnicity">Race & Ethnicity</Link>
         </h5>
         <h5>
-          <Link to="/gender">Covid v. Gender</Link>
+          <Link to="/gender">Gender</Link>
         </h5>
         <h5>
-          <Link to="/age">Covid v. Age</Link>
+          <Link to="/age">Age</Link>
         </h5>
         <h5>
           <Link to="/environment">Environment</Link>
         </h5>
         <h5>
-          <Link to="/unemployment">Covid v. Unemployment</Link>
+          <Link to="/unemployment">Unemployment</Link>
         </h5>
         <h5>
-          <Link to="/behindBars">Covid v. Jails/Prisons</Link>
-          <Link to="/hunger">Covid v. Hunger</Link>
+          <Link to="/behindBars">Jails & Prisons</Link>
+          <Link to="/hunger">Hunger</Link>
         </h5>
         <h5>
           <Link to="/about">About</Link>
