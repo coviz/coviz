@@ -16,7 +16,7 @@ export const AgeChart = props => {
     initAgeChart(1000, 1000)
   }, [])
 
-  console.log('data: ', data)
+  // console.log('data: ', data)
   return (
     <div>
       <h1 style={{color: 'white'}}>Covid v. Age Groups</h1>
