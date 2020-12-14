@@ -15,7 +15,7 @@ export function initStacked() {
 }
 
 export function drawGenderUnempChart(data) {
-  console.log('this is on the stackedbarplot', data)
+  // console.log('this is on the stackedbarplot', data)
   if (data.length > 0) {
     // set the dimensions and margins of the graph
 

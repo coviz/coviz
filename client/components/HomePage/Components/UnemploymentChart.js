@@ -28,8 +28,8 @@ export const UnemploymentChart = props => {
     return elem.year === '2020'
   })
   const sortedGenderData = genderData.sort((a, b) => a.year - b.year)
-  console.log('this is new data', newData)
-  console.log('this is data', data)
+  // console.log('this is new data', newData)
+  // console.log('this is data', data)
   return (
     <div>
       <h2 id="unempTitle">Covid v. Unemployment</h2>

@@ -1,8 +1,5 @@
 import * as d3 from 'd3'
 
-// var margin = {top: 10, right: 30, bottom: 90, left: 40},
-// width = 460 - margin.left - margin.right,
-// height = 500 - margin.top - margin.bottom;
 
 export function initAgeChart(height, width) {
   var margin = {top: 10, right: 30, bottom: 90, left: 40},
@@ -22,7 +19,6 @@ export function drawAgeChart(height, width, data) {
   const svg = d3.select('#ageChart svg')
   var margin = {top: 10, right: 30, bottom: 90, left: 120}
 
-  // X axis
   var x = d3
     .scaleBand()
     .range([0, width + 250])
@@ -35,37 +31,23 @@ export function drawAgeChart(height, width, data) {
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
-    // .attr("transform", `translate(0,${height - margin.top})`)
     .attr('color', 'white')
-    // .attr("transform", `translate(${margin.bottom},0)`)
     .call(d3.axisBottom(x))
     .selectAll('text')
-    // .attr("color", "white")
     .attr('transform', 'translate(-10,0)rotate(-45)')
     .style('text-anchor', 'end')
-    // .style("text", "white");
     .style('font-size', '18px')
 
-  // .attr("class", "xAxis")
-
-  // Add Y axis
   var y = d3
     .scaleLinear()
     .domain([0, 81000])
     .range([height, 0])
-  //.padding(1);
   svg
     .append('g')
-    // .attr("class", "y axis")
-    // .attr("transform", "translate(0," + width + ")")
-    // attr("transform", "translate(" + width + ", 0)")
     .attr('transform', `translate(${margin.left},0)`)
     .style('font-size', '18px')
     .attr('color', 'white')
     .call(d3.axisLeft(y))
-  // .selectAll("text")
-
-  // Lines
   svg
     .selectAll('myline')
     .data(data)
@@ -82,9 +64,6 @@ export function drawAgeChart(height, width, data) {
     })
     .attr('y2', y(0))
     .attr('stroke', '#e3e3e3')
-  // .attr("stroke", "2px")
-
-  // Circles
   svg
     .selectAll('mycircle')
     .data(data)
@@ -97,15 +76,12 @@ export function drawAgeChart(height, width, data) {
       return y(d.deathTotals)
     })
     .attr('r', '10')
-    .style('fill', '#80ceed')
-    .attr('stroke', '#5a90a6')
+    .style('fill', '#4CC9F0')
+    .attr('stroke', '#3da0bf')
 
-  //  x axis labels
   svg
     .append('text')
     .attr('class', 'x label')
-    // .style("font-size", "18px")
-    // .attr("color", "white")
     .attr('text-anchor', 'end')
     .attr('x', width - 100)
     .attr('y', height + 150)
@@ -114,14 +90,11 @@ export function drawAgeChart(height, width, data) {
     .style('font-size', '25px')
     .style('font-weight', 'bold')
 
-  // y axis labels
   svg
     .append('text')
     .attr('class', 'y label')
     .attr('text-anchor', 'end')
-    // .attr("x", width )
     .attr('y', 5)
-    // .attr("dx", "2em")
     .attr('dy', '0.80em')
     .attr('x', -210)
     .attr('transform', 'rotate(-90)')
@@ -130,7 +103,6 @@ export function drawAgeChart(height, width, data) {
     .attr('fill', 'white')
     .style('font-weight', 'bold')
 
-  // // Data Values Above
 
   var div = d3
     .select('body')
@@ -150,9 +122,9 @@ export function drawAgeChart(height, width, data) {
     .attr('cy', function(d) {
       return y(d.deathTotals)
     })
-    .attr('stroke', '#5a90a6')
+    .attr('stroke', '#5daec7')
     .attr('stroke-width', 2.5)
-    .attr('fill', '#80ceed')
+    .attr('fill', '#80d7f2')
     .on('mouseover', function(d, i) {
       d3
         .select(this)
@@ -163,12 +135,12 @@ export function drawAgeChart(height, width, data) {
         .transition()
         .duration(100)
         .style('opacity', 1)
-      // switch out .event's to new version stuff to show data value
       div
         .html(d.srcElement.__data__.deathTotals)
         .style('left', d.pageX + 10 + 'px')
         .style('top', d.pageY - 15 + 'px')
-      console.log(d)
+        .style('font-size', '25px')
+      // console.log(d)
     })
     .on('mouseout', function(d, i) {
       d3
@@ -182,13 +154,4 @@ export function drawAgeChart(height, width, data) {
         .style('opacity', 0)
     })
 
-  // svg.selectAll("myValues")
-  //     console.log('in myvals')
-  //     .data(data)
-  //     .enter()
-  //     .append("text")
-  //     .attr("d", function(d) { return y((d.deathTotals)); })
-  //     .attr("transform", `translate(0, 10)`) //-10?
-  //     .attr("fill", "white")
-  //     .style("text-anchor", "middle")
 }

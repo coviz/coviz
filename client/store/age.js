@@ -11,10 +11,10 @@ export const fetchAges = () => {
     return async dispatch => {
         try {
             const {data} = await axios.get('/api/age')
-            console.log('fetched age data: ', data)
+            // console.log('fetched age data: ', data)
             dispatch(setAges(data))
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
 }
