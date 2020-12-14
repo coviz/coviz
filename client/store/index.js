@@ -7,7 +7,10 @@ import usDataByDate from './usDataByDate'
 import ethnicities from './ethnicity'
 import ages from './age'
 import genders from './gender'
+import environments from './environment'
 import unemployment from './unemployment'
+import behindBarsReducer from './behindBarsReducer'
+import hunger from './hunger'
 
 const reducer = combineReducers({
   states,
@@ -15,7 +18,10 @@ const reducer = combineReducers({
   ethnicities,
   genders,
   ages,
-  unemployment
+  unemployment,
+  behindBarsReducer,
+  hunger,
+  environments
 })
 
 const middleware = composeWithDevTools(

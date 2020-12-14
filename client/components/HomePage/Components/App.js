@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
-import {fetchAllDateDataThunk} from '../../../store/usDataByDate'
+import {
+  fetchAllDateDataThunk,
+  fetchAllCurentThunk
+} from '../../../store/usDataByDate'
 import useTimer from '../../HomePage/Assets/useTimer'
 import {group} from 'd3'
 import Trend from './Trend'
-
+import {Current} from './Current'
 export const App = () => {
   const capitals = useSelector(state => state.usDataByDate.usDailyData)
+  const currentData = useSelector(state => state.usDataByDate.currentData)
   const isLoading = useSelector(state => state.usDataByDate.isLoading)
   const dispatch = useDispatch()
 
@@ -22,9 +26,11 @@ export const App = () => {
   const timerDate = timer.time.toLocaleDateString()
 
   const [data, setData] = useState([])
+  const [current, setCurrent] = useState([])
 
   useEffect(() => {
     dispatch(fetchAllDateDataThunk())
+    dispatch(fetchAllCurentThunk())
   }, [])
 
   useEffect(
@@ -52,29 +58,48 @@ export const App = () => {
         })
         setData(searchedDate[0].value)
       }
+
+      if (!currentData.isLoading) {
+        setCurrent(currentData.data)
+      }
     },
-    [timerDate]
+    [timerDate, currentData.isLoading]
   )
 
   return (
-    <div id="mainMap">
+    <div id="main">
       <div id="map">
         <Trend {...timer} />
-        <div>
-          {timerDate === '11/22/2020' ? (
-            <button type="button" className="play-button" onClick={timer.reset}>
-              {' '}
-              Reset{' '}
-            </button>
-          ) : !timer.isPlaying ? (
-            <button type="button" className="play-button" onClick={timer.play}>
-              Play
-            </button>
-          ) : (
-            <button type="button" className="play-button" onClick={timer.stop}>
-              Stop
-            </button>
-          )}
+        <div id="test">
+          <div>
+            {timerDate === '11/22/2020' ? (
+              <button
+                type="button"
+                className="play-button"
+                onClick={timer.reset}
+              >
+                {' '}
+                Reset{' '}
+              </button>
+            ) : !timer.isPlaying ? (
+              <button
+                type="button"
+                className="play-button"
+                onClick={timer.play}
+              >
+                Play
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="play-button"
+                onClick={timer.stop}
+              >
+                Stop
+              </button>
+            )}
+          </div>
+          <h1 id="time">{timerDate}</h1>
         </div>
         <div>
           <div>
@@ -84,11 +109,8 @@ export const App = () => {
               <div />
             )}
           </div>
+          <div>{current.length > 0 ? <Current data={current} /> : <div />}</div>
         </div>
-      </div>
-
-      <div id="time">
-        <h1>{timerDate}</h1>
       </div>
     </div>
   )

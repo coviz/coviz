@@ -7,7 +7,10 @@ import {
   EthnicityChart,
   GenderChart,
   AgeChart,
-  UnemploymentChart
+  UnemploymentChart,
+  BehindBars,
+  HungerChart,
+  EnviroChart
 } from './components'
 
 /**
@@ -24,7 +27,10 @@ export default class Routes extends Component {
         <Route exact path="/chart" component={Chart} />
         <Route exact path="/ethnicity" component={EthnicityChart} />
         <Route exact path="/age" component={AgeChart} />
+        <Route exact path="/environment" component={EnviroChart} />
         <Route exact path="/unemployment" component={UnemploymentChart} />
+        <Route exact path="/behindBars" component={BehindBars} />
+        <Route exact path="/hunger" component={HungerChart} />
       </Switch>
     )
   }
