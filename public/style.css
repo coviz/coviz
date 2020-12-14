@@ -155,6 +155,10 @@ div.tooltipLolli {
   justify-content: space-between;
 }
 
+.genderFact {
+  text-align: center;
+}
+
 /* Unemployment Chart Styling */
 #unempTitle {
   display: flex;
