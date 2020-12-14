@@ -24,17 +24,39 @@ export function drawEnviroChart(height, width, data) {
   height = height - margin.top - margin.bottom
 
 
-  const minX = d3.min(data, function(d) { return +d.value; })
+  const minX = d3.min(data, function(d) { return +d.date; })
   console.log('x min:', minX)
-  const maxX = d3.max(data, function(d) { return +d.value; })
+  const maxX = d3.max(data, function(d) { return +d.date; })
   console.log('x max:', maxX)
+  // Max value observed:
+  const minY = d3.min(data, function(d) { return +d.value; })
+  console.log('y min:', minY)
+  const maxY = d3.max(data, function(d) { return +d.value; })
+  console.log('y max:', maxY)
+
+  let xScale = d3.scaleLinear()
+  .domain([minX, maxX])
+  .range([margin.left, width + 250]);
+
+  // var y = d3.scaleLinear()
+  // .domain([0, maxY+40])
+  // .range([ height, 0 ]);
 
   var x = d3
     .scaleBand()
-    .range([margin.left, width + 250])
+    .range([margin.left, width + 270])
+    // .domain(
+    //   data.map(d => {
+    //     return d.date
+    //   })
+    // )
     .domain(
-      data.map(function(d) {
-        return d.date
+      data
+      // .filter(function(d, index) {
+      //   return index % 12 === 0
+      // })
+      .map((d, index) => {
+        return index % 12 === 0 ? d.date : d.date
       })
     )
     // .ticks(minX, maxX, 47)
@@ -42,8 +64,8 @@ export function drawEnviroChart(height, width, data) {
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
-    .attr('color', 'white')
-    .call(d3.axisBottom(x)
+    .attr('color', '#F7D9C4')
+    .call(d3.axisBottom(xScale)
     )
     // .tickValue([197301, 200001, 202001])
     // .call(d3.ticks(minX, maxX, 47))
@@ -52,21 +74,12 @@ export function drawEnviroChart(height, width, data) {
     .style('text-anchor', 'end')
     // .ticks(minX, maxX, 47)
     // .style('font-size', '18px')
+    //var ticks = d3.ticks(10, 20, 5);
+    //svg.append('g').call(ticks)
+    .style('font-size', '14px')
 
-  // var x = d3.scaleTime()
-  //   .domain(d3.extent(data, function(d) { return d.date; }))
-  //   .range([ margin.left, width + margin.left ]);
-  // svg.append("g")
-  //   .attr("transform", "translate(0," + height + ")")
-  //   .style('font-size', '18px')
-  //   .attr('color', 'white')
-  //   .call(d3.axisBottom(x));
+  
 
-  // Max value observed:
-  const minY = d3.min(data, function(d) { return +d.value; })
-  console.log('y min:', minY)
-  const maxY = d3.max(data, function(d) { return +d.value; })
-  console.log('y max:', maxY)
   
   // Add Y axis
   var y = d3.scaleLinear()
@@ -75,7 +88,7 @@ export function drawEnviroChart(height, width, data) {
   svg.append("g")
     .attr('transform', `translate(${margin.left},0)`)
     .style('font-size', '18px')
-    .attr('color', 'white')
+    .attr('color', '#F7D9C4')
     .call(d3.axisLeft(y));
 
   // Set the gradient
@@ -106,28 +119,33 @@ export function drawEnviroChart(height, width, data) {
       .y(function(d) { return y(d.value) })
       )
 
+  //  x axis labels
+  svg
+    .append('text')
+    .attr('class', 'x label')
+    // .style("font-size", "18px")
+    // .attr("color", "white")
+    .attr('text-anchor', 'end')
+    .attr('x', width - 100)
+    .attr('y', height + 100)
+    .text('Time')
+    .attr('fill', '#F7D9C4')
+    .style('font-size', '20px')
+    .style('font-weight', 'bold')
 
-
-  // var parseTime = d3.timeParse("%b %d, %Y");
-  // var dates = [];
-  // for (let obj of data) {
-  //   dates.push(parseTime(obj.date));
-  // }
-  // console.log('dates', dates)
-  // // const newData = data.map(dataBit => {
-  // //   return {...dataBit, date: }
-  // // })
-  // var domain = d3.extent(dates);
-  // console.log('domain', domain)
-  // var xScale = d3.scaleTime()
-  //   .domain(domain)
-  //   .range([25, 555]);
-  // var xAxis = d3.axisBottom(xScale);
-  // svg.append("g")
-  //   .attr("transform", "translate(0,60)")
-  //   .style('font-size', '18px')
-  //   .attr('color', 'white')
-  //   .call(xAxis);
-
-  
+  // y axis labels
+  svg
+    .append('text')
+    .attr('class', 'y label')
+    .attr('text-anchor', 'end')
+    // .attr("x", width )
+    .attr('y', 35)
+    // .attr("dx", "2em")
+    .attr('dy', '0.80em')
+    .attr('x', -170)
+    .attr('transform', 'rotate(-90)')
+    .text('Carbon Emissions (Million Metric Tons)')
+    .style('font-size', '20px')
+    .attr('fill', '#F7D9C4')
+    .style('font-weight', 'bold')
 }

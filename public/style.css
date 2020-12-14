@@ -65,7 +65,7 @@ form div {
 
 .ageChartNinfo div {
   z-index: 10;
-  color: white;
+  color: #F7D9C4;
   font-size: 1.6rem;
 }
 
@@ -81,7 +81,7 @@ form div {
 
 .co2ChartNinfo div {
   z-index: 10;
-  color: white;
+  color: #F7D9C4;
   font-size: 1.44rem;
 }
 

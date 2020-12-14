@@ -19,10 +19,10 @@ export const EnviroChart = (props) => {
   console.log('enviro data: ', data)
   return (
     <div>
-      <h1 style={{color: 'white'}}>Covid v. EnvironmentTTTTT</h1>
+      <h1 style={{color: '#F7D9C4'}}>Covid v. Environment</h1>
       {isLoading ? drawEnviroChart(840, 800, data) : <div />}
       <div className="co2ChartNinfo">
-        <div style={{border: 'solid 2px red'}} id="enviroChart" />
+        <div id="enviroChart" />
         <div>
           <b>The Effect of COVID-19 on Carbon Emissions</b>
           <br />
