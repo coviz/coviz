@@ -3,6 +3,9 @@ body {
   background-color: #080b0c;
   color: #f7d9c4;
   letter-spacing: 1px;
+
+  display: grid;
+  /* grid-template-rows: auto 1fr auto; */
 }
 
 a {
@@ -159,6 +162,7 @@ div.tooltip {
 #mainMap {
   display: flex;
   justify-content: space-between;
+  padding: 70px;
 }
 #map {
   flex-direction: column;
@@ -200,4 +204,12 @@ div.tooltipz {
 .button:hover {
   background-color: #ced4da;
   color: rgba(38, 50, 56);
+}
+.footer {
+  height: 170px;
+  background-color: #384f56;
+  padding: 2px;
+}
+ul {
+  list-style: none;
 }

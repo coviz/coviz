@@ -26,10 +26,10 @@ export const Navbar = () => (
           <Link to="/unemployment">Covid v. Unemployment</Link>
         </h5>
         <h5>
-          <Link to="/about">About</Link>
+          <Link to="/behindBars">Covid v. Jails/Prisons</Link>
         </h5>
         <h5>
-          <Link to="/behindBars">Covid v. Jails/Prisons</Link>
+          <Link to="/about">About</Link>
         </h5>
       </div>
     </nav>
