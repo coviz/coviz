@@ -1,20 +1,26 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const AgeSex = db.define('ageSex', {
-  state: {
+const Unemployment = db.define('unemployment', {
+  year: {
     type: Sequelize.STRING
   },
-  sex: {
+  month: {
     type: Sequelize.STRING
   },
-  ageGroup: {
-    type: Sequelize.STRING
-  },
-  deathTotals: {
+  unemployed: {
     type: Sequelize.INTEGER
   },
-  pop: {
+  men: {
+    type: Sequelize.INTEGER
+  },
+  women: {
+    type: Sequelize.INTEGER
+  },
+  notInLaborMen: {
+    type: Sequelize.INTEGER
+  },
+  notInLaborWomen: {
     type: Sequelize.INTEGER
   },
   createdAt: {
@@ -27,4 +33,4 @@ const AgeSex = db.define('ageSex', {
   }
 })
 
-module.exports = AgeSex
+module.exports = Unemployment

@@ -5,8 +5,18 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import states from './states'
 import usDataByDate from './usDataByDate'
 import ethnicities from './ethnicity'
+import ages from './age'
+import genders from './gender'
+import unemployment from './unemployment'
 
-const reducer = combineReducers({states, usDataByDate, ethnicities})
+const reducer = combineReducers({
+  states,
+  usDataByDate,
+  ethnicities,
+  genders,
+  ages,
+  unemployment
+})
 
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))

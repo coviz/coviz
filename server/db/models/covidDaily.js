@@ -8,11 +8,7 @@ const CovidDaily = db.define('covidDaily', {
   statecode: {
     type: Sequelize.STRING
   },
-  positive: {
-    type: Sequelize.INTEGER,
-    allowNull: true
-  },
-  death: {
+  positiveCumulative: {
     type: Sequelize.INTEGER,
     allowNull: true
   },
@@ -20,7 +16,23 @@ const CovidDaily = db.define('covidDaily', {
     type: Sequelize.INTEGER,
     allowNull: true
   },
+  deathCumulative: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
   deathIncrease: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  hospitalizedCurrently: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  hospitalizedCumulative: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  hospitalizedIncrease: {
     type: Sequelize.INTEGER,
     allowNull: true
   },

@@ -1,4 +1,6 @@
 const {Ethnicity} = require('../db/models')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 const router = require('express').Router()
 // const Ethnicity = require('../db/models/ethnicity')
@@ -8,7 +10,7 @@ router.get('/', async (req, res, next) => {
   try {
     const nation = await Ethnicity.findAll({
       where: {
-        state: 'United States'
+        state: {[Op.notIn]: ['United States']}
       }
     })
     res.json(nation)

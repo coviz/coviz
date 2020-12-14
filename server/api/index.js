@@ -2,8 +2,10 @@ const router = require('express').Router()
 module.exports = router
 
 // router.use('/states', require('./states')
+router.use('/unemployment', require('./unemployment'))
 router.use('/ethnicity', require('./ethnicity'))
-router.use('/ageSex', require('./ageSex'))
+router.use('/age', require('./age'))
+router.use('/gender', require('./gender'))
 router.use('/covidDaily', require('./covidDaily'))
 
 router.use((req, res, next) => {
