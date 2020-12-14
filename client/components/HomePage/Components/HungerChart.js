@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchHungerDataThunk} from '../../../store/hunger'
-import {initHungerChart, drawHungerChart} from '../../D3Charts/GroupedBarChart'
+import {drawHungerChart} from '../../D3Charts/GroupedBarChart'
 
 export const HungerChart = props => {
   const dispatch = useDispatch()

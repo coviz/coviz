@@ -2,7 +2,7 @@ import * as d3 from 'd3'
 
 export function drawHungerChart(data) {
   // set the dimensions and margins of the graph
-  const margin = {top: 10, right: 30, bottom: 20, left: 50},
+  const margin = {top: 50, right: 50, bottom: 50, left: 50},
     width = 1000 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom
 
@@ -14,6 +14,8 @@ export function drawHungerChart(data) {
     .attr('height', height + margin.top + margin.bottom)
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+  // List of years
+  const groups = data.map(x => x.year)
 
   // List of subgroups = header of the csv files = soil condition here
   const subgroups = ['Overall', 'White', 'Black', 'Hispanic', 'Other']
@@ -21,22 +23,7 @@ export function drawHungerChart(data) {
   // Add X axis
   const x = d3
     .scaleBand()
-    .domain([
-      2007,
-      2008,
-      2009,
-      2010,
-      2011,
-      2012,
-      2013,
-      2014,
-      2015,
-      2016,
-      2017,
-      2018,
-      2019,
-      2020
-    ])
+    .domain(groups)
     .range([0, width])
     .padding([0.2])
   svg
@@ -44,12 +31,31 @@ export function drawHungerChart(data) {
     .attr('transform', 'translate(0,' + height + ')')
     .call(d3.axisBottom(x).tickSize(0))
 
+  // X axis labels
+  svg
+    .append('text')
+    .attr('transform', 'translate(' + width / 2 + ' ,' + (height + 35) + ')')
+    .style('text-anchor', 'middle')
+    .text('Year')
+    .attr('fill', '#F7D9C4')
+
   // Add Y axis
   const y = d3
     .scaleLinear()
     .domain([0, 40])
     .range([height, 0])
   svg.append('g').call(d3.axisLeft(y))
+
+  // Y axis label
+  svg
+    .append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', 0 - margin.left)
+    .attr('x', 0 - height / 2)
+    .attr('dy', '1em')
+    .style('text-anchor', 'middle')
+    .text('Percent of Households Experiencing Food Insecurity')
+    .attr('fill', '#F7D9C4')
 
   // Another scale for subgroup position?
   const xSubgroup = d3
@@ -62,7 +68,7 @@ export function drawHungerChart(data) {
   const color = d3
     .scaleOrdinal()
     .domain(subgroups)
-    .range(['#F25F5C', '#4CC9F0', '#EDF0DA', '#0CF574', '#F7D9C4'])
+    .range(['#0CF574', '#EDF0DA', '#F25F5C', '#4CC9F0', '#F7D9C4'])
 
   // Show the bars
   svg
@@ -96,5 +102,34 @@ export function drawHungerChart(data) {
     })
     .attr('fill', function(d) {
       return color(d.key)
+    })
+
+  // Legend
+  let legend = svg
+    .append('g')
+    .selectAll('g')
+    .data(subgroups)
+    .enter()
+    .append('g')
+    .attr('transform', function(d, i) {
+      return 'translate(20,' + (i - 1) * 20 + ')'
+    })
+    .attr('fill', '#F7D9C4')
+
+  legend
+    .append('rect')
+    .attr('x', 40)
+    .attr('y', 10)
+    .attr('width', 18)
+    .attr('height', 18)
+    .attr('fill', color)
+
+  legend
+    .append('text')
+    .attr('x', 70)
+    .attr('y', 20)
+    .attr('dy', '0.25em')
+    .text(function(d) {
+      return d
     })
 }
