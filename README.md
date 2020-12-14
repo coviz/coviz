@@ -12,6 +12,10 @@ Heroku app: https://covizdatavis.herokuapp.com/
 
 GitHub Project Link: https://github.com/coviz/coviz
 
+# Sources
+
+Add source data here.
+
 # To view the project
 
 Please visit coviz at https://covizdatavis.herokuapp.com/
