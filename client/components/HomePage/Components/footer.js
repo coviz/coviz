@@ -10,7 +10,7 @@ export const Footer = () => (
     >
       <GoMarkGithub color="##e36397" size={32} /> Link to GitHub
     </a>
-    <ul>
+    <ul className="footerul">
       <li>CREATORS</li>
       <li>Claire Brown</li>
       <li>Jin Young Choi</li>
