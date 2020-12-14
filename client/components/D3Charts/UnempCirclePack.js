@@ -22,8 +22,8 @@ export function drawUnempChart(height, width, data) {
   // Size scale
   let size = d3
     .scaleLinear()
-    .domain([0, 100])
-    .range([7, 55]) // circle will be between 7 and 55 px wi
+    .domain([0, 90])
+    .range([7, 40]) // circle will be between 7 and 55 px wi
 
   // create a tooltip
   let Tooltip = d3
@@ -52,8 +52,8 @@ export function drawUnempChart(height, width, data) {
         `In ${dataBub.month.toUpperCase()} ${dataBub.year}`
     )
       // manipulate d.value to be % per pop
-      .style('left', d3.pointer(this)[0] + 20 + 'px')
-      .style('top', d3.pointer(this)[1] + 'px')
+      .style('left', d.pageX + 'px')
+      .style('top', d.pageY + 'px')
   }
   let mouseleave = function(d) {
     Tooltip.style('opacity', 0)
@@ -69,8 +69,8 @@ export function drawUnempChart(height, width, data) {
     .attr('r', function(d) {
       return size(d.unemployed / 600000)
     })
-    .attr('cx', width / 2)
-    .attr('cy', height / 2)
+    .attr('cx', width / 2.2)
+    .attr('cy', height / 2.2)
     .style('fill', function(d) {
       return color(d.year)
     })
@@ -80,13 +80,13 @@ export function drawUnempChart(height, width, data) {
     .on('mouseover', mouseover) // What to do when hovered
     .on('mousemove', mousemove)
     .on('mouseleave', mouseleave)
-    .call(
-      d3
-        .drag() // call specific function when circle is dragged
-        .on('start', dragstarted)
-        .on('drag', dragged)
-        .on('end', dragended)
-    )
+  // .call(
+  //   d3
+  //     .drag() // call specific function when circle is dragged
+  //     .on('start', dragstarted)
+  //     .on('drag', dragged)
+  //     .on('end', dragended)
+  // )
 
   let simulation = d3
     .forceSimulation()
@@ -94,8 +94,8 @@ export function drawUnempChart(height, width, data) {
       'center',
       d3
         .forceCenter()
-        .x(width / 2)
-        .y(height / 2)
+        .x(width / 2.2)
+        .y(height / 2.2)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(
@@ -104,7 +104,7 @@ export function drawUnempChart(height, width, data) {
         .forceCollide()
         .strength(0.2)
         .radius(function(d) {
-          return size(d.unemployed / 600000) + 3
+          return size(d.unemployed / 700000) + 3
         })
         .iterations(1)
     ) // Force that avoids circle overlapping
@@ -160,23 +160,23 @@ export function drawUnempChart(height, width, data) {
     .attr('stroke', 'white')
 
   // What happens when a circle is dragged?
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.03).restart()
-    d3
-      .select(this)
-      .raise()
-      .attr('stroke', 'black')
-  }
+  // function dragstarted(event, d) {
+  //   if (!event.active) simulation.alphaTarget(0.03).restart()
+  //   d3
+  //     .select(this)
+  //     .raise()
+  //     .attr('stroke', 'black')
+  // }
 
-  function dragged(event, d) {
-    d3
-      .select(this)
-      .attr('cx', (d.x = event.x))
-      .attr('cy', (d.y = event.y))
-  }
+  // function dragged(event, d) {
+  //   d3
+  //     .select(this)
+  //     .attr('cx', (d.x = event.x))
+  //     .attr('cy', (d.y = event.y))
+  // }
 
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0.03)
-    d3.select(this)
-  }
+  // function dragended(event, d) {
+  //   if (!event.active) simulation.alphaTarget(0.03)
+  //   d3.select(this)
+  // }
 }
