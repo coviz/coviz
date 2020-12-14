@@ -157,7 +157,7 @@ export function drawUnempChart(height, width, data) {
     .text(function(d) {
       return d
     })
-    .attr('stroke', 'white')
+    .attr('fill', '#F7D9C4')
 
   // What happens when a circle is dragged?
   // function dragstarted(event, d) {

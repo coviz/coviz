@@ -160,10 +160,10 @@ export const StateMap = data => {
             setMode(e.target.value)
           }}
         >
-          <option value="maxcases"> new cases/max cases</option>
-          <option value="pop"> new cases/state population</option>
-          <option value="deaths"> deaths/state population</option>
-          <option value="maxdeaths"> deaths/max deaths</option>
+          <option value="maxcases"> Total Cases</option>
+          <option value="pop"> Total Cases as a % of Population</option>
+          <option value="maxdeaths"> Total Deaths</option>
+          <option value="deaths"> Total Deaths as a % of Population</option>
         </select>
       </div>
       <svg
