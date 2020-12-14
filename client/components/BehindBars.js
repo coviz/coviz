@@ -33,5 +33,10 @@ export const BehindBars = () => {
     },
     [isLoading]
   )
-  return <div>{isLoading ? <div /> : <SpikeMap realData={data} />}</div>
+  return (
+    <div>
+      <h2 id="jailTitle">Covid v. Jails & Prisons</h2>
+      <div>{isLoading ? <div /> : <SpikeMap realData={data} />}</div>
+    </div>
+  )
 }

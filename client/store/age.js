@@ -18,7 +18,6 @@ export const fetchAges = () => {
     }
   }
 }
-//  FETCH data for indiv states laterrr, if need
 
 const initialState = {
   usData: {},
