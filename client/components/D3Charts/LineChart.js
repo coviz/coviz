@@ -95,7 +95,7 @@ export function drawEnviroChart(height, width, data) {
     .append('g')
     .attr('transform', `translate(${margin.left},0)`)
     .style('font-size', '18px')
-    .attr('color', 'white')
+    .attr('color', '#F7D9C4')
     .call(d3.axisLeft(y))
 
   // Set the gradient
@@ -147,7 +147,7 @@ export function drawEnviroChart(height, width, data) {
     .attr('x', width - 100)
     .attr('y', height + 100)
     .text('Time')
-    .attr('fill', 'white')
+    .attr('fill', '#F7D9C4')
     .style('font-size', '20px')
     .style('font-weight', 'bold')
 
@@ -164,6 +164,6 @@ export function drawEnviroChart(height, width, data) {
     .attr('transform', 'rotate(-90)')
     .text('Carbon Emissions (Million Metric Tons)')
     .style('font-size', '20px')
-    .attr('fill', 'white')
+    .attr('fill', '#F7D9C4')
     .style('font-weight', 'bold')
 }

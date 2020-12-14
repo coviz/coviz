@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const AgeSex = require('../db/models/age-and-sex')
+const AgeSex = require('../db/models/ageSex')
 module.exports = router
 
 //routes for gender data

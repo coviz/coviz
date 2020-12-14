@@ -64,6 +64,8 @@ export function drawAgeChart(height, width, data) {
       return y(d.deathTotals)
     })
     .attr('y2', y(0))
+    .attr('stroke', '#F7D9C4')
+
   svg
     .selectAll('mycircle')
     .data(data)
