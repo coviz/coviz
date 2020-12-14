@@ -38,25 +38,14 @@ export const EthnicityChart = props => {
               "Pacific Islanders in US hospitalised with Covid-19 at up to 10
               times the rate of other groups, many islanders in America live in
               large families and tight-knit communities, and work in frontline
-              service industries, increasing their risk of exposure" -The
-              Guardian
+              service industries, increasing their risk of exposure"{' '}
+              <sup>1</sup>
             </li>
             <li>
-              "American Indian and Alaska Native people have died in connection
-              with COVID-19 at nearly twice the rate of white people in a sample
-              of 14 states, according to a new analysis published by the Centers
-              for Disease Control and Prevention" -US News
-            </li>
-            <li>
-              "...But the new studies do suggest that there is no innate
+              "...the new studies do suggest that there is no innate
               vulnerability to the virus among Black and Hispanic
               Americans...Instead, these groups are more often exposed because
-              of social and environmental factors...<br /> Among many other
-              vulnerabilities, Black and Hispanic communities and households
-              tend to be more crowded; many people work jobs requiring frequent
-              contact with others and rely on public transportation.Access to
-              health care is poorer than among white Americans, and rates of
-              underlying conditions are much higher." -The NYT
+              of social and environmental factors... -The NYT
             </li>
           </ul>
         </div>
