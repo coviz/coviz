@@ -53,22 +53,8 @@ async function createCovidDailyTable() {
 
       pool.connect((err, client, done) => {
         if (err) throw err
-        let timer = new Date(2020, 1, 22)
-        let lastDate = new Date(2020, 1, 28)
-
-        // let c = '20200222'
-        // let year = c.slice(0, 4)
-        // year = Number(year)
-        // let month = c.slice(4, 6)
-        // month = Number(month) - 1
-        // let day = c.slice(6, 8)
-        // day = Number(day)
-        // let rowDate = new Date(year, month, day)
-        // console.log('rowDate', rowDate)
-        // console.log('timer', timer)
-        // console.log('ROWDATE', rowDate.getTime())
-        // console.log('TIMER', timer.getTime())
-        // console.log(timer.getTime() === rowDate.getTime())
+        let timer = new Date(2020, 2, 22)
+        let lastDate = new Date(2020, 11, 10)
 
         while (timer <= lastDate) {
           try {
@@ -76,7 +62,7 @@ async function createCovidDailyTable() {
               let year = row[0].slice(0, 4)
               year = Number(year)
               let month = row[0].slice(4, 6)
-              month = Number(month) - 1
+              month = Number(month)
               let day = row[0].slice(6, 8)
               day = Number(day)
               let rowDate = new Date(year, month, day)
@@ -90,11 +76,11 @@ async function createCovidDailyTable() {
                   }
                 })
               }
-              timer = new Date(timer.setDate(timer.getDate() + 2))
             })
           } catch (error) {
-            console.log(error)
+            console.log('failure in csvData loop', error)
           }
+          timer.setDate(timer.getDate() + 2)
         }
 
         // pool.end(() => {
