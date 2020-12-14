@@ -14,7 +14,7 @@ export default ({startTime, endTime, step, frequency}) => {
 
       /** if the current state is playing.. */
       if (isPlaying) {
-        /** set interval to run frequncy times every second */
+        /** set interval to run frequency times every second */
         interval = setInterval(() => {
           /** increment the time by the step value */
           setTime(time => time + step)

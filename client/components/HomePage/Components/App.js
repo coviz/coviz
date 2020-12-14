@@ -67,24 +67,39 @@ export const App = () => {
   )
 
   return (
-    <div id="mainMap">
+    <div id="main">
       <div id="map">
         <Trend {...timer} />
-        <div>
-          {timerDate === '11/22/2020' ? (
-            <button type="button" className="play-button" onClick={timer.reset}>
-              {' '}
-              Reset{' '}
-            </button>
-          ) : !timer.isPlaying ? (
-            <button type="button" className="play-button" onClick={timer.play}>
-              Play
-            </button>
-          ) : (
-            <button type="button" className="play-button" onClick={timer.stop}>
-              Stop
-            </button>
-          )}
+        <div id="test">
+          <div>
+            {timerDate === '11/22/2020' ? (
+              <button
+                type="button"
+                className="play-button"
+                onClick={timer.reset}
+              >
+                {' '}
+                Reset{' '}
+              </button>
+            ) : !timer.isPlaying ? (
+              <button
+                type="button"
+                className="play-button"
+                onClick={timer.play}
+              >
+                Play
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="play-button"
+                onClick={timer.stop}
+              >
+                Stop
+              </button>
+            )}
+          </div>
+          <h1 id="time">{timerDate}</h1>
         </div>
         <div>
           <div>
@@ -96,10 +111,6 @@ export const App = () => {
           </div>
           <div>{current.length > 0 ? <Current data={current} /> : <div />}</div>
         </div>
-      </div>
-
-      <div id="time">
-        <h1>{timerDate}</h1>
       </div>
     </div>
   )
