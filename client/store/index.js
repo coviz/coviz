@@ -8,8 +8,17 @@ import ethnicities from './ethnicity'
 import ages from './age'
 import genders from './gender'
 import environments from './environment'
+import unemployment from './unemployment'
 
-const reducer = combineReducers({states, usDataByDate, ethnicities, genders, ages, environments})
+const reducer = combineReducers({
+  states,
+  usDataByDate,
+  ethnicities,
+  genders,
+  ages,
+  environments,
+  unemployment
+})
 
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))

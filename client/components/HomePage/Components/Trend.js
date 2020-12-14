@@ -54,11 +54,11 @@ export default ({time, startTime, endTime, updateTime}) => {
       ref={svgRef}
       width={width}
       height={height}
-      stroke="#fff"
+      stroke="#F7D9C4"
       onClick={handlePlotClick}
     >
       <g transform="translate(5, 5)" />
-      <g ref={xAxisRef} transform="translate(5, 5)" />
+      <g ref={xAxisRef} transform="translate(5, 5)" color="#F7D9C4" />
     </svg>
   )
 }
