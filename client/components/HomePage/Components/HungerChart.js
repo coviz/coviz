@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchHungerData} from '../../../store/hunger'
+import {fetchHungerDataThunk} from '../../../store/hunger'
 import {initHungerChart, drawHungerChart} from '../../D3Charts/GroupedBarChart'
 
 export const HungerChart = props => {
@@ -9,17 +9,13 @@ export const HungerChart = props => {
   const isLoading = useSelector(state => state.hunger.isLoading)
 
   useEffect(() => {
-    dispatch(fetchHungerData())
-  }, [])
-
-  useEffect(() => {
-    initHungerChart(1000, 1200)
+    dispatch(fetchHungerDataThunk())
   }, [])
 
   return (
     <div>
       <h2>Covid v. Hunger</h2>
-      {isLoading ? drawHungerChart() : <div />}
+      {isLoading ? drawHungerChart(data) : <div />}
       <div id="hungerChart" />
     </div>
   )

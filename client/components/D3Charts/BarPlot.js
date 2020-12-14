@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 export function drawGenderUnempChart(data, selected) {
-  console.log('this is on the barplot', data)
+  // console.log('this is on the barplot', data)
   if (data.length > 0) {
     // set the dimensions and margins of the graph
     let margin = {top: 30, right: 30, bottom: 70, left: 90},

@@ -14,7 +14,20 @@ export const fetchHungerDataThunk = () => {
   return async dispatch => {
     try {
       const {data} = await axios.get(`api/hunger`)
-      dispatch(fetchHungerData(data))
+      //change data format
+      let newObj = []
+      for (let i = 0; i < data.length; i++) {
+        newObj.push({
+          year: data[i].year,
+          Black: data[i].blackFoodInsecurity,
+          //childrenFoodInsecurity: data[i].childrenFoodInsecurity,
+          Hispanic: data[i].hispanicFoodInsecurity,
+          Other: data[i].otherFoodInsecurity,
+          Overall: data[i].overallFoodInsecurity,
+          White: data[i].whiteFoodInsecurity
+        })
+      }
+      dispatch(fetchHungerData(newObj))
     } catch (err) {
       console.error(err)
     }
