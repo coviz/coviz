@@ -3,6 +3,7 @@ const Ethnicity = require('./ethnicity')
 const Environment = require('./environment')
 const AgeSex = require('./age-and-sex')
 const CovidDaily = require('./covidDaily')
+const Unemployment = require('./unemployment')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -25,5 +26,6 @@ module.exports = {
   Ethnicity,
   Environment,
   AgeSex,
-  CovidDaily
+  CovidDaily,
+  Unemployment
 }

@@ -58,7 +58,7 @@ export default ({time, startTime, endTime, updateTime}) => {
       onClick={handlePlotClick}
     >
       <g transform="translate(5, 5)" />
-      <g ref={xAxisRef} transform="translate(5, 5)" />
+      <g ref={xAxisRef} transform="translate(5, 5)" color="#fff" />
     </svg>
   )
 }
