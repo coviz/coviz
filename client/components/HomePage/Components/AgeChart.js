@@ -22,10 +22,10 @@ export const AgeChart = props => {
       {isLoading ? drawAgeChart(650, 600, data) : <div />}
       <div className="ageChartNinfo">
         <div style={{margin: 50}} id="ageChart" />
-        <div>
-          <b>The Effect of COVID-19 on Different Age Groups</b>
+        <div className="ageFacts">
+          <b id='ageTitle'>The Effect of COVID-19 on Different Age Groups</b>
           <br />
-          <ul className="ageFacts">
+          <ul >
             <li>
               As clearly as it is displayed in the visual, the risk of dying
               from Coronavirus increases greatly with age.

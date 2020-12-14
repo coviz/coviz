@@ -132,13 +132,32 @@ div.tooltipjails {
 
 .ageChartNinfo div {
   z-index: 10;
-  color: #f7d9c4;
-  font-size: 1.6rem;
+  color: white;
+  font-size: 17px;
+}
+
+#ageTitle {
+  text-decoration: underline;
+}
+
+.ageFacts {
+  /* padding: 10px; */
+  display: table;
+  line-height: 1.6;
+  /* margin-top: 60px; */
+  margin-top: 2.5rem;
+  margin-right: 40px;
+  /* margin-bottom: 70px; */
+  width: 40vw;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
 }
 
 .ageFacts li {
-  padding: 10px;
-  line-height: 1.6;
+  margin: 20px;
 }
 
 .co2ChartNinfo {
