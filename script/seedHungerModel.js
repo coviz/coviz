@@ -4,7 +4,7 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createHungerTable() {
-  await db.sync({force: true})
+  await db.sync()
   await db.close()
 
   let stream = fs.createReadStream('script/COVIDHungerData_USDA_Brookings.csv')

@@ -1,6 +1,7 @@
 /* Overall Styling */
 body {
   background-color: #080b0c;
+  display: grid;
   color: white;
 }
 
@@ -243,6 +244,21 @@ div.tooltipz {
   /* opacity: 0.4; */
   justify-content: flex-end;
 }
+.prisonfacts {
+  /* border: 2px solid skyblue; */
+  flex-wrap: wrap;
+  padding: 30px;
+  flex: 1;
+  border-radius: 5px 5px 5px;
+  margin: 5px 5px 5px;
+  letter-spacing: 1px;
+  width: 90vw;
+  height: 20vh;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  /* opacity: 0.4; */
+  justify-content: flex-end;
+}
 
 #totalUnemp {
   /* border: 2px solid red; */
@@ -306,6 +322,14 @@ div.tooltipHunger {
 #hungerChart {
   display: flex;
   justify-content: center;
+}
+.footer {
+  height: 170px;
+  background-color: #384f56;
+  padding: 2px;
+}
+.footerul {
+  list-style: none;
 }
 
 /* Styles the Main Map Dropdown */

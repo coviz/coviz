@@ -9,6 +9,7 @@ import ages from './age'
 import genders from './gender'
 import environments from './environment'
 import unemployment from './unemployment'
+import behindBarsReducer from './behindBarsReducer'
 import hunger from './hunger'
 
 const reducer = combineReducers({
@@ -18,6 +19,7 @@ const reducer = combineReducers({
   genders,
   ages,
   unemployment,
+  behindBarsReducer,
   hunger,
   environments
 })
