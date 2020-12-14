@@ -72,6 +72,11 @@ export const SpikeMap = realData => {
         height={610}
         viewBox="0 0 975 610"
       />
+      <div>
+        <p>
+          helo<sup>1</sup>
+        </p>
+      </div>
     </div>
   )
 }
