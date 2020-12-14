@@ -5,14 +5,35 @@ export const About = () => {
     <div id="about">
       <h3>About coviz</h3>
       <p>
-        coviz is a data visualization application that takes COVID-19 related
-        data from multiple sources to draw insights about how the virus has
-        affected certain spaces and demographics within the U.S.
+        Coviz is an interactive data visualization of the impact of COVID-19
+        over time in the United State, including how it intersects with a
+        variety of key issues. We created coviz as our capstone project during
+        the Grace Hopper Program at Fullstack Academy. It highlights how case
+        counts and deaths have changed in each state since COVID-19 began, and
+        offers users the opportunity to explore how COVID-19 has impacted
+        demographic groups (age, race and ethnicity, gender, and prison
+        populations) and social issues (unemployment, hunger, and the
+        environment).
+      </p>
+      <p>
+        We hope that you find Coviz interesting and insightful, and that it can
+        be a tool for you to use in considering which demographics and social
+        problems have been impacted the most by the COVID-19 pandemic.
+      </p>
+      <p>
+        The site uses D3 to render the main map and additional charts, as well
+        as uses React/Redux for the front end. Additionally, the site uses
+        express/sequelize/SQL for the backend and stores data in a PostgreSQL
+        database. The javascript libraries fast-csv and node-postgres (pg) are
+        used to help read our data files and store the read data in PostgreSQL.
+        To ensure everything is working as expected, code is tested using the
+        Chai BDD/TDD assertion library.
       </p>
       <div className="sources">
         <h3>Sources</h3>
         <ul>
           <h4>Unemployment</h4>
+          <div />
           <li>
             Unemployment Data, Bureau of Labor Statistics, Employment status of
             the civilian population by sex and age, Not Seasonally Adjusted:{' '}

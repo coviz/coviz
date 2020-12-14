@@ -72,6 +72,7 @@ export function drawEnviroChart(height, width, data) {
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
+    .attr('fill', '#F7D9C4')
     .attr('color', '#F7D9C4')
     .call(d3.axisBottom(xScale))
     // .tickValue([197301, 200001, 202001])

@@ -30,7 +30,8 @@ export function drawAgeChart(height, width, data) {
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
-    .attr('color', 'white')
+    .attr('fill', '#F7D9C4')
+    .attr('color', '#F7D9C4')
     .call(d3.axisBottom(x))
     .selectAll('text')
     .attr('transform', 'translate(-10,0)rotate(-45)')
@@ -45,7 +46,8 @@ export function drawAgeChart(height, width, data) {
     .append('g')
     .attr('transform', `translate(${margin.left},0)`)
     .style('font-size', '18px')
-    .attr('color', 'white')
+    .attr('fill', '#F7D9C4')
+    .attr('color', '#F7D9C4')
     .call(d3.axisLeft(y))
   svg
     .selectAll('myline')
@@ -62,7 +64,6 @@ export function drawAgeChart(height, width, data) {
       return y(d.deathTotals)
     })
     .attr('y2', y(0))
-    .attr('stroke', '#e3e3e3')
   svg
     .selectAll('mycircle')
     .data(data)
@@ -85,7 +86,7 @@ export function drawAgeChart(height, width, data) {
     .attr('x', width - 100)
     .attr('y', height + 150)
     .text('Age Groups')
-    .attr('fill', 'white')
+    .attr('fill', '#F7D9C4')
     .style('font-size', '25px')
     .style('font-weight', 'bold')
 
@@ -99,7 +100,7 @@ export function drawAgeChart(height, width, data) {
     .attr('transform', 'rotate(-90)')
     .text('Death Totals')
     .style('font-size', '25px')
-    .attr('fill', 'white')
+    .attr('fill', '#F7D9C4')
     .style('font-weight', 'bold')
 
   var div = d3

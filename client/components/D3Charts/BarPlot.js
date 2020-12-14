@@ -39,6 +39,8 @@ export function drawGenderLaborChart(data) {
     svg
       .append('g')
       .attr('transform', 'translate(70,' + height + ')')
+      .attr('fill', '#F7D9C4')
+      .attr('color', '#F7D9C4')
       .call(d3.axisBottom(x).tickSize(0))
 
     // Add Y axis
@@ -54,6 +56,8 @@ export function drawGenderLaborChart(data) {
     svg
       .append('g')
       .attr('transform', 'translate(' + 70 + ')')
+      .attr('fill', '#F7D9C4')
+      .attr('color', '#F7D9C4')
       .call(d3.axisLeft(y))
 
     // Another scale for subgroup position?
@@ -133,6 +137,6 @@ export function drawGenderLaborChart(data) {
       .text(function(d) {
         return d
       })
-      .attr('stroke', 'white')
+      .attr('fill', '#F7D9C4')
   }
 }
