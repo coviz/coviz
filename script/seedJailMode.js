@@ -6,15 +6,16 @@ const db = require('../server/db')
 async function createTable() {
   await db.sync()
   await db.close()
-  console.log('this is inside createTable')
-  // let stream = fs.createReadStream('script/CO2emissions.csv')
-  // let stream = fs.createReadStream('script/co2Emissions(1type).csv')
-  // let stream = fs.createReadStream('script/co2Emissions-dateAndVal.csv')
-  let stream = fs.createReadStream('script/totalCO2Emissions.csv')
+  let stream = fs.createReadStream('script/prison-data.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
-    .on('data', function(data) {
+    .on('data', function(row) {
+      let data = []
+      for (let i = 0; i < 11; i++) {
+        if (row[i] === '') row[i] = null
+        data.push(row[i])
+      }
       csvData.push(data)
     })
     .on('end', function() {
@@ -25,7 +26,7 @@ async function createTable() {
       const pool = new Pool({
         host: 'localhost',
         user: 'postgres',
-        // ^^comment this 1 line in when not on Anna's comp^^
+        // ^^comment this back in when not on Anna's comp^^
         // user: 'ania',
         // password: 'newPassword',
         // ^^comment these 2 lines out when not on Anna's comp^^
@@ -34,9 +35,7 @@ async function createTable() {
       })
       console.log('this is right before query')
       const query =
-        'INSERT INTO environments (code, date, value, description) VALUES ($1, $2, $3, $4)'
-      // const query =
-      //   'INSERT INTO environments (date, value) VALUES ($1, $2)'
+        'INSERT INTO "jails" ("state","nameOfFacility","date","confirmedResidents","confirmedStaff","deathsResidents","deathsStaff","city","county","latitude","longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)'
 
       pool.connect((err, client, done) => {
         if (err) throw err

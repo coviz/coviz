@@ -2,9 +2,9 @@ import * as d3 from 'd3'
 
 export function initEnviroChart(height, width) {
   // console.log('init')
-  var margin = {top: 30, right: 30, bottom: 30, left: 30},
-    width = width - margin.left - margin.right,
-    height = height - margin.top - margin.bottom
+  var margin = {top: 30, right: 30, bottom: 30, left: 30}
+  width = width - margin.left - margin.right
+  height = height - margin.top - margin.bottom
 
   // append the svg object to the body of the page
   d3
@@ -19,9 +19,9 @@ export function initEnviroChart(height, width) {
 export function drawEnviroChart(height, width, data) {
   console.log('draw')
   const svg = d3.select('#enviroChart svg')
-  var margin = {top: 30, right: 30, bottom: 30, left: 120}(
-    (width = width - margin.left - margin.right)
-  )((height = height - margin.top - margin.bottom))
+  let margin = {top: 30, right: 30, bottom: 30, left: 120}
+  width = width - margin.left - margin.right
+  height = height - margin.top - margin.bottom
 
   const minX = d3.min(data, function(d) {
     return +d.date
