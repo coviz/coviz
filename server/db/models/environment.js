@@ -25,4 +25,4 @@ const Environment = db.define('environment', {
   }
 })
 
-module.exports = Environment;
+module.exports = Environment

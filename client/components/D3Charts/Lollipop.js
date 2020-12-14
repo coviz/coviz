@@ -1,6 +1,5 @@
 import * as d3 from 'd3'
 
-
 export function initAgeChart(height, width) {
   var margin = {top: 10, right: 30, bottom: 90, left: 40},
     width = width - margin.left - margin.right,
@@ -103,7 +102,6 @@ export function drawAgeChart(height, width, data) {
     .attr('fill', 'white')
     .style('font-weight', 'bold')
 
-
   var div = d3
     .select('body')
     .append('div')
@@ -153,5 +151,4 @@ export function drawAgeChart(height, width, data) {
         .duration('200')
         .style('opacity', 0)
     })
-
 }

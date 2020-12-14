@@ -97,7 +97,8 @@ export const About = () => {
             </u>
           </li>
           <li>
-            Experiences with the COVID-19 outbreak can vary for Americans of different ages, article:{' '}
+            Experiences with the COVID-19 outbreak can vary for Americans of
+            different ages, article:{' '}
             <u>
               <a href="https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/">
                 https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/
@@ -105,7 +106,8 @@ export const About = () => {
             </u>
           </li>
           <li>
-            What Do We Know About Children and Coronavirus Transmission?, Article:{' '}
+            What Do We Know About Children and Coronavirus Transmission?,
+            Article:{' '}
             <u>
               <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
                 https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
@@ -114,7 +116,8 @@ export const About = () => {
           </li>
           <h4>Environment</h4>
           <li>
-            Carbon dioxide emissions from energy consumption, Data on Monthly CO2 in the United States:{' '}
+            Carbon dioxide emissions from energy consumption, Data on Monthly
+            CO2 in the United States:{' '}
             <u>
               <a href="https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40">
                 https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40
@@ -122,7 +125,8 @@ export const About = () => {
             </u>
           </li>
           <li>
-            Near-real-time monitoring of global CO2 emissions reveals the effects of the COVID-19 pandemic, Academic Journal:{' '}
+            Near-real-time monitoring of global CO2 emissions reveals the
+            effects of the COVID-19 pandemic, Academic Journal:{' '}
             <u>
               <a href="https://www.nature.com/articles/s41467-020-18922-7">
                 https://www.nature.com/articles/s41467-020-18922-7

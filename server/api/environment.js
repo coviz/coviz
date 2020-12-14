@@ -17,4 +17,3 @@ router.get('/', async (req, res, next) => {
 })
 
 // do we want a specific route for each type? no, right?
-

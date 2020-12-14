@@ -4,7 +4,7 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createTable() {
-  await db.sync({force:true})
+  await db.sync({force: true})
   await db.close()
   console.log('this is inside createTable')
   // let stream = fs.createReadStream('script/CO2emissions.csv')

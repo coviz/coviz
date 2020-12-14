@@ -3,11 +3,11 @@ import {useDispatch, useSelector} from 'react-redux'
 import {fetchEnviro} from '../../../store/environment'
 import {initEnviroChart, drawEnviroChart} from '../../D3Charts/LineChart'
 
-export const EnviroChart = (props) => {
+export const EnviroChart = props => {
   const dispatch = useDispatch()
 
-  const data = useSelector((state) => state.environments.co2Data)
-  const isLoading = useSelector((state) => state.environments.isLoading)
+  const data = useSelector(state => state.environments.co2Data)
+  const isLoading = useSelector(state => state.environments.isLoading)
 
   useEffect(() => {
     dispatch(fetchEnviro())
@@ -40,13 +40,14 @@ export const EnviroChart = (props) => {
             <li>
               "By July 1st, the pandemic’s effects on global emissions
               diminished as lockdown restrictions relaxed and some economic
-              activities restarted, [...] with continuing emission declines in the U.S. where coronavirus
-              cases are still increasing substantially." -Zhu Liu, nature.com
+              activities restarted, [...] with continuing emission declines in
+              the U.S. where coronavirus cases are still increasing
+              substantially." -Zhu Liu, nature.com
             </li>
             <li>
-              "[There are] substantial COVID-related decreases in CO2 emissions between
-              January 1st and June 30th of 2020 as compared to 2019. In the
-              aggregate, emissions were 8.8% lower." -Zhu Liu, nature.com
+              "[There are] substantial COVID-related decreases in CO2 emissions
+              between January 1st and June 30th of 2020 as compared to 2019. In
+              the aggregate, emissions were 8.8% lower." -Zhu Liu, nature.com
             </li>
           </ul>
         </div>

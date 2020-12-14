@@ -29,6 +29,9 @@ export const Navbar = () => (
           <Link to="/unemployment">Covid v. Unemployment</Link>
         </h5>
         <h5>
+          <Link to="/hunger">Covid v. Hunger</Link>
+        </h5>
+        <h5>
           <Link to="/about">About</Link>
         </h5>
       </div>
