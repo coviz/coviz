@@ -11,15 +11,12 @@ export const BehindBars = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    console.log('inside first useEffect')
     dispatch(fetchCasesInJails())
   }, [])
   useEffect(
     () => {
       //if it's no longer loding
-      console.log('inside second useEffect', isLoading)
       if (!isLoading) {
-        console.log('going into if block')
         allCases = allCases.map(element => {
           return {
             id: element.id,
@@ -29,7 +26,6 @@ export const BehindBars = () => {
           }
         })
         setData(allCases)
-        console.log('in app behind bars componenet', data)
       }
     },
     [isLoading]

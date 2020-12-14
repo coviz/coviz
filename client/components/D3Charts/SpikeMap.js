@@ -6,7 +6,6 @@ import usData from '../HomePage/Assets/usData.json'
 
 export const SpikeMap = realData => {
   const data = realData.realData
-  console.log('realData.realData', data)
 
   const svgRef = useRef()
   const length = d3.scaleLinear(
@@ -19,7 +18,6 @@ export const SpikeMap = realData => {
 
   useEffect(
     () => {
-      console.log('data inside useEffect', data)
       let projection = geoAlbersUsa()
         .scale(1300)
         .translate([975 / 2, 610 / 2])
@@ -74,8 +72,26 @@ export const SpikeMap = realData => {
       />
       <div>
         <p>
-          helo<sup>1</sup>
+          * This map is not a complete representation of all cases in U.S. jails
+          and prisions, due to missing data from certain states and counties. *{' '}
         </p>
+        <ul>
+          <li>
+            Jails and prisons have been severely affected by the COVID-19
+            pandemic. In the USA, more than 40 of the 50 largest clustered
+            outbreaks in the country have occurred in jails and prisons.
+            <sup>1</sup>
+          </li>
+          <li>
+            Compared with the general population, the number of COVID-19 cases
+            is 5·5 times higher among people who are incarcerated.<sup>2</sup>
+          </li>
+          <li>
+            Transmission risks in prisons and jails are further exacerbated by
+            confined conditions, overcrowding, high occupant turnover, and a
+            scarcity of resources for infection control.<sup>3</sup>
+          </li>
+        </ul>
       </div>
     </div>
   )
