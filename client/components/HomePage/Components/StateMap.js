@@ -163,6 +163,7 @@ export const StateMap = data => {
     <div>
       <div>
         <select
+          className="select-css"
           onChange={e => {
             setMode(e.target.value)
           }}
