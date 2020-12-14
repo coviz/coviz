@@ -3,35 +3,46 @@ import React from 'react'
 export const About = () => {
   return (
     <div id="about">
-      <h3>About coviz</h3>
-      <p>
-        Coviz is an interactive data visualization of the impact of COVID-19
-        over time in the United State, including how it intersects with a
-        variety of key issues. We created coviz as our capstone project during
-        the Grace Hopper Program at Fullstack Academy. It highlights how case
-        counts and deaths have changed in each state since COVID-19 began, and
-        offers users the opportunity to explore how COVID-19 has impacted
-        demographic groups (age, race and ethnicity, gender, and prison
-        populations) and social issues (unemployment, hunger, and the
-        environment).
-      </p>
-      <p>
-        We hope that you find Coviz interesting and insightful, and that it can
-        be a tool for you to use in considering which demographics and social
-        problems have been impacted the most by the COVID-19 pandemic.
-      </p>
-      <p>
-        The site uses D3 to render the main map and additional charts, as well
-        as uses React/Redux for the front end. Additionally, the site uses
-        express/sequelize/SQL for the backend and stores data in a PostgreSQL
-        database. The javascript libraries fast-csv and node-postgres (pg) are
-        used to help read our data files and store the read data in PostgreSQL.
-        To ensure everything is working as expected, code is tested using the
-        Chai BDD/TDD assertion library.
-      </p>
+      <h3 id="aboutTitle">About Coviz</h3>
+      <div className="aboutDetails">
+        <p>
+          Coviz is an interactive data visualization of the impact of COVID-19
+          over time in the United State, including how it intersects with a
+          variety of key issues. We created coviz as our capstone project during
+          the Grace Hopper Program at Fullstack Academy. It highlights how case
+          counts and deaths have changed in each state since COVID-19 began, and
+          offers users the opportunity to explore how COVID-19 has impacted
+          demographic groups (age, race and ethnicity, gender, and prison
+          populations) and social issues (unemployment, hunger, and the
+          environment).
+        </p>
+        <p>
+          We hope that you find Coviz interesting and insightful, and that it
+          can be a tool for you to use in considering which demographics and
+          social problems have been impacted the most by the COVID-19 pandemic.
+        </p>
+        <p>
+          The site uses D3 to render the main map and additional charts, as well
+          as uses React/Redux for the front end. Additionally, the site uses
+          express/sequelize/SQL for the backend and stores data in a PostgreSQL
+          database. The javascript libraries fast-csv and node-postgres (pg) are
+          used to help read our data files and store the read data in
+          PostgreSQL. To ensure everything is working as expected, code is
+          tested using the Chai BDD/TDD assertion library.
+        </p>
+      </div>
       <div className="sources">
         <h3>Sources</h3>
         <ul>
+          <h4>Covid-19</h4>
+          <li>
+            Covid-19 Data, The Covid Tracking Project, The Atlantic:{' '}
+            <u>
+              <a href="https://covidtracking.com/data">
+                https://covidtracking.com/data
+              </a>
+            </u>
+          </li>
           <h4>Unemployment</h4>
           <div />
           <li>
@@ -59,30 +70,10 @@ export const About = () => {
               </a>
             </u>
           </li>
-          <h4>Ethnicity</h4>
+          <h4>Ethnicity & Race</h4>
           <li>
-            Ethnicity Data, Centers for Disease Control and Prevention (CDC) ,
-            Provisional Death Counts for Coronavirus Disease (COVID-19):
-            Distribution of Deaths by Race and Hispanic Origin:{' '}
-            <u>
-              <a href="https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh">
-                https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh
-              </a>
-            </u>
-          </li>
-          <li>
-            Ethnicity Data, United States Census Bureau, State Population by
-            Characteristics: 2010-2019: Age, Sex, Race, and Hispanic Origin - 6
-            race groups:{' '}
-            <u>
-              <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html">
-                https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
-              </a>
-            </u>
-          </li>
-          <li>
-            Pacific Islanders in US hospitalised with Covid-19 at up to 10 times
-            the rate of other groups, The Guardian:{' '}
+            1.Pacific Islanders in US hospitalised with Covid-19 at up to 10
+            times the rate of other groups, The Guardian:{' '}
             <u>
               <a href="https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us">
                 https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us
@@ -107,6 +98,29 @@ export const About = () => {
               </a>
             </u>
           </li>
+          <div>
+            <h5> Ethnicity & Race Chart: </h5>
+            <li>
+              Ethnicity Data, Centers for Disease Control and Prevention (CDC) ,
+              Provisional Death Counts for Coronavirus Disease (COVID-19):
+              Distribution of Deaths by Race and Hispanic Origin:{' '}
+              <u>
+                <a href="https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh">
+                  https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh
+                </a>
+              </u>
+            </li>
+            <li>
+              Ethnicity Data, United States Census Bureau, State Population by
+              Characteristics: 2010-2019: Age, Sex, Race, and Hispanic Origin -
+              6 race groups:{' '}
+              <u>
+                <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html">
+                  https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
+                </a>
+              </u>
+            </li>
+          </div>
           <h4>Age & Gender</h4>
           <li>
             Age & Gender Data, Centers for Disease Control and Prevention (CDC)
@@ -114,6 +128,36 @@ export const About = () => {
             <u>
               <a href="https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku">
                 https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
+              </a>
+            </u>
+          </li>
+          <h4>Jails & Prisons</h4>
+          <li>
+            Jails & Prisons Data, Covid-19 Jail/Prison Confirmed Cases & Deaths,
+            UCLA Law Covid-19 Behind Bars Data Project:{' '}
+            <u>
+              <a href="https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project">
+                https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project
+              </a>
+            </u>
+          </li>
+          <h4>Hunger</h4>
+          <li>
+            Hunger Data, Measuring Household Experiences during the Coronavirus
+            Pandemic, The Brookings Institution's analysis of the US Census
+            Bureau's household pulse survey:{' '}
+            <u>
+              <a href="https://www.census.gov/data/experimental-data-products/household-pulse-survey.html">
+                https://www.census.gov/data/experimental-data-products/household-pulse-survey.html
+              </a>
+            </u>
+          </li>
+          <li>
+            Hunger Data, Food Security in the U.S., United States Department of
+            Agriculture Economic Research Service:{' '}
+            <u>
+              <a href="https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/">
+                https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/
               </a>
             </u>
           </li>

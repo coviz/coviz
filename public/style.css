@@ -20,7 +20,7 @@ nav a {
   margin: 1em;
   margin-top: 1px;
   color: white;
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 
 nav a:hover {
@@ -37,7 +37,6 @@ nav h5 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
   /* background-color: #a91010; */
   padding: 5px;
   padding-bottom: 0px;
@@ -95,13 +94,58 @@ div.tooltip {
 
 #main {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 #map {
   flex-direction: column;
+  margin-top: 20px;
+  /* border: 2px solid peachpuff; */
 }
 
+#mapTimer {
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid red; */
+}
+#pip {
+  display: inline-block;
+  width: 70%;
+  padding: 5px;
+  /* border: 2px solid lime; */
+}
+#pop {
+  display: inline-block;
+  width: 30%;
+  margin-right: 30px;
+  /* border: 2px solid orange; */
+}
+.aboveTimeline {
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid orange; */
+}
+
+#aboveTitle {
+  /* border: 2px solid yellow; */
+}
+
+#totalsBox {
+  margin-top: 75px;
+  margin-bottom: 30px;
+  width: 15vw;
+  padding: 10px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+  /* box-shadow: 5px 5px rgba(236, 235, 235, 0.2); */
+  font-size: 18px;
+  /* z-index: 1; */
+}
+.select-css {
+  margin: 0px;
+}
 #time {
   /* border: 2px solid peachpuff; */
   align-items: flex-end;
@@ -114,25 +158,50 @@ div.tooltip {
 }
 
 /* Age Chart Styling */
+
 .ageChartNinfo {
   display: flex;
   justify-content: space-around;
 }
 
+#ageTitle {
+  display: flex;
+  justify-content: center;
+}
+
 .ageChartNinfo div {
   z-index: 10;
-  color: #f7d9c4;
-  font-size: 1.6rem;
+  color: white;
+  font-size: 17px;
+}
+
+#ageTitle1 {
+  color: white;
+  text-align: center;
+}
+
+#ageTitle2 {
+  text-decoration: underline;
+}
+
+.ageFacts {
+  /* padding: 10px; */
+  display: table;
+  line-height: 1.6;
+  /* margin-top: 60px; */
+  margin-top: 2.5rem;
+  margin-right: 40px;
+  /* margin-bottom: 70px; */
+  width: 40vw;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
 }
 
 .ageFacts li {
-  padding: 10px;
-  line-height: 1.6;
-}
-
-.co2ChartNinfo {
-  display: flex;
-  justify-content: space-around;
+  margin: 20px;
 }
 
 div.tooltipLolli {
@@ -150,13 +219,48 @@ div.tooltipLolli {
 /* Environment Chart Styling */
 .co2ChartNinfo div {
   z-index: 10;
-  color: #f7d9c4;
-  font-size: 1.44rem;
+  color: white;
+  font-size: 17px;
+}
+
+.co2ChartNinfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+#enviroTitle1 {
+  color: white;
+  text-align: center;
+}
+
+#enviroTitle2 {
+  text-decoration: underline;
+}
+
+.co2Facts {
+  /* padding: 10px; */
+  display: table;
+  line-height: 1.6;
+  /* margin-top: 60px; */
+  margin-top: 4rem;
+  margin-left: 40px;
+  /* margin-bottom: 70px; */
+  width: 40vw;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
 }
 
 .co2Facts li {
   padding: 10px;
   line-height: 1.6;
+  /* margin: 20px; */
+}
+#envTitle {
+  display: flex;
+  justify-content: center;
 }
 
 .flex {
@@ -168,6 +272,10 @@ div.tooltipLolli {
   display: flex;
   justify-content: space-evenly;
 }
+#genderTitle {
+  display: flex;
+  justify-content: center;
+}
 
 .genderFact {
   text-align: center;
@@ -175,8 +283,9 @@ div.tooltipLolli {
 
 #genderPage {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
+  margin: 0px;
   /* border: 2px solid orange; */
 }
 
@@ -187,6 +296,26 @@ div.tooltipz {
   color: black;
   width: 300px;
   height: 50px;
+}
+
+div.tooltipsie {
+  position: absolute;
+  text-align: center;
+  color: black;
+  width: 300px;
+  height: 50px;
+  pointer-events: none;
+
+  /* position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 40;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #f7d9c4;
+  color: #080b0c;
+  border: 0px;
+  border-radius: 8px; */
 }
 
 /* Unemployment Chart Styling */
@@ -239,9 +368,10 @@ div.tooltipz {
   margin: 5px 5px 5px;
   letter-spacing: 1px;
   width: 90vw;
-  height: 60vh;
+  height: 50vh;
   background: rgba(38, 38, 39, 0.5);
   color: white;
+  font-size: 20px;
   /* opacity: 0.4; */
   justify-content: flex-end;
 }
@@ -251,10 +381,6 @@ div.tooltipz {
   height: 30%;
   flex: 1;
   width: 33%;
-}
-
-.facts li {
-  margin: 10px;
 }
 
 /* Jail/Prison Styling */
@@ -272,6 +398,14 @@ div.tooltipjails {
   pointer-events: none;
 }
 
+.facts li {
+  margin: 17px;
+}
+
+#jailTitle {
+  display: flex;
+  justify-content: center;
+}
 .prisonfacts {
   /* border: 2px solid skyblue; */
   flex-wrap: wrap;
@@ -286,6 +420,13 @@ div.tooltipjails {
   color: white;
   /* opacity: 0.4; */
   justify-content: flex-end;
+}
+
+#totalUnemp {
+  /* border: 2px solid red; */
+  height: 30%;
+  flex: 1;
+  width: 33%;
 }
 
 /* Race/ethnicity Chart Styling */
@@ -306,15 +447,17 @@ div.tooltipjails {
   margin-top: 60px;
   margin-bottom: 30px;
   width: 30vw;
+  height: 70vh;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);
   color: white;
   border-radius: 5px 5px 5px;
+  font-size: 20px;
 }
 
 .factsEthn li {
-  margin: 10px;
+  margin: 17px;
 }
 
 /* Hunger Chart Stylings */
@@ -331,7 +474,10 @@ div.tooltipHunger {
   border-radius: 8px;
   pointer-events: none;
 }
-
+#hungerTitle {
+  display: flex;
+  justify-content: center;
+}
 #hungerFact {
   text-align: center;
 }
@@ -340,13 +486,38 @@ div.tooltipHunger {
   display: flex;
   justify-content: center;
 }
+
+/* Footer */
 .footer {
-  height: 170px;
-  background-color: #384f56;
-  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  /* background: rgba(38, 38, 39, 0.5); */
+  /* background-color: #a91010; */
+  padding: 5px;
+  padding-bottom: 0px;
+}
+
+.footer h5 {
+  display: inline-block;
+  margin: 1em;
+  margin-top: 1px;
+  letter-spacing: 1px;
+  text-decoration: underline;
 }
 .footerul {
   list-style: none;
+}
+.footer a {
+  display: inline-block;
+  margin: 1em;
+  margin-top: 1px;
+  color: white;
+  text-decoration: underline;
+}
+.footer a:hover {
+  color: #4cc9f0;
 }
 
 /* Styles the Main Map Dropdown */
@@ -397,6 +568,29 @@ div.tooltipHunger {
 } */
 
 /* About Page Styling */
+#about {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+#aboutTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.aboutDetails {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  width: 90vw;
+  height: 150px;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+}
 .sources {
   margin-top: 60px;
   margin-bottom: 30px;

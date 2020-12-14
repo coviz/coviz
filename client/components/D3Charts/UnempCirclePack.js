@@ -30,7 +30,7 @@ export function drawUnempChart(height, width, data) {
     .select('#unempChart')
     .append('div')
     .style('opacity', 0)
-    .attr('class', 'tooltipz')
+    .attr('class', 'tooltipsie')
     .style('background-color', '#ced4da')
     .style('border', 'solid')
     .style('border-width', '2px')

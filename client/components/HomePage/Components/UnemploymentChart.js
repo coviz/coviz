@@ -68,33 +68,12 @@ export const UnemploymentChart = props => {
               Statistics
             </li>
             <li>
-              The height of unemployment during the pandemic was in April and
-              May
-            </li>
-            <li>
               "The COVID-19 outbreak and the economic downturn it engendered
               swelled the ranks of unemployed Americans by more than 14 million,
               from 6.2 million in February to 20.5 million in May 2020...The
               rise in the number of unemployed workers due to COVID-19 is
               substantially greater than the increase due to the Great
               Recession" -Pew Research Center
-            </li>
-            <li>
-              Comparing unemployment data from The Great Recession to Covid-19
-              we found that the height of unemployment was in the 3 years after
-              2008, leading to the expectation that we could see the same in the
-              years following the pandemic
-            </li>
-            <li>
-              The unemployment rate has stayed relatively even along gender
-              lines in 2020
-            </li>
-            <li>
-              "labor-force participation usually falls in recessions. The lack
-              of good-paying job opportunities prompt many of the unemployed to
-              give up the job search...Many who have left the labor force had
-              worked in low-wage sectors like retail, hospitality and personal
-              care services disproportionately hit by the pandemic." -WSJ
             </li>
             <li>
               "...some economists see three reasons the pandemic’s depressing
@@ -107,15 +86,6 @@ export const UnemploymentChart = props => {
               workers with less education and skills. These workers often
               struggle to find well-paying work and many drop out of the
               workforce." -WSJ
-            </li>
-            <li>
-              Generally, women over 20 have higher rates of not being in the
-              workforce, even pre-pandemic
-            </li>
-            <li>
-              During some months of 2020 women over 20 dropped out the workforce
-              at a higher rate than men but not at a strikingly signifigant
-              percentage
             </li>
           </div>
         </div>
