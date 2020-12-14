@@ -16,12 +16,11 @@ export const AgeChart = props => {
     initAgeChart(1000, 1000)
   }, [])
 
-  console.log('data: ', data)
   return (
     <div>
       <h1 style={{color: 'white'}}>Covid v. Age Groups</h1>
       {isLoading ? drawAgeChart(650, 600, data) : <div />}
-      <div className="chartNinfo">
+      <div className="ageChartNinfo">
         <div style={{margin: 50}} id="ageChart" />
         <div>
           <b>The Effect of COVID-19 on Different Age Groups</b>
@@ -34,7 +33,7 @@ export const AgeChart = props => {
             <li>
               "COVID-19 is not just hazardous for elderly people, it is
               extremely dangerous for people in their mid-fifties, sixties and
-              seventies"
+              seventies" -Andrew Levin, nature.com
             </li>
             <li>
               The death totals for the 85 and older age group are almost double
@@ -42,13 +41,13 @@ export const AgeChart = props => {
             </li>
             <li>
               "Children, under the age of 18, to date, account for less than one
-              percent of reported COVID-19 deaths"
+              percent of reported COVID-19 deaths" -Josh Michaud, kkf.org
             </li>
             <li>
               "The risk of dying from coronavirus is also linked to underlying
               health conditions, the capacity of health-care systems, and
               whether the virus has spread among people living in elderly-care
-              facilities."
+              facilities." - Smriti Mallapaty, nature.com
             </li>
           </ul>
         </div>

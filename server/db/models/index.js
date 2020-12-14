@@ -1,7 +1,9 @@
 const State = require('./state')
 const Ethnicity = require('./ethnicity')
+const Environment = require('./environment')
 const AgeSex = require('./age-and-sex')
 const CovidDaily = require('./covidDaily')
+const Hunger = require('./hunger')
 const Unemployment = require('./unemployment')
 
 /**
@@ -23,7 +25,9 @@ const Unemployment = require('./unemployment')
 module.exports = {
   State,
   Ethnicity,
+  Environment,
   AgeSex,
   CovidDaily,
+  Hunger,
   Unemployment
 }
