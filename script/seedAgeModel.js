@@ -6,11 +6,7 @@ const db = require('../server/db')
 async function createTable() {
   await db.sync({force: true})
   await db.close()
-<<<<<<< HEAD
-  console.log('this is inside createTable')
-=======
-  // console.log('this is inside createTable')
->>>>>>> main
+
   let stream = fs.createReadStream('script/Covd_vs_Age_&_Sex.csv')
   let csvData = []
   let csvStream = fastcsv
