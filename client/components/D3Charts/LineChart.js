@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 export function initEnviroChart(height, width) {
-  console.log('init')
+  // console.log('init')
   var margin = {top: 30, right: 30, bottom: 30, left: 30},
     width = width - margin.left - margin.right,
     height = height - margin.top - margin.bottom
@@ -23,6 +23,12 @@ export function drawEnviroChart(height, width, data) {
   width = width - margin.left - margin.right,
   height = height - margin.top - margin.bottom
 
+
+  const minX = d3.min(data, function(d) { return +d.value; })
+  console.log('x min:', minX)
+  const maxX = d3.max(data, function(d) { return +d.value; })
+  console.log('x max:', maxX)
+
   var x = d3
     .scaleBand()
     .range([margin.left, width + 250])
@@ -31,15 +37,20 @@ export function drawEnviroChart(height, width, data) {
         return d.date
       })
     )
+    // .ticks(minX, maxX, 47)
     .padding(2)
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
     .attr('color', 'white')
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(x)
+    )
+    // .tickValue([197301, 200001, 202001])
+    // .call(d3.ticks(minX, maxX, 47))
     .selectAll('text')
     .attr('transform', 'translate(-10,0)rotate(-90)')
     .style('text-anchor', 'end')
+    // .ticks(minX, maxX, 47)
     // .style('font-size', '18px')
 
   // var x = d3.scaleTime()
@@ -52,12 +63,14 @@ export function drawEnviroChart(height, width, data) {
   //   .call(d3.axisBottom(x));
 
   // Max value observed:
-  const max = d3.max(data, function(d) { return +d.value; })
-  console.log(max)
-
+  const minY = d3.min(data, function(d) { return +d.value; })
+  console.log('y min:', minY)
+  const maxY = d3.max(data, function(d) { return +d.value; })
+  console.log('y max:', maxY)
+  
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, max+40])
+    .domain([0, maxY+40])
     .range([ height, 0 ]);
   svg.append("g")
     .attr('transform', `translate(${margin.left},0)`)
@@ -70,9 +83,9 @@ export function drawEnviroChart(height, width, data) {
     .attr("id", "line-gradient")
     .attr("gradientUnits", "userSpaceOnUse")
     .attr("x1", 0)
-    .attr("y1", y(0))
+    .attr("y1", y(minY))
     .attr("x2", 0)
-    .attr("y2", y(max))
+    .attr("y2", y(maxY))
     .selectAll("stop")
       .data([
         {offset: "0%", color: "blue"},
