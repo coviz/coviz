@@ -72,7 +72,7 @@ export function drawEnviroChart(height, width, data) {
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
-    .attr('color', '#F7D9C4')
+    .attr('color', 'white')
     .call(d3.axisBottom(xScale))
     // .tickValue([197301, 200001, 202001])
     // .call(d3.ticks(minX, maxX, 47))
@@ -88,13 +88,13 @@ export function drawEnviroChart(height, width, data) {
   // Add Y axis
   var y = d3
     .scaleLinear()
-    .domain([0, maxY + 40])
+    .domain([200, maxY + 40])
     .range([height, 0])
   svg
     .append('g')
     .attr('transform', `translate(${margin.left},0)`)
     .style('font-size', '18px')
-    .attr('color', '#F7D9C4')
+    .attr('color', 'white')
     .call(d3.axisLeft(y))
 
   // Set the gradient
@@ -146,7 +146,7 @@ export function drawEnviroChart(height, width, data) {
     .attr('x', width - 100)
     .attr('y', height + 100)
     .text('Time')
-    .attr('fill', '#F7D9C4')
+    .attr('fill', 'white')
     .style('font-size', '20px')
     .style('font-weight', 'bold')
 
@@ -163,6 +163,6 @@ export function drawEnviroChart(height, width, data) {
     .attr('transform', 'rotate(-90)')
     .text('Carbon Emissions (Million Metric Tons)')
     .style('font-size', '20px')
-    .attr('fill', '#F7D9C4')
+    .attr('fill', 'white')
     .style('font-weight', 'bold')
 }

@@ -18,12 +18,12 @@ export const AgeChart = props => {
 
   return (
     <div>
-      <h1 style={{color: 'white'}}>Covid v. Age Groups</h1>
+      <h1 id='ageTitle1'>Covid v. Age Groups</h1>
       {isLoading ? drawAgeChart(650, 600, data) : <div />}
       <div className="ageChartNinfo">
         <div style={{margin: 50}} id="ageChart" />
         <div className="ageFacts">
-          <b id='ageTitle'>The Effect of COVID-19 on Different Age Groups</b>
+          <b id='ageTitle2'>The Effect of COVID-19 on Different Age Groups</b>
           <br />
           <ul >
             <li>
