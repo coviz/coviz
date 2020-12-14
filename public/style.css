@@ -262,6 +262,7 @@ div.tooltipz {
   background: rgba(38, 38, 39, 0.5);
   color: white;
   border-radius: 5px 5px 5px;
+  font-size: 20px;
 }
 
 .factsEthn li {

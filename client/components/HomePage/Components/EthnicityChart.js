@@ -51,12 +51,7 @@ export const EthnicityChart = props => {
               "...But the new studies do suggest that there is no innate
               vulnerability to the virus among Black and Hispanic
               Americans...Instead, these groups are more often exposed because
-              of social and environmental factors...<br /> Among many other
-              vulnerabilities, Black and Hispanic communities and households
-              tend to be more crowded; many people work jobs requiring frequent
-              contact with others and rely on public transportation.Access to
-              health care is poorer than among white Americans, and rates of
-              underlying conditions are much higher." -The NYT
+              of social and environmental factors... -The NYT
             </li>
           </ul>
         </div>
