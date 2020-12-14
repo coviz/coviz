@@ -99,7 +99,10 @@ export const App = () => {
               </button>
             )}
           </div>
-          <h1 id="time">{timerDate}</h1>
+          <div id="mapTimer">
+            <h3>Showing Data For:</h3>
+            <h1 id="time">{timerDate}</h1>
+          </div>
         </div>
         <div>
           <div>
@@ -109,9 +112,9 @@ export const App = () => {
               <div />
             )}
           </div>
-          <div>{current.length > 0 ? <Current data={current} /> : <div />}</div>
         </div>
       </div>
+      <div>{current.length > 0 ? <Current data={current} /> : <div />}</div>
     </div>
   )
 }

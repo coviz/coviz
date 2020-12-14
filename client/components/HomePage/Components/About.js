@@ -3,12 +3,20 @@ import React from 'react'
 export const About = () => {
   return (
     <div id="about">
-      <h3>About coviz</h3>
-      <p>
-        coviz is a data visualization application that takes COVID-19 related
-        data from multiple sources to draw insights about how the virus has
-        affected certain spaces and demographics within the U.S.
-      </p>
+      <h3 id="aboutTitle">About Coviz</h3>
+      <div className="aboutDetails">
+        <p>
+          Welcome to coviz! Coviz is an interactive data visualization of the
+          impact of COVID-19 over time in the United State, including how it
+          intersects with a variety of key issues. We created coviz as our
+          capstone project during the Grace Hopper Program at Fullstack Academy.
+          It highlights how case counts and deaths have changed in each state
+          since COVID-19 began, and offers users the opportunity to explore how
+          COVID-19 has impacted demographic groups (age, race and ethnicity,
+          gender, and prison populations) and social issues (unemployment,
+          hunger, and the environment).
+        </p>
+      </div>
       <div className="sources">
         <h3>Sources</h3>
         <ul>
