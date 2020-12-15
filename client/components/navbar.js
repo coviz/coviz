@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 export const Navbar = () => (
   <div id="navbar">
     <div>
-      <img src="../../../../img/logo.png" />
+      <img src="../../img/logo.png" />
     </div>
     <nav>
       <div>

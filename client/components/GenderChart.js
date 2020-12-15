@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchGenderData} from '../../../store/gender'
-import {initGenderChart, drawGenderChart} from '../../D3Charts/CircularBarplot'
+import {fetchGenderData} from '../store/gender'
+import {initGenderChart, drawGenderChart} from './D3Charts/CircularBarplot'
 
 export const GenderChart = props => {
   const dispatch = useDispatch()

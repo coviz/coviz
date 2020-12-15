@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {StateMap} from './StateMap'
-import {
-  fetchAllDateDataThunk,
-  fetchAllCurentThunk
-} from '../../../store/usDataByDate'
-import useTimer from '../../HomePage/Assets/useTimer'
+import {fetchAllDateDataThunk, fetchAllCurentThunk} from '../store/usDataByDate'
+import useTimer from './Assets/useTimer'
 import {group} from 'd3'
 import Trend from './Trend'
 import {Current} from './Current'

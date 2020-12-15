@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEnviro} from '../../../store/environment'
-import {initEnviroChart, drawEnviroChart} from '../../D3Charts/LineChart'
+import {fetchEnviro} from '../store/environment'
+import {initEnviroChart, drawEnviroChart} from './D3Charts/LineChart'
 
 export const EnviroChart = props => {
   const dispatch = useDispatch()

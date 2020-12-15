@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from 'react'
 import {geoAlbersUsa, geoPath, select, scaleSqrt, easeLinear, max} from 'd3'
-import usData from '../Assets/usData.json'
+import usData from './Assets/usData.json'
 
 export const StateMap = data => {
   const [mode, setMode] = useState('maxcases')
