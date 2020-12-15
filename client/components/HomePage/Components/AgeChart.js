@@ -27,28 +27,23 @@ export const AgeChart = props => {
           <br />
           <ul>
             <li>
-              As clearly as it is displayed in the visual, the risk of dying
-              from Coronavirus increases greatly with age.
+              "Children, under the age of 18, to date, account for less than one
+              percent of reported COVID-19 deaths" -Josh Michaud, kkf.org
             </li>
+            {/* ^^source: https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/ */}
             <li>
               "COVID-19 is not just hazardous for elderly people, it is
               extremely dangerous for people in their mid-fifties, sixties and
               seventies" -Andrew Levin, nature.com
             </li>
-            <li>
-              The death totals for the 85 and older age group are almost double
-              for that of the 50 through 64 year age group.
-            </li>
-            <li>
-              "Children, under the age of 18, to date, account for less than one
-              percent of reported COVID-19 deaths" -Josh Michaud, kkf.org
-            </li>
+            {/* ^^source: https://www.nature.com/articles/d41586-020-02483-2 */}
             <li>
               "The risk of dying from coronavirus is also linked to underlying
               health conditions, the capacity of health-care systems, and
               whether the virus has spread among people living in elderly-care
               facilities." - Smriti Mallapaty, nature.com
             </li>
+            {/* ^^source: https://www.nature.com/articles/d41586-020-02483-2 */}
           </ul>
         </div>
       </div>
