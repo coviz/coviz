@@ -185,14 +185,11 @@ div.tooltip {
 }
 
 .ageFacts {
-  /* padding: 10px; */
   display: table;
   line-height: 1.6;
-  /* margin-top: 60px; */
   margin-top: 2.5rem;
   margin-right: 40px;
-  /* margin-bottom: 70px; */
-  width: 40vw;
+  width: 30%;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);
@@ -218,7 +215,7 @@ div.tooltipLolli {
 
 /* Environment Chart Styling */
 .co2ChartNinfo div {
-  z-index: 10;
+  /* z-index: 10; */
   color: white;
   font-size: 17px;
 }
@@ -238,14 +235,11 @@ div.tooltipLolli {
 }
 
 .co2Facts {
-  /* padding: 10px; */
   display: table;
   line-height: 1.6;
-  /* margin-top: 60px; */
   margin-top: 4rem;
   margin-left: 40px;
-  /* margin-bottom: 70px; */
-  width: 40vw;
+  width: 30%;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);
@@ -256,7 +250,6 @@ div.tooltipLolli {
 .co2Facts li {
   padding: 10px;
   line-height: 1.6;
-  /* margin: 20px; */
 }
 #envTitle {
   display: flex;

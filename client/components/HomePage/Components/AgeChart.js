@@ -27,17 +27,13 @@ export const AgeChart = props => {
           <br />
           <ul>
             <li>
-              As clearly as it is displayed in the visual, the risk of dying
-              from Coronavirus increases greatly with age.
+              The death totals for the 85 and older age group are almost double
+              for that of the 50 through 64 year age group.
             </li>
             <li>
               "COVID-19 is not just hazardous for elderly people, it is
               extremely dangerous for people in their mid-fifties, sixties and
               seventies" -Andrew Levin, nature.com
-            </li>
-            <li>
-              The death totals for the 85 and older age group are almost double
-              for that of the 50 through 64 year age group.
             </li>
             <li>
               "Children, under the age of 18, to date, account for less than one
