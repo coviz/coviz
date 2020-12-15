@@ -120,7 +120,7 @@ export const SpikeMap = realData => {
       <h1 className="jailFact">
         On average, the COVID-19 mortality rate within prisons is twice as large
         as that of the general population, after adjusting for sex, age, and
-        race/ethnicity of those incarcerated.{' '}
+        race/ethnicity of those incarcerated.<sup id="smallsup">7</sup>
       </h1>
 
       <div className="closure">
@@ -154,7 +154,7 @@ export const SpikeMap = realData => {
       </div>
       <h1 className="jailFact">
         Incarcerated individuals are four times more likely to become infected
-        than people in the general population.
+        than people in the general population.<sup id="smallsup">7</sup>
       </h1>
     </div>
   )

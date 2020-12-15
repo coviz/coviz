@@ -65,7 +65,7 @@ export const UnemploymentChart = props => {
               are unemployed. The labor force is made up of the employed and the
               unemployed. People who are neither employed nor unemployed are not
               in the labor force."
-              <sup>4</sup>
+              <sup id="smallsup">4</sup>
             </li>
             <li>
               "The COVID-19 outbreak and the economic downturn it engendered
@@ -74,7 +74,7 @@ export const UnemploymentChart = props => {
               rise in the number of unemployed workers due to COVID-19 is
               substantially greater than the increase due to the Great
               Recession."
-              <sup>5</sup>
+              <sup id="smallsup">5</sup>
             </li>
             <li>
               "...some economists see three reasons the pandemic’s depressing
@@ -86,7 +86,7 @@ export const UnemploymentChart = props => {
               a comeback harder. Third, it is falling particularly heavily on
               workers with less education and skills. These workers often
               struggle to find well-paying work and many drop out of the
-              workforce." <sup>6</sup>
+              workforce." <sup id="smallsup">6</sup>
             </li>
           </div>
         </div>
