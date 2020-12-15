@@ -15,11 +15,11 @@ export const Current = data => {
       <u>
         <h3>Current U.S. Totals</h3>
       </u>
-      <p>Data as of : {date}</p>
-      <p>Total cases : {totalCases} </p>
-      <p>Total deaths : {totalDeaths} </p>
-      <p>New cases : {newCases} </p>
-      <p>New deaths : {newDeaths} </p>
+      <p>Data as of: {date}</p>
+      <p>Total cases: {totalCases} </p>
+      <p>Total deaths: {totalDeaths} </p>
+      <p>New cases: {newCases} </p>
+      <p>New deaths: {newDeaths} </p>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-let margin = {top: 10, right: 10, bottom: 70, left: 30},
+const margin = {top: 10, right: 10, bottom: 70, left: 30},
   width = 425 - margin.left - margin.right,
   height = 450 - margin.top - margin.bottom
 
@@ -20,18 +20,18 @@ export function init() {
 export function drawGenderLaborChart(data) {
   if (data.length > 0) {
     // append the svg object to the body of the page
-    let svg = d3.select('#notInLabor svg')
+    const svg = d3.select('#notInLabor svg')
 
     // List of subgroups = header of the csv files = soil condition here
-    let subgroups = ['notInLaborMen', 'notInLaborWomen']
+    const subgroups = ['notInLaborMen', 'notInLaborWomen']
 
     // List of groups = species here = value of the first column called group -> I show them on the X axis
-    let months = d3.map(data, function(d) {
+    const months = d3.map(data, function(d) {
       return d.month
     })
 
     // Add X axis
-    let x = d3
+    const x = d3
       .scaleBand()
       .domain(months)
       .range([0, width])
@@ -44,7 +44,7 @@ export function drawGenderLaborChart(data) {
       .call(d3.axisBottom(x).tickSize(0))
 
     // Add Y axis
-    let y = d3
+    const y = d3
       .scaleLinear()
       .domain([
         0,
@@ -61,14 +61,14 @@ export function drawGenderLaborChart(data) {
       .call(d3.axisLeft(y))
 
     // Another scale for subgroup position?
-    let xSubgroup = d3
+    const xSubgroup = d3
       .scaleBand()
       .domain(subgroups)
       .range([0, x.bandwidth()])
       .padding([0.05])
 
     // color palette = one color per subgroup
-    let color = d3
+    const color = d3
       .scaleOrdinal()
       .domain(['Men', 'Women'])
       .range(['#F7D9C4', '#F25F5C'])
@@ -88,8 +88,6 @@ export function drawGenderLaborChart(data) {
       .selectAll('rect')
       .data(function(d) {
         return subgroups.map(function(key) {
-          // console.log('this is d in new', d)
-          // console.log({key: key, value: d[key]})
           return {key: key, value: d[key]}
         })
       })
@@ -109,7 +107,7 @@ export function drawGenderLaborChart(data) {
         return color(d.key)
       })
 
-    let legend = svg
+    const legend = svg
       .append('g')
       .attr('class', 'legend')
       .attr('width', 140)

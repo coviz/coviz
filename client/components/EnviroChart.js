@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEnviro} from '../../../store/environment'
-import {initEnviroChart, drawEnviroChart} from '../../D3Charts/LineChart'
+import {fetchEnviro} from '../store/environment'
+import {initEnviroChart, drawEnviroChart} from './D3Charts/LineChart'
 
 export const EnviroChart = props => {
   const dispatch = useDispatch()
@@ -16,9 +16,8 @@ export const EnviroChart = props => {
     initEnviroChart(1000, 920)
   }, [])
 
-  console.log('enviro data: ', data)
   return (
-    <div>
+    <div className="envStuff">
       <h1 id="enviroTitle1">Covid v. Environment</h1>
       {isLoading ? drawEnviroChart(840, 800, data) : <div />}
       <div className="co2ChartNinfo">
@@ -30,24 +29,18 @@ export const EnviroChart = props => {
             <li>
               "The first half of 2020 saw an unprecedented decline in CO2
               emissions -- larger than during the financial crisis of 2008, the
-              oil crisis of the 1979, or even World War II." -Zhu Liu,
-              nature.com
+              oil crisis of the 1979, or even World War II."{' '}
+              <sup className="smallsup">12</sup>
             </li>
             <li>
               The biggest drop of carbon emissions in the US during 2020 so far
               occurred during April.
             </li>
             <li>
-              "By July 1st, the pandemic’s effects on global emissions
-              diminished as lockdown restrictions relaxed and some economic
-              activities restarted, [...] with continuing emission declines in
-              the U.S. where coronavirus cases are still increasing
-              substantially." -Zhu Liu, nature.com
-            </li>
-            <li>
               "[There are] substantial COVID-related decreases in CO2 emissions
               between January 1st and June 30th of 2020 as compared to 2019. In
-              the aggregate, emissions were 8.8% lower." -Zhu Liu, nature.com
+              the aggregate, emissions were 8.8% lower."{' '}
+              <sup className="smallsup">12</sup>
             </li>
           </ul>
         </div>

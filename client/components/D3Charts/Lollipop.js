@@ -16,9 +16,9 @@ export function initAgeChart(height, width) {
 
 export function drawAgeChart(height, width, data) {
   const svg = d3.select('#ageChart svg')
-  var margin = {top: 10, right: 30, bottom: 90, left: 120}
+  const margin = {top: 10, right: 30, bottom: 90, left: 120}
 
-  var x = d3
+  const x = d3
     .scaleBand()
     .range([0, width + 250])
     .domain(
@@ -38,7 +38,7 @@ export function drawAgeChart(height, width, data) {
     .style('text-anchor', 'end')
     .style('font-size', '18px')
 
-  var y = d3
+  const y = d3
     .scaleLinear()
     .domain([0, 81000])
     .range([height, 0])
@@ -105,13 +105,13 @@ export function drawAgeChart(height, width, data) {
     .attr('fill', '#F7D9C4')
     .style('font-weight', 'bold')
 
-  var div = d3
+  const div = d3
     .select('body')
     .append('div')
     .attr('class', 'tooltipLolli')
     .style('opacity', 0)
 
-  var path = svg
+  const path = svg
     .selectAll('dot')
     .data(data)
     .enter()
@@ -141,7 +141,6 @@ export function drawAgeChart(height, width, data) {
         .style('left', d.pageX + 10 + 'px')
         .style('top', d.pageY - 15 + 'px')
         .style('font-size', '25px')
-      // console.log(d)
     })
     .on('mouseout', function(d, i) {
       d3

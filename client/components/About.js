@@ -7,14 +7,14 @@ export const About = () => {
       <div className="aboutDetails">
         <p>
           Coviz is an interactive data visualization of the impact of COVID-19
-          over time in the United State, including how it intersects with a
+          over time in the United States, including how it intersects with a
           variety of key issues. We created coviz as our capstone project during
           the Grace Hopper Program at Fullstack Academy. It highlights how case
           counts and deaths have changed in each state since COVID-19 began, and
           offers users the opportunity to explore how COVID-19 has impacted
-          demographic groups (age, race and ethnicity, gender, and prison
-          populations) and social issues (unemployment, hunger, and the
-          environment).
+          demographic groups (age, race & ethnicity, gender, and prison
+          populations) as well as social and economic issues (unemployment,
+          hunger, and the environment).
         </p>
         <p>
           We hope that you find Coviz interesting and insightful, and that it
@@ -22,13 +22,13 @@ export const About = () => {
           social problems have been impacted the most by the COVID-19 pandemic.
         </p>
         <p>
-          The site uses D3 to render the main map and additional charts, as well
-          as uses React/Redux for the front end. Additionally, the site uses
-          express/sequelize/SQL for the backend and stores data in a PostgreSQL
-          database. The javascript libraries fast-csv and node-postgres (pg) are
-          used to help read our data files and store the read data in
-          PostgreSQL. To ensure everything is working as expected, code is
-          tested using the Chai BDD/TDD assertion library.
+          The site uses D3 to render the main map and supplemental charts,
+          coupled with React/Redux for the front end. Additionally, the site
+          uses express/sequelize/SQL for the backend and stores data in a
+          PostgreSQL database. The javascript libraries fast-csv and
+          node-postgres (pg) are used to help read our data files and store the
+          read data in PostgreSQL. To ensure everything is working as expected,
+          code is tested using the Chai BDD/TDD assertion library.
         </p>
       </div>
       <div className="sources">
@@ -97,6 +97,68 @@ export const About = () => {
               </u>
             </li>
           </div>
+
+          <h4>AGE & GENDER</h4>
+          <li>
+            9. Why COVID-19 is Hitting Men Harder Than Women, Healthline
+            <u>
+              <a href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses">
+                https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses
+              </a>
+            </u>
+          </li>
+          <li>
+            10. What Do We Know About Children and Coronavirus Transmission?
+            KFF:
+            <u>
+              <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
+                https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
+              </a>
+            </u>
+          </li>
+          <li>
+            11. Why COVID-19 is Hitting Men Harder Than Women, Healthline
+            <u>
+              <a href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses">
+                https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses
+              </a>
+            </u>
+          </li>
+
+          <h5> Age & Gender Charts: </h5>
+          <li>
+            Age & Gender Data, Centers for Disease Control and Prevention (CDC)
+            , Provisional COVID-19 Death Counts by Sex, Age, and State:{' '}
+            <u>
+              <a href="https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku">
+                https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
+              </a>
+            </u>
+          </li>
+
+          <h4>ENVIRONMENT</h4>
+          <li>
+            12. Near-real-time monitoring of global CO2 emissions reveals the
+            effects of the COVID-19 pandemic, Academic Journal:{' '}
+            <u>
+              <a href="https://www.nature.com/articles/s41467-020-18922-7">
+                https://www.nature.com/articles/s41467-020-18922-7
+              </a>
+            </u>
+          </li>
+          <h5>Environment Line Graph:</h5>
+          <div>
+            <li>
+              Carbon dioxide emissions from energy consumption, Data on Monthly
+              CO2 in the United States:{' '}
+              <u>
+                <a href="https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40">
+                  https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40
+                </a>
+              </u>
+            </li>
+          </div>
+
           <h4>UNEMPLOYMENT</h4>
 
           <li>
@@ -128,21 +190,10 @@ export const About = () => {
             </u>
           </li>
 
-          <h4>AGE & GENDER</h4>
-          <h5> Age & Gender Charts: </h5>
-          <li>
-            Age & Gender Data, Centers for Disease Control and Prevention (CDC)
-            , Provisional COVID-19 Death Counts by Sex, Age, and State:{' '}
-            <u>
-              <a href="https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku">
-                https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
-              </a>
-            </u>
-          </li>
           <h4>JAILS & PRISONS</h4>
           <li>
-            Impact Report: COVID-19 and Prisons, National Commission on COVID-19
-            and Criminal Justice:
+            7. Impact Report: COVID-19 and Prisons, National Commission on
+            COVID-19 and Criminal Justice:
             <u>
               <a href="https://covid19.counciloncj.org/2020/09/02/covid-19-and-prisons/">
                 https://covid19.counciloncj.org/2020/09/02/covid-19-and-prisons/
@@ -162,26 +213,26 @@ export const About = () => {
 
           <h4>HUNGER</h4>
 
-          <li>
-            Experiences with the COVID-19 outbreak can vary for Americans of
-            different ages, article:{' '}
-            <u>
-              <a href="https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/">
-                https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/
-              </a>
-            </u>
-          </li>
-          <li>
-            What Do We Know About Children and Coronavirus Transmission?,
-            Article:{' '}
-            <u>
-              <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
-                https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
-              </a>
-            </u>
-          </li>
           <h5>Hunger Bar Graph:</h5>
           <div>
+            <li>
+              Experiences with the COVID-19 outbreak can vary for Americans of
+              different ages, article:{' '}
+              <u>
+                <a href="https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/">
+                  https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/
+                </a>
+              </u>
+            </li>
+            <li>
+              What Do We Know About Children and Coronavirus Transmission?,
+              Article:{' '}
+              <u>
+                <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
+                  https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
+                </a>
+              </u>
+            </li>
             <li>
               Hunger Data, Measuring Household Experiences during the
               Coronavirus Pandemic, The Brookings Institution's analysis of the
@@ -198,28 +249,6 @@ export const About = () => {
               <u>
                 <a href="https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/">
                   https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/
-                </a>
-              </u>
-            </li>
-          </div>
-          <h4>ENVIRONMENT</h4>
-          <li>
-            Near-real-time monitoring of global CO2 emissions reveals the
-            effects of the COVID-19 pandemic, Academic Journal:{' '}
-            <u>
-              <a href="https://www.nature.com/articles/s41467-020-18922-7">
-                https://www.nature.com/articles/s41467-020-18922-7
-              </a>
-            </u>
-          </li>
-          <h5>Environment Line Graph:</h5>
-          <div>
-            <li>
-              Carbon dioxide emissions from energy consumption, Data on Monthly
-              CO2 in the United States:{' '}
-              <u>
-                <a href="https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40">
-                  https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40
                 </a>
               </u>
             </li>

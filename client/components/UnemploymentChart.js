@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {
-  fetchUnemployment,
-  fetchGenderUnemployment
-} from '../../../store/unemployment'
-import {initUnempChart, drawUnempChart} from '../../D3Charts/UnempCirclePack'
-import {drawGenderUnempChart, initStacked} from '../../D3Charts/StackedBarPlot'
-import {drawGenderLaborChart, init} from '../../D3Charts/BarPlot'
+import {fetchUnemployment, fetchGenderUnemployment} from '../store/unemployment'
+import {initUnempChart, drawUnempChart} from './D3Charts/UnempCirclePack'
+import {drawGenderUnempChart, initStacked} from './D3Charts/StackedBarPlot'
+import {drawGenderLaborChart, init} from './D3Charts/BarPlot'
 
 export const UnemploymentChart = props => {
   const dispatch = useDispatch()
@@ -28,8 +25,7 @@ export const UnemploymentChart = props => {
     return elem.year === '2020'
   })
   const sortedGenderData = genderData.sort((a, b) => a.year - b.year)
-  // console.log('this is new data', newData)
-  // console.log('this is data', data)
+
   return (
     <div>
       <h2 id="unempTitle">Covid v. Unemployment</h2>
@@ -65,7 +61,7 @@ export const UnemploymentChart = props => {
               are unemployed. The labor force is made up of the employed and the
               unemployed. People who are neither employed nor unemployed are not
               in the labor force."
-              <sup id="smallsup">4</sup>
+              <sup className="smallsup">4</sup>
             </li>
             <li>
               "The COVID-19 outbreak and the economic downturn it engendered
@@ -74,7 +70,7 @@ export const UnemploymentChart = props => {
               rise in the number of unemployed workers due to COVID-19 is
               substantially greater than the increase due to the Great
               Recession."
-              <sup id="smallsup">5</sup>
+              <sup className="smallsup">5</sup>
             </li>
             <li>
               "...some economists see three reasons the pandemic’s depressing
@@ -86,7 +82,7 @@ export const UnemploymentChart = props => {
               a comeback harder. Third, it is falling particularly heavily on
               workers with less education and skills. These workers often
               struggle to find well-paying work and many drop out of the
-              workforce." <sup id="smallsup">6</sup>
+              workforce." <sup className="smallsup">6</sup>
             </li>
           </div>
         </div>

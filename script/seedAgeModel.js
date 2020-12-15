@@ -4,10 +4,10 @@ const fastcsv = require('fast-csv')
 const db = require('../server/db')
 
 async function createTable() {
-  await db.sync()
+  await db.sync({force: true})
   await db.close()
 
-  let stream = fs.createReadStream('script/Covd_vs_Age_&_Sex.csv')
+  let stream = fs.createReadStream('script/datasets/Covid_vs_Age_&_Sex.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()

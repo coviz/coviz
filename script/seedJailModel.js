@@ -6,7 +6,7 @@ const db = require('../server/db')
 async function createTable() {
   await db.sync()
   await db.close()
-  let stream = fs.createReadStream('script/prison-data.csv')
+  let stream = fs.createReadStream('script/datasets/prison-data.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()

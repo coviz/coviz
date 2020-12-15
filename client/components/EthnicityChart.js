@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEthnicities} from '../../../store/ethnicity'
-import {initEthnChart, drawEthnChart} from '../../D3Charts/CirclePack'
+import {fetchEthnicities} from '../store/ethnicity'
+import {initEthnChart, drawEthnChart} from './D3Charts/CirclePack'
 
 export const EthnicityChart = props => {
   const dispatch = useDispatch()
@@ -31,22 +31,23 @@ export const EthnicityChart = props => {
           </h4>
           <ul>
             <li>
-              According to our data African Americans, Native Americans, Pacfic
+              According to our data, African Americans, Native Americans, Pacfic
               Islanders and Latino Americans sufferd higher rates of death
-              <sup id="smallsup">1</sup>
+              <sup className="smallsup">1</sup>
             </li>
             <li>
               "Pacific Islanders in US hospitalised with Covid-19 at up to 10
               times the rate of other groups, many islanders in America live in
               large families and tight-knit communities, and work in frontline
               service industries, increasing their risk of exposure"{' '}
-              <sup id="smallsup">2</sup>
+              <sup className="smallsup">2</sup>
             </li>
             <li>
               "...the new studies do suggest that there is no innate
               vulnerability to the virus among Black and Hispanic
               Americans...Instead, these groups are more often exposed because
-              of social and environmental factors..." <sup id="smallsup">3</sup>
+              of social and environmental factors..."{' '}
+              <sup className="smallsup">3</sup>
             </li>
           </ul>
         </div>

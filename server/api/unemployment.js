@@ -3,6 +3,7 @@ const {Unemployment} = require('../db/models')
 const Sequelize = require('sequelize')
 module.exports = router
 
+// GET route for all unemployment data
 router.get('/', async (req, res, next) => {
   try {
     const unemployment = await Unemployment.findAll()
@@ -12,6 +13,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// GET route for unemployment data by gender
 router.get('/gender', async (req, res, next) => {
   try {
     const gender = await Unemployment.findAll({

@@ -2,8 +2,7 @@ const router = require('express').Router()
 const {Hunger} = require('../db/models')
 module.exports = router
 
-// query for all data
-
+// GET route for all hunger data
 router.get('/', async (req, res, next) => {
   try {
     const hungerData = await Hunger.findAll()

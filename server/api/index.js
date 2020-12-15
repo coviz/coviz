@@ -1,7 +1,6 @@
 const router = require('express').Router()
 module.exports = router
 
-// router.use('/states', require('./states')
 router.use('/unemployment', require('./unemployment'))
 router.use('/ethnicity', require('./ethnicity'))
 router.use('/age', require('./age'))

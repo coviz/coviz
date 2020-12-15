@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import {geoAlbersUsa, geoPath, select} from 'd3'
 import * as d3 from 'd3'
 
-import usData from '../HomePage/Assets/usData.json'
+import usData from '../Assets/usData.json'
 
 export const SpikeMap = realData => {
   const data = realData.realData
@@ -24,7 +24,7 @@ export const SpikeMap = realData => {
       const pathGenerator = geoPath().projection(projection)
 
       // Create the tooltip
-      var div = d3
+      const div = d3
         .select('body')
         .append('div')
         .attr('class', 'tooltipjails')
@@ -120,7 +120,7 @@ export const SpikeMap = realData => {
       <h1 className="jailFact">
         On average, the COVID-19 mortality rate within prisons is twice as large
         as that of the general population, after adjusting for sex, age, and
-        race/ethnicity of those incarcerated.<sup id="smallsup">7</sup>
+        race/ethnicity of those incarcerated.<sup className="smallsup">7</sup>
       </h1>
 
       <div className="closure">
@@ -154,7 +154,7 @@ export const SpikeMap = realData => {
       </div>
       <h1 className="jailFact">
         Incarcerated individuals are four times more likely to become infected
-        than people in the general population.<sup id="smallsup">7</sup>
+        than people in the general population.<sup className="smallsup">7</sup>
       </h1>
     </div>
   )
