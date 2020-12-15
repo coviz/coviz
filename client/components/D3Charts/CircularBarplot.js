@@ -162,7 +162,7 @@ export function drawGenderChart(data) {
   const legend = g
     .append('g')
     .selectAll('g')
-    .data(['Males', 'Females'].reverse())
+    .data(['Females', 'Males'].reverse())
     .enter()
     .append('g')
     .attr('transform', function(d, i) {

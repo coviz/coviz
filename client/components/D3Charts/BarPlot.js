@@ -88,8 +88,6 @@ export function drawGenderLaborChart(data) {
       .selectAll('rect')
       .data(function(d) {
         return subgroups.map(function(key) {
-          // console.log('this is d in new', d)
-          // console.log({key: key, value: d[key]})
           return {key: key, value: d[key]}
         })
       })

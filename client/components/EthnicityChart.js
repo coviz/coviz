@@ -32,7 +32,7 @@ export const EthnicityChart = props => {
           <ul>
             <li>
               Accoring to our data African Americans, Native Americans, Pacfic
-              Islanders and Latino Americans sufferd higher rates of death
+              Islanders and Latino Americans suffered higher rates of death
             </li>
             <li>
               "Pacific Islanders in US hospitalised with Covid-19 at up to 10

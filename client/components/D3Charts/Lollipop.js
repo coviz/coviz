@@ -141,7 +141,6 @@ export function drawAgeChart(height, width, data) {
         .style('left', d.pageX + 10 + 'px')
         .style('top', d.pageY - 15 + 'px')
         .style('font-size', '25px')
-      // console.log(d)
     })
     .on('mouseout', function(d, i) {
       d3

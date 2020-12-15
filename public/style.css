@@ -32,6 +32,7 @@ nav h5 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
   /* background-color: #a91010; */
   padding: 5px;
   padding-bottom: 0px;
@@ -344,7 +345,7 @@ div.tooltipsie {
 #graphs {
   display: flex;
   flex: 1;
-  margin: 25px;
+  margin: 0px;
   justify-content: center;
   /* border: 2px solid rgb(255, 0, 221); */
   flex-direction: row;
@@ -369,18 +370,18 @@ div.tooltipsie {
 .factsCont {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin: 0px;
 }
 .facts {
   /* border: 2px solid skyblue; */
   flex-wrap: wrap;
-  padding: 30px;
+  padding: 10px;
   flex: 1;
   border-radius: 5px 5px 5px;
   margin: 5px 5px 5px;
   letter-spacing: 1px;
-  width: 90vw;
-  height: 50vh;
+  width: 500px;
+  height: 400px;
   background: rgba(38, 38, 39, 0.5);
   color: white;
   font-size: 20px;
@@ -457,8 +458,8 @@ div.tooltipjails {
   /* border: 2px solid skyblue; */
   margin-top: 60px;
   margin-bottom: 30px;
-  width: 30vw;
-  height: 70vh;
+  width: 400px;
+  height: 620px;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);

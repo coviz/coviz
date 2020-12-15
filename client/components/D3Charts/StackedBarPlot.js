@@ -15,7 +15,6 @@ export function initStacked() {
 }
 
 export function drawGenderUnempChart(data) {
-  // console.log('this is on the stackedbarplot', data)
   if (data.length > 0) {
     // set the dimensions and margins of the graph
 
@@ -92,11 +91,9 @@ export function drawGenderUnempChart(data) {
     }
     const mousemove = function(d) {
       const databub = d.srcElement.__data__.data
-      //     console.log('this is the d in mouseover', databub)
       const subgroupName = d3.select(this.parentNode).datum().key
-      //   console.log(subgroupName)
       const subgroupValue = databub[subgroupName]
-      //   console.log(subgroupValue)
+
       tooltip
         .html(
           `Max Unemployment for <u>${subgroupName}</u> in ${databub.year} ` +

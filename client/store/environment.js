@@ -8,11 +8,10 @@ export const setEnviro = co2Data => ({
 })
 
 export const fetchEnviro = () => {
-  console.log('in fetch')
   return async dispatch => {
     try {
       const {data} = await axios.get('/api/environment')
-      console.log('fetched enviro data: ', data)
+
       dispatch(setEnviro(data))
     } catch (error) {
       console.log(error)
