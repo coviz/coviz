@@ -16,7 +16,6 @@ export const EnviroChart = props => {
     initEnviroChart(1000, 920)
   }, [])
 
-  console.log('enviro data: ', data)
   return (
     <div className='envStuff'>
       <h1 id="enviroTitle1">Covid v. Environment</h1>
