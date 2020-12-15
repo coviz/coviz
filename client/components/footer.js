@@ -25,9 +25,33 @@ export const Footer = () => (
           Claire Brown
         </a>
       </h5>
-      <h5>Jin Young Choi</h5>
-      <h5>Jasmine Hatcher</h5>
-      <h5>Anna Syzmula</h5>
+      <h5>
+        <a
+          href="https://www.linkedin.com/in/jc1995/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Jin Young Choi
+        </a>
+      </h5>
+      <h5>
+        <a
+          href="https://www.linkedin.com/in/jasminehatcher/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Jasmine Hatcher
+        </a>
+      </h5>
+      <h5>
+        <a
+          href="https://www.linkedin.com/in/annaszymula/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Anna Syzmula
+        </a>
+      </h5>
     </div>
     <div>
       <Link to="/about"> View Sources</Link>
