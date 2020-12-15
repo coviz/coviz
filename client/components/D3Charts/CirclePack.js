@@ -37,7 +37,7 @@ export function drawEthnChart(height, width, data) {
     .select('#ethnChart')
     .append('div')
     .style('opacity', 0)
-    .attr('class', 'tooltipz')
+    .attr('class', 'tooltipsie')
     .style('background-color', '#ced4da')
     .style('border', 'solid')
     .style('border-width', '2px')
@@ -63,7 +63,7 @@ export function drawEthnChart(height, width, data) {
     )
       // manipulate d.value to be % per pop
       .style('left', d.pageX + 'px')
-      .style('top', d.pageY - 28 + 'px')
+      .style('top', d.pageY + 'px')
   }
   let mouseleave = function(d) {
     Tooltip.style('opacity', 0)

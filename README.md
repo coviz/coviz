@@ -1,6 +1,6 @@
 # coviz
 
-Welcome to coviz! Coviz is an interactive data visualization of the impact of COVID-19 over time in the United State, including how it intersects with a variety of key issues. We created coviz as our capstone project during the Grace Hopper Program at Fullstack Academy. It highlights how case counts and deaths have changed in each state since COVID-19 began, and offers users the opportunity to explore how COVID-19 has impacted demographic groups (age, race and ethnicity, gender, and prison populations) and social issues (unemployment, hunger, and the environment).
+Welcome to coviz! Coviz is an interactive data visualization of the impact of COVID-19 over time in the United States, including how it intersects with a variety of key issues. We created coviz as our capstone project during the Grace Hopper Program at Fullstack Academy. It highlights how case counts and deaths have changed in each state since COVID-19 began, and offers users the opportunity to explore how COVID-19 has impacted demographic groups (age, race and ethnicity, gender, and prison populations) and social issues (unemployment, hunger, and the environment).
 
 # Technologies
 
