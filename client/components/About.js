@@ -3,12 +3,12 @@ import React from 'react'
 export const About = () => {
   return (
     <div id="about">
-      <h3 id="aboutTitle">About Coviz</h3>
       <div className="aboutDetails">
+        <h3 id="aboutTitle">About Coviz</h3>
         <p>
           Coviz is an interactive data visualization of the impact of COVID-19
           over time in the United States, including how it intersects with a
-          variety of key issues. We created coviz as our capstone project during
+          variety of key issues. We created Coviz as our capstone project during
           the Grace Hopper Program at Fullstack Academy. It highlights how case
           counts and deaths have changed in each state since COVID-19 began, and
           offers users the opportunity to explore how COVID-19 has impacted
@@ -100,7 +100,7 @@ export const About = () => {
 
           <h4>AGE & GENDER</h4>
           <li>
-            9. Why COVID-19 is Hitting Men Harder Than Women, Healthline
+            4. Why COVID-19 is Hitting Men Harder Than Women, Healthline
             <u>
               <a href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses">
                 https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses
@@ -108,8 +108,7 @@ export const About = () => {
             </u>
           </li>
           <li>
-            10. What Do We Know About Children and Coronavirus Transmission?
-            KFF:
+            5. What Do We Know About Children and Coronavirus Transmission? KFF:
             <u>
               <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
                 https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
@@ -117,7 +116,7 @@ export const About = () => {
             </u>
           </li>
           <li>
-            11. Why COVID-19 is Hitting Men Harder Than Women, Healthline
+            6. Why COVID-19 is Hitting Men Harder Than Women, Healthline
             <u>
               <a href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses">
                 https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses
@@ -138,7 +137,7 @@ export const About = () => {
 
           <h4>ENVIRONMENT</h4>
           <li>
-            12. Near-real-time monitoring of global CO2 emissions reveals the
+            7. Near-real-time monitoring of global CO2 emissions reveals the
             effects of the COVID-19 pandemic, Academic Journal:{' '}
             <u>
               <a href="https://www.nature.com/articles/s41467-020-18922-7">
@@ -162,7 +161,7 @@ export const About = () => {
           <h4>UNEMPLOYMENT</h4>
 
           <li>
-            5. Unemployment rose higher in three months of COVID-19 than it did
+            8. Unemployment rose higher in three months of COVID-19 than it did
             in two years of the Great Recession, Pew Research Center:
             <u>
               <a href="https://www.pewresearch.org/fact-tank/2020/06/11/unemployment-rose-higher-in-three-months-of-covid-19-than-it-did-in-two-years-of-the-great-recession/">
@@ -171,7 +170,7 @@ export const About = () => {
             </u>
           </li>
           <li>
-            6. Covid Shrinks the Labor Market, Pushing Out Women and Baby
+            9. Covid Shrinks the Labor Market, Pushing Out Women and Baby
             Boomers, The Wall Street Journal:
             <u>
               <a href="https://www.wsj.com/articles/covid-shrinks-the-labor-market-pushing-out-women-and-baby-boomers-11607022074">
@@ -181,7 +180,7 @@ export const About = () => {
           </li>
           <h5>Unemployment Charts:</h5>
           <li>
-            4. Unemployment Data, Bureau of Labor Statistics, Employment status
+            10. Unemployment Data, Bureau of Labor Statistics, Employment status
             of the civilian population by sex and age, Not Seasonally Adjusted:{' '}
             <u>
               <a href="https://www.bls.gov/webapps/legacy/cpsatab1.htm">
@@ -192,7 +191,7 @@ export const About = () => {
 
           <h4>JAILS & PRISONS</h4>
           <li>
-            7. Impact Report: COVID-19 and Prisons, National Commission on
+            11. Impact Report: COVID-19 and Prisons, National Commission on
             COVID-19 and Criminal Justice:
             <u>
               <a href="https://covid19.counciloncj.org/2020/09/02/covid-19-and-prisons/">

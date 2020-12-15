@@ -107,6 +107,7 @@ img {
   background: rgba(38, 38, 39, 0.5);
   color: white;
   border-radius: 5px 5px 5px;
+  font-size: 25px;
 }
 .sources {
   margin-top: 20px;
@@ -229,18 +230,15 @@ div.tooltip {
   display: flex;
   justify-content: space-around;
 }
-#ageTitle {
-  display: flex;
-  justify-content: center;
-}
 .ageChartNinfo div {
   z-index: 10;
   color: white;
-  font-size: 17px;
+  font-size: 20px;
 }
 #ageTitle1 {
   color: white;
   text-align: center;
+  font-size: 1.5em;
 }
 #ageTitle2 {
   text-decoration: underline;
@@ -278,7 +276,7 @@ div.tooltipLolli {
 .co2ChartNinfo div {
   /* z-index: 10; */
   color: white;
-  font-size: 17px;
+  font-size: 20px;
 }
 .co2ChartNinfo {
   display: flex;

@@ -30,7 +30,7 @@ export const EnviroChart = props => {
               "The first half of 2020 saw an unprecedented decline in CO2
               emissions -- larger than during the financial crisis of 2008, the
               oil crisis of the 1979, or even World War II."{' '}
-              <sup className="smallsup">12</sup>
+              <sup className="smallsup">7</sup>
             </li>
             <li>
               The biggest drop of carbon emissions in the US during 2020 so far
@@ -40,7 +40,7 @@ export const EnviroChart = props => {
               "[There are] substantial COVID-related decreases in CO2 emissions
               between January 1st and June 30th of 2020 as compared to 2019. In
               the aggregate, emissions were 8.8% lower."{' '}
-              <sup className="smallsup">12</sup>
+              <sup className="smallsup">7</sup>
             </li>
           </ul>
         </div>

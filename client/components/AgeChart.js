@@ -29,20 +29,20 @@ export const AgeChart = props => {
             <li>
               "Children, under the age of 18, to date, account for less than one
               percent of reported COVID-19 deaths."
-              <sup className="smallsup">10</sup>
+              <sup className="smallsup">5</sup>
             </li>
 
             <li>
               "COVID-19 is not just hazardous for elderly people, it is
               extremely dangerous for people in their mid-fifties, sixties and
-              seventies." <sup className="smallsup">11</sup>
+              seventies." <sup className="smallsup">6</sup>
             </li>
 
             <li>
               "The risk of dying from coronavirus is also linked to underlying
               health conditions, the capacity of health-care systems, and
               whether the virus has spread among people living in elderly-care
-              facilities."<sup className="smallsup">11</sup>
+              facilities."<sup className="smallsup">6</sup>
             </li>
           </ul>
         </div>

@@ -17,9 +17,9 @@ export const EthnicityChart = props => {
 
   return (
     <div>
+      <h2 id="ethnTitle">Covid v. Ethnicity</h2>
       <div id="ethnPage">
         <div>
-          <h2 id="ethnTitle">Covid v. Ethnicity</h2>
           {isLoading ? drawEthnChart(700, 800, data) : <div />}
           <div id="chartEthn">
             <div id="ethnChart" />
