@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEthnicities} from '../../../store/ethnicity'
-import {initEthnChart, drawEthnChart} from '../../D3Charts/CirclePack'
+import {fetchEthnicities} from '../store/ethnicity'
+import {initEthnChart, drawEthnChart} from './D3Charts/CirclePack'
 
 export const EthnicityChart = props => {
   const dispatch = useDispatch()

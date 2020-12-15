@@ -1,11 +1,9 @@
 const {BehindBars} = require('../db/models')
-
 const router = require('express').Router()
 const Op = require('sequelize').Op
-
-// const Ethnicity = require('../db/models/ethnicity')
 module.exports = router
 
+// GET route for jail and prison data
 router.get('/', async (req, res, next) => {
   try {
     const state = await BehindBars.findAll({

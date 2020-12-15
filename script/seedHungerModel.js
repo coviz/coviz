@@ -7,7 +7,9 @@ async function createHungerTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/COVIDHungerData_USDA_Brookings.csv')
+  let stream = fs.createReadStream(
+    'script/datasets/COVIDHungerData_USDA_Brookings.csv'
+  )
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -57,4 +59,4 @@ async function createHungerTable() {
 
 createHungerTable()
 
-// module.exports = createStateTable()
+module.exports = createHungerTable

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchEnviro} from '../../../store/environment'
-import {initEnviroChart, drawEnviroChart} from '../../D3Charts/LineChart'
+import {fetchEnviro} from '../store/environment'
+import {initEnviroChart, drawEnviroChart} from './D3Charts/LineChart'
 
 export const EnviroChart = props => {
   const dispatch = useDispatch()
@@ -17,7 +17,7 @@ export const EnviroChart = props => {
   }, [])
 
   return (
-    <div className='envStuff'>
+    <div className="envStuff">
       <h1 id="enviroTitle1">Covid v. Environment</h1>
       {isLoading ? drawEnviroChart(840, 800, data) : <div />}
       <div className="co2ChartNinfo">

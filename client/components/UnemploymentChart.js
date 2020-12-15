@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {
-  fetchUnemployment,
-  fetchGenderUnemployment
-} from '../../../store/unemployment'
-import {initUnempChart, drawUnempChart} from '../../D3Charts/UnempCirclePack'
-import {drawGenderUnempChart, initStacked} from '../../D3Charts/StackedBarPlot'
-import {drawGenderLaborChart, init} from '../../D3Charts/BarPlot'
+import {fetchUnemployment, fetchGenderUnemployment} from '../store/unemployment'
+import {initUnempChart, drawUnempChart} from './D3Charts/UnempCirclePack'
+import {drawGenderUnempChart, initStacked} from './D3Charts/StackedBarPlot'
+import {drawGenderLaborChart, init} from './D3Charts/BarPlot'
 
 export const UnemploymentChart = props => {
   const dispatch = useDispatch()

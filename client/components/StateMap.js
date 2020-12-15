@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from 'react'
 import {geoAlbersUsa, geoPath, select, scaleSqrt, easeLinear, max} from 'd3'
-import usData from '../Assets/usData.json'
+import usData from './Assets/usData.json'
 
 export const StateMap = data => {
   const [mode, setMode] = useState('maxcases')
@@ -21,7 +21,7 @@ export const StateMap = data => {
       const pathGenerator = geoPath().projection(projection)
 
       // Create the tooltip
-      var div = select('body')
+      const div = select('body')
         .append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0)
@@ -125,18 +125,35 @@ export const StateMap = data => {
               .transition()
               .duration(200)
               .style('opacity', 0.9)
-            div
-              .html(
-                '<b><u>' +
-                  ` ${toolData.state}` +
-                  '</u></b>' +
-                  '<br>' +
-                  `${numberWithCommas(
-                    toolData.positiveCumulative
-                  )} cases on ${newDateString}`
-              )
-              .style('left', d.pageX + 'px')
-              .style('top', d.pageY - 28 + 'px')
+
+            if (mode === 'pop' || mode === 'maxcases') {
+              // const percent = toolData.positiveCumulative/toolData.population * 100
+              div
+                .html(
+                  '<b><u>' +
+                    ` ${toolData.state}` +
+                    '</u></b>' +
+                    '<br>' +
+                    `${numberWithCommas(
+                      toolData.positiveCumulative
+                    )} cases as of ${newDateString}`
+                )
+                .style('left', d.pageX + 'px')
+                .style('top', d.pageY - 28 + 'px')
+            } else if (mode === 'deaths' || mode === 'maxdeaths') {
+              div
+                .html(
+                  '<b><u>' +
+                    ` ${toolData.state}` +
+                    '</u></b>' +
+                    '<br>' +
+                    `${numberWithCommas(
+                      toolData.deathCumulative
+                    )} deaths as of ${newDateString}`
+                )
+                .style('left', d.pageX + 'px')
+                .style('top', d.pageY - 28 + 'px')
+            }
           })
 
           // fade out tooltip on mouse out

@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 export function initEnviroChart(height, width) {
-  var margin = {top: 30, right: 30, bottom: 30, left: 30}
+  const margin = {top: 30, right: 30, bottom: 30, left: 30}
   width = width - margin.left - margin.right
   height = height - margin.top - margin.bottom
 
@@ -17,7 +17,7 @@ export function initEnviroChart(height, width) {
 
 export function drawEnviroChart(height, width, data) {
   const svg = d3.select('#enviroChart svg')
-  let margin = {top: 30, right: 30, bottom: 30, left: 120}
+  const margin = {top: 30, right: 30, bottom: 30, left: 120}
   width = width - margin.left - margin.right
   height = height - margin.top - margin.bottom
 
@@ -35,33 +35,19 @@ export function drawEnviroChart(height, width, data) {
     return +d.value
   })
 
-  let xScale = d3
+  const xScale = d3
     .scaleLinear()
     .domain([minX, maxX])
     .range([margin.left, width + 250])
 
-  // var y = d3.scaleLinear()
-  // .domain([0, maxY+40])
-  // .range([ height, 0 ]);
-
-  var x = d3
+  const x = d3
     .scaleBand()
     .range([margin.left, width + 270])
-    // .domain(
-    //   data.map(d => {
-    //     return d.date
-    //   })
-    // )
     .domain(
-      data
-        // .filter(function(d, index) {
-        //   return index % 12 === 0
-        // })
-        .map((d, index) => {
-          return index % 12 === 0 ? d.date : d.date
-        })
+      data.map((d, index) => {
+        return index % 12 === 0 ? d.date : d.date
+      })
     )
-    // .ticks(minX, maxX, 47)
     .padding(2)
   svg
     .append('g')
@@ -69,19 +55,13 @@ export function drawEnviroChart(height, width, data) {
     .attr('fill', '#F7D9C4')
     .attr('color', '#F7D9C4')
     .call(d3.axisBottom(xScale))
-    // .tickValue([197301, 200001, 202001])
-    // .call(d3.ticks(minX, maxX, 47))
     .selectAll('text')
     .attr('transform', 'translate(-10,0)rotate(-90)')
     .style('text-anchor', 'end')
-    // .ticks(minX, maxX, 47)
-    // .style('font-size', '18px')
-    //var ticks = d3.ticks(10, 20, 5);
-    //svg.append('g').call(ticks)
     .style('font-size', '14px')
 
   // Add Y axis
-  var y = d3
+  const y = d3
     .scaleLinear()
     .domain([200, maxY + 40])
     .range([height, 0])
@@ -135,8 +115,6 @@ export function drawEnviroChart(height, width, data) {
   svg
     .append('text')
     .attr('class', 'x label')
-    // .style("font-size", "18px")
-    // .attr("color", "white")
     .attr('text-anchor', 'end')
     .attr('x', width - 100)
     .attr('y', height + 100)
@@ -150,9 +128,7 @@ export function drawEnviroChart(height, width, data) {
     .append('text')
     .attr('class', 'y label')
     .attr('text-anchor', 'end')
-    // .attr("x", width )
     .attr('y', 35)
-    // .attr("dx", "2em")
     .attr('dy', '0.80em')
     .attr('x', -170)
     .attr('transform', 'rotate(-90)')

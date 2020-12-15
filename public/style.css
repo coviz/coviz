@@ -5,11 +5,9 @@ body {
   color: white;
   font: sans-serif;
 }
-
 a {
   text-decoration: none;
 }
-
 label {
   display: block;
 }
@@ -22,17 +20,14 @@ nav a {
   color: white;
   text-decoration: underline;
 }
-
 nav a:hover {
   color: #4cc9f0;
 }
-
 nav h5 {
   display: inline-block;
   margin: 0px;
   letter-spacing: 1px;
 }
-
 #navbar {
   display: flex;
   flex-direction: row;
@@ -42,17 +37,95 @@ nav h5 {
   padding: 5px;
   padding-bottom: 0px;
 }
-
 img {
   height: 50px;
   width: 200px;
 }
-
 #logo {
   display: inline-block;
   align-items: flex-end;
   /* font-family: Roboto, sans-serif; */
   color: #f7d9c4;
+}
+
+/* Footer Styling*/
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  /* background: rgba(38, 38, 39, 0.5); */
+  /* background-color: #a91010; */
+  padding: 5px;
+  padding-bottom: 0px;
+}
+.footer h5 {
+  display: inline-block;
+  margin: 1em;
+  margin-top: 1px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+.footerul {
+  list-style: none;
+}
+.footer a {
+  display: inline-block;
+  margin: 1em;
+  margin-top: 1px;
+  color: white;
+  text-decoration: underline;
+}
+.footer a:hover {
+  color: #4cc9f0;
+}
+
+/* About Page Styling */
+#about {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+#aboutTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+}
+.aboutDetails {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  width: 90vw;
+  height: 150px;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+}
+.sources {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  width: 90vw;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+}
+.sources a {
+  color: #f7d9c4;
+}
+.sources a:hover {
+  color: #f25f5c;
+}
+.mapdiv {
+  padding: 20px;
+}
+.closure {
+  display: flex;
+  justify-content: center;
 }
 
 /* Main Map Styling */
@@ -68,17 +141,14 @@ img {
   cursor: pointer;
   height: 30px;
 }
-
 .play-button:hover {
   background-color: #ced4da;
   color: rgba(38, 50, 56);
   font-weight: 600;
 }
-
 .ticks {
   font-size: 10px;
 }
-
 div.tooltip {
   position: absolute;
   text-align: center;
@@ -92,45 +162,35 @@ div.tooltip {
   border-radius: 8px;
   pointer-events: none;
 }
-
 #main {
   display: flex;
   justify-content: space-evenly;
 }
-
 #map {
   flex-direction: column;
   margin-top: 20px;
-  /* border: 2px solid peachpuff; */
 }
-
 #mapTimer {
   display: flex;
   flex-direction: row;
-  /* border: 2px solid red; */
 }
 #pip {
   display: inline-block;
   width: 70%;
   padding: 5px;
-  /* border: 2px solid lime; */
 }
 #pop {
   display: inline-block;
   width: 30%;
   margin-right: 30px;
-  /* border: 2px solid orange; */
 }
 .aboveTimeline {
   display: flex;
   justify-content: space-between;
-  /* border: 2px solid orange; */
 }
-
 #aboveTitle {
   /* border: 2px solid yellow; */
 }
-
 #totalsBox {
   margin-top: 75px;
   margin-bottom: 30px;
@@ -140,18 +200,14 @@ div.tooltip {
   background: rgba(38, 38, 39, 0.5);
   color: white;
   border-radius: 5px 5px 5px;
-  /* box-shadow: 5px 5px rgba(236, 235, 235, 0.2); */
   font-size: 18px;
-  /* z-index: 1; */
 }
 .select-css {
   margin: 0px;
 }
 #time {
-  /* border: 2px solid peachpuff; */
   align-items: flex-end;
 }
-
 #test {
   display: flex;
   justify-content: space-between;
@@ -159,32 +215,26 @@ div.tooltip {
 }
 
 /* Age Chart Styling */
-
 .ageChartNinfo {
   display: flex;
   justify-content: space-around;
 }
-
 #ageTitle {
   display: flex;
   justify-content: center;
 }
-
 .ageChartNinfo div {
   z-index: 10;
   color: white;
   font-size: 17px;
 }
-
 #ageTitle1 {
   color: white;
   text-align: center;
 }
-
 #ageTitle2 {
   text-decoration: underline;
 }
-
 .ageFacts {
   display: table;
   line-height: 1.6;
@@ -197,21 +247,21 @@ div.tooltip {
   color: white;
   border-radius: 5px 5px 5px;
 }
-
 .ageFacts li {
   margin: 20px;
 }
-
 div.tooltipLolli {
   position: absolute;
   text-align: center;
-  padding: 0.2rem;
-  background: #313639;
-  color: #f9f9f9;
+  width: 100px;
+  height: 60;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #ced4da;
+  color: #080b0c;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
-  font-size: 0.7rem;
 }
 
 /* Environment Chart Styling */
@@ -220,21 +270,17 @@ div.tooltipLolli {
   color: white;
   font-size: 17px;
 }
-
 .co2ChartNinfo {
   display: flex;
   justify-content: space-around;
 }
-
 #enviroTitle1 {
   color: white;
   text-align: center;
 }
-
 #enviroTitle2 {
   text-decoration: underline;
 }
-
 .co2Facts {
   display: table;
   line-height: 1.6;
@@ -247,7 +293,6 @@ div.tooltipLolli {
   color: white;
   border-radius: 5px 5px 5px;
 }
-
 .co2Facts li {
   padding: 10px;
   line-height: 1.6;
@@ -256,7 +301,6 @@ div.tooltipLolli {
   display: flex;
   justify-content: center;
 }
-
 .flex {
   display: flex;
 }
@@ -270,15 +314,9 @@ div.tooltipLolli {
   display: flex;
   justify-content: center;
 }
-
 .genderFact {
   text-align: center;
 }
-.jailFact {
-  text-align: center;
-  padding-top: 50px;
-}
-
 #genderPage {
   display: flex;
   justify-content: space-around;
@@ -288,32 +326,15 @@ div.tooltipLolli {
 }
 
 /* Tooltip for Race/Ethnicity and Umemployment */
-div.tooltipz {
-  /* position: absolute; */
-  text-align: center;
-  color: black;
-  width: 300px;
-  height: 50px;
-}
-
 div.tooltipsie {
   position: absolute;
   text-align: center;
+  /* background: #ced4da;
+  fill: #080b0C; */
   color: black;
   width: 300px;
   height: 50px;
   pointer-events: none;
-
-  /* position: absolute;
-  text-align: center;
-  width: 100px;
-  height: 40;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: #f7d9c4;
-  color: #080b0c;
-  border: 0px;
-  border-radius: 8px; */
 }
 
 /* Unemployment Chart Styling */
@@ -321,7 +342,6 @@ div.tooltipsie {
   display: flex;
   justify-content: center;
 }
-
 #graphs {
   display: flex;
   flex: 1;
@@ -331,32 +351,27 @@ div.tooltipsie {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 #unempTitle {
   display: flex;
   justify-content: center;
 }
-
 #genderUnemp {
   /* border: 2px solid lime; */
   height: 30%;
   flex: 1;
   width: 33%;
 }
-
 #notInLabor {
   /* border: 2px solid peachpuff; */
   height: 30%;
   flex: 1;
   width: 33%;
 }
-
 .factsCont {
   display: flex;
   justify-content: center;
   margin: 0px;
 }
-
 .facts {
   /* border: 2px solid skyblue; */
   flex-wrap: wrap;
@@ -373,7 +388,6 @@ div.tooltipsie {
   /* opacity: 0.4; */
   justify-content: flex-end;
 }
-
 #totalUnemp {
   /* border: 2px solid red; */
   height: 30%;
@@ -385,21 +399,19 @@ div.tooltipsie {
 div.tooltipjails {
   position: absolute;
   text-align: center;
-  width: 10%;
-  height: 100;
+  width: 100px;
+  height: 60;
   padding: 2px;
   font: 12px sans-serif;
-  background: #f7d9c4;
+  background: #ced4da;
   color: #080b0c;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
 }
-
 .facts li {
   margin: 17px;
 }
-
 #jailTitle {
   display: flex;
   justify-content: center;
@@ -419,12 +431,14 @@ div.tooltipjails {
   /* opacity: 0.4; */
   justify-content: flex-end;
 }
-
-#totalUnemp {
-  /* border: 2px solid red; */
-  height: 30%;
-  flex: 1;
-  width: 33%;
+.jailFact {
+  text-align: center;
+  padding-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 70px;
 }
 
 /* Race/ethnicity Chart Styling */
@@ -453,7 +467,6 @@ div.tooltipjails {
   border-radius: 5px 5px 5px;
   font-size: 20px;
 }
-
 .factsEthn li {
   margin: 17px;
 }
@@ -463,10 +476,10 @@ div.tooltipHunger {
   position: absolute;
   text-align: center;
   width: 100px;
-  height: 40;
+  height: 60;
   padding: 2px;
   font: 12px sans-serif;
-  background: #f7d9c4;
+  background: #ced4da;
   color: #080b0c;
   border: 0px;
   border-radius: 8px;
@@ -479,43 +492,9 @@ div.tooltipHunger {
 #hungerFact {
   text-align: center;
 }
-
 #hungerChart {
   display: flex;
   justify-content: center;
-}
-
-/* Footer */
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  /* background: rgba(38, 38, 39, 0.5); */
-  /* background-color: #a91010; */
-  padding: 5px;
-  padding-bottom: 0px;
-}
-
-.footer h5 {
-  display: inline-block;
-  margin: 1em;
-  margin-top: 1px;
-  letter-spacing: 1px;
-  text-decoration: underline;
-}
-.footerul {
-  list-style: none;
-}
-.footer a {
-  display: inline-block;
-  margin: 1em;
-  margin-top: 1px;
-  color: white;
-  text-decoration: underline;
-}
-.footer a:hover {
-  color: #4cc9f0;
 }
 
 /* Styles the Main Map Dropdown */
@@ -544,15 +523,12 @@ div.tooltipHunger {
   background-position: right 0.7em top 50%, 0 0;
   background-size: 0.65em auto, 100%;
 }
-
 .select-css::-ms-expand {
   display: none;
 }
-
 .select-css:hover {
   border-color: #888;
 }
-
 .select-css:focus {
   border-color: #aaa;
   box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
@@ -560,77 +536,6 @@ div.tooltipHunger {
   color: #222;
   outline: none;
 }
-
 .select-css option {
   font-weight: normal;
 } */
-
-/* About Page Styling */
-#about {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-}
-#aboutTitle {
-  display: flex;
-  justify-content: center;
-  font-size: 22px;
-}
-
-.aboutDetails {
-  margin-top: 60px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-  width: 90vw;
-  height: 225px;
-  padding: 20px;
-  letter-spacing: 1px;
-  background: rgba(38, 38, 39, 0.5);
-  color: white;
-  border-radius: 5px 5px 5px;
-}
-.sources {
-  margin-top: 60px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-  width: 90vw;
-  padding: 20px;
-  letter-spacing: 1px;
-  background: rgba(38, 38, 39, 0.5);
-  color: white;
-  border-radius: 5px 5px 5px;
-}
-
-.sources a {
-  color: #f7d9c4;
-}
-
-.sources a:hover {
-  color: #f25f5c;
-}
-
-/* form div {
-  margin: 1em;
-  display: inline-block;
-} */
-
-/* #jailMainMap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-.mapdiv {
-  padding: 20px;
-}
-.closure {
-  display: flex;
-  justify-content: center;
-}
-.jailFact {
-  margin-left: 150px;
-  margin-right: 150px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 70px;
-}

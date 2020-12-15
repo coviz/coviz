@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import {geoAlbersUsa, geoPath, select} from 'd3'
 import * as d3 from 'd3'
 
-import usData from '../HomePage/Assets/usData.json'
+import usData from '../Assets/usData.json'
 
 export const SpikeMap = realData => {
   const data = realData.realData
@@ -24,7 +24,7 @@ export const SpikeMap = realData => {
       const pathGenerator = geoPath().projection(projection)
 
       // Create the tooltip
-      var div = d3
+      const div = d3
         .select('body')
         .append('div')
         .attr('class', 'tooltipjails')
