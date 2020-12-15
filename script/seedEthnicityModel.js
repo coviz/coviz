@@ -9,7 +9,7 @@ async function createTable() {
   await db.sync()
   await db.close()
   console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/covid_v_race.csv')
+  let stream = fs.createReadStream('script/datasets/covid_v_race.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()

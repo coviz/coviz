@@ -6,10 +6,10 @@ const connectionString =
   'postgres://uvwoudywlamqec:d9f5e5619ff97970fe450cac1ed73858d420d2443615228dcea65f1ff8179d12@ec2-3-89-230-115.compute-1.amazonaws.com:5432/d5mpo1h40u920n'
 
 async function createTable() {
-  await db.sync()
+  await db.sync({force: true})
   await db.close()
-  console.log('this is inside createTable')
-  let stream = fs.createReadStream('script/covid_v_age&sex.csv')
+
+  let stream = fs.createReadStream('script/datasets/Covid_vs_Age_&_Sex.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -26,7 +26,7 @@ async function createTable() {
       })
 
       const query =
-        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals") VALUES ($1, $2, $3, $4)'
+        'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals", "pop") VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err

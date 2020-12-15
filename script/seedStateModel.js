@@ -9,7 +9,7 @@ async function createStateTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/usCapitals.csv')
+  let stream = fs.createReadStream('script/datasets/usCapitals.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -51,5 +51,3 @@ async function createStateTable() {
 }
 
 createStateTable()
-
-// module.exports = createStateTable()

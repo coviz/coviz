@@ -12,7 +12,7 @@ export function initEthnChart(height, width) {
 export function drawEthnChart(height, width, data) {
   const svg = d3.select('#ethnChart svg')
   // Color palette
-  let color = d3
+  const color = d3
     .scaleOrdinal()
     .domain([
       'Caucasian',
@@ -27,17 +27,17 @@ export function drawEthnChart(height, width, data) {
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
 
   // Size scale
-  let size = d3
+  const size = d3
     .scaleLinear()
     .domain([0, 1])
     .range([7, 55]) // circle will be between 7 and 55 px wi
 
   // create a tooltip
-  let Tooltip = d3
+  const Tooltip = d3
     .select('#ethnChart')
     .append('div')
     .style('opacity', 0)
-    .attr('class', 'tooltipz')
+    .attr('class', 'tooltipsie')
     .style('background-color', '#ced4da')
     .style('border', 'solid')
     .style('border-width', '2px')
@@ -45,15 +45,20 @@ export function drawEthnChart(height, width, data) {
     .style('padding', '5px')
     .style('margin', '0px')
 
-  let mouseover = function(d) {
+  const mouseover = function(d) {
     Tooltip.style('opacity', 1)
   }
-  let mousemove = function(d) {
+  const mousemove = function(d) {
     const dataBub = d.srcElement.__data__
+
+    // add space and capitalization to races/ethnicities
+    let ethnicity = dataBub.ethnicity
+    if (ethnicity === 'latinoAmerican') ethnicity = 'LatinoAmerican'
+    ethnicity = ethnicity.replace(/([A-Z])/g, ' $1').trim()
 
     Tooltip.html(
       '<u>' +
-        ` ${dataBub.ethnicity} in ${dataBub.state} ` +
+        ` ${ethnicity} in ${dataBub.state} ` +
         '</u>' +
         '<br>' +
         `${(dataBub.deaths / dataBub.pop * 100).toFixed(2)}` +
@@ -62,14 +67,14 @@ export function drawEthnChart(height, width, data) {
         ` Death Count: ${dataBub.deaths}`
     )
       // manipulate d.value to be % per pop
-      .style('left', d3.pointer(this)[0] + 20 + 'px')
-      .style('top', d3.pointer(this)[1] + 'px')
+      .style('left', d.pageX + 'px')
+      .style('top', d.pageY + 'px')
   }
-  let mouseleave = function(d) {
+  const mouseleave = function(d) {
     Tooltip.style('opacity', 0)
   }
 
-  let node = svg
+  const node = svg
     .append('g')
     .selectAll('circle')
     .data(data)
@@ -79,8 +84,8 @@ export function drawEthnChart(height, width, data) {
     .attr('r', function(d) {
       return size(d.deaths / d.pop * 100)
     })
-    .attr('cx', width / 2)
-    .attr('cy', height / 2)
+    .attr('cx', width / 2.2)
+    .attr('cy', height / 2.2)
     .style('fill', function(d) {
       return color(d.ethnicity)
     })
@@ -98,14 +103,14 @@ export function drawEthnChart(height, width, data) {
         .on('end', dragended)
     )
 
-  let simulation = d3
+  const simulation = d3
     .forceSimulation()
     .force(
       'center',
       d3
         .forceCenter()
-        .x(width / 2)
-        .y(height / 2)
+        .x(width / 2.2)
+        .y(height / 2.2)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(
@@ -129,9 +134,8 @@ export function drawEthnChart(height, width, data) {
   })
 
   //creates legend
-  let legend = d3
-    .select('body')
-    .append('svg')
+  const legend = svg
+    .append('g')
     .attr('class', 'legend')
     .attr('width', 140)
     .attr('height', 200)
@@ -168,7 +172,7 @@ export function drawEthnChart(height, width, data) {
     .text(function(d) {
       return d
     })
-    .attr('stroke', 'white')
+    .attr('fill', '#F7D9C4')
 
   // What happens when a circle is dragged?
   function dragstarted(event, d) {

@@ -3,9 +3,15 @@
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
-export {App} from './HomePage/Components/App'
+export {App} from './App'
 export {Chart} from './D3Charts/Chart'
-export {Navbar} from './HomePage/Components/navbar'
-export {EthnicityChart} from './HomePage/Components/EthnicityChart'
-export {About} from './HomePage/Components/About'
-export {GenderChart} from './HomePage/Components/GenderChart'
+export {Navbar} from './navbar'
+export {EthnicityChart} from './EthnicityChart'
+export {About} from './About'
+export {GenderChart} from './GenderChart'
+export {AgeChart} from './AgeChart'
+export {EnviroChart} from './EnviroChart'
+export {UnemploymentChart} from './UnemploymentChart'
+export {BehindBars} from './BehindBars'
+export {Footer} from './footer'
+export {HungerChart} from './HungerChart'

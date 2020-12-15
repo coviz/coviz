@@ -10,23 +10,23 @@ export function initGenderChart(height, width) {
   // .style('background-color', '#fff')
 }
 export function drawGenderChart(data) {
-  var svg = d3.select('svg'),
+  const svg = d3.select('svg'),
     width = +svg.attr('width'),
     height = +svg.attr('height'),
     innerRadius = 250,
     outerRadius = Math.min(width, height) * 0.45,
     g = svg
       .append('g')
-      .attr('transform', 'translate(' + width / 2 + ',' + height * 0.5 + ')')
+      .attr('transform', 'translate(' + width / 1.6 + ',' + height * 0.5 + ')')
 
-  var x = d3
+  const x = d3
     .scaleBand()
     .range([0, 2 * Math.PI])
     .align(0)
 
-  var y = d3.scaleRadial().range([innerRadius, outerRadius])
+  const y = d3.scaleRadial().range([innerRadius, outerRadius])
 
-  var z = d3.scaleOrdinal().range(['#fbff12', '#41ead4'])
+  const z = d3.scaleOrdinal().range(['#fbff12', '#41ead4'])
   x.domain(
     data.map(function(d) {
       return d.state
@@ -76,7 +76,7 @@ export function drawGenderChart(data) {
         .padRadius(innerRadius)
     )
 
-  var label = g
+  const label = g
     .append('g')
     .selectAll('g')
     .data(data)
@@ -96,7 +96,7 @@ export function drawGenderChart(data) {
   label
     .append('line')
     .attr('x2', -5)
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
   label
     .append('text')
@@ -109,11 +109,11 @@ export function drawGenderChart(data) {
     .text(function(d) {
       return d.state
     })
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
-  var yAxis = g.append('g').attr('text-anchor', 'end')
+  const yAxis = g.append('g').attr('text-anchor', 'end')
 
-  var yTick = yAxis
+  const yTick = yAxis
     .selectAll('g')
     .data(y.ticks(10).slice(1))
     .enter()
@@ -122,7 +122,7 @@ export function drawGenderChart(data) {
   yTick
     .append('circle')
     .attr('fill', 'none')
-    .attr('stroke', '#fff')
+    .attr('stroke', '#F7D9C4')
     .attr('stroke-opacity', 0.5)
     .attr('r', y)
 
@@ -133,8 +133,8 @@ export function drawGenderChart(data) {
       return -y(d)
     })
     .attr('dy', '0.35em')
-    .attr('fill', '#fff')
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
+    .attr('stroke', '#F7D9C4f')
     .attr('stroke-linejoin', 'round')
     .attr('stroke-width', 3)
     .text(y.tickFormat(10, 's'))
@@ -147,6 +147,7 @@ export function drawGenderChart(data) {
     })
     .attr('dy', '0.35em')
     .text(y.tickFormat(10, 's'))
+    .attr('fill', '#F7D9C4')
 
   yAxis
     .append('text')
@@ -156,18 +157,18 @@ export function drawGenderChart(data) {
     })
     .attr('dy', '-1em')
     .text('Population')
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
-  var legend = g
+  const legend = g
     .append('g')
     .selectAll('g')
-    .data(['males', 'females'].reverse())
+    .data(['Females', 'Males'].reverse())
     .enter()
     .append('g')
     .attr('transform', function(d, i) {
       return 'translate(-40,' + (i - (3 - 1) / 2) * 20 + ')'
     })
-    .attr('stroke', '#fff')
+    .attr('fill', '#F7D9C4')
 
   legend
     .append('rect')

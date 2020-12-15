@@ -12,7 +12,7 @@ const getGenderData = data => {
 export const fetchGenderData = () => {
   return async dispatch => {
     try {
-      const {data} = await axios.get('/api/agesex/gender')
+      const {data} = await axios.get('/api/gender')
       dispatch(getGenderData(data))
     } catch (err) {
       console.error(err)

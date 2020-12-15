@@ -1,6 +1,17 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
-import {About, App, Chart, EthnicityChart, GenderChart} from './components'
+import {
+  About,
+  App,
+  Chart,
+  EthnicityChart,
+  GenderChart,
+  AgeChart,
+  UnemploymentChart,
+  BehindBars,
+  HungerChart,
+  EnviroChart
+} from './components'
 
 /**
  * COMPONENT
@@ -15,6 +26,11 @@ export default class Routes extends Component {
         <Route exact path="/gender" component={GenderChart} />
         <Route exact path="/chart" component={Chart} />
         <Route exact path="/ethnicity" component={EthnicityChart} />
+        <Route exact path="/age" component={AgeChart} />
+        <Route exact path="/environment" component={EnviroChart} />
+        <Route exact path="/unemployment" component={UnemploymentChart} />
+        <Route exact path="/behindBars" component={BehindBars} />
+        <Route exact path="/hunger" component={HungerChart} />
       </Switch>
     )
   }

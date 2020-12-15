@@ -29,4 +29,5 @@ const State = db.define('state', {
     allowNull: true
   }
 })
+
 module.exports = State

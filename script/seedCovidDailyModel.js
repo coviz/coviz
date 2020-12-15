@@ -8,16 +8,31 @@ async function createCovidDailyTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/daily_covid_case_counts_112320.csv')
+  let stream = fs.createReadStream(
+    'script/datasets/daily_covid_case_counts_112320.csv'
+  )
   let csvData = []
   let csvStream = fastcsv
     .parse()
     .on('data', function(row) {
-      if (row[2] === '') row[2] = 0
-      if (row[19] === '') row[19] = 0
-      if (row[41] === '') row[41] = 0
-      if (row[46] === '') row[46] = 0
-      const data = [row[0], row[1], row[2], row[19], row[41], row[46]]
+      if (row[2] === '') row[2] = '0'
+      if (row[19] === '') row[19] = '0'
+      if (row[41] === '') row[41] = '0'
+      if (row[46] === '') row[46] = '0'
+      if (row[9] === '') row[9] = '0'
+      if (row[10] === '') row[10] = '0'
+      if (row[48] === '') row[47] = '0'
+      const data = [
+        row[0],
+        row[1],
+        row[2],
+        row[19],
+        row[41],
+        row[46],
+        row[9],
+        row[10],
+        row[47]
+      ]
       csvData.push(data)
     })
     .on('end', function() {
@@ -30,7 +45,7 @@ async function createCovidDailyTable() {
       })
 
       const query =
-        'INSERT INTO "covidDailies" (date, "statecode", positive, death, "positiveIncrease", "deathIncrease") VALUES ($1, $2, $3, $4, $5, $6)'
+        'INSERT INTO "covidDailies" (date, "statecode", "positiveCumulative", "deathCumulative", "positiveIncrease", "deathIncrease", "hospitalizedCurrently", "hospitalizedCumulative", "hospitalizedIncrease") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -45,14 +60,10 @@ async function createCovidDailyTable() {
               }
             })
           })
-        } catch {
-          // what is the difference between done() and end() and close()
-          // done()
+        } finally {
+          //done()
         }
       })
-      // pool.end(() => {
-      //   console.log('pool has ended')
-      // })
     })
 
   stream.pipe(csvStream)
@@ -60,4 +71,4 @@ async function createCovidDailyTable() {
 
 createCovidDailyTable()
 
-// module.exports = createCovidDailyTable()
+module.exports = createCovidDailyTable

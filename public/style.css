@@ -1,34 +1,33 @@
+/* Overall Styling */
 body {
-  font-family: sans-serif;
   background-color: #080b0c;
+  display: grid;
+  color: white;
+  font: sans-serif;
 }
-
 a {
   text-decoration: none;
 }
-
 label {
   display: block;
 }
 
+/* Navbar Styling */
 nav a {
   display: inline-block;
   margin: 1em;
   margin-top: 1px;
-  color: #ffffff;
+  color: white;
   text-decoration: underline;
 }
-
 nav a:hover {
-  color: #80ed99;
+  color: #4cc9f0;
 }
-
 nav h5 {
   display: inline-block;
   margin: 0px;
   letter-spacing: 1px;
 }
-
 #navbar {
   display: flex;
   flex-direction: row;
@@ -46,110 +45,471 @@ img {
   display: inline-block;
   align-items: flex-end;
   /* font-family: Roboto, sans-serif; */
-  color: #ffffff;
+  color: #f7d9c4;
 }
 
-#about {
-  color: #ced4da;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
-}
-
-h1,
-h2 {
-  color: whitesmoke;
-}
-
-.flex {
+/* Footer Styling*/
+.footer {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  /* background: rgba(38, 38, 39, 0.5); */
+  /* background-color: #a91010; */
+  padding: 5px;
+  padding-bottom: 0px;
+}
+.footer h5 {
+  display: inline-block;
+  margin: 1em;
+  margin-top: 1px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+.footerul {
+  list-style: none;
+}
+.footer a {
+  display: inline-block;
+  margin: 1em;
+  margin-top: 1px;
+  color: white;
+  text-decoration: underline;
+}
+.footer a:hover {
+  color: #4cc9f0;
 }
 
+/* About Page Styling */
+#about {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  /* margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px; */
+}
+#aboutTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+}
+.aboutDetails {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+  margin-right: 60px;
+  width: 90;
+  height: 150;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+  font-size: 25px;
+}
+.sources {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+  margin-right: 60px;
+  width: 90;
+  height: 150;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+}
+.sources ul {
+  list-style: none;
+}
+.sources a {
+  color: #f7d9c4;
+}
+.sources a:hover {
+  color: #f25f5c;
+}
+.mapdiv {
+  padding: 20px;
+}
+.closure {
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Map Styling */
 .play-button {
-  /* position: absolute;
-  top: 140px;
-  left: 50px; */
-  background: rgba(38, 50, 56);
+  background: #384f56;
   padding-right: 26px;
   border-radius: 3px;
   border: none;
-  color: white;
+  color: #ced4da;
   margin: 0;
   padding: 0 12px;
   width: 60px;
   cursor: pointer;
   height: 30px;
 }
-
 .play-button:hover {
-  background-color: #e91e;
+  background-color: #ced4da;
+  color: rgba(38, 50, 56);
+  font-weight: 600;
 }
-
 .ticks {
   font-size: 10px;
 }
-
-.track,
-.track-inset,
-.track-overlay {
-  stroke-linecap: round;
-}
-
-.track {
-  stroke: #000;
-  stroke-opacity: 0.3;
-  stroke-width: 10px;
-}
-
-.track-inset {
-  stroke: #dcdcdc;
-  stroke-width: 8px;
-}
-
-.track-overlay {
-  pointer-events: stroke;
-  stroke-width: 50px;
-  stroke: transparent;
-  cursor: crosshair;
-}
-
-.handle {
-  fill: pink;
-  stroke: #000;
-  stroke-opacity: 0.5;
-  stroke-width: 1.25px;
-}
-
 div.tooltip {
   position: absolute;
   text-align: center;
   width: 100px;
-  height: 60px;
+  height: 60;
   padding: 2px;
   font: 12px sans-serif;
-  background: white;
+  background: #ced4da;
+  color: #080b0c;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+#main {
+  display: flex;
+  justify-content: space-evenly;
+}
+#map {
+  flex-direction: column;
+  margin-top: 20px;
+}
+#mapTimer {
+  display: flex;
+  flex-direction: row;
+}
+#pip {
+  display: inline-block;
+  width: 70%;
+  padding: 5px;
+}
+#pop {
+  display: inline-block;
+  width: 30%;
+  margin-right: 30px;
+}
+.aboveTimeline {
+  display: flex;
+  justify-content: space-between;
+}
+#aboveTitle {
+  /* border: 2px solid yellow; */
+}
+#totalsBox {
+  margin-top: 75px;
+  margin-bottom: 30px;
+  width: 15vw;
+  padding: 10px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+  font-size: 18px;
+}
+.select-css {
+  margin: 0px;
+}
+#time {
+  align-items: flex-end;
+}
+#test {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Age Chart Styling */
+.ageChartNinfo {
+  display: flex;
+  justify-content: space-around;
+}
+.ageChartNinfo div {
+  z-index: 10;
+  color: white;
+  font-size: 20px;
+}
+#ageTitle1 {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+}
+#ageTitle2 {
+  text-decoration: underline;
+}
+.ageFacts {
+  display: table;
+  line-height: 1.6;
+  margin-top: 2.5rem;
+  margin-right: 40px;
+  width: 30%;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+}
+.ageFacts li {
+  margin: 20px;
+}
+div.tooltipLolli {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 60;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #ced4da;
+  color: #080b0c;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
 }
 
-#mainMap {
+/* Environment Chart Styling */
+.co2ChartNinfo div {
+  /* z-index: 10; */
+  color: white;
+  font-size: 20px;
+}
+.co2ChartNinfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-#map {
-  flex-direction: column;
-  /* border: 2px solid lime; */
-}
-#time {
-  /* border: 2px solid peachpuff; */
-  align-items: flex-end;
-}
-div.tooltipz {
-  /* position: absolute; */
+#enviroTitle1 {
+  color: white;
   text-align: center;
+}
+#enviroTitle2 {
+  text-decoration: underline;
+}
+.co2Facts {
+  display: table;
+  line-height: 1.6;
+  margin-top: 4rem;
+  margin-left: 40px;
+  width: 30%;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+}
+.co2Facts li {
+  padding: 10px;
+  line-height: 1.6;
+}
+#envTitle {
+  display: flex;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+}
+
+/* Gender Chart Styling */
+#genderPage {
+  display: flex;
+  justify-content: space-evenly;
+}
+#genderTitle {
+  display: flex;
+  justify-content: center;
+}
+.genderFact {
+  text-align: center;
+}
+#genderPage {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0px;
+  /* border: 2px solid orange; */
+}
+
+#genderChartPage {
+  /* display: flex; */
+  justify-content: center;
+}
+
+/* Tooltip for Race/Ethnicity and Umemployment */
+div.tooltipsie {
+  position: absolute;
+  text-align: center;
+  /* background: #ced4da;
+  fill: #080b0C; */
+  color: black;
   width: 300px;
   height: 50px;
+  pointer-events: none;
+}
+
+/* Unemployment Chart Styling */
+#unempTitle {
+  display: flex;
+  justify-content: center;
+}
+#graphs {
+  display: flex;
+  flex: 1;
+  margin: 0px;
+  justify-content: center;
+  /* border: 2px solid rgb(255, 0, 221); */
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#unempTitle {
+  display: flex;
+  justify-content: center;
+}
+#genderUnemp {
+  /* border: 2px solid lime; */
+  height: 30%;
+  flex: 1;
+  width: 33%;
+}
+#notInLabor {
+  /* border: 2px solid peachpuff; */
+  height: 30%;
+  flex: 1;
+  width: 33%;
+}
+.factsCont {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+.facts {
+  /* border: 2px solid skyblue; */
+  flex-wrap: wrap;
+  padding: 10px;
+  flex: 1;
+  border-radius: 5px 5px 5px;
+  margin: 5px 5px 5px;
+  letter-spacing: 1px;
+  width: 500px;
+  height: 400px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  font-size: 20px;
+  /* opacity: 0.4; */
+  justify-content: flex-end;
+}
+#totalUnemp {
+  /* border: 2px solid red; */
+  height: 30%;
+  flex: 1;
+  width: 33%;
+}
+
+/* Jail/Prison Styling */
+div.tooltipjails {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 60;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #ced4da;
+  color: #080b0c;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+.facts li {
+  margin: 17px;
+}
+#jailTitle {
+  display: flex;
+  justify-content: center;
+}
+.prisonfacts {
+  /* border: 2px solid skyblue; */
+  flex-wrap: wrap;
+  padding: 30px;
+  flex: 1;
+  border-radius: 5px 5px 5px;
+  margin: 5px 5px 5px;
+  letter-spacing: 1px;
+  width: 90vw;
+  height: 20vh;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  /* opacity: 0.4; */
+  justify-content: flex-end;
+}
+.jailFact {
+  text-align: center;
+  padding-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 70px;
+}
+
+/* Race/ethnicity Chart Styling */
+#ethnPage {
+  display: flex;
+  justify-content: space-evenly;
+}
+#ethnTitle {
+  display: flex;
+  justify-content: center;
+}
+#chartEthn {
+  /* border: 2px solid red; */
+  width: 50vw;
+}
+.factsEthn {
+  /* border: 2px solid skyblue; */
+  margin-top: 60px;
+  margin-bottom: 30px;
+  width: 400px;
+  height: 620px;
+  padding: 20px;
+  letter-spacing: 1px;
+  background: rgba(38, 38, 39, 0.5);
+  color: white;
+  border-radius: 5px 5px 5px;
+  font-size: 20px;
+}
+.factsEthn li {
+  margin: 17px;
+}
+
+/* Hunger Chart Stylings */
+div.tooltipHunger {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 60;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #ced4da;
+  color: #080b0c;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+#hungerTitle {
+  display: flex;
+  justify-content: center;
+}
+#hungerFact {
+  text-align: center;
+}
+#hungerChart {
+  display: flex;
+  justify-content: center;
+}
+
+.smallsup {
+  font-size: x-small;
 }
