@@ -2,6 +2,8 @@ const fs = require('fs')
 const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
+const connectionString =
+  'postgres://uvwoudywlamqec:d9f5e5619ff97970fe450cac1ed73858d420d2443615228dcea65f1ff8179d12@ec2-3-89-230-115.compute-1.amazonaws.com:5432/d5mpo1h40u920n'
 
 async function createTable() {
   await db.sync({force: true})
@@ -20,14 +22,7 @@ async function createTable() {
 
       // create a new connection to the database
       const pool = new Pool({
-        host: 'localhost',
-        user: 'postgres',
-        // ^^comment this 1 line in when not on Anna's comp^^
-        // user: 'ania',
-        // password: 'newPassword',
-        // ^^comment these 2 lines out when not on Anna's comp^^
-        database: 'coviz',
-        port: 5432
+        connectionString: connectionString
       })
       console.log('this is right before query')
       const query =
