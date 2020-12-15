@@ -17,9 +17,9 @@ export const EthnicityChart = props => {
 
   return (
     <div>
+      <h2 id="ethnTitle">Covid v. Ethnicity</h2>
       <div id="ethnPage">
         <div>
-          <h2 id="ethnTitle">Covid v. Ethnicity</h2>
           {isLoading ? drawEthnChart(700, 800, data) : <div />}
           <div id="chartEthn">
             <div id="ethnChart" />
@@ -31,21 +31,23 @@ export const EthnicityChart = props => {
           </h4>
           <ul>
             <li>
-              Accoring to our data African Americans, Native Americans, Pacfic
-              Islanders and Latino Americans suffered higher rates of death
+              According to our data, African Americans, Native Americans, Pacfic
+              Islanders and Latino Americans sufferd higher rates of death
+              <sup className="smallsup">1</sup>
             </li>
             <li>
               "Pacific Islanders in US hospitalised with Covid-19 at up to 10
               times the rate of other groups, many islanders in America live in
               large families and tight-knit communities, and work in frontline
               service industries, increasing their risk of exposure"{' '}
-              <sup>1</sup>
+              <sup className="smallsup">2</sup>
             </li>
             <li>
               "...the new studies do suggest that there is no innate
               vulnerability to the virus among Black and Hispanic
               Americans...Instead, these groups are more often exposed because
-              of social and environmental factors... -The NYT
+              of social and environmental factors..."{' '}
+              <sup className="smallsup">3</sup>
             </li>
           </ul>
         </div>

@@ -17,7 +17,7 @@ export function drawGenderChart(data) {
     outerRadius = Math.min(width, height) * 0.45,
     g = svg
       .append('g')
-      .attr('transform', 'translate(' + width / 1.9 + ',' + height * 0.5 + ')')
+      .attr('transform', 'translate(' + width / 1.6 + ',' + height * 0.5 + ')')
 
   const x = d3
     .scaleBand()

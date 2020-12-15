@@ -14,10 +14,10 @@ export const App = () => {
 
   // create the timer
   const timer = useTimer({
-    startTime: new Date('2020-02-26'),
-    endTime: new Date('2020-11-23'),
-    step: 1000 * 60 * 60,
-    frequency: 100
+    startTime: new Date('2020-02-28'),
+    endTime: new Date('2020-11-21'),
+    step: 1000 * 60 * 60 * 72,
+    frequency: 3
   })
 
   const timerDate = timer.time.toLocaleDateString()
@@ -83,7 +83,9 @@ export const App = () => {
         <Trend {...timer} />
         <div id="test">
           <div>
-            {timerDate === '11/22/2020' ? (
+            {timerDate === '11/21/2020' ||
+            timerDate === '11/22/2020' ||
+            timerDate === '11/23/2020' ? (
               <button
                 type="button"
                 className="play-button"
