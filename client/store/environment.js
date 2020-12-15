@@ -11,7 +11,6 @@ export const fetchEnviro = () => {
   return async dispatch => {
     try {
       const {data} = await axios.get('/api/environment')
-
       dispatch(setEnviro(data))
     } catch (error) {
       console.log(error)

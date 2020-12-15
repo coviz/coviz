@@ -17,7 +17,7 @@ export const EnviroChart = props => {
   }, [])
 
   return (
-    <div>
+    <div className="envStuff">
       <h1 id="enviroTitle1">Covid v. Environment</h1>
       {isLoading ? drawEnviroChart(840, 800, data) : <div />}
       <div className="co2ChartNinfo">
@@ -35,13 +35,6 @@ export const EnviroChart = props => {
             <li>
               The biggest drop of carbon emissions in the US during 2020 so far
               occurred during April.
-            </li>
-            <li>
-              "By July 1st, the pandemic’s effects on global emissions
-              diminished as lockdown restrictions relaxed and some economic
-              activities restarted, [...] with continuing emission declines in
-              the U.S. where coronavirus cases are still increasing
-              substantially." -Zhu Liu, nature.com
             </li>
             <li>
               "[There are] substantial COVID-related decreases in CO2 emissions

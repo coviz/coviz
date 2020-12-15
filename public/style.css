@@ -240,7 +240,7 @@ div.tooltip {
   line-height: 1.6;
   margin-top: 2.5rem;
   margin-right: 40px;
-  width: 40vw;
+  width: 30%;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);
@@ -266,7 +266,7 @@ div.tooltipLolli {
 
 /* Environment Chart Styling */
 .co2ChartNinfo div {
-  z-index: 10;
+  /* z-index: 10; */
   color: white;
   font-size: 17px;
 }
@@ -286,7 +286,7 @@ div.tooltipLolli {
   line-height: 1.6;
   margin-top: 4rem;
   margin-left: 40px;
-  width: 40vw;
+  width: 30%;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);
