@@ -23,7 +23,7 @@ export const fetchUnemployment = () => {
       const {data} = await axios.get('/api/unemployment')
       dispatch(getUnemploymentData(data))
     } catch (err) {
-      // console.log(err)
+      console.log(err)
     }
   }
 }
@@ -33,7 +33,7 @@ export const fetchGenderUnemployment = () => {
       const {data} = await axios.get('/api/unemployment/gender')
       dispatch(getGenderUnemploymentData(data))
     } catch (err) {
-      // console.log(err)
+      console.log(err)
     }
   }
 }

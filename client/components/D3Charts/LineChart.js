@@ -1,7 +1,6 @@
 import * as d3 from 'd3'
 
 export function initEnviroChart(height, width) {
-  // console.log('init')
   var margin = {top: 30, right: 30, bottom: 30, left: 30}
   width = width - margin.left - margin.right
   height = height - margin.top - margin.bottom
@@ -17,7 +16,6 @@ export function initEnviroChart(height, width) {
 }
 
 export function drawEnviroChart(height, width, data) {
-  console.log('draw')
   const svg = d3.select('#enviroChart svg')
   let margin = {top: 30, right: 30, bottom: 30, left: 120}
   width = width - margin.left - margin.right
@@ -26,20 +24,16 @@ export function drawEnviroChart(height, width, data) {
   const minX = d3.min(data, function(d) {
     return +d.date
   })
-  console.log('x min:', minX)
   const maxX = d3.max(data, function(d) {
     return +d.date
   })
-  console.log('x max:', maxX)
   // Max value observed:
   const minY = d3.min(data, function(d) {
     return +d.value
   })
-  console.log('y min:', minY)
   const maxY = d3.max(data, function(d) {
     return +d.value
   })
-  console.log('y max:', maxY)
 
   let xScale = d3
     .scaleLinear()
