@@ -105,7 +105,7 @@ export function drawHungerChart(data) {
     })
 
   // Legend
-  let legend = svg
+  const legend = svg
     .append('g')
     .selectAll('g')
     .data([

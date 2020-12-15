@@ -2,7 +2,7 @@ import * as d3 from 'd3'
 
 export function initEnviroChart(height, width) {
   // console.log('init')
-  var margin = {top: 30, right: 30, bottom: 30, left: 30}
+  const margin = {top: 30, right: 30, bottom: 30, left: 30}
   width = width - margin.left - margin.right
   height = height - margin.top - margin.bottom
 
@@ -19,7 +19,7 @@ export function initEnviroChart(height, width) {
 export function drawEnviroChart(height, width, data) {
   console.log('draw')
   const svg = d3.select('#enviroChart svg')
-  let margin = {top: 30, right: 30, bottom: 30, left: 120}
+  const margin = {top: 30, right: 30, bottom: 30, left: 120}
   width = width - margin.left - margin.right
   height = height - margin.top - margin.bottom
 
@@ -41,7 +41,7 @@ export function drawEnviroChart(height, width, data) {
   })
   console.log('y max:', maxY)
 
-  let xScale = d3
+  const xScale = d3
     .scaleLinear()
     .domain([minX, maxX])
     .range([margin.left, width + 250])
@@ -50,7 +50,7 @@ export function drawEnviroChart(height, width, data) {
   // .domain([0, maxY+40])
   // .range([ height, 0 ]);
 
-  var x = d3
+  const x = d3
     .scaleBand()
     .range([margin.left, width + 270])
     // .domain(
@@ -87,7 +87,7 @@ export function drawEnviroChart(height, width, data) {
     .style('font-size', '14px')
 
   // Add Y axis
-  var y = d3
+  const y = d3
     .scaleLinear()
     .domain([200, maxY + 40])
     .range([height, 0])

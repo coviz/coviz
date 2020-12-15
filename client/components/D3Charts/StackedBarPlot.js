@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-let margin = {top: 10, right: 30, bottom: 20, left: 90},
+const margin = {top: 10, right: 30, bottom: 20, left: 90},
   width = 460 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom
 
@@ -20,18 +20,18 @@ export function drawGenderUnempChart(data) {
     // set the dimensions and margins of the graph
 
     // append the svg object to the body of the page
-    let svg = d3.select('#genderUnempChart svg')
+    const svg = d3.select('#genderUnempChart svg')
 
     //   // List of subgroups = header of the csv files = soil condition here
     //   let subgroups = data.columns.slice(1)
 
     // List of groups = species here = value of the first column called group -> I show them on the X axis
-    let years = d3.map(data, function(d) {
+    const years = d3.map(data, function(d) {
       return d.year
     })
 
     // Add X axis
-    let x = d3
+    const x = d3
       .scaleBand()
       .domain(years)
       .range([0, width])
@@ -45,7 +45,7 @@ export function drawGenderUnempChart(data) {
     //.attr('color', '#fff')
 
     // Add Y axis
-    let y = d3
+    const y = d3
       .scaleLinear()
       .domain([
         0,
@@ -63,18 +63,18 @@ export function drawGenderUnempChart(data) {
     //.attr('color', '#fff')
 
     // color palette = one color per subgroup
-    let color = d3
+    const color = d3
       .scaleOrdinal()
       .domain(['Men', 'Women'])
       .range(['#0CF574', '#F7D9C4'])
 
     //stack the data? --> stack per subgroup
-    let stackedData = d3.stack().keys(['Men', 'Women'])(data)
+    const stackedData = d3.stack().keys(['Men', 'Women'])(data)
 
     // ----------------
     // Create a tooltip
     // ----------------
-    let tooltip = d3
+    const tooltip = d3
       .select('#genderUnempChart')
       .append('div')
       .style('opacity', 0)
@@ -87,15 +87,15 @@ export function drawGenderUnempChart(data) {
       .style('padding', '10px')
 
     // Three function that change the tooltip when user hover / move / leave a cell
-    let mouseover = function(d) {
+    const mouseover = function(d) {
       tooltip.style('opacity', 1)
     }
-    let mousemove = function(d) {
+    const mousemove = function(d) {
       const databub = d.srcElement.__data__.data
       //     console.log('this is the d in mouseover', databub)
-      let subgroupName = d3.select(this.parentNode).datum().key
+      const subgroupName = d3.select(this.parentNode).datum().key
       //   console.log(subgroupName)
-      let subgroupValue = databub[subgroupName]
+      const subgroupValue = databub[subgroupName]
       //   console.log(subgroupValue)
       tooltip
         .html(
@@ -107,7 +107,7 @@ export function drawGenderUnempChart(data) {
         .style('left', d.pageX + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
         .style('top', d.pageY - 28 + 'px')
     }
-    let mouseleave = function(d) {
+    const mouseleave = function(d) {
       tooltip.style('opacity', 0)
     }
 
@@ -144,7 +144,7 @@ export function drawGenderUnempChart(data) {
       .on('mousemove', mousemove)
       .on('mouseleave', mouseleave)
 
-    let legend = svg
+    const legend = svg
       .append('g')
       .attr('class', 'legend')
       .attr('width', 140)

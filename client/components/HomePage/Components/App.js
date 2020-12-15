@@ -35,6 +35,7 @@ export const App = () => {
 
   useEffect(
     () => {
+      // reformat date to match database model values
       const array = timerDate.split('/')
       const year = array.pop()
       array.unshift(year)

@@ -24,7 +24,7 @@ export const SpikeMap = realData => {
       const pathGenerator = geoPath().projection(projection)
 
       // Create the tooltip
-      var div = d3
+      const div = d3
         .select('body')
         .append('div')
         .attr('class', 'tooltipjails')

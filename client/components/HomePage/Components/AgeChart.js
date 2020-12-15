@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchAges} from '../../../store/age'
 import {initAgeChart, drawAgeChart} from '../../D3Charts/Lollipop'

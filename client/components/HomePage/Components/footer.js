@@ -16,7 +16,15 @@ export const Footer = () => (
     </div>
     <div>
       <h5>CREATORS:</h5>
-      <h5>Claire Brown</h5>
+      <h5>
+        <a
+          href="https://www.linkedin.com/in/cbconstans/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Claire Brown
+        </a>
+      </h5>
       <h5>Jin Young Choi</h5>
       <h5>Jasmine Hatcher</h5>
       <h5>Anna Syzmula</h5>
