@@ -26,13 +26,13 @@ export const GenderChart = props => {
   })
 
   return (
-    <div>
+    <div id="genderChartPage">
       <h2 id="genderTitle">Covid v. Gender</h2>
       <h1 className="genderFact">
         {' '}
-        While men are more likely to contract (and die) from the coronavirus,
-        <br />women are bearing the brunt of the economic and social fallout of
-        COVID-19.
+        Men are more likely to die from COVID-19,
+        <br /> which scientists currently hypothesize to be related to immune
+        system response. <sup className="smallsup">1</sup>
       </h1>
       {isLoading ? drawGenderChart(test) : <div />}
       <div id="genderChart" />
