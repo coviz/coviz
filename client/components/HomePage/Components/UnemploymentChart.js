@@ -62,10 +62,10 @@ export const UnemploymentChart = props => {
             <li>
               Definition of Employed, Unemployed & Not In the Labor Force:
               "People who are jobless, looking for a job, and available for work
-              are <u>unemployed</u>. The <u>labor force</u> is made up of the
-              employed and the unemployed. People who are neither employed nor
-              unemployed are <u>not in the labor force</u>." -Bureau of Labor
-              Statistics
+              are unemployed. The labor force is made up of the employed and the
+              unemployed. People who are neither employed nor unemployed are not
+              in the labor force."
+              <sup>4</sup>
             </li>
             <li>
               "The COVID-19 outbreak and the economic downturn it engendered
@@ -73,7 +73,8 @@ export const UnemploymentChart = props => {
               from 6.2 million in February to 20.5 million in May 2020...The
               rise in the number of unemployed workers due to COVID-19 is
               substantially greater than the increase due to the Great
-              Recession" -Pew Research Center
+              Recession."
+              <sup>5</sup>
             </li>
             <li>
               "...some economists see three reasons the pandemic’s depressing
@@ -85,7 +86,7 @@ export const UnemploymentChart = props => {
               a comeback harder. Third, it is falling particularly heavily on
               workers with less education and skills. These workers often
               struggle to find well-paying work and many drop out of the
-              workforce." -WSJ
+              workforce." <sup>6</sup>
             </li>
           </div>
         </div>

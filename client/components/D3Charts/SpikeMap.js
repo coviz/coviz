@@ -120,8 +120,9 @@ export const SpikeMap = realData => {
       <h1 className="jailFact">
         On average, the COVID-19 mortality rate within prisons is twice as large
         as that of the general population, after adjusting for sex, age, and
-        race/ethnicity of those incarcerated.
+        race/ethnicity of those incarcerated.{' '}
       </h1>
+
       <div className="closure">
         <svg
           id="jailMainMap"

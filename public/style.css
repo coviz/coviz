@@ -588,13 +588,15 @@ div.tooltipHunger {
   margin-bottom: 30px;
   margin-left: 20px;
   width: 90vw;
-  height: 150px;
+  height: 150;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);
   color: white;
   border-radius: 5px 5px 5px;
+  list-style: none;
 }
+
 .sources {
   margin-top: 60px;
   margin-bottom: 30px;
@@ -606,7 +608,9 @@ div.tooltipHunger {
   color: white;
   border-radius: 5px 5px 5px;
 }
-
+.sources ul {
+  list-style: none;
+}
 .sources a {
   color: #f7d9c4;
 }
