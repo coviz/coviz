@@ -335,6 +335,11 @@ div.tooltipLolli {
   /* border: 2px solid orange; */
 }
 
+#genderChartPage {
+  /* display: flex; */
+  justify-content: center;
+}
+
 /* Tooltip for Race/Ethnicity and Umemployment */
 div.tooltipsie {
   position: absolute;

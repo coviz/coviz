@@ -23,8 +23,8 @@ export const About = () => {
         </p>
         <p>
           The site uses D3 to render the main map and supplemental charts,
-          coupled with React/Redux for the front end. Additionally, the site
-          uses express/sequelize/SQL for the backend and stores data in a
+          coupled with React and Redux for the front end. Additionally, the site
+          uses express, sequelize, and SQL for the backend and stores data in a
           PostgreSQL database. The javascript libraries fast-csv and
           node-postgres (pg) are used to help read our data files and store the
           read data in PostgreSQL. To ensure everything is working as expected,
