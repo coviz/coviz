@@ -58,6 +58,7 @@ const states = {
   Wyoming: 'WY'
 }
 
+// GET route for death counts by gender in US
 router.get('/', async (req, res, next) => {
   try {
     const gender = await AgeSex.findAll({

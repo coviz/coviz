@@ -7,7 +7,9 @@ async function createCovidDailyTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/daily_covid_case_counts_112320.csv')
+  let stream = fs.createReadStream(
+    'script/datasets/daily_covid_case_counts_112320.csv'
+  )
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -64,14 +66,10 @@ async function createCovidDailyTable() {
               }
             })
           })
-        } catch {
-          // what is the difference between done() and end() and close()
-          // done()
+        } finally {
+          //done()
         }
       })
-      // pool.end(() => {
-      //   console.log('pool has ended')
-      // })
     })
 
   stream.pipe(csvStream)
@@ -79,4 +77,4 @@ async function createCovidDailyTable() {
 
 createCovidDailyTable()
 
-// module.exports = createCovidDailyTable()
+module.exports = createCovidDailyTable

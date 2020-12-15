@@ -50,7 +50,7 @@
     "d3-tip": "^0.9.1",
     "express": "^4.16.4",
     "express-session": "^1.15.1",
-    "fast-csv": "^4.3.5",
+    "fast-csv": "^4.3.6",
     "fs": "0.0.1-security",
     "history": "^4.9.0",
     "mdbreact": "^5.0.1",

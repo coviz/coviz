@@ -7,7 +7,9 @@ async function createUnemploymentTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/total_unemployment_rates.csv')
+  let stream = fs.createReadStream(
+    'script/datasets/total_unemployment_rates.csv'
+  )
   let csvData = []
   let csvStream = fastcsv
     .parse()
@@ -56,5 +58,3 @@ async function createUnemploymentTable() {
 }
 
 createUnemploymentTable()
-
-// module.exports = createStateTable()

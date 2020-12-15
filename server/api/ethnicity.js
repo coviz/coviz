@@ -1,11 +1,10 @@
 const {Ethnicity} = require('../db/models')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
-
 const router = require('express').Router()
-// const Ethnicity = require('../db/models/ethnicity')
 module.exports = router
 
+// GET route for all race and ethnicity data
 router.get('/', async (req, res, next) => {
   try {
     const nation = await Ethnicity.findAll({
@@ -19,6 +18,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// GET route for one state's race and ethnicity data
 router.get('/:stateName', async (req, res, next) => {
   try {
     const state = await Ethnicity.findAll({
