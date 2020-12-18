@@ -10,10 +10,13 @@ export function initHungerChart() {
   d3
     .select('#hungerChart')
     .append('svg')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
+    .attr('width', width + margin.left + margin.right + 70)
+    .attr('height', height + margin.top + margin.bottom + 40)
     .append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+    .attr(
+      'transform',
+      'translate(' + margin.left + 400 + ',' + margin.top + ')'
+    )
 }
 
 export function drawHungerChart(data) {
@@ -34,7 +37,7 @@ export function drawHungerChart(data) {
     .padding([0.2])
   svg
     .append('g')
-    .attr('transform', 'translate(0,' + height + ')')
+    .attr('transform', 'translate(70,' + height + ')')
     .call(d3.axisBottom(x).tickSize(0))
 
   // X axis labels
@@ -50,13 +53,16 @@ export function drawHungerChart(data) {
     .scaleLinear()
     .domain([0, 40])
     .range([height, 0])
-  svg.append('g').call(d3.axisLeft(y))
+  svg
+    .append('g')
+    .attr('transform', 'translate(' + 70 + ')')
+    .call(d3.axisLeft(y))
 
   // Y axis label
   svg
     .append('text')
     .attr('transform', 'rotate(-90)')
-    .attr('y', 0 - margin.left)
+    .attr('y', 0 - margin.left + 70)
     .attr('x', 0 - height / 2)
     .attr('dy', '1em')
     .style('text-anchor', 'middle')
@@ -97,7 +103,7 @@ export function drawHungerChart(data) {
     .enter()
     .append('rect')
     .attr('x', function(d) {
-      return xSubgroup(d.key)
+      return xSubgroup(d.key) + 70
     })
     .attr('y', function(d) {
       return y(d.value)
@@ -131,7 +137,7 @@ export function drawHungerChart(data) {
 
   legend
     .append('rect')
-    .attr('x', 40)
+    .attr('x', 110)
     .attr('y', 20)
     .attr('width', 18)
     .attr('height', 18)
@@ -139,7 +145,7 @@ export function drawHungerChart(data) {
 
   legend
     .append('text')
-    .attr('x', 70)
+    .attr('x', 140)
     .attr('y', 30)
     .attr('dy', '0.25em')
     .text(function(d) {
