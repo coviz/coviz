@@ -2,8 +2,7 @@ const fs = require('fs')
 const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
-const connectionString =
-  'postgres://uvwoudywlamqec:d9f5e5619ff97970fe450cac1ed73858d420d2443615228dcea65f1ff8179d12@ec2-3-89-230-115.compute-1.amazonaws.com:5432/d5mpo1h40u920n'
+const connectionString = process.env.HEROKU_POSTGRESQL_PINK_URL
 async function createUnemploymentTable() {
   await db.sync()
   await db.close()
