@@ -1,19 +1,25 @@
 import * as d3 from 'd3'
 
-export function drawHungerChart(data) {
-  // set the dimensions and margins of the graph
-  const margin = {top: 50, right: 50, bottom: 50, left: 50},
-    width = 1200 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom
+// set the dimensions and margins of the graph
+const margin = {top: 50, right: 50, bottom: 50, left: 50},
+  width = 1200 - margin.left - margin.right,
+  height = 600 - margin.top - margin.bottom
 
+export function initHungerChart() {
   // append the svg object to the body of the page
-  const svg = d3
+  d3
     .select('#hungerChart')
     .append('svg')
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+}
+
+export function drawHungerChart(data) {
+  // append the svg object to the body of the page
+  const svg = d3.select('#hungerChart svg')
+
   // List of years
   const groups = data.map(x => x.year)
 

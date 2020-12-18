@@ -40,14 +40,16 @@ export function drawEnviroChart(height, width, data) {
     .domain([minX, maxX])
     .range([margin.left, width + 250])
 
+  const xLabels = data.map((d, index) => {
+    const adjDate = Math.floor(d.date / 100)
+    console.log(adjDate)
+    return index % 12 === 0 ? adjDate : adjDate
+  })
+
   const x = d3
     .scaleBand()
     .range([margin.left, width + 270])
-    .domain(
-      data.map((d, index) => {
-        return index % 12 === 0 ? d.date : d.date
-      })
-    )
+    .domain(xLabels)
     .padding(2)
   svg
     .append('g')
@@ -104,7 +106,7 @@ export function drawEnviroChart(height, width, data) {
       d3
         .line()
         .x(function(d) {
-          return x(d.date)
+          return x(Math.floor(d.date / 100))
         })
         .y(function(d) {
           return y(d.value)

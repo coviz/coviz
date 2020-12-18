@@ -14,23 +14,23 @@ async function createCovidDailyTable() {
   let csvStream = fastcsv
     .parse()
     .on('data', function(row) {
-      if (row[2] === '') row[2] = '0'
-      if (row[19] === '') row[19] = '0'
-      if (row[41] === '') row[41] = '0'
-      if (row[46] === '') row[46] = '0'
+      if (row[20] === '') row[20] = '0'
+      if (row[3] === '') row[3] = '0'
+      if (row[22] === '') row[22] = '0'
+      if (row[5] === '') row[5] = '0'
       if (row[9] === '') row[9] = '0'
+      if (row[7] === '') row[7] = '0'
       if (row[10] === '') row[10] = '0'
-      if (row[48] === '') row[47] = '0'
       const data = [
         row[0],
         row[1],
-        row[2],
-        row[19],
-        row[41],
-        row[46],
+        row[20],
+        row[3],
+        row[22],
+        row[5],
         row[9],
-        row[10],
-        row[47]
+        row[7],
+        row[10]
       ]
       csvData.push(data)
     })

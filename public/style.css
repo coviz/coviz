@@ -508,6 +508,7 @@ div.tooltipHunger {
 #hungerChart {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .smallsup {
