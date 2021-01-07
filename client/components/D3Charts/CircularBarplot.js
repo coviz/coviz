@@ -144,6 +144,7 @@ export function drawGenderChart(data) {
     .append('text')
     .attr('x', -6)
     .attr('y', function(d) {
+      console.log('d,', d)
       return -y(d)
     })
     .attr('dy', '0.35em')
@@ -157,6 +158,7 @@ export function drawGenderChart(data) {
       return -y(y.ticks(10).pop())
     })
     .attr('dy', '-1em')
+    .attr('dx', '2em')
     .text('Population')
     .attr('fill', '#F7D9C4')
 
