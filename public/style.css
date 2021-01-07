@@ -325,17 +325,25 @@ div.tooltipLolli {
 .genderFact {
   text-align: center;
 }
-#genderPage {
+#genderChart {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  margin: 0px;
-  /* border: 2px solid orange; */
+  align-items: center;
+  /* margin-left: 50px; */
+  flex-shrink: 1;
+  border: 2px solid red;
+}
+#genderChartCont {
+  display: flex;
+  justify-content: center;
+  border: 2px solid pink;
 }
 
 #genderChartPage {
-  /* display: flex; */
+  display: flex;
+  /* flex: 1; */
   justify-content: center;
+  flex-direction: column;
+  border: 2px solid orange;
 }
 
 /* Tooltip for Race/Ethnicity and Umemployment */
@@ -354,6 +362,14 @@ div.tooltipsie {
 #unempTitle {
   display: flex;
   justify-content: center;
+}
+
+#genderPage {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0px;
+  /* border: 2px solid green; */
 }
 #graphs {
   display: flex;

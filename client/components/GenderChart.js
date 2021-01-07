@@ -26,16 +26,20 @@ export const GenderChart = props => {
   })
 
   return (
-    <div id="genderChartPage">
+    <div>
       <h2 id="genderTitle">Covid v. Gender</h2>
-      <h1 className="genderFact">
-        {' '}
-        Men are more likely to die from COVID-19,
-        <br /> which scientists currently hypothesize to be related to immune
-        system response. <sup className="smallsup">4</sup>
-      </h1>
-      {isLoading ? drawGenderChart(test) : <div />}
-      <div id="genderChart" />
+      <div id="genderChartPage">
+        <h1 className="genderFact">
+          {' '}
+          Men are more likely to die from COVID-19,
+          <br /> which scientists currently hypothesize to be related to immune
+          system response. <sup className="smallsup">4</sup>
+        </h1>
+        {isLoading ? drawGenderChart(test) : <div />}
+        <div id="genderChartCont">
+          <div id="genderChart" />
+        </div>
+      </div>
     </div>
   )
 }
