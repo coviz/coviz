@@ -144,7 +144,6 @@ export function drawGenderChart(data) {
     .append('text')
     .attr('x', -6)
     .attr('y', function(d) {
-      console.log('d,', d)
       return -y(d)
     })
     .attr('dy', '0.35em')

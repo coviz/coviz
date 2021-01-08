@@ -330,12 +330,12 @@ div.tooltipLolli {
   align-items: center;
   /* margin-left: 50px; */
   flex-shrink: 1;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 #genderChartCont {
   display: flex;
   justify-content: center;
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
 }
 
 #genderChartPage {
@@ -343,7 +343,7 @@ div.tooltipLolli {
   /* flex: 1; */
   justify-content: center;
   flex-direction: column;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
 }
 
 /* Tooltip for Race/Ethnicity and Umemployment */
@@ -378,7 +378,7 @@ div.tooltipsie {
   justify-content: center;
   /* border: 2px solid rgb(255, 0, 221); */
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 #unempTitle {
   display: flex;
@@ -474,6 +474,8 @@ div.tooltipjails {
 #ethnPage {
   display: flex;
   justify-content: space-evenly;
+  /* border: 2px solid lime; */
+  height: 100%;
 }
 #ethnTitle {
   display: flex;
@@ -481,14 +483,14 @@ div.tooltipjails {
 }
 #chartEthn {
   /* border: 2px solid red; */
-  width: 50vw;
+  width: 60%;
 }
 .factsEthn {
   /* border: 2px solid skyblue; */
-  margin-top: 60px;
+  margin-top: 0px;
   margin-bottom: 30px;
-  width: 400px;
-  height: 620px;
+  width: 30%;
+  height: 60%;
   padding: 20px;
   letter-spacing: 1px;
   background: rgba(38, 38, 39, 0.5);

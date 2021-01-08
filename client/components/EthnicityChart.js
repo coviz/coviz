@@ -12,7 +12,7 @@ export const EthnicityChart = props => {
     dispatch(fetchEthnicities())
   }, [])
   useEffect(() => {
-    initEthnChart(600, 800)
+    initEthnChart(800, 650)
   }, [])
 
   return (
