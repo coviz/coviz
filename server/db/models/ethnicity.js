@@ -6,15 +6,15 @@ const Ethnicity = db.define('ethnicity', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  ethnicity: {
+  ethn: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  deaths: {
+  pop: {
     type: Sequelize.INTEGER,
     defaultValue: 0
   },
-  pop: {
+  deaths: {
     type: Sequelize.INTEGER,
     defaultValue: 0
   },

@@ -186,7 +186,7 @@ export const StateMap = data => {
       <svg
         id="mainMap"
         ref={svgRef}
-        width={1000}
+        width={975}
         height={700}
         viewBox="0 0 975 610"
       />

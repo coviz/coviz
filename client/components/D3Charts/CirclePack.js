@@ -15,13 +15,13 @@ export function drawEthnChart(height, width, data) {
   const color = d3
     .scaleOrdinal()
     .domain([
-      'Caucasian',
-      'AfricanAmerican',
-      'NativeAmerican',
-      'AsianAmerican',
-      'PacificIslander',
-      'latinoAmerican',
-      'Other'
+      'White American',
+      'Black or African American',
+      ' American Indian or Alaska Native',
+      ' Asian American',
+      'Native Hawaiian or Other Pacific Islander',
+      'Hispanic or Latino',
+      'Multi-racial and Other'
     ])
     .range(d3.schemeSet2)
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
@@ -51,10 +51,7 @@ export function drawEthnChart(height, width, data) {
   const mousemove = function(d) {
     const dataBub = d.srcElement.__data__
 
-    // add space and capitalization to races/ethnicities
-    let ethnicity = dataBub.ethnicity
-    if (ethnicity === 'latinoAmerican') ethnicity = 'LatinoAmerican'
-    ethnicity = ethnicity.replace(/([A-Z])/g, ' $1').trim()
+    let ethnicity = dataBub.ethn
 
     Tooltip.html(
       '<u>' +
@@ -87,7 +84,7 @@ export function drawEthnChart(height, width, data) {
     .attr('cx', width / 2.2)
     .attr('cy', height / 2.2)
     .style('fill', function(d) {
-      return color(d.ethnicity)
+      return color(d.ethn)
     })
     .style('fill-opacity', 0.8)
     .attr('stroke', 'black')
