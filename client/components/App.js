@@ -100,7 +100,7 @@ export const App = () => {
                 className="play-button"
                 onClick={timer.play}
               >
-                Play
+                Start
               </button>
             ) : (
               <button
