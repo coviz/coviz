@@ -107,7 +107,7 @@ export function drawEthnChart(height, width, data) {
       d3
         .forceCenter()
         .x(width / 2.2)
-        .y(height / 2.2)
+        .y(height / 1.8)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(
@@ -146,13 +146,14 @@ export function drawEthnChart(height, width, data) {
     .enter()
     .append('g')
     .attr('transform', function(d, i) {
-      return 'translate(0,' + i * 20 + ')'
+      return 'translate(0,' + i * 17 + ')'
     })
 
   legend
     .append('rect')
-    .attr('width', 18)
-    .attr('height', 18)
+    .attr('width', 15)
+    .attr('height', 15)
+    .attr('x', 0)
     .style('fill', color)
 
   legend
@@ -163,9 +164,9 @@ export function drawEthnChart(height, width, data) {
         .slice()
         .reverse()
     )
-    .attr('x', 24)
-    .attr('y', 9)
-    .attr('dy', '.35em')
+    .attr('x', 19)
+    .attr('y', 10)
+    .attr('dy', '.20em')
     .text(function(d) {
       return d
     })
