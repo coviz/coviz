@@ -17,7 +17,7 @@ export const App = () => {
     startTime: new Date('2020-02-28'),
     endTime: new Date('2020-12-12'),
     step: 1000 * 60 * 60 * 72,
-    frequency: 3
+    frequency: 2
   })
 
   const timerDate = timer.time.toLocaleDateString()
