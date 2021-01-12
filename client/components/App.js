@@ -13,9 +13,10 @@ export const App = () => {
   const dispatch = useDispatch()
 
   // create the timer
+  /* endtime needs to be changed whenever we change dataset*/
   const timer = useTimer({
     startTime: new Date('2020-02-28'),
-    endTime: new Date('2020-12-12'),
+    endTime: new Date('2020-11-19'),
     step: 1000 * 60 * 60 * 72,
     frequency: 3
   })
@@ -83,9 +84,10 @@ export const App = () => {
         <Trend {...timer} />
         <div id="test">
           <div>
-            {timerDate === '12/11/2020' ||
-            timerDate === '12/12/2020' ||
-            timerDate === '12/13/2020' ? (
+            {/* this needs to be changed whenever we change dataset*/}
+            {timerDate === '11/19/2020' ||
+            timerDate === '11/20/2020' ||
+            timerDate === '11/21/2020' ? (
               <button
                 type="button"
                 className="play-button"

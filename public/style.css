@@ -325,13 +325,6 @@ div.tooltipLolli {
 .genderFact {
   text-align: center;
 }
-#genderPage {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  margin: 0px;
-  /* border: 2px solid orange; */
-}
 
 #genderChartPage {
   /* display: flex; */
@@ -351,6 +344,13 @@ div.tooltipsie {
 }
 
 /* Unemployment Chart Styling */
+#unemployment {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0px;
+  /* border: 2px solid orange; */
+}
 #unempTitle {
   display: flex;
   justify-content: center;

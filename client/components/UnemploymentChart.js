@@ -30,7 +30,7 @@ export const UnemploymentChart = props => {
     <div>
       <h2 id="unempTitle">Covid v. Unemployment</h2>
       {isLoading ? drawUnempChart(400, 500, data) : <div />}
-      <div id="genderPage">
+      <div id="unemployment">
         <div id="graphs">
           <div id="totalUnemp">
             <h4>Unemployment Chart Covid v. Great Recession</h4>
