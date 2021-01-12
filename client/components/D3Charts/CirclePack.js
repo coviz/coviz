@@ -107,7 +107,7 @@ export function drawEthnChart(height, width, data) {
       d3
         .forceCenter()
         .x(width / 2.2)
-        .y(height / 1.8)
+        .y(height / 1.9)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(
