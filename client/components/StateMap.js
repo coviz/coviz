@@ -99,7 +99,7 @@ export const StateMap = data => {
           )
         )
       } else if (mode === 'daily') {
-        circleData.style('fill', '#F39237').style('fill-opacity', 0.7)
+        circleData.style('fill', '#EF8354').style('fill-opacity', 0.7)
         circleData.attr('r', d =>
           radiusScale.domain([0, 1, maxDaily * 2]).range([0, 2, 75])(
             d.positiveIncrease

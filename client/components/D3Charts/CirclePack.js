@@ -54,9 +54,9 @@ export function drawEthnChart(height, width, data) {
     let ethnicity = dataBub.ethn
 
     Tooltip.html(
-      '<u>' +
+      '<b><u>' +
         ` ${ethnicity} in ${dataBub.state} ` +
-        '</u>' +
+        '</u></b>' +
         '<br>' +
         `${(dataBub.deaths / dataBub.pop * 100).toFixed(2)}` +
         ' deaths by population (%)' +
