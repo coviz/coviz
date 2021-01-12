@@ -45,9 +45,9 @@ export function drawUnempChart(height, width, data) {
     const dataBub = d.srcElement.__data__
 
     Tooltip.html(
-      '<u>' +
+      '<b><u>' +
         `Total Unemployed: ${dataBub.unemployed.toLocaleString()}` +
-        '</u>' +
+        '</u></b>' +
         '<br>' +
         `In ${dataBub.month.toUpperCase()} ${dataBub.year}`
     )
