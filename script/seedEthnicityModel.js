@@ -25,7 +25,7 @@ async function createTable() {
       })
       console.log('this is right before query')
       const query =
-        'INSERT INTO "ethnicities" ("state", "ethnicity", "deaths", "pop", "percentage") VALUES ($1, $2, $3, $4, $5)'
+        'INSERT INTO "ethnicities" ("state", "ethn", "pop", "deaths", "percentage") VALUES ($1, $2, $3, $4, $5)'
 
       pool.connect((err, client, done) => {
         if (err) throw err

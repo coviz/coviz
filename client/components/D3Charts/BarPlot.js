@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
-const margin = {top: 10, right: 10, bottom: 70, left: 30},
-  width = 425 - margin.left - margin.right,
+const margin = {top: 10, right: 5, bottom: 70, left: 0},
+  width = 380 - margin.left - margin.right,
   height = 450 - margin.top - margin.bottom
 
 export function init() {

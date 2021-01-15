@@ -40,7 +40,7 @@ export const About = () => {
           <li>
             Covid-19 Data, The Covid Tracking Project, The Atlantic:{' '}
             <u>
-              <a href="https://covidtracking.com/data">
+              <a href="https://covidtracking.com/data" target="_blank">
                 https://covidtracking.com/data
               </a>
             </u>
@@ -50,7 +50,10 @@ export const About = () => {
             1. Study: COVID-19 Mortality Twice as High Among Native Americans,
             U.S. News:{' '}
             <u>
-              <a href="https://www.usnews.com/news/health-news/articles/2020-12-10/covid-mortality-twice-as-high-among-native-americans-than-whites">
+              <a
+                href="https://www.usnews.com/news/health-news/articles/2020-12-10/covid-mortality-twice-as-high-among-native-americans-than-whites"
+                target="_blank"
+              >
                 https://www.usnews.com/news/health-news/articles/2020-12-10/covid-mortality-twice-as-high-among-native-americans-than-whites
               </a>
             </u>
@@ -59,7 +62,10 @@ export const About = () => {
             2. Pacific Islanders in US hospitalised with Covid-19 at up to 10
             times the rate of other groups, The Guardian:{' '}
             <u>
-              <a href="https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us">
+              <a
+                href="https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us"
+                target="_blank"
+              >
                 https://www.theguardian.com/world/2020/jul/27/system-is-so-broken-covid-19-devastates-pacific-islander-communities-in-us
               </a>
             </u>
@@ -69,7 +75,10 @@ export const About = () => {
             3. Social Inequities Explain Racial Gaps in Pandemic, Studies Find,
             The New York Times:{' '}
             <u>
-              <a href="https://www.nytimes.com/2020/12/09/health/coronavirus-black-hispanic.html">
+              <a
+                href="https://www.nytimes.com/2020/12/09/health/coronavirus-black-hispanic.html"
+                target="_blank"
+              >
                 https://www.nytimes.com/2020/12/09/health/coronavirus-black-hispanic.html
               </a>
             </u>
@@ -81,7 +90,10 @@ export const About = () => {
               , Provisional Death Counts for Coronavirus Disease (COVID-19):
               Distribution of Deaths by Race and Hispanic Origin:{' '}
               <u>
-                <a href="https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh">
+                <a
+                  href="https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh"
+                  target="_blank"
+                >
                   https://data.cdc.gov/NCHS/Provisional-Death-Counts-for-Coronavirus-Disease-C/pj7m-y5uh
                 </a>
               </u>
@@ -91,7 +103,10 @@ export const About = () => {
               Characteristics: 2010-2019: Age, Sex, Race, and Hispanic Origin -
               6 race groups:{' '}
               <u>
-                <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html">
+                <a
+                  href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html"
+                  target="_blank"
+                >
                   https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
                 </a>
               </u>
@@ -102,7 +117,10 @@ export const About = () => {
           <li>
             4. Why COVID-19 is Hitting Men Harder Than Women, Healthline
             <u>
-              <a href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses">
+              <a
+                href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses"
+                target="_blank"
+              >
                 https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses
               </a>
             </u>
@@ -110,7 +128,10 @@ export const About = () => {
           <li>
             5. What Do We Know About Children and Coronavirus Transmission? KFF:
             <u>
-              <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
+              <a
+                href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/"
+                target="_blank"
+              >
                 https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
               </a>
             </u>
@@ -118,7 +139,10 @@ export const About = () => {
           <li>
             6. Why COVID-19 is Hitting Men Harder Than Women, Healthline
             <u>
-              <a href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses">
+              <a
+                href="https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses"
+                target="_blank"
+              >
                 https://www.healthline.com/health-news/men-more-susceptible-to-serious-covid-19-illnesses
               </a>
             </u>
@@ -129,7 +153,10 @@ export const About = () => {
             Age & Gender Data, Centers for Disease Control and Prevention (CDC)
             , Provisional COVID-19 Death Counts by Sex, Age, and State:{' '}
             <u>
-              <a href="https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku">
+              <a
+                href="https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku"
+                target="_blank"
+              >
                 https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
               </a>
             </u>
@@ -140,7 +167,10 @@ export const About = () => {
             7. Near-real-time monitoring of global CO2 emissions reveals the
             effects of the COVID-19 pandemic, Academic Journal:{' '}
             <u>
-              <a href="https://www.nature.com/articles/s41467-020-18922-7">
+              <a
+                href="https://www.nature.com/articles/s41467-020-18922-7"
+                target="_blank"
+              >
                 https://www.nature.com/articles/s41467-020-18922-7
               </a>
             </u>
@@ -151,7 +181,10 @@ export const About = () => {
               Carbon dioxide emissions from energy consumption, Data on Monthly
               CO2 in the United States:{' '}
               <u>
-                <a href="https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40">
+                <a
+                  href="https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40"
+                  target="_blank"
+                >
                   https://www.eia.gov/totalenergy/data/monthly/?fbclid=IwAR2lMC9dDh2sShSVCFNVxOh39_IdZY54N_hXFRrAWOp4YVahcZ5H_zXTY40
                 </a>
               </u>
@@ -164,7 +197,10 @@ export const About = () => {
             8. Unemployment rose higher in three months of COVID-19 than it did
             in two years of the Great Recession, Pew Research Center:
             <u>
-              <a href="https://www.pewresearch.org/fact-tank/2020/06/11/unemployment-rose-higher-in-three-months-of-covid-19-than-it-did-in-two-years-of-the-great-recession/">
+              <a
+                href="https://www.pewresearch.org/fact-tank/2020/06/11/unemployment-rose-higher-in-three-months-of-covid-19-than-it-did-in-two-years-of-the-great-recession/"
+                target="_blank"
+              >
                 https://www.pewresearch.org/fact-tank/2020/06/11/unemployment-rose-higher-in-three-months-of-covid-19-than-it-did-in-two-years-of-the-great-recession/
               </a>
             </u>
@@ -173,7 +209,10 @@ export const About = () => {
             9. Covid Shrinks the Labor Market, Pushing Out Women and Baby
             Boomers, The Wall Street Journal:
             <u>
-              <a href="https://www.wsj.com/articles/covid-shrinks-the-labor-market-pushing-out-women-and-baby-boomers-11607022074">
+              <a
+                href="https://www.wsj.com/articles/covid-shrinks-the-labor-market-pushing-out-women-and-baby-boomers-11607022074"
+                target="_blank"
+              >
                 https://www.wsj.com/articles/covid-shrinks-the-labor-market-pushing-out-women-and-baby-boomers-11607022074
               </a>
             </u>
@@ -183,7 +222,10 @@ export const About = () => {
             10. Unemployment Data, Bureau of Labor Statistics, Employment status
             of the civilian population by sex and age, Not Seasonally Adjusted:{' '}
             <u>
-              <a href="https://www.bls.gov/webapps/legacy/cpsatab1.htm">
+              <a
+                href="https://www.bls.gov/webapps/legacy/cpsatab1.htm"
+                target="_blank"
+              >
                 https://www.bls.gov/webapps/legacy/cpsatab1.htm
               </a>
             </u>
@@ -194,7 +236,10 @@ export const About = () => {
             11. Impact Report: COVID-19 and Prisons, National Commission on
             COVID-19 and Criminal Justice:
             <u>
-              <a href="https://covid19.counciloncj.org/2020/09/02/covid-19-and-prisons/">
+              <a
+                href="https://covid19.counciloncj.org/2020/09/02/covid-19-and-prisons/"
+                target="_blank"
+              >
                 https://covid19.counciloncj.org/2020/09/02/covid-19-and-prisons/
               </a>
             </u>
@@ -204,7 +249,10 @@ export const About = () => {
             Jails & Prisons Data, Covid-19 Jail/Prison Confirmed Cases & Deaths,
             UCLA Law Covid-19 Behind Bars Data Project:{' '}
             <u>
-              <a href="https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project">
+              <a
+                href="https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project"
+                target="_blank"
+              >
                 https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project
               </a>
             </u>
@@ -218,7 +266,10 @@ export const About = () => {
               Experiences with the COVID-19 outbreak can vary for Americans of
               different ages, article:{' '}
               <u>
-                <a href="https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/">
+                <a
+                  href="https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/"
+                  target="_blank"
+                >
                   https://www.pewresearch.org/fact-tank/2020/06/16/experiences-with-the-covid-19-outbreak-can-vary-for-americans-of-different-ages/
                 </a>
               </u>
@@ -227,7 +278,10 @@ export const About = () => {
               What Do We Know About Children and Coronavirus Transmission?,
               Article:{' '}
               <u>
-                <a href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/">
+                <a
+                  href="https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/"
+                  target="_blank"
+                >
                   https://www.kff.org/coronavirus-covid-19/issue-brief/what-do-we-know-about-children-and-coronavirus-transmission/
                 </a>
               </u>
@@ -237,7 +291,10 @@ export const About = () => {
               Coronavirus Pandemic, The Brookings Institution's analysis of the
               US Census Bureau's household pulse survey:{' '}
               <u>
-                <a href="https://www.census.gov/data/experimental-data-products/household-pulse-survey.html">
+                <a
+                  href="https://www.census.gov/data/experimental-data-products/household-pulse-survey.html"
+                  target="_blank"
+                >
                   https://www.census.gov/data/experimental-data-products/household-pulse-survey.html
                 </a>
               </u>
@@ -246,7 +303,10 @@ export const About = () => {
               Hunger Data, Food Security in the U.S., United States Department
               of Agriculture Economic Research Service:{' '}
               <u>
-                <a href="https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/">
+                <a
+                  href="https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/"
+                  target="_blank"
+                >
                   https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/
                 </a>
               </u>

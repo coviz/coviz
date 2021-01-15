@@ -15,13 +15,13 @@ export function drawEthnChart(height, width, data) {
   const color = d3
     .scaleOrdinal()
     .domain([
-      'Caucasian',
-      'AfricanAmerican',
-      'NativeAmerican',
-      'AsianAmerican',
-      'PacificIslander',
-      'latinoAmerican',
-      'Other'
+      'White American',
+      'Black or African American',
+      ' American Indian or Alaska Native',
+      ' Asian American',
+      'Native Hawaiian or Other Pacific Islander',
+      'Hispanic or Latino',
+      'Multi-racial and Other'
     ])
     .range(d3.schemeSet2)
   // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
@@ -37,9 +37,9 @@ export function drawEthnChart(height, width, data) {
     .select('#ethnChart')
     .append('div')
     .style('opacity', 0)
-    .attr('class', 'tooltipsie')
+    .attr('class', 'tooltip')
     .style('background-color', '#ced4da')
-    .style('border', 'solid')
+    // .style('border', 'solid')
     .style('border-width', '2px')
     .style('border-radius', '5px')
     .style('padding', '5px')
@@ -51,15 +51,12 @@ export function drawEthnChart(height, width, data) {
   const mousemove = function(d) {
     const dataBub = d.srcElement.__data__
 
-    // add space and capitalization to races/ethnicities
-    let ethnicity = dataBub.ethnicity
-    if (ethnicity === 'latinoAmerican') ethnicity = 'LatinoAmerican'
-    ethnicity = ethnicity.replace(/([A-Z])/g, ' $1').trim()
+    let ethnicity = dataBub.ethn
 
     Tooltip.html(
-      '<u>' +
+      '<b><u>' +
         ` ${ethnicity} in ${dataBub.state} ` +
-        '</u>' +
+        '</u></b>' +
         '<br>' +
         `${(dataBub.deaths / dataBub.pop * 100).toFixed(2)}` +
         ' deaths by population (%)' +
@@ -87,7 +84,7 @@ export function drawEthnChart(height, width, data) {
     .attr('cx', width / 2.2)
     .attr('cy', height / 2.2)
     .style('fill', function(d) {
-      return color(d.ethnicity)
+      return color(d.ethn)
     })
     .style('fill-opacity', 0.8)
     .attr('stroke', 'black')
@@ -110,7 +107,7 @@ export function drawEthnChart(height, width, data) {
       d3
         .forceCenter()
         .x(width / 2.2)
-        .y(height / 2.2)
+        .y(height / 1.9)
     ) // Attraction to the center of the svg area
     .force('charge', d3.forceManyBody().strength(0.1)) // Nodes are attracted one each other of value is > 0
     .force(
@@ -149,13 +146,14 @@ export function drawEthnChart(height, width, data) {
     .enter()
     .append('g')
     .attr('transform', function(d, i) {
-      return 'translate(0,' + i * 20 + ')'
+      return 'translate(0,' + i * 17 + ')'
     })
 
   legend
     .append('rect')
-    .attr('width', 18)
-    .attr('height', 18)
+    .attr('width', 15)
+    .attr('height', 15)
+    .attr('x', 0)
     .style('fill', color)
 
   legend
@@ -166,9 +164,9 @@ export function drawEthnChart(height, width, data) {
         .slice()
         .reverse()
     )
-    .attr('x', 24)
-    .attr('y', 9)
-    .attr('dy', '.35em')
+    .attr('x', 19)
+    .attr('y', 10)
+    .attr('dy', '.20em')
     .text(function(d) {
       return d
     })

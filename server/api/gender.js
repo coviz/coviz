@@ -101,8 +101,8 @@ router.get('/', async (req, res, next) => {
       if (elem.state) {
         elem.state = states[elem.state]
         elem.total = +elem.females + +elem.males
-        elem.females = +elem.females
-        elem.males = +elem.males
+        elem.women = +elem.females
+        elem.men = +elem.males
       }
       return elem
     })
