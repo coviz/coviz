@@ -17,7 +17,8 @@ export function drawGenderChart(data) {
     outerRadius = Math.min(width, height) * 0.45,
     g = svg
       .append('g')
-      .attr('transform', 'translate(' + width / 1.6 + ',' + height * 0.5 + ')')
+      .attr('transform', 'translate(' + width / 2 + ',' + height * 0.5 + ')')
+  // .attr('transform', 'translate(' + width / 1.6 + ',' + height * 0.5 + ')')
 
   const x = d3
     .scaleBand()
@@ -39,12 +40,12 @@ export function drawGenderChart(data) {
       return d.total
     })
   ])
-  z.domain(['males', 'females'])
+  z.domain(['men', 'women'])
 
   g
     .append('g')
     .selectAll('g')
-    .data(d3.stack().keys(['males', 'females'])(data))
+    .data(d3.stack().keys(['men', 'women'])(data))
     .enter()
     .append('g')
     .attr('fill', function(d) {
@@ -156,13 +157,14 @@ export function drawGenderChart(data) {
       return -y(y.ticks(10).pop())
     })
     .attr('dy', '-1em')
+    .attr('dx', '2em')
     .text('Population')
     .attr('fill', '#F7D9C4')
 
   const legend = g
     .append('g')
     .selectAll('g')
-    .data(['Females', 'Males'].reverse())
+    .data(['women', 'men'].reverse())
     .enter()
     .append('g')
     .attr('transform', function(d, i) {

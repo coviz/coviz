@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
-const margin = {top: 10, right: 30, bottom: 20, left: 90},
-  width = 460 - margin.left - margin.right,
+const margin = {top: 10, right: 30, bottom: 20, left: 30},
+  width = 400 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom
 
 export function initStacked() {
@@ -78,8 +78,8 @@ export function drawGenderUnempChart(data) {
       .append('div')
       .style('opacity', 0)
       .attr('class', 'tooltip')
-      .style('background-color', 'white')
-      .style('border', 'solid')
+      .style('background-color', '#ced4da')
+      // .style('border', 'solid')
       .style('color', 'black')
       .style('border-width', '1px')
       .style('border-radius', '5px')
@@ -96,7 +96,9 @@ export function drawGenderUnempChart(data) {
 
       tooltip
         .html(
-          `Max Unemployment for <u>${subgroupName}</u> in ${databub.year} ` +
+          `<b> Max Unemployment for <u>${subgroupName}</u> in ${
+            databub.year
+          } </b> ` +
             '<br>' +
             'Total:' +
             subgroupValue.toLocaleString()

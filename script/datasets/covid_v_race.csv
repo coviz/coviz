@@ -1,344 +1,351 @@
-﻿State,Ethn,CaseCount,Pop,percetage
-United States,Caucasian,138695,197045422,0.07
-United States,AfricanAmerican,46756,40834198,0.11
-United States,NativeAmerican,2689,2433495,0.11
-United States,AsianAmerican,9448,18875338,0.05
-United States,PacificIslander,459,595569,0.08
-United States,latinoAmerican,49339,60492760,0.08
-United States,Other,2184,7256992,0.03
-Alabama,Caucasian,2815,3200828,0.09
-Alabama,AfricanAmerican,1497,1297775,0.12
-Alabama,NativeAmerican,0,27729,0.00
-Alabama,AsianAmerican,22,72046,0.03
-Alabama,PacificIslander,0,2539,0.00
-Alabama,latinoAmerican,105,223278,0.05
-Alabama,Other,0,78990,0.00
-Arizona,Caucasian,2612,3939690,0.07
-Arizona,AfricanAmerican,199,325777,0.06
-Arizona,NativeAmerican,779,286981,0.27
-Arizona,AsianAmerican,95,249264,0.04
-Arizona,PacificIslander,16,13913,0.12
-Arizona,latinoAmerican,1932,2310590,0.08
-Arizona,Other,140,152502,0.09
-Arkansas,Caucasian,1867,2173848,0.09
-Arkansas,AfricanAmerican,375,465209,0.08
-Arkansas,NativeAmerican,13,23171,0.06
-Arkansas,AsianAmerican,24,48588,0.05
-Arkansas,PacificIslander,53,10617,0.50
-Arkansas,latinoAmerican,117,236631,0.05
-Arkansas,Other,0,59740,0.00
-California,Caucasian,5673,14423748,0.04
-California,AfricanAmerican,1323,2221363,0.06
-California,NativeAmerican,72,162336,0.04
-California,AsianAmerican,2164,5869038,0.04
-California,PacificIslander,90,146449,0.06
-California,latinoAmerican,9039,15574880,0.06
-California,Other,144,1114409,0.01
-Colorado,Caucasian,1670,3896103,0.04
-Colorado,AfricanAmerican,163,233523,0.07
-Colorado,NativeAmerican,34,37313,0.09
-Colorado,AsianAmerican,99,192733,0.05
-Colorado,PacificIslander,13,7975,0.16
-Colorado,latinoAmerican,707,1256904,0.06
-Colorado,Other,22,134185,0.02
-Connecticut,Caucasian,3370,2350123,0.14
-Connecticut,AfricanAmerican,703,368834,0.19
-Connecticut,NativeAmerican,0,7806,0.00
-Connecticut,AsianAmerican,62,172355,0.04
-Connecticut,PacificIslander,0,1266,0.00
-Connecticut,latinoAmerican,439,600955,0.07
-Connecticut,Other,28,63948,0.04
-Delaware,Caucasian,456,600349,0.08
-Delaware,AfricanAmerican,160,214658,0.07
-Delaware,NativeAmerican,0,3003,0.00
-Delaware,AsianAmerican,0,39174,0.00
-Delaware,PacificIslander,0,351,0.00
-Delaware,latinoAmerican,35,93391,0.04
-Delaware,Other,0,22838,0.00
-Florida,Caucasian,9060,11436685,0.08
-Florida,AfricanAmerican,3447,3335263,0.10
-Florida,NativeAmerican,26,54015,0.05
-Florida,AsianAmerican,247,610090,0.04
-Florida,PacificIslander,0,13827,0.00
-Florida,latinoAmerican,4833,5663860,0.09
-Florida,Other,50,363997,0.01
-Georgia,Caucasian,4032,5523358,0.07
-Georgia,AfricanAmerican,3039,3359449,0.09
-Georgia,NativeAmerican,0,24384,0.00
-Georgia,AsianAmerican,130,454147,0.03
-Georgia,PacificIslander,0,6641,0.00
-Georgia,latinoAmerican,509,1048724,0.05
-Georgia,Other,15,200720,0.01
-Hawaii,Caucasian,23,306622,0.01
-Hawaii,AfricanAmerican,0,27780,0.00
-Hawaii,NativeAmerican,0,3017,0.00
-Hawaii,AsianAmerican,162,515909,0.03
-Hawaii,PacificIslander,71,133369,0.05
-Hawaii,latinoAmerican,16,150864,0.01
-Hawaii,Other,29,278311,0.01
-Idaho,Caucasian,763,1458277,0.05
-Idaho,AfricanAmerican,0,13584,0.00
-Idaho,NativeAmerican,15,19738,0.08
-Idaho,AsianAmerican,11,25778,0.04
-Idaho,PacificIslander,0,3174,0.00
-Idaho,latinoAmerican,109,229490,0.05
-Idaho,Other,0,37024,0.00
-Illinois,Caucasian,6134,7702651,0.08
-Illinois,AfricanAmerican,2274,1783443,0.13
-Illinois,NativeAmerican,11,19319,0.06
-Illinois,AsianAmerican,430,731524,0.06
-Illinois,PacificIslander,0,3717,0.00
-Illinois,latinoAmerican,2026,2219882,0.09
-Illinois,Other,77,211285,0.04
-Indiana,Caucasian,4320,5278982,0.08
-Indiana,AfricanAmerican,753,645375,0.12
-Indiana,NativeAmerican,0,15688,0.00
-Indiana,AsianAmerican,45,171203,0.03
-Indiana,PacificIslander,0,2577,0.00
-Indiana,latinoAmerican,221,489353,0.05
-Indiana,Other,0,129041,0.00
-Iowa,Caucasian,2372,2682696,0.09
-Iowa,AfricanAmerican,89,122388,0.07
-Iowa,NativeAmerican,22,9673,0.23
-Iowa,AsianAmerican,43,82604,0.05
-Iowa,PacificIslander,11,4115,0.27
-Iowa,latinoAmerican,100,198550,0.05
-Iowa,Other,0,55044,0.00
-Kansas,Caucasian,1278,2196863,0.06
-Kansas,AfricanAmerican,143,167325,0.09
-Kansas,NativeAmerican,27,23271,0.12
-Kansas,AsianAmerican,22,90552,0.02
-Kansas,PacificIslander,0,2818,0.00
-Kansas,latinoAmerican,179,356073,0.05
-Kansas,Other,23,76412,0.03
-Kentucky,Caucasian,1825,3759463,0.05
-Kentucky,AfricanAmerican,240,367899,0.07
-Kentucky,NativeAmerican,0,9396,0.00
-Kentucky,AsianAmerican,20,69783,0.03
-Kentucky,PacificIslander,0,3074,0.00
-Kentucky,latinoAmerican,60,174706,0.03
-Kentucky,Other,0,83352,0.00
-Louisiana,Caucasian,2856,2715282,0.11
-Louisiana,AfricanAmerican,2495,1500991,0.17
-Louisiana,NativeAmerican,19,30251,0.06
-Louisiana,AsianAmerican,36,81660,0.04
-Louisiana,PacificIslander,0,1840,0.00
-Louisiana,latinoAmerican,159,246972,0.06
-Louisiana,Other,0,71798,0.00
-Maine,Caucasian,208,1249597,0.02
-Maine,AfricanAmerican,0,21554,0.00
-Maine,NativeAmerican,0,8990,0.00
-Maine,AsianAmerican,0,17083,0.00
-Maine,PacificIslander,0,375,0.00
-Maine,latinoAmerican,0,23700,0.00
-Maine,Other,0,22913,0.00
-Maryland,Caucasian,2141,3025781,0.07
-Maryland,AfricanAmerican,1958,1810267,0.11
-Maryland,NativeAmerican,0,14762,0.00
-Maryland,AsianAmerican,189,398519,0.05
-Maryland,PacificIslander,0,3025,0.00
-Maryland,latinoAmerican,535,643822,0.08
-Maryland,Other,20,149504,0.01
-Massachusetts,Caucasian,6856,4897800,0.14
-Massachusetts,AfricanAmerican,731,505757,0.14
-Massachusetts,NativeAmerican,0,12408,0.00
-Massachusetts,AsianAmerican,263,490023,0.05
-Massachusetts,PacificIslander,0,2989,0.00
-Massachusetts,latinoAmerican,596,854907,0.07
-Massachusetts,Other,97,128619,0.08
-Michigan,Caucasian,4687,7464662,0.06
-Michigan,AfricanAmerican,2618,1374886,0.19
-Michigan,NativeAmerican,22,57264,0.04
-Michigan,AsianAmerican,77,332320,0.02
-Michigan,PacificIslander,0,2814,0.00
-Michigan,latinoAmerican,235,528205,0.04
-Michigan,Other,110,226706,0.05
-Minnesota,Caucasian,2818,4460149,0.06
-Minnesota,AfricanAmerican,224,382621,0.06
-Minnesota,NativeAmerican,41,60251,0.07
-Minnesota,AsianAmerican,135,288583,0.05
-Minnesota,PacificIslander,0,2941,0.00
-Minnesota,latinoAmerican,124,315130,0.04
-Minnesota,Other,12,129957,0.01
-Mississippi,Caucasian,1863,1678232,0.11
-Mississippi,AfricanAmerican,1607,1113643,0.14
-Mississippi,NativeAmerican,86,15067,0.57
-Mississippi,AsianAmerican,18,32251,0.06
-Mississippi,PacificIslander,0,1042,0.00
-Mississippi,latinoAmerican,42,100110,0.04
-Mississippi,Other,0,35804,0.00
-Missouri,Caucasian,3450,4857512,0.07
-Missouri,AfricanAmerican,668,711702,0.09
-Missouri,NativeAmerican,10,27098,0.04
-Missouri,AsianAmerican,45,130717,0.03
-Missouri,PacificIslander,0,8246,0.00
-Missouri,latinoAmerican,99,268708,0.04
-Missouri,Other,16,133445,0.01
-Montana,Caucasian,444,917711,0.05
-Montana,AfricanAmerican,0,5766,0.00
-Montana,NativeAmerican,153,64953,0.24
-Montana,AsianAmerican,0,9412,0.00
-Montana,PacificIslander,0,767,0.00
-Montana,latinoAmerican,17,43289,0.04
-Montana,Other,0,26880,0.00
-Nebraska,Caucasian,948,1513172,0.06
-Nebraska,AfricanAmerican,55,94830,0.06
-Nebraska,NativeAmerican,11,16333,0.07
-Nebraska,AsianAmerican,12,51496,0.02
-Nebraska,PacificIslander,0,1229,0.00
-Nebraska,latinoAmerican,128,219645,0.06
-Nebraska,Other,0,37703,0.00
-Nevada,Caucasian,856,1483933,0.06
-Nevada,AfricanAmerican,238,286466,0.08
-Nevada,NativeAmerican,21,26363,0.08
-Nevada,AsianAmerican,243,254474,0.10
-Nevada,PacificIslander,17,19718,0.09
-Nevada,latinoAmerican,584,900600,0.06
-Nevada,Other,0,108602,0.00
-New Hampshire,Caucasian,392,1220437,0.03
-New Hampshire,AfricanAmerican,0,20054,0.00
-New Hampshire,NativeAmerican,0,2924,0.00
-New Hampshire,AsianAmerican,0,39797,0.00
-New Hampshire,PacificIslander,0,403,0.00
-New Hampshire,latinoAmerican,13,54589,0.02
-New Hampshire,Other,91,21507,0.42
-New Jersey,Caucasian,8228,4850995,0.17
-New Jersey,AfricanAmerican,2686,1148564,0.23
-New Jersey,NativeAmerican,11,12823,0.09
-New Jersey,AsianAmerican,917,870472,0.11
-New Jersey,PacificIslander,0,3163,0.00
-New Jersey,latinoAmerican,3155,1856844,0.17
-New Jersey,Other,55,139329,0.04
-New Mexico,Caucasian,318,772630,0.04
-New Mexico,AfricanAmerican,13,39583,0.03
-New Mexico,NativeAmerican,523,185233,0.28
-New Mexico,AsianAmerican,0,32698,0.00
-New Mexico,PacificIslander,0,1371,0.00
-New Mexico,latinoAmerican,355,1032942,0.03
-New Mexico,Other,0,32372,0.00
-New York,Caucasian,13788,10755420,0.13
-New York,AfricanAmerican,7970,2813773,0.28
-New York,NativeAmerican,24,56781,0.04
-New York,AsianAmerican,2551,1713428,0.15
-New York,PacificIslander,0,8983,0.00
-New York,latinoAmerican,8370,3751058,0.22
-New York,Other,955,354118,0.27
-North Carolina,Caucasian,1770,6567102,0.03
-North Carolina,AfricanAmerican,967,2240609,0.04
-North Carolina,NativeAmerican,36,117219,0.03
-North Carolina,AsianAmerican,53,322955,0.02
-North Carolina,PacificIslander,0,6967,0.00
-North Carolina,latinoAmerican,281,1025830,0.03
-North Carolina,Other,0,207402,0.00
-North Dakota,Caucasian,634,637513,0.10
-North Dakota,AfricanAmerican,0,24866,0.00
-North Dakota,NativeAmerican,61,39211,0.16
-North Dakota,AsianAmerican,0,12561,0.00
-North Dakota,PacificIslander,0,524,0.00
-North Dakota,latinoAmerican,15,31532,0.05
-North Dakota,Other,0,15855,0.00
-Ohio,Caucasian,5156,9169092,0.06
-Ohio,AfricanAmerican,1019,1481352,0.07
-Ohio,NativeAmerican,0,22944,0.00
-Ohio,AsianAmerican,67,287255,0.02
-Ohio,PacificIslander,0,4824,0.00
-Ohio,latinoAmerican,122,470462,0.03
-Ohio,Other,14,253171,0.01
-Oklahoma,Caucasian,1564,2572388,0.06
-Oklahoma,AfricanAmerican,133,293458,0.05
-Oklahoma,NativeAmerican,228,330735,0.07
-Oklahoma,AsianAmerican,32,91286,0.04
-Oklahoma,PacificIslander,16,7091,0.23
-Oklahoma,latinoAmerican,145,438110,0.03
-Oklahoma,Other,52,223903,0.02
-Oregon,Caucasian,581,3165484,0.02
-Oregon,AfricanAmerican,17,82610,0.02
-Oregon,NativeAmerican,18,47157,0.04
-Oregon,AsianAmerican,26,198697,0.01
-Oregon,PacificIslander,0,17074,0.00
-Oregon,latinoAmerican,114,566847,0.02
-Oregon,Other,0,139868,0.00
-Pennsylvania,Caucasian,7782,9693578,0.08
-Pennsylvania,AfricanAmerican,1860,1394630,0.13
-Pennsylvania,NativeAmerican,0,18846,0.00
-Pennsylvania,AsianAmerican,225,471559,0.05
-Pennsylvania,PacificIslander,0,3936,0.00
-Pennsylvania,latinoAmerican,563,1000150,0.06
-Pennsylvania,Other,29,219290,0.01
-Rhode Island,Caucasian,1029,755931,0.14
-Rhode Island,AfricanAmerican,75,64966,0.12
-Rhode Island,NativeAmerican,0,4600,0.00
-Rhode Island,AsianAmerican,23,37922,0.06
-Rhode Island,PacificIslander,0,659,0.00
-Rhode Island,latinoAmerican,108,172644,0.06
-Rhode Island,Other,0,22639,0.00
-South Carolina,Caucasian,2462,3277542,0.08
-South Carolina,AfricanAmerican,1584,1360342,0.12
-South Carolina,NativeAmerican,12,18988,0.06
-South Carolina,AsianAmerican,27,91375,0.03
-South Carolina,PacificIslander,0,3101,0.00
-South Carolina,latinoAmerican,119,307118,0.04
-South Carolina,Other,0,90248,0.00
-South Dakota,Caucasian,668,721053,0.09
-South Dakota,AfricanAmerican,0,19447,0.00
-South Dakota,NativeAmerican,98,73477,0.13
-South Dakota,AsianAmerican,13,13393,0.10
-South Dakota,PacificIslander,0,525,0.00
-South Dakota,latinoAmerican,10,37351,0.03
-South Dakota,Other,0,19413,0.00
-Tennessee,Caucasian,3147,5019540,0.06
-Tennessee,AfricanAmerican,936,1141790,0.08
-Tennessee,NativeAmerican,0,19697,0.00
-Tennessee,AsianAmerican,32,130143,0.02
-Tennessee,PacificIslander,0,3762,0.00
-Tennessee,latinoAmerican,169,391382,0.04
-Tennessee,Other,0,122860,0.00
-Texas,Caucasian,7437,11950774,0.06
-Texas,AfricanAmerican,2366,3501610,0.07
-Texas,NativeAmerican,42,94168,0.04
-Texas,AsianAmerican,415,1457549,0.03
-Texas,PacificIslander,10,25861,0.04
-Texas,latinoAmerican,11595,11525578,0.10
-Texas,Other,30,440341,0.01
-Utah,Caucasian,597,2493759,0.02
-Utah,AfricanAmerican,0,38056,0.00
-Utah,NativeAmerican,44,30401,0.14
-Utah,AsianAmerican,29,81646,0.04
-Utah,PacificIslander,38,31393,0.12
-Utah,latinoAmerican,165,462051,0.04
-Utah,Other,0,68652,0.00
-Virginia,Caucasian,2448,5227904,0.05
-Virginia,AfricanAmerican,1114,1632226,0.07
-Virginia,NativeAmerican,0,22794,0.00
-Virginia,AsianAmerican,168,578504,0.03
-Virginia,PacificIslander,0,6541,0.00
-Virginia,latinoAmerican,373,834422,0.04
-Virginia,Other,22,233128,0.01
-Washington,Caucasian,1645,5140589,0.03
-Washington,AfricanAmerican,76,304224,0.02
-Washington,NativeAmerican,67,96506,0.07
-Washington,AsianAmerican,165,711626,0.02
-Washington,PacificIslander,44,54633,0.08
-Washington,latinoAmerican,342,991721,0.03
-Washington,Other,26,315594,0.01
-West Virginia,Caucasian,405,1648512,0.02
-West Virginia,AfricanAmerican,18,62775,0.03
-West Virginia,NativeAmerican,0,3836,0.00
-West Virginia,AsianAmerican,0,14393,0.00
-West Virginia,PacificIslander,0,411,0.00
-West Virginia,latinoAmerican,0,31162,0.00
-West Virginia,Other,0,31058,0.00
-Wisconsin,Caucasian,2910,4709065,0.06
-Wisconsin,AfricanAmerican,287,372273,0.08
-Wisconsin,NativeAmerican,40,52436,0.08
-Wisconsin,AsianAmerican,60,172205,0.03
-Wisconsin,PacificIslander,0,2318,0.00
-Wisconsin,latinoAmerican,232,413208,0.06
-Wisconsin,Other,0,100929,0.00
-Wyoming,Caucasian,140,484380,0.03
-Wyoming,AfricanAmerican,0,6520,0.00
-Wyoming,NativeAmerican,24,12198,0.20
-Wyoming,AsianAmerican,0,6129,0.00
-Wyoming,PacificIslander,0,412,0.00
-Wyoming,latinoAmerican,17,58609,0.03
-Wyoming,Other,0,10511,0.00
+﻿state,ethn,pop,deaths,percentage
+Alabama, American Indian or Alaska Native,27729,0,0.00
+Alabama, Asian American,72046,27,0.04
+Alabama,Black or African American,1297775,1690,0.13
+Alabama,Hispanic or Latino,223278,118,0.05
+Alabama,Multi-racial and Other,78990,0,0.00
+Alabama,Native Hawaiian or Other Pacific Islander,2539,0,0.00
+Alabama,White American,3200828,3569,0.11
+Alaska, American Indian or Alaska Native,107883,64,0.06
+Alaska, Asian American,46606,19,0.04
+Alaska,Black or African American,24190,0,0.00
+Alaska,Hispanic or Latino,53212,0,0.00
+Alaska,Multi-racial and Other,49564,0,0.00
+Alaska,Native Hawaiian or Other Pacific Islander,10012,11,0.11
+Alaska,White American,440078,59,0.01
+Arizona, American Indian or Alaska Native,286981,931,0.32
+Arizona, Asian American,249264,120,0.05
+Arizona,Black or African American,325777,234,0.07
+Arizona,Hispanic or Latino,2310590,2396,0.10
+Arizona,Multi-racial and Other,152502,163,0.11
+Arizona,Native Hawaiian or Other Pacific Islander,13913,19,0.14
+Arizona,White American,3939690,3513,0.09
+Arkansas, American Indian or Alaska Native,23171,21,0.09
+Arkansas, Asian American,48588,29,0.06
+Arkansas,Black or African American,465209,466,0.10
+Arkansas,Hispanic or Latino,236631,140,0.06
+Arkansas,Multi-racial and Other,59740,11,0.02
+Arkansas,Native Hawaiian or Other Pacific Islander,10617,54,0.51
+Arkansas,White American,2173848,2589,0.12
+California, American Indian or Alaska Native,162336,96,0.06
+California, Asian American,5869038,2723,0.05
+California,Black or African American,2221363,1566,0.07
+California,Hispanic or Latino,15574880,11055,0.07
+California,Multi-racial and Other,1114409,179,0.02
+California,Native Hawaiian or Other Pacific Islander,146449,119,0.08
+California,White American,14423748,7495,0.05
+Colorado, American Indian or Alaska Native,37313,47,0.13
+Colorado, Asian American,192733,141,0.07
+Colorado,Black or African American,233523,201,0.09
+Colorado,Hispanic or Latino,1256904,1021,0.08
+Colorado,Multi-racial and Other,134185,33,0.02
+Colorado,Native Hawaiian or Other Pacific Islander,7975,14,0.18
+Colorado,White American,3896103,2537,0.07
+Connecticut, American Indian or Alaska Native,7806,0,0.00
+Connecticut, Asian American,172355,68,0.04
+Connecticut,Black or African American,368834,743,0.20
+Connecticut,Hispanic or Latino,600955,493,0.08
+Connecticut,Multi-racial and Other,63948,32,0.05
+Connecticut,Native Hawaiian or Other Pacific Islander,1266,0,0.00
+Connecticut,White American,2350123,3772,0.16
+Delaware, American Indian or Alaska Native,3003,0,0.00
+Delaware, Asian American,39174,0,0.00
+Delaware,Black or African American,214658,176,0.08
+Delaware,Hispanic or Latino,93391,39,0.04
+Delaware,Multi-racial and Other,22838,0,0.00
+Delaware,Native Hawaiian or Other Pacific Islander,351,0,0.00
+Delaware,White American,600349,529,0.09
+Florida, American Indian or Alaska Native,54015,27,0.05
+Florida, Asian American,610090,281,0.05
+Florida,Black or African American,3335263,3670,0.11
+Florida,Hispanic or Latino,5663860,5279,0.09
+Florida,Multi-racial and Other,363997,58,0.02
+Florida,Native Hawaiian or Other Pacific Islander,13827,0,0.00
+Florida,White American,11436685,10404,0.09
+Georgia, American Indian or Alaska Native,24384,0,0.00
+Georgia, Asian American,454147,148,0.03
+Georgia,Black or African American,3359449,3286,0.10
+Georgia,Hispanic or Latino,1048724,556,0.05
+Georgia,Multi-racial and Other,200720,16,0.01
+Georgia,Native Hawaiian or Other Pacific Islander,6641,0,0.00
+Georgia,White American,5523358,4683,0.08
+Hawaii, American Indian or Alaska Native,3017,0,0.00
+Hawaii, Asian American,515909,177,0.03
+Hawaii,Black or African American,27780,0,0.00
+Hawaii,Hispanic or Latino,150864,20,0.01
+Hawaii,Multi-racial and Other,278311,31,0.01
+Hawaii,Native Hawaiian or Other Pacific Islander,133369,78,0.06
+Hawaii,White American,306622,27,0.01
+Idaho, American Indian or Alaska Native,19738,20,0.10
+Idaho, Asian American,25778,13,0.05
+Idaho,Black or African American,13584,0,0.00
+Idaho,Hispanic or Latino,229490,141,0.06
+Idaho,Multi-racial and Other,37024,0,0.00
+Idaho,Native Hawaiian or Other Pacific Islander,3174,0,0.00
+Idaho,White American,1458277,1053,0.07
+Illinois, American Indian or Alaska Native,19319,12,0.06
+Illinois, Asian American,731524,539,0.07
+Illinois,Black or African American,1783443,2647,0.15
+Illinois,Hispanic or Latino,2219882,2492,0.11
+Illinois,Multi-racial and Other,211285,80,0.04
+Illinois,Native Hawaiian or Other Pacific Islander,3717,0,0.00
+Illinois,White American,7702651,8727,0.11
+Indiana, American Indian or Alaska Native,15688,0,0.00
+Indiana, Asian American,171203,67,0.04
+Indiana,Black or African American,645375,872,0.14
+Indiana,Hispanic or Latino,489353,300,0.06
+Indiana,Multi-racial and Other,129041,12,0.01
+Indiana,Native Hawaiian or Other Pacific Islander,2577,0,0.00
+Indiana,White American,5278982,6402,0.12
+Iowa, American Indian or Alaska Native,9673,26,0.27
+Iowa, Asian American,82604,55,0.07
+Iowa,Black or African American,122388,111,0.09
+Iowa,Hispanic or Latino,198550,126,0.06
+Iowa,Multi-racial and Other,55044,0,0.00
+Iowa,Native Hawaiian or Other Pacific Islander,4115,12,0.29
+Iowa,White American,2682696,3761,0.14
+Kansas, American Indian or Alaska Native,23271,36,0.15
+Kansas, Asian American,90552,31,0.03
+Kansas,Black or African American,167325,176,0.11
+Kansas,Hispanic or Latino,356073,249,0.07
+Kansas,Multi-racial and Other,76412,34,0.04
+Kansas,Native Hawaiian or Other Pacific Islander,2818,0,0.00
+Kansas,White American,2196863,2251,0.10
+Kentucky, American Indian or Alaska Native,9396,0,0.00
+Kentucky, Asian American,69783,22,0.03
+Kentucky,Black or African American,367899,325,0.09
+Kentucky,Hispanic or Latino,174706,83,0.05
+Kentucky,Multi-racial and Other,83352,0,0.00
+Kentucky,Native Hawaiian or Other Pacific Islander,3074,0,0.00
+Kentucky,White American,3759463,2763,0.07
+Louisiana, American Indian or Alaska Native,30251,19,0.06
+Louisiana, Asian American,81660,40,0.05
+Louisiana,Black or African American,1500991,2640,0.18
+Louisiana,Hispanic or Latino,246972,174,0.07
+Louisiana,Multi-racial and Other,71798,0,0.00
+Louisiana,Native Hawaiian or Other Pacific Islander,1840,0,0.00
+Louisiana,White American,2715282,3282,0.12
+Maine, American Indian or Alaska Native,8990,0,0.00
+Maine, Asian American,17083,0,0.00
+Maine,Black or African American,21554,0,0.00
+Maine,Hispanic or Latino,23700,0,0.00
+Maine,Multi-racial and Other,22913,0,0.00
+Maine,Native Hawaiian or Other Pacific Islander,375,0,0.00
+Maine,White American,1249597,366,0.03
+Maryland, American Indian or Alaska Native,14762,0,0.00
+Maryland, Asian American,398519,215,0.05
+Maryland,Black or African American,1810267,2206,0.12
+Maryland,Hispanic or Latino,643822,594,0.09
+Maryland,Multi-racial and Other,149504,23,0.02
+Maryland,Native Hawaiian or Other Pacific Islander,3025,0,0.00
+Maryland,White American,3025781,2773,0.09
+Massachusetts, American Indian or Alaska Native,12408,0,0.00
+Massachusetts, Asian American,490023,291,0.06
+Massachusetts,Black or African American,505757,767,0.15
+Massachusetts,Hispanic or Latino,854907,678,0.08
+Massachusetts,Multi-racial and Other,128619,113,0.09
+Massachusetts,Native Hawaiian or Other Pacific Islander,2989,0,0.00
+Massachusetts,White American,4897800,7534,0.15
+Michigan, American Indian or Alaska Native,57264,40,0.07
+Michigan, Asian American,332320,100,0.03
+Michigan,Black or African American,1374886,2862,0.21
+Michigan,Hispanic or Latino,528205,352,0.07
+Michigan,Multi-racial and Other,226706,124,0.05
+Michigan,Native Hawaiian or Other Pacific Islander,2814,0,0.00
+Michigan,White American,7464662,7195,0.10
+Minnesota, American Indian or Alaska Native,60251,64,0.11
+Minnesota, Asian American,288583,192,0.07
+Minnesota,Black or African American,382621,276,0.07
+Minnesota,Hispanic or Latino,315130,154,0.05
+Minnesota,Multi-racial and Other,129957,22,0.02
+Minnesota,Native Hawaiian or Other Pacific Islander,2941,0,0.00
+Minnesota,White American,4460149,4345,0.10
+Mississippi, American Indian or Alaska Native,15067,90,0.60
+Mississippi, Asian American,32251,20,0.06
+Mississippi,Black or African American,1113643,1866,0.17
+Mississippi,Hispanic or Latino,100110,45,0.04
+Mississippi,Multi-racial and Other,35804,0,0.00
+Mississippi,Native Hawaiian or Other Pacific Islander,1042,0,0.00
+Mississippi,White American,1678232,2336,0.14
+Missouri, American Indian or Alaska Native,27098,23,0.08
+Missouri, Asian American,130717,63,0.05
+Missouri,Black or African American,711702,820,0.12
+Missouri,Hispanic or Latino,268708,144,0.05
+Missouri,Multi-racial and Other,133445,24,0.02
+Missouri,Native Hawaiian or Other Pacific Islander,8246,10,0.12
+Missouri,White American,4857512,5391,0.11
+Montana, American Indian or Alaska Native,64953,212,0.33
+Montana, Asian American,9412,0,0.00
+Montana,Black or African American,5766,0,0.00
+Montana,Hispanic or Latino,43289,25,0.06
+Montana,Multi-racial and Other,26880,0,0.00
+Montana,Native Hawaiian or Other Pacific Islander,767,0,0.00
+Montana,White American,917711,795,0.09
+Nebraska, American Indian or Alaska Native,16333,12,0.07
+Nebraska, Asian American,51496,15,0.03
+Nebraska,Black or African American,94830,70,0.07
+Nebraska,Hispanic or Latino,219645,157,0.07
+Nebraska,Multi-racial and Other,37703,0,0.00
+Nebraska,Native Hawaiian or Other Pacific Islander,1229,0,0.00
+Nebraska,White American,1513172,1554,0.10
+Nevada, American Indian or Alaska Native,26363,28,0.11
+Nevada, Asian American,254474,305,0.12
+Nevada,Black or African American,286466,294,0.10
+Nevada,Hispanic or Latino,900600,763,0.08
+Nevada,Multi-racial and Other,108602,0,0.00
+Nevada,Native Hawaiian or Other Pacific Islander,19718,22,0.11
+Nevada,White American,1483933,1266,0.09
+New Hampshire, American Indian or Alaska Native,2924,0,0.00
+New Hampshire, Asian American,39797,0,0.00
+New Hampshire,Black or African American,20054,0,0.00
+New Hampshire,Hispanic or Latino,54589,18,0.03
+New Hampshire,Multi-racial and Other,21507,0,0.00
+New Hampshire,Native Hawaiian or Other Pacific Islander,403,0,0.00
+New Hampshire,White American,1220437,637,0.05
+New Jersey, American Indian or Alaska Native,12823,14,0.11
+New Jersey, Asian American,870472,1016,0.12
+New Jersey,Black or African American,1148564,2879,0.25
+New Jersey,Hispanic or Latino,1856844,3523,0.19
+New Jersey,Multi-racial and Other,139329,62,0.04
+New Jersey,Native Hawaiian or Other Pacific Islander,3163,0,0.00
+New Jersey,White American,4850995,9276,0.19
+New Mexico, American Indian or Alaska Native,185233,675,0.36
+New Mexico, Asian American,32698,11,0.03
+New Mexico,Black or African American,39583,26,0.07
+New Mexico,Hispanic or Latino,1032942,709,0.07
+New Mexico,Multi-racial and Other,32372,0,0.00
+New Mexico,Native Hawaiian or Other Pacific Islander,1371,0,0.00
+New Mexico,White American,772630,576,0.07
+New York, American Indian or Alaska Native,56781,32,0.06
+New York, Asian American,1713428,2674,0.16
+New York,Black or African American,2813773,8220,0.29
+New York,Hispanic or Latino,3751058,8682,0.23
+New York,Multi-racial and Other,354118,989,0.28
+New York,Native Hawaiian or Other Pacific Islander,8983,0,0.00
+New York,White American,10755420,15878,0.15
+North Carolina, American Indian or Alaska Native,117219,39,0.03
+North Carolina, Asian American,322955,55,0.02
+North Carolina,Black or African American,2240609,1064,0.05
+North Carolina,Hispanic or Latino,1025830,301,0.03
+North Carolina,Multi-racial and Other,207402,0,0.00
+North Carolina,Native Hawaiian or Other Pacific Islander,6967,0,0.00
+North Carolina,White American,6567102,2000,0.03
+North Dakota, American Indian or Alaska Native,39211,89,0.23
+North Dakota, Asian American,12561,0,0.00
+North Dakota,Black or African American,24866,0,0.00
+North Dakota,Hispanic or Latino,31532,24,0.08
+North Dakota,Multi-racial and Other,15855,10,0.06
+North Dakota,Native Hawaiian or Other Pacific Islander,524,0,0.00
+North Dakota,White American,637513,992,0.16
+Ohio, American Indian or Alaska Native,22944,0,0.00
+Ohio, Asian American,287255,98,0.03
+Ohio,Black or African American,1481352,1298,0.09
+Ohio,Hispanic or Latino,470462,167,0.04
+Ohio,Multi-racial and Other,253171,15,0.01
+Ohio,Native Hawaiian or Other Pacific Islander,4824,0,0.00
+Ohio,White American,9169092,8262,0.09
+Oklahoma, American Indian or Alaska Native,330735,354,0.11
+Oklahoma, Asian American,91286,46,0.05
+Oklahoma,Black or African American,293458,217,0.07
+Oklahoma,Hispanic or Latino,438110,216,0.05
+Oklahoma,Multi-racial and Other,223903,73,0.03
+Oklahoma,Native Hawaiian or Other Pacific Islander,7091,16,0.23
+Oklahoma,White American,2572388,2600,0.10
+Oregon, American Indian or Alaska Native,47157,23,0.05
+Oregon, Asian American,198697,49,0.02
+Oregon,Black or African American,82610,25,0.03
+Oregon,Hispanic or Latino,566847,164,0.03
+Oregon,Multi-racial and Other,139868,0,0.00
+Oregon,Native Hawaiian or Other Pacific Islander,17074,13,0.08
+Oregon,White American,3165484,890,0.03
+Pennsylvania, American Indian or Alaska Native,18846,0,0.00
+Pennsylvania, Asian American,471559,294,0.06
+Pennsylvania,Black or African American,1394630,2178,0.16
+Pennsylvania,Hispanic or Latino,1000150,681,0.07
+Pennsylvania,Multi-racial and Other,219290,32,0.01
+Pennsylvania,Native Hawaiian or Other Pacific Islander,3936,0,0.00
+Pennsylvania,White American,9693578,11440,0.12
+Rhode Island, American Indian or Alaska Native,4600,0,0.00
+Rhode Island, Asian American,37922,26,0.07
+Rhode Island,Black or African American,64966,86,0.13
+Rhode Island,Hispanic or Latino,172644,125,0.07
+Rhode Island,Multi-racial and Other,22639,0,0.00
+Rhode Island,Native Hawaiian or Other Pacific Islander,659,0,0.00
+Rhode Island,White American,755931,1204,0.16
+South Carolina, American Indian or Alaska Native,18988,12,0.06
+South Carolina, Asian American,91375,33,0.04
+South Carolina,Black or African American,1360342,1682,0.12
+South Carolina,Hispanic or Latino,307118,128,0.04
+South Carolina,Multi-racial and Other,90248,0,0.00
+South Carolina,Native Hawaiian or Other Pacific Islander,3101,0,0.00
+South Carolina,White American,3277542,2785,0.08
+South Dakota, American Indian or Alaska Native,73477,154,0.21
+South Dakota, Asian American,13393,16,0.12
+South Dakota,Black or African American,19447,0,0.00
+South Dakota,Hispanic or Latino,37351,17,0.05
+South Dakota,Multi-racial and Other,19413,0,0.00
+South Dakota,Native Hawaiian or Other Pacific Islander,525,0,0.00
+South Dakota,White American,721053,1151,0.16
+Tennessee, American Indian or Alaska Native,19697,0,0.00
+Tennessee, Asian American,130143,37,0.03
+Tennessee,Black or African American,1141790,1167,0.10
+Tennessee,Hispanic or Latino,391382,210,0.05
+Tennessee,Multi-racial and Other,122860,11,0.01
+Tennessee,Native Hawaiian or Other Pacific Islander,3762,0,0.00
+Tennessee,White American,5019540,4675,0.09
+Texas, American Indian or Alaska Native,94168,47,0.05
+Texas, Asian American,1457549,508,0.03
+Texas,Black or African American,3501610,2799,0.08
+Texas,Hispanic or Latino,11525578,13833,0.12
+Texas,Multi-racial and Other,440341,40,0.01
+Texas,Native Hawaiian or Other Pacific Islander,25861,16,0.06
+Texas,White American,11950774,10226,0.09
+Utah, American Indian or Alaska Native,30401,57,0.19
+Utah, Asian American,81646,41,0.05
+Utah,Black or African American,38056,10,0.03
+Utah,Hispanic or Latino,462051,219,0.05
+Utah,Multi-racial and Other,68652,10,0.01
+Utah,Native Hawaiian or Other Pacific Islander,31393,47,0.15
+Utah,White American,2493759,917,0.04
+Vermont, American Indian or Alaska Native,2058,0,0.00
+Vermont, Asian American,11813,0,0.00
+Vermont,Black or African American,8152,0,0.00
+Vermont,Hispanic or Latino,12719,0,0.00
+Vermont,Multi-racial and Other,11511,0,0.00
+Vermont,Native Hawaiian or Other Pacific Islander,197,0,0.00
+Vermont,White American,577539,105,0.02
+Virginia, American Indian or Alaska Native,22794,0,0.00
+Virginia, Asian American,578504,198,0.03
+Virginia,Black or African American,1632226,1274,0.08
+Virginia,Hispanic or Latino,834422,427,0.05
+Virginia,Multi-racial and Other,233128,25,0.01
+Virginia,Native Hawaiian or Other Pacific Islander,6541,0,0.00
+Virginia,White American,5227904,3159,0.06
+Washington, American Indian or Alaska Native,96506,81,0.08
+Washington, Asian American,711626,214,0.03
+Washington,Black or African American,304224,101,0.03
+Washington,Hispanic or Latino,991721,419,0.04
+Washington,Multi-racial and Other,315594,37,0.01
+Washington,Native Hawaiian or Other Pacific Islander,54633,52,0.10
+Washington,White American,5140589,2205,0.04
+West Virginia, American Indian or Alaska Native,3836,0,0.00
+West Virginia, Asian American,14393,0,0.00
+West Virginia,Black or African American,62775,28,0.04
+West Virginia,Hispanic or Latino,31162,0,0.00
+West Virginia,Multi-racial and Other,31058,0,0.00
+West Virginia,Native Hawaiian or Other Pacific Islander,411,0,0.00
+West Virginia,White American,1648512,848,0.05
+Wisconsin, American Indian or Alaska Native,52436,65,0.12
+Wisconsin, Asian American,172205,85,0.05
+Wisconsin,Black or African American,372273,356,0.10
+Wisconsin,Hispanic or Latino,413208,299,0.07
+Wisconsin,Multi-racial and Other,100929,0,0.00
+Wisconsin,Native Hawaiian or Other Pacific Islander,2318,0,0.00
+Wisconsin,White American,4709065,4421,0.09
+Wyoming, American Indian or Alaska Native,12198,35,0.29
+Wyoming, Asian American,6129,0,0.00
+Wyoming,Black or African American,6520,0,0.00
+Wyoming,Hispanic or Latino,58609,27,0.05
+Wyoming,Multi-racial and Other,10511,0,0.00
+Wyoming,Native Hawaiian or Other Pacific Islander,412,0,0.00
+Wyoming,White American,484380,264,0.05

@@ -8,6 +8,7 @@ export const StateMap = data => {
   const svgRef = useRef()
   const maxCases = max(data.data.map(d => d.positiveCumulative))
   const maxDeaths = max(data.data.map(d => d.deathCumulative))
+  const maxDaily = max(data.data.map(d => d.positiveIncrease))
 
   let radiusScale = scaleSqrt()
 
@@ -97,6 +98,20 @@ export const StateMap = data => {
             d.deathCumulative
           )
         )
+      } else if (mode === 'daily') {
+        circleData.style('fill', '#EF8354').style('fill-opacity', 0.7)
+        circleData.attr('r', d =>
+          radiusScale.domain([0, 1, maxDaily * 2]).range([0, 2, 75])(
+            d.positiveIncrease
+          )
+        )
+      } else if (mode === 'dailyPop') {
+        circleData.style('fill', '#FFB100').style('fill-opacity', 0.7)
+        circleData.attr('r', d =>
+          radiusScale.domain([0, 1, d.population / 180]).range([0, 2, 75])(
+            d.positiveIncrease
+          )
+        )
       }
 
       // Exit data points no longer in data and remove
@@ -153,6 +168,19 @@ export const StateMap = data => {
                 )
                 .style('left', d.pageX + 'px')
                 .style('top', d.pageY - 28 + 'px')
+            } else if (mode === 'daily' || mode === 'dailyPop') {
+              div
+                .html(
+                  '<b><u>' +
+                    ` ${toolData.state}` +
+                    '</u></b>' +
+                    '<br>' +
+                    `${numberWithCommas(
+                      toolData.positiveIncrease
+                    )} cases on ${newDateString}`
+                )
+                .style('left', d.pageX + 'px')
+                .style('top', d.pageY - 28 + 'px')
             }
           })
 
@@ -179,6 +207,8 @@ export const StateMap = data => {
         >
           <option value="maxcases"> Total Cases</option>
           <option value="pop"> Total Cases as a % of Population</option>
+          <option value="daily"> Daily Cases</option>
+          <option value="dailyPop"> Daily Cases as a % of Population</option>
           <option value="maxdeaths"> Total Deaths</option>
           <option value="deaths"> Total Deaths as a % of Population</option>
         </select>

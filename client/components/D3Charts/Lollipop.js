@@ -40,7 +40,7 @@ export function drawAgeChart(height, width, data) {
 
   const y = d3
     .scaleLinear()
-    .domain([0, 81000])
+    .domain([0, 125000])
     .range([height, 0])
   svg
     .append('g')
