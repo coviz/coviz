@@ -22,9 +22,16 @@ async function createHungerTable() {
       csvData.shift()
 
       // create a new connection to the database
-      const pool = new Pool({
-        connectionString: connectionString
-      })
+      const pool = process.env.HEROKU_POSTGRESQL_PINK_URL
+        ? new Pool({
+            connectionString: connectionString
+          })
+        : new Pool({
+            host: 'localhost',
+            user: 'postgres',
+            database: 'coviz',
+            port: 5432
+          })
 
       const query =
         'INSERT INTO "hunger" (year, "overallFoodInsecurity", "blackFoodInsecurity", "hispanicFoodInsecurity", "whiteFoodInsecurity", "otherFoodInsecurity", "childrenFoodInsecurity") VALUES ($1, $2, $3, $4, $5, $6, $7)'

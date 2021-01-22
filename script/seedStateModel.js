@@ -20,10 +20,16 @@ async function createStateTable() {
       csvData.shift()
 
       // create a new connection to the database
-      const pool = new Pool({
-        connectionString: connectionString
-      })
-
+      const pool = process.env.HEROKU_POSTGRESQL_PINK_URL
+        ? new Pool({
+            connectionString: connectionString
+          })
+        : new Pool({
+            host: 'localhost',
+            user: 'postgres',
+            database: 'coviz',
+            port: 5432
+          })
       const query =
         'INSERT INTO "states" (state, capital, latitude, longitude, population, "statecode") VALUES ($1, $2, $3, $4, $5, $6)'
 
