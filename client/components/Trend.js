@@ -50,6 +50,7 @@ export default ({time, startTime, endTime, updateTime}) => {
 
   return (
     <svg
+      className="timeline"
       ref={svgRef}
       width={width}
       height={height}
