@@ -38,9 +38,16 @@ async function createCovidDailyTable() {
       csvData.shift()
 
       // create a new connection to the database
-      const pool = new Pool({
-        connectionString: connectionString
-      })
+      const pool = process.env.HEROKU_POSTGRESQL_PINK_URL
+        ? new Pool({
+            connectionString: connectionString
+          })
+        : new Pool({
+            host: 'localhost',
+            user: 'postgres',
+            database: 'coviz',
+            port: 5432
+          })
 
       const query =
         'INSERT INTO "covidDailies" (date, "statecode", "positiveCumulative", "deathCumulative", "positiveIncrease", "deathIncrease", "hospitalizedCurrently", "hospitalizedCumulative", "hospitalizedIncrease") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)'

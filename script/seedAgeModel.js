@@ -20,9 +20,17 @@ async function createTable() {
       csvData.shift()
 
       // create a new connection to the database
-      const pool = new Pool({
-        connectionString: connectionString
-      })
+      const pool = process.env.HEROKU_POSTGRESQL_PINK_URL
+        ? new Pool({
+            connectionString: connectionString
+          })
+        : new Pool({
+            host: 'localhost',
+            user: 'postgres',
+            database: 'coviz',
+            port: 5432
+          })
+
       console.log('this is right before query')
       const query =
         'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals", "pop") VALUES ($1, $2, $3, $4, $5)'
