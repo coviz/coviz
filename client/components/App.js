@@ -15,7 +15,7 @@ export const App = () => {
   // create the timer
   const timer = useTimer({
     startTime: new Date('2020-02-28'),
-    endTime: new Date('2021-01-20'),
+    endTime: new Date('2021-01-19'),
     step: 1000 * 60 * 60 * 72,
     frequency: 2
   })
@@ -85,7 +85,8 @@ export const App = () => {
           <div>
             {timerDate === '1/19/2021' ||
             timerDate === '1/20/2021' ||
-            timerDate === '1/21/2021' ? (
+            timerDate === '1/21/2021' ||
+            timerDate === '1/22/2021' ? (
               <button
                 type="button"
                 className="play-button"
