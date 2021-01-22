@@ -83,7 +83,8 @@ export const App = () => {
         <Trend {...timer} />
         <div id="test">
           <div>
-            {timerDate === '1/19/2021' ||
+            {timerDate === '1/18/2021' ||
+            timerDate === '1/19/2021' ||
             timerDate === '1/20/2021' ||
             timerDate === '1/21/2021' ||
             timerDate === '1/22/2021' ? (
