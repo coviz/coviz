@@ -55,14 +55,13 @@ img {
   display: flex;
   flex-direction: row;
   /* justify-content: space-evenly; */
-  justify-content: space-between;
+  justify-content: space-around;
   /* align-items: flex-start; */
   align-items: center;
   /* background: rgba(38, 38, 39, 0.5); */
   /* background-color: #a91010; */
   padding: 5px;
   padding-bottom: 0px;
-
   /* border: 2px solid rgb(255, 242, 129); */
   /* position: fixed; */
   position: relative;
@@ -100,7 +99,7 @@ img {
   text-decoration: underline;
   text-align: center;
   height: 2rem;
-  width: 5rem;
+  width: 4rem;
 }
 .footer a:hover {
   color: #70d2f0;
@@ -600,7 +599,13 @@ div.tooltipHunger {
     /* padding: 5px; */
     justify-content: space-around;
   }
-
+  #ethnPage {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .factsEthn {
+    width: 40rem;
+  }
 }
 
 /* Mobile L (min 425px) */
