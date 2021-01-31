@@ -310,6 +310,7 @@ div.tooltipLolli {
 #enviroTitle1 {
   color: white;
   text-align: center;
+  font-size: 24px;
 }
 #enviroTitle2 {
   text-decoration: underline;
@@ -613,6 +614,16 @@ div.tooltipHunger {
   .ageFacts {
     width: 50rem;
     /* height: 20rem; */
+    padding-top: 3rem;
+    margin-bottom: 5rem;
+  }
+  .co2ChartNinfo {
+    display: flex;
+    flex-flow: row wrap;
+    width: 96%;
+  }
+  .co2Facts {
+    width: 50rem;
     padding-top: 3rem;
     margin-bottom: 5rem;
   }
