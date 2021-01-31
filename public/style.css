@@ -606,6 +606,16 @@ div.tooltipHunger {
   .factsEthn {
     width: 40rem;
   }
+  .ageChartNinfo {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .ageFacts {
+    width: 50rem;
+    /* height: 20rem; */
+    padding-top: 3rem;
+    margin-bottom: 5rem;
+  }
 }
 
 /* Mobile L (min 425px) */
