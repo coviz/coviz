@@ -627,6 +627,9 @@ div.tooltipHunger {
     padding-top: 3rem;
     margin-bottom: 5rem;
   }
+  .facts {
+    margin-bottom: 3rem;
+  }
 }
 
 /* Mobile L (min 425px) */
