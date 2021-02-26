@@ -15,7 +15,8 @@ export const Footer = () => (
       </a>
     </div>
     <div>
-      <h5>CREATORS:</h5>
+      <h4>MEET THE TEAM:</h4>
+      <br></br>
       <h5>
         <a
           href="https://www.linkedin.com/in/cbconstans/"
@@ -49,7 +50,7 @@ export const Footer = () => (
           rel="noopener noreferrer"
           target="_blank"
         >
-          Anna Syzmula
+          Anna Szymula
         </a>
       </h5>
     </div>
