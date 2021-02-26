@@ -15,7 +15,7 @@ export const App = () => {
   // create the timer
   const timer = useTimer({
     startTime: new Date('2020-02-28'),
-    endTime: new Date('2021-01-12'),
+    endTime: new Date('2021-01-19'),
     step: 1000 * 60 * 60 * 72,
     frequency: 2
   })
@@ -83,10 +83,11 @@ export const App = () => {
         <Trend {...timer} />
         <div id="test">
           <div>
-            {timerDate === '1/11/2021' ||
-            timerDate === '1/12/2021' ||
-            timerDate === '1/13/2021' ||
-            timerDate === '1/14/2021' ? (
+            {timerDate === '1/18/2021' ||
+            timerDate === '1/19/2021' ||
+            timerDate === '1/20/2021' ||
+            timerDate === '1/21/2021' ||
+            timerDate === '1/22/2021' ? (
               <button
                 type="button"
                 className="play-button"

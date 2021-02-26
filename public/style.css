@@ -224,9 +224,12 @@ div.tooltip {
   display: flex;
   justify-content: space-between;
 }
-/* #aboveTitle {
-  border: 2px solid yellow;
-} */
+
+.timeline {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='40' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%'>⬆</text></svg>")
+      16 0,
+    auto;
+}
 .totalsBox {
   margin-top: 75px;
   margin-bottom: 30px;
