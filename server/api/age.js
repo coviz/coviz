@@ -14,7 +14,6 @@ router.get('/', async (req, res, next) => {
     })
     // send select all ages data
     let nationalData = nationData.slice(1)
-    console.log('inside api', nationData)
 
     res.json(nationalData)
   } catch (error) {

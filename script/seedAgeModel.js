@@ -6,7 +6,6 @@ const connectionString = process.env.HEROKU_POSTGRESQL_PINK_URL
 
 async function createTable() {
   await db.sync({force: true})
-  // await db.sync()
 
   await db.close()
 
@@ -32,8 +31,6 @@ async function createTable() {
             database: 'coviz',
             port: 5432
           })
-
-      console.log('this is right before query')
       const query =
         'INSERT INTO "ageSexes" (state, sex, "ageGroup", "deathTotals", "pop") VALUES ($1, $2, $3, $4, $5)'
 
