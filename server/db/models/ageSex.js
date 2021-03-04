@@ -15,7 +15,8 @@ const AgeSex = db.define('ageSex', {
     type: Sequelize.INTEGER
   },
   pop: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    allowNull: true
   },
   createdAt: {
     type: Sequelize.DATE,

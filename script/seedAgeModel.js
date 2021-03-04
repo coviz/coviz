@@ -6,6 +6,8 @@ const connectionString = process.env.HEROKU_POSTGRESQL_PINK_URL
 
 async function createTable() {
   await db.sync({force: true})
+  // await db.sync()
+
   await db.close()
 
   let stream = fs.createReadStream('script/datasets/Covid_vs_Age_&_Sex.csv')

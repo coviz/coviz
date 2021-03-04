@@ -10,14 +10,14 @@ describe('ethnicity routes', () => {
     await db.sync({force: true})
     await ethnicity.create({
       state: 'California',
-      ethnicity: 'other',
+      ethn: 'other',
       deaths: 10000,
       pop: 10000000,
       percentage: 0.2
     })
     await ethnicity.create({
       state: 'Alabama',
-      ethnicity: 'AfricanAmerican',
+      ethn: 'African American',
       deaths: 2000,
       pop: 15000000,
       percentage: 0.5
@@ -29,8 +29,8 @@ describe('ethnicity routes', () => {
     expect(res.body).to.be.an('array')
     expect(res.body[0].state).to.equal('California')
     expect(res.body[1].state).to.equal('Alabama')
-    expect(res.body[0].ethnicity).to.equal('other')
-    expect(res.body[1].ethnicity).to.equal('AfricanAmerican')
+    expect(res.body[0].ethn).to.equal('other')
+    expect(res.body[1].ethn).to.equal('African American')
   })
   it('GET /api/ethnicity/statesName', async () => {
     const res = await agent.get('/api/ethnicity/Alabama').expect(200)
