@@ -30,8 +30,6 @@ router.get('/:stateName', async (req, res, next) => {
         state: req.params.stateName
       }
     })
-    // console.log(stateData)
-    // res.json(stateData)
   } catch (error) {
     next(error)
   }

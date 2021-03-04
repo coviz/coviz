@@ -7,7 +7,6 @@ export function initUnempChart(height, width) {
     .append('svg')
     .attr('width', width)
     .attr('height', height)
-  // .style('border', '1px solid white')
 }
 
 export function drawUnempChart(height, width, data) {
@@ -17,7 +16,6 @@ export function drawUnempChart(height, width, data) {
     .scaleOrdinal()
     .domain(['2008', '2009', '2010', '2011', '2017', '2018', '2019', '2020'])
     .range(d3.schemeTableau10)
-  // .range(["#213631","#252a50","#233657", "#492934", "#63242d","#4b4138", "#220033"]);
 
   // Size scale
   const size = d3
