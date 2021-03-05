@@ -25,7 +25,6 @@ describe('covidDaily routes', () => {
       statecode: 'CA'
     })
   })
-  // afterEach(() => db.sync({force: true}))
 
   it('GET /api/covidDaily', async () => {
     const res = await agent.get('/api/covidDaily').expect(200)
@@ -34,7 +33,7 @@ describe('covidDaily routes', () => {
     expect(res.body[0].date).to.equal(20201123)
   })
   it('GET /api/covidDaily/states', async () => {
-    const res = await agent.get('/api/covidDaily/states/CA').expect(200)
+    const res = await agent.get('/api/covidDaily/CA').expect(200)
     expect(res.body).to.be.an('array')
     expect(res.body[0].state).to.equal('California')
     expect(res.body[0].date).to.equal(20201123)

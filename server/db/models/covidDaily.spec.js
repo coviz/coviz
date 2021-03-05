@@ -12,17 +12,13 @@ describe('covidDaily model', () => {
     const example = await covidDaily.create({
       date: 20201123,
       statecode: 'CA',
-      positive: 100,
-      death: 10,
       positiveIncrease: 10,
-      deathIncrease: 2
+      deathIncrease: 10
     })
     expect(example.date).to.equal(20201123)
     expect(example.statecode).to.equal('CA')
-    expect(example.positiveCumulative).to.equal(100)
-    expect(example.death).to.equal(10)
     expect(example.positiveIncrease).to.equal(10)
-    expect(example.deathIncrease).to.equal(2)
+    expect(example.deathIncrease).to.equal(10)
   })
   it('date and statecode cannot be empty', async () => {
     try {

@@ -6,16 +6,15 @@ module.exports = router
 // GET route for age data for all of US
 router.get('/', async (req, res, next) => {
   try {
-    console.log('in try')
     const nationData = await AgeSex.findAll({
       where: {
         state: 'United States',
         sex: 'All Sexes'
       }
     })
-    console.log('after db find')
     // send select all ages data
     let nationalData = nationData.slice(1)
+
     res.json(nationalData)
   } catch (error) {
     next(error)
@@ -30,8 +29,6 @@ router.get('/:stateName', async (req, res, next) => {
         state: req.params.stateName
       }
     })
-    // console.log(stateData)
-    // res.json(stateData)
   } catch (error) {
     next(error)
   }

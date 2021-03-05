@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
 
 //GET route for COVID data for one state
 router.get('/:statecode', async (req, res, next) => {
-  const query = `SELECT states.state, states.statecode, states.latitude, states.longitude, states.population, date, positive FROM states JOIN "covidDailies" ON states.statecode = "covidDailies".statecode WHERE states.statecode='${
+  const query = `SELECT states.state, states.statecode, states.latitude, states.longitude, states.population, date FROM states JOIN "covidDailies" ON states.statecode = "covidDailies".statecode WHERE states.statecode='${
     req.params.statecode
   }'`
   try {

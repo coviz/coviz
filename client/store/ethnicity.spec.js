@@ -30,10 +30,6 @@ describe('ethnicity redux', () => {
   })
   it('fetchEthnicities action creator returns a valid action', () => {
     const example = fetchEthnicities(data)
-
-    expect(fetchEthnicities(data)).to.deep.equal({
-      type: 'SET_ETHNICITIES',
-      usData
-    })
+    expect(typeof example).to.deep.equal('function')
   })
 })
