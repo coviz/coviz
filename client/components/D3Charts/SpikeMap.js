@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from 'react'
-import {geoAlbersUsa, geoPath, select} from 'd3'
 import * as d3 from 'd3'
 
 import usData from '../Assets/usData.json'
@@ -17,11 +16,12 @@ export const SpikeMap = realData => {
 
   useEffect(
     () => {
-      let projection = geoAlbersUsa()
+      let projection = d3
+        .geoAlbersUsa()
         .scale(1300)
         .translate([975 / 2, 610 / 2])
-      const svg = select(svgRef.current)
-      const pathGenerator = geoPath().projection(projection)
+      const svg = d3.select(svgRef.current)
+      const pathGenerator = d3.geoPath().projection(projection)
 
       // Create the tooltip
       const div = d3

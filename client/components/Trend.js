@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import {scaleTime, axisBottom, select} from 'd3'
 
-export default ({time, startTime, endTime, updateTime}) => {
+export const Trend = ({time, startTime, endTime, updateTime}) => {
   /** Trend dimensions */
   const width = 950
   const height = 25
@@ -50,6 +50,7 @@ export default ({time, startTime, endTime, updateTime}) => {
 
   return (
     <svg
+      className="timeline"
       ref={svgRef}
       width={width}
       height={height}
@@ -61,3 +62,4 @@ export default ({time, startTime, endTime, updateTime}) => {
     </svg>
   )
 }
+export default Trend

@@ -15,7 +15,6 @@ export const BehindBars = () => {
   }, [])
   useEffect(
     () => {
-      //if it's no longer loding
       if (!isLoading) {
         allCases = allCases.map(element => {
           return {
