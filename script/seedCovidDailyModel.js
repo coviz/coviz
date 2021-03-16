@@ -69,7 +69,7 @@ async function createCovidDailyTable() {
             })
           })
         } finally {
-          done()
+          // done()
         }
       })
     })
