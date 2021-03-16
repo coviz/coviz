@@ -23,7 +23,10 @@ async function createTable() {
 
       const pool = process.env.HEROKU_POSTGRESQL_PINK_URL
         ? new Pool({
-            connectionString: connectionString
+            connectionString: connectionString,
+            ssl: {
+              rejectUnauthorized: false
+            }
           })
         : new Pool({
             host: 'localhost',
