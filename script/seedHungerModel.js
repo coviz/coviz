@@ -24,7 +24,10 @@ async function createHungerTable() {
       // create a new connection to the database
       const pool = process.env.HEROKU_POSTGRESQL_PINK_URL
         ? new Pool({
-            connectionString: connectionString
+            connectionString: connectionString,
+            ssl: {
+              rejectUnauthorized: false
+            }
           })
         : new Pool({
             host: 'localhost',
