@@ -6,7 +6,7 @@ const Vaccine = db.define('vaccine', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  date: {
+  day: {
     type: Sequelize.INTEGER,
     allowNull: false
   },
