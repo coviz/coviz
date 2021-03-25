@@ -3,34 +3,15 @@ const Pool = require('pg').Pool
 const fastcsv = require('fast-csv')
 const db = require('../server/db')
 const connectionString = process.env.HEROKU_POSTGRESQL_PINK_URL
-
-async function createCovidDailyTable() {
+async function createUnemploymentTable() {
   await db.sync()
   await db.close()
 
-  let stream = fs.createReadStream('script/datasets/all-states-history.csv')
+  let stream = fs.createReadStream('script/datasets/vaccines_vs_covid.csv')
   let csvData = []
   let csvStream = fastcsv
     .parse()
-    .on('data', function(row) {
-      if (row[20] === '') row[20] = '0'
-      if (row[3] === '') row[3] = '0'
-      if (row[22] === '') row[22] = '0'
-      if (row[5] === '') row[5] = '0'
-      if (row[9] === '') row[9] = '0'
-      if (row[7] === '') row[7] = '0'
-      if (row[10] === '') row[10] = '0'
-      const data = [
-        row[0],
-        row[1],
-        row[20],
-        row[3],
-        row[22],
-        row[5],
-        row[9],
-        row[7],
-        row[10]
-      ]
+    .on('data', function(data) {
       csvData.push(data)
     })
     .on('end', function() {
@@ -53,7 +34,7 @@ async function createCovidDailyTable() {
           })
 
       const query =
-        'INSERT INTO "covidDailies" (date, "statecode", "positiveCumulative", "deathCumulative", "positiveIncrease", "deathIncrease", "hospitalizedCurrently", "hospitalizedCumulative", "hospitalizedIncrease") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)'
+        'INSERT INTO "vaccines" (state, day, vaccinations) VALUES ($1, $2, $3)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
@@ -77,6 +58,4 @@ async function createCovidDailyTable() {
   stream.pipe(csvStream)
 }
 
-createCovidDailyTable()
-
-module.exports = createCovidDailyTable
+createUnemploymentTable()

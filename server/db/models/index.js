@@ -6,6 +6,7 @@ const CovidDaily = require('./covidDaily')
 const Hunger = require('./hunger')
 const Unemployment = require('./unemployment')
 const BehindBars = require('./behind-bars')
+const Vaccine = require('./vaccine')
 
 module.exports = {
   State,
@@ -15,5 +16,6 @@ module.exports = {
   CovidDaily,
   Unemployment,
   BehindBars,
-  Hunger
+  Hunger,
+  Vaccine
 }

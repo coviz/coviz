@@ -561,7 +561,6 @@ div.tooltipHunger {
   font-size: x-small;
 }
 
-
 /* MEDIA QUERIES */
 
 /* Laptop L (min 1440px) is good */
@@ -597,7 +596,7 @@ div.tooltipHunger {
   .totalsBox h3 {
     text-align: center;
   }
-  .totalsFacts div{
+  .totalsFacts div {
     display: flex;
     /* flex-flow: row wrap; */
     /* padding: 5px; */

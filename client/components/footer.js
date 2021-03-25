@@ -16,7 +16,7 @@ export const Footer = () => (
     </div>
     <div>
       <h4>MEET THE TEAM:</h4>
-      <br></br>
+      <br />
       <h5>
         <a
           href="https://www.linkedin.com/in/cbconstans/"
